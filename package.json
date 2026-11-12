@@ -1,0 +1,26 @@
+{
+  "name": "politidex",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "dev": "next dev",
+    "check:claims": "node scripts/check-claims.mjs",
+    "prebuild": "node scripts/unpack-data.mjs && node scripts/check-claims.mjs",
+    "build": "next build && node scripts/check-rendered.mjs",
+    "start": "next start",
+    "check:rendered": "node scripts/check-rendered.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,41 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Secrets and private OPSEC denylist (never commit)
+.env
+.env*
+*.local
+.opsec-denylist
+
+# Regenerable / bulky data (see README for how to rebuild)
+data/raw/
+data/verify-cache/
+data/build/
+data/review-queue/
+
+# Election results and unpublished investigation notes (not part of the public site)
+data/manual/elections-2026.json
+data/manual/elections-2026-coverage.json
+data/manual/on-the-record-investigations.md
+
+# Caches, logs, and temp files
+__pycache__/
+*.pyc
+*.pyo
+*.tmp
+*.log
+logs/
+.cache/
+.vercel
+*.map
+
+# Screenshots and deploy artifacts
+screenshots/
+deploy-bundle.json.gz
+
+# OS
+.DS_Store

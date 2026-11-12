@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-serif: var(--font-crimson), Georgia, serif;
+  --color-paper: #f8f6f0;
+  --color-paper-2: #f0ede6;
+  --color-ink: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-rule: #d4d0c4;
+  --color-record: #1f4e79;
+  --color-analysis: #8a4b0f;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: hidden; }
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  background-image:
+    radial-gradient(circle at 20% 50%, #78776c08 0, #0000 50%),
+    radial-gradient(circle at 80% 20%, #78776c08 0, #0000 50%),
+    repeating-linear-gradient(0deg, #0000, #0000 2px, #78776c03 2px 4px),
+    repeating-linear-gradient(90deg, #0000, #0000 2px, #78776c03 2px 4px),
+    linear-gradient(45deg, #f8f6f0, #faf8f2 25%, #f6f4ee 50%, #f8f6f0 75%, #faf8f2);
+  background-attachment: fixed;
+}
+.masthead-shadow { text-shadow: 1px 1px #0000001a, 2px 2px #0000000d, 3px 3px #00000005; }
+.newspaper-card {
+  background: linear-gradient(135deg, #fffffff2, #fffffffa 50%, #fffffff2);
+  border: 1px solid var(--color-rule);
+}
+.paper-crease { position: relative; }
+.paper-crease::before {
+  content: ""; pointer-events: none; position: absolute; inset: 0;
+  background: linear-gradient(90deg, #0000, #00000005 45%, #00000008 50%, #00000005 55%, #0000);
+}
+.rule-double { border-top: 3px double var(--color-ink); }
+.prose-news p { margin: 0 0 1rem; line-height: 1.65; font-size: 1.125rem; }
+.prose-news h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin: 2rem 0 .75rem; }
+.prose-news h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
+.prose-news ul { list-style: disc; padding-left: 1.4rem; margin: 0 0 1rem; }
+.prose-news ol { list-style: decimal; padding-left: 1.4rem; margin: 0 0 1rem; }
+.prose-news li { margin: .3rem 0; line-height: 1.55; font-size: 1.08rem; }
+.prose-news a, a.link { color: var(--color-record); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.cite { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .68rem; vertical-align: super; margin-left: 1px; color: var(--color-record); text-decoration: none; white-space: nowrap; }
+.cite:hover { text-decoration: underline; }
+.tag { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+table { border-collapse: collapse; }

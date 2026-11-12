@@ -1,0 +1,5 @@
+# Copy this file to .opsec-denylist (gitignored) or set the OPSEC_DENYLIST
+# environment variable to a comma-separated list of the same terms.
+# One literal string per line. scripts/check-rendered.mjs scans prerendered
+# HTML for these strings and fails the build if any appear.
+# Put maintainer personal identifiers here. Do not commit the real file.
