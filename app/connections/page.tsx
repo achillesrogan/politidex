@@ -14,7 +14,7 @@ export default function ConnectionsPage() {
   const name = (id: string) => { const p = by.get(id); return p ? <Link className="link" href={`/p/${p.slug}`}>{p.name}</Link> : id; };
   return (
     <div>
-      <PageHead kicker="Connections v1" title="Documented connections" dek="Relationships that appear in public records. A connection documents a fact; it does not by itself imply coordination, influence, or wrongdoing." />
+      <PageHead kicker="Connections v1" title="Documented connections" dek="Relationships that appear in public records. Each current member’s profile has a Connections panel for committee contributions, lobbying disclosure matches, independent expenditures, and cosponsorship. A connection documents a fact; it does not by itself imply coordination, influence, or wrongdoing." />
       <section className="newspaper-card p-5 sm:p-6">
         <div className="tag text-[var(--color-record)]">Record</div>
         <h2 className="font-display text-2xl font-bold mt-1 mb-3">Most frequent cosponsorship relationships</h2>
@@ -31,7 +31,7 @@ export default function ConnectionsPage() {
       <section className="newspaper-card p-5 sm:p-6 mt-6">
         <div className="tag text-[var(--color-record)]">Record</div>
         <h2 className="font-display text-2xl font-bold mt-1 mb-3">Political committees that appear among the most members’ top givers</h2>
-        <p className="text-[var(--color-muted)] mb-3">Built from each member’s five largest committee givers in 2025–26, as reported to the FEC by the paying committees (Schedule B). Committee-level data only.</p>
+        <p className="text-[var(--color-muted)] mb-3">This overview still uses each member’s five largest committee givers from FEC Schedule B disbursements (2025–26), committee-level data only. Itemized 24K committee contributions, leadership PAC receipts, and independent expenditures are on each member’s Connections panel.</p>
         <div className="grid gap-4 md:grid-cols-2">
           {pacs.slice(0, 16).map((x: any) => (
             <div key={x.committee_id} className="border border-[var(--color-rule)] p-4 bg-white/60">

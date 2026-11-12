@@ -23,9 +23,9 @@ export default function About() {
           <li>Contact details or addresses of private individuals, including individual campaign contributors. Federal law restricts the use of individual contributor information from FEC reports, and we only publish committee-level figures.</li>
         </ul>
         <h2>How AI is used</h2>
-        <p>AI helps us find, organize, and summarize records. It never publishes on its own. An AI-drafted sentence may only restate a claim that our verifier has already confirmed against its source, a second automated pass rejects anything unsupported, and a human editor reviews every item before it goes live. See the <a href="/methodology">Verification Standard</a>.</p>
+        <p>AI helps us find, organize, and summarize records. It never publishes on its own. An AI-drafted sentence may only restate a claim that our verifier has already confirmed against its source, a second automated pass rejects anything unsupported, and a human editor approves every AI-drafted summary before it renders. See the <a href="/methodology">Verification Standard</a>.</p>
         <h2>Open source and non-profit</h2>
-        <p>Politidex is a public-good project, not a commercial product. The code is released under the GNU AGPL-3.0, and our original data compilations under CC BY 4.0 where the underlying source terms allow. Coverage starts with the federal government and will expand to state and local officials.</p>
+        <p>Politidex is a public-good, open-source project, not a commercial product. The code is released under the GNU AGPL-3.0, and our original data compilations under CC BY 4.0 where the underlying source terms allow. Coverage starts with the federal government and will expand to state and local officials. <a className="link" href="https://github.com/achillesrogan/politidex" rel="noopener noreferrer">Source code on GitHub</a>.</p>
         <h2>Contact</h2>
         <p>Editorial: <a href={`mailto:${SITE.editorEmail}`}>{SITE.editorEmail}</a><br />Corrections: <a href={`mailto:${SITE.correctionsEmail}`}>{SITE.correctionsEmail}</a></p>
       </div>

@@ -1,8 +1,11 @@
+import CommitteeInfo from "@/components/CommitteeInfo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Fact from "@/components/Fact";
 import { RecordModule, AnalysisModule } from "@/components/Module";
-import { people, profile, verified, fmtUSD, claims, approvedSummary } from "@/lib/data";
+import { people, profile, verified, fmtUSD, claims, approvedSummary, committeeHistory } from "@/lib/data";
+import ConnectionsPanel from "@/components/ConnectionsPanel";
+import { fmtDate } from "@/lib/dates";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -50,10 +53,32 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
             </dl>
           </RecordModule>
 
-          {pr.committees?.some((c: any) => verified(c.claim)) && (
+          {pr.committees?.some((c: any) => c?.name && verified(c.claim)) && (
             <RecordModule title="Committee assignments">
               <ul className="grid gap-1">
-                {pr.committees.map((c: any) => <Fact key={c.code} as="li" claim={track(c.claim)}>{c.name}{c.role && c.role !== "Member" ? ` — ${c.role}` : ""}</Fact>)}
+                {pr.committees.filter((c: any) => c?.name && verified(c.claim)).map((c: any) => {
+                  const meta = committeeHistory(c.code);
+                  const hist = (c.history_claims || []).map((id: string) => {
+                    const claim = verified(id);
+                    if (!claim) return null;
+                    const fact = meta?.facts?.find((x: any) => x.claim === id);
+                    return {
+                      id: claim.id,
+                      label: fact?.label || "Official record",
+                      text: String(claim.text),
+                      excerpt: claim.excerpt,
+                      source_name: claim.source_name,
+                      source_url: claim.source_url,
+                      retrieved_at: claim.retrieved_at,
+                    };
+                  }).filter(Boolean);
+                  return (
+                    <li key={c.code || c.claim} className="flex flex-wrap items-baseline gap-2">
+                      <Fact claim={track(c.claim)}>{c.name}{c.role && c.role !== "Member" ? ` — ${c.role}` : ""}</Fact>
+                      {hist.length > 0 && <CommitteeInfo name={c.name} facts={hist} />}
+                    </li>
+                  );
+                })}
               </ul>
             </RecordModule>
           )}
@@ -86,6 +111,10 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
             </RecordModule>
           )}
 
+          {pr.ties && (
+            <ConnectionsPanel ties={pr.ties} personName={p.name} cosponsors={pr.cosponsors} />
+          )}
+
           {an && (
             <AnalysisModule title="Politi-Matrix v1: participation and party alignment">
               <dl className="grid gap-3 sm:grid-cols-2">
@@ -108,11 +137,11 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
                   <div key={m.label}><dt className="text-sm text-[var(--color-muted)]">{m.label}</dt><dd className="font-semibold"><Fact claim={track(m.claim)}>{fmtUSD(m.value)}</Fact></dd></div>
                 ))}
               </dl>
-              <p className="mt-3 text-sm text-[var(--color-muted)]">Committee-level totals reported to the FEC{pr.money_meta?.coverage_end ? `, through ${pr.money_meta.coverage_end.slice(0, 10)}` : ""}. Individual contributors are not shown.</p>
+              <p className="mt-3 text-sm text-[var(--color-muted)]">Committee-level totals reported to the FEC{pr.money_meta?.coverage_end ? `, through ${fmtDate(pr.money_meta.coverage_end)}` : ""}. Individual contributors are not shown.</p>
             </RecordModule>
           )}
 
-          {pr.pacs?.some((x: any) => verified(x.claim)) && (
+          {!pr.ties?.money?.rows?.length && pr.pacs?.some((x: any) => verified(x.claim)) && (
             <RecordModule title="Political committees giving the most">
               <ul className="grid gap-2">
                 {pr.pacs.map((x: any) => <Fact key={x.committee_id} as="li" claim={track(x.claim)}><a className="link" href={x.url} rel="noopener noreferrer">{x.name}</a> — {fmtUSD(x.largest)} <span className="text-[var(--color-muted)] text-sm">({x.count} {x.count === 1 ? "payment" : "payments"})</span></Fact>)}

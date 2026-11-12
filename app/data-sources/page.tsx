@@ -6,7 +6,9 @@ const SOURCES = [
   ["Office of the Clerk, U.S. House — member data", "https://clerk.house.gov/xml/lists/MemberData.xml", "House committee assignments.", "U.S. government work."],
   ["U.S. Senate — roll-call votes", "https://www.senate.gov/legislative/votes_new.htm", "Every recorded Senate vote, senator by senator (official XML).", "U.S. government work."],
   ["U.S. Senate — committee memberships", "https://www.senate.gov/general/committee_assignments/assignments.htm", "Senate committee rosters (official XML).", "U.S. government work."],
-  ["Federal Election Commission — OpenFEC API", "https://api.open.fec.gov/developers/", "Candidate financial totals and committee-to-committee contributions.", "Public records. Individual contributor information may not be sold or used to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)); Politidex shows committee-level data only."],
+  ["Federal Election Commission — OpenFEC API", "https://api.open.fec.gov/developers/", "Candidate financial totals and leadership PAC sponsor identifiers.", "Public records. Individual contributor information may not be sold or used to solicit contributions or for commercial purposes (52 U.S.C. § 30111(a)(4)); Politidex shows committee-level data only."],
+  ["Federal Election Commission — 2026 bulk files", "https://www.fec.gov/data/browse-data/?tab=bulk-data", "Committee master (type, designation, Interest group category, connected organization); contributions from committees to candidates (PAS2, transaction type 24K); any transaction from one committee to another (OTH, 24K receipts to leadership PACs); independent expenditures.", "Public records. Same 52 U.S.C. § 30111(a)(4) restriction; committee-level data only."],
+  ["Senate Office of Public Records — LDA.gov", "https://lda.gov/api/v1/filings/", "Lobbying disclosure filings: specific-issues text matched to bills a member sponsored or cosponsored, and covered-position listings that name a member.", "Must cite the retrieval date. The Senate Office of Public Records cannot vouch for the accuracy of the data after retrieval. No Senate seal."],
   ["The White House — The Cabinet", "https://www.whitehouse.gov/administration/cabinet/", "Current Cabinet officials and titles.", "U.S. government work."],
   ["U.S. Senate — senators’ contact information (XML)", "https://www.senate.gov/general/contact_information/senators_cfm.xml", "Senate roster fields used to join official records (state, class, and official listings).", "U.S. government work."],
   ["unitedstates/congress-legislators", "https://github.com/unitedstates/congress-legislators", "Cross-reference IDs (Bioguide, FEC, Senate LIS) used to join records.", "CC0 1.0 (public domain dedication). Used as an index; facts are verified against official sources."],
@@ -28,7 +30,7 @@ export default function DataSources() {
         <h2>Not used as sources</h2>
         <p>Unsourced social-media claims, leaked documents, paywalled opposition research, and scraped news text. AI models are not sources of fact. The OpenSecrets public API (discontinued April 2025) and the ProPublica Congress API (retired 2024) are not used.</p>
         <h2>Planned</h2>
-        <p>Senate Lobbying Disclosure Act filings (LDA.gov), House and Senate financial-disclosure reports, and state campaign-finance and ethics filings. Primary sources used in the <a href="/on-the-record">On the record</a> section (organizer event pages, official member releases, and public schedules) are cited on each entry.</p>
+        <p>House and Senate financial-disclosure reports, and state campaign-finance and ethics filings.</p>
       </div>
     </div>
   );

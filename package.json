@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "check:claims": "node scripts/check-claims.mjs",
-    "prebuild": "node scripts/unpack-data.mjs && node scripts/check-claims.mjs",
+    "prebuild": "node scripts/unpack-data.mjs && python3 ingest/test_match_validation.py && node scripts/check-claims.mjs",
     "build": "next build && node scripts/check-rendered.mjs",
     "start": "next start",
     "check:rendered": "node scripts/check-rendered.mjs"

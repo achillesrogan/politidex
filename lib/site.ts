@@ -9,7 +9,6 @@ export const SITE = {
 export const NAV = [
   { href: "/", label: "Home" },
   { href: "/people", label: "People" },
-  { href: "/on-the-record", label: "On the record" },
   { href: "/connections", label: "Connections" },
   { href: "/politi-matrix", label: "Politi-Matrix" },
   { href: "/methodology", label: "Methodology" },

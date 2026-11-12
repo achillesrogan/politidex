@@ -18,6 +18,10 @@ for (const f of fs.readdirSync(path.join(DIR, "profiles"))) walk(JSON.parse(fs.r
 walk(JSON.parse(fs.readFileSync(path.join(DIR, "connections.json"), "utf8")), "connections.json");
 if (fs.existsSync(path.join(DIR, "elections.json"))) walk(JSON.parse(fs.readFileSync(path.join(DIR, "elections.json"), "utf8")), "elections.json");
 if (fs.existsSync(path.join(DIR, "on-the-record.json"))) walk(JSON.parse(fs.readFileSync(path.join(DIR, "on-the-record.json"), "utf8")), "on-the-record.json");
+if (fs.existsSync(path.join(DIR, "orgs-index.json"))) walk(JSON.parse(fs.readFileSync(path.join(DIR, "orgs-index.json"), "utf8")), "orgs-index.json");
+if (fs.existsSync(path.join(DIR, "committee-history.json"))) walk(JSON.parse(fs.readFileSync(path.join(DIR, "committee-history.json"), "utf8")), "committee-history.json");
+const orgDir = path.join(DIR, "orgs");
+if (fs.existsSync(orgDir)) for (const f of fs.readdirSync(orgDir)) walk(JSON.parse(fs.readFileSync(path.join(orgDir, f), "utf8")), "orgs/"+f);
 const st = Object.values(claims).reduce((a, c) => ((a[c.status] = (a[c.status] || 0) + 1), a), {});
 console.log(`check-claims: ${refs} references, claim status ${JSON.stringify(st)}`);
 if (errors.length) { console.error(errors.slice(0, 50).join("\n")); console.error(`check-claims FAILED: ${errors.length} problems`); process.exit(1); }

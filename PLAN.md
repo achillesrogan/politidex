@@ -1,13 +1,15 @@
 # Politidex — build plan
 
-_Last updated: November 11, 2026. Status: Phase A + Phase B (federal profiles and connections) are in production at https://www.politidex.icu (the apex domain redirects to www); noindex is on. Election results are not part of the site. The On the record section is built locally and is not yet deployed. The maintainer approves every deploy._
+_Last updated: November 12, 2026. Status: Phase A + Phase B (federal profiles, the Connections panel, and organization pages) are in production at https://www.politidex.icu (the apex domain redirects to www); noindex is on. Election results are not part of the site. The maintainer approves every deploy._
 
 ## Current status (checkpoint)
 - Phase A: complete and verified (`POLITIDEX_DATA=0 npm run build` → 18 pages, CI OK).
 - Phase B: federal profiles and connections for current officeholders. 562 profiles (100 senators, 433 representatives,
   5 delegates + 1 resident commissioner, President, VP, 21 Cabinet-level officials per whitehouse.gov),
-  1,599 roll calls (House 682, Senate 917), 33,359 claims — **33,359 verified, 0 blocked** (live re-fetch,
-  Nov 11 2026 ~2:45–3:37 PM CT). Build: 579 pages, 30,304 rendered facts, CI OK.
+  1,600 roll calls. Connections panel (committee contributions, lobbying-disclosure matches,
+  independent expenditures, covered-position records) and organization pages deployed
+  November 12, 2026, about 08:15 UTC. **64,067 claims verified, 0 blocked** (connections-stage
+  live re-check, November 12, 2026, 06:42 UTC).
 - Independent spot-check (second source, 20 profiles, 2 random samples): 99/99 checks pass
   (`data/build/spotcheck-sample-seed*.txt`). Gap: senators' joint-committee seats are not yet ingested.
 - Review queue: 562 template-drafted summaries `pending_review`, 0 approved, so none render.
@@ -40,6 +42,7 @@ No summary, fact, connection, or edge may exist without verifiable proof from a 
    Only items the editor moves to `approved` can render. Deploys require the maintainer's explicit approval.
 5. **Public corrections log** at `/corrections` (`data/manual/corrections-log.json`), dated entries with source.
 6. **CI gates.** `npm run build` runs:
+   - `ingest/test_match_validation.py` (prebuild): lobbying name/bill match rules and IE notice dedupe.
    - `scripts/check-claims.mjs` (prebuild): every referenced claim exists and has source URL, retrieved-at,
      excerpt, check spec, status.
    - `scripts/check-rendered.mjs` (postbuild): scans every prerendered HTML page; **fails the build** if any
@@ -67,28 +70,27 @@ unsupported nuance in phrasing — which is why human review (step 4) is mandato
 - New favicon set and OG image. Real methodology (Verification Standard), corrections, data-sources,
   about (open-source/non-profit, AI double-edged sword framing), short honest privacy and terms.
 
-### Phase B — Federal data (in progress locally)
+### Phase B — Federal data (in production)
 Coverage target: President, VP, Cabinet, and all 539 current members of the 119th Congress.
 - Ingest: Congress.gov v3, House Clerk + Senate roll-call XML, House MemberData.xml and Senate committee XML,
-  OpenFEC totals + committee-level receipts, whitehouse.gov Cabinet page; IDs joined via
-  unitedstates/congress-legislators (CC0).
+  OpenFEC totals + committee-level receipts, official FEC bulk committee contributions (24K) and
+  Schedule E independent expenditures, LDA.gov quarterly filings, whitehouse.gov Cabinet page;
+  IDs joined via unitedstates/congress-legislators (CC0).
 - Profiles `/p/[slug]`: office, party, state/district, first year served, website, committees, 8 most recent
   roll-call positions, recent sponsored bills, FEC 2025–26 totals (aggregate), largest committee contributors,
-  cosponsorship partners, Politi-Matrix v1 analysis. Every item cited with retrieval date.
-- `/people` search/filter; `/connections` (record-based edges); `/politi-matrix` (Analysis).
-- **Election results are out of scope for the site.** Unused ingest scripts remain as code only;
-  official results data is not included in this repository. The former `/elections-2026` and
-  `/elect/*` UI is stored under `attic/elections-ui/` and is not shipped. Those routes redirect to `/`.
-- **On the record (side by side):** `/on-the-record` places two independently verified records next to each
-  other with no stated conclusion. Record A is an official roll-call “Not Voting” position (`rollcall-xml`).
-  Record B is a qualifying primary source that names the member at an event on the same date
-  (`primary-excerpt`, exact excerpt plus the member’s name). An entry is published only when both verify.
-  Causal wording is barred from the section in `check-rendered.mjs`. The catalog starts empty.
+  a Connections panel (committee contributions, lobbying-disclosure matches, independent expenditures,
+  covered-position records), cosponsorship partners, Politi-Matrix v1 analysis. Every item cited with
+  retrieval date.
+- `/people` search/filter; `/connections` (record-based edges); `/org/[slug]` organization pages;
+  `/politi-matrix` (Analysis).
+- **Election results are out of scope for the site.** Official results data is not included in this
+  repository. The `/elections-2026` and `/elect/*` routes redirect to `/`.
 
-### Phase C — Money and lobbying depth (2–4 weeks)
-LDA.gov registrations/LD-2/LD-203 (lobbyist ↔ client ↔ issue ↔ member contributions), leadership PACs,
-joint fundraising committee mapping, independent expenditures (Schedule E) for/against each member.
-Required LDA statement on every LDA-derived page.
+### Phase C — Money and lobbying depth (partially shipped)
+Shipped in the Connections panel: LDA.gov LD-2 lobbying-disclosure matches, covered-position records,
+leadership PAC receipts, and Schedule E independent expenditures, plus organization pages. Still open:
+joint fundraising committee mapping and further LDA depth (lobbyist ↔ client ↔ issue ↔ member
+contributions). Required LDA statement on every LDA-derived page.
 
 ### Phase D — States (rolling, 3–12 months)
 Pilot one state end-to-end, then expand. Sources per level below.
@@ -145,7 +147,6 @@ rebuild only after the maintainer approves the diff once launched.
 ---
 
 ## Open items
-- On the record: add pairings only when both records verify.
 - Stated-position ("mask") sources for Politi-Matrix: official press releases/floor statements, each quoted
   with link; not started.
 - Legal review of terms/privacy before public launch.

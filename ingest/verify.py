@@ -18,7 +18,12 @@ def live(url):
     with _lock:
         if url in _cache: return _cache[url]
     if "api.congress.gov" in url:
-        st, b = fetch(url, headers={"X-Api-Key": CONG_KEY, "Accept": "application/json"}, timeout=60)
+        st, b = 0, b""
+        for attempt in range(20):
+            st, b = fetch(url, headers={"X-Api-Key": CONG_KEY, "Accept": "application/json"}, timeout=60, retries=1)
+            if st not in (0, 429):
+                break
+            time.sleep(60 if st == 429 else 15)
     elif "api.open.fec.gov" in url:
         with _fec_lock:  # FEC allows ~60 requests/minute per key
             wait = 1.05 - (time.time() - _fec_last[0])
@@ -31,7 +36,10 @@ def live(url):
     else:
         st, b = fetch(url, timeout=60)
     res = (st, b)
-    with _lock: _cache[url] = res
+    # Cache successful (and definitive HTTP) responses only; let 429/timeouts be retried.
+    if st not in (0, 429):
+        with _lock:
+            _cache[url] = res
     return res
 
 def jpath(obj, path):
@@ -174,11 +182,257 @@ def check(c, vote_sets):
         if excerpt not in text: return False, "excerpt not found"
         if name not in text: return False, "member name not found on source page"
         return True, "excerpt and name present"
+    if kind == "fec-bulk-24k":
+        CONN_DONE.wait()
+        if not CONN_OK:
+            return False, "official FEC bulk file could not be re-fetched"
+        key = (k["recipient_id"], k["giver_id"], k.get("source_file") or "pas2")
+        got = CONN_BULK["24k"].get(key)
+        if not got:
+            return False, "pair not present in re-fetched file"
+        total, count = got
+        ok = abs(total - float(k["expected_total"])) < 0.005 and count == int(k["expected_count"])
+        return ok, f"re-summed {total} count {count}"
+    if kind == "fec-bulk-24k-category":
+        CONN_DONE.wait()
+        if not CONN_OK:
+            return False, "official FEC bulk file could not be re-fetched"
+        want = set(k["recipient_ids"])
+        code = k.get("org_type") or ""
+        total = 0.0
+        for (rid, gid, src), (amt, _n) in CONN_BULK["24k"].items():
+            if rid not in want:
+                continue
+            ot = CONN_BULK["org_type"].get(gid, "")
+            if ot == code:
+                total += amt
+        total = round(total, 2)
+        ok = abs(total - float(k["expected_total"])) < 0.005
+        return ok, f"re-summed {total}"
+    if kind == "fec-bulk-ie":
+        CONN_DONE.wait()
+        if not CONN_OK:
+            return False, "official FEC independent expenditure file could not be re-fetched"
+        key = (k["spender_id"], k["candidate_id"], k["support_oppose"])
+        got = CONN_BULK["ie"].get(key)
+        if not got:
+            return False, "spender-candidate-position not present in re-fetched file"
+        total, count = got
+        ok = abs(total - float(k["expected_total"])) < 0.005 and count == int(k["expected_count"])
+        return ok, f"re-summed {total} count {count}"
+    if kind == "lda-excerpt":
+        st, b = live(k["url"])
+        if st != 200 or not b:
+            return False, f"source HTTP {st}"
+        try:
+            j = json.loads(b)
+        except json.JSONDecodeError:
+            return False, "LDA filing was not JSON"
+        field = k.get("field") or "description"
+        blobs = []
+        for act in j.get("lobbying_activities") or []:
+            if field == "covered_position":
+                for lb in act.get("lobbyists") or []:
+                    blobs.append(lb.get("covered_position") or "")
+            else:
+                blobs.append(act.get("description") or "")
+        text = re.sub(r"\s+", " ", " ".join(blobs))
+        excerpt = re.sub(r"\s+", " ", (k.get("excerpt") or "")).strip()
+        excerpt = excerpt.strip(".…").strip()  # display ellipses are not part of the source
+        if not excerpt:
+            return False, "missing excerpt"
+        if excerpt not in text:
+            return False, "excerpt not found"
+        if k.get("name") and k["name"] not in text:
+            return False, "name not found in filing"
+        return True, "excerpt present"
+    if kind == "source-excerpt":
+        st, b = live(k["url"])
+        if st != 200 or not b:
+            return False, f"source HTTP {st}"
+        text = re.sub(r"<script.*?</script>|<style.*?</style>", " ", b.decode("utf-8", "ignore"), flags=re.S | re.I)
+        text = H.unescape(re.sub(r"<[^>]+>", " ", text))
+        text = re.sub(r"\s+", " ", text)
+        missing = [n for n in (k.get("needles") or [k.get("excerpt")]) if n and n not in text]
+        if missing:
+            return False, "label not found on official description page"
+        return True, "official labels present"
     return False, f"unknown check kind {kind}"
 
 
 FEC_BATCH = {}
 FEC_DONE = threading.Event()
+CONN_BULK = {"24k": {}, "ie": {}, "org_type": {}}
+CONN_DONE = threading.Event()
+CONN_OK = False
+
+def _download(url, dest):
+    dest = Path(dest) if not isinstance(dest, type(Path("."))) else dest
+    st, b = live(url)
+    if st != 200 or not b:
+        return False
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(b)
+    return True
+
+def prefetch_connection_files():
+    """Live re-fetch of official FEC bulk files used by Connections claims; parse once."""
+    import zipfile, io, csv, tempfile
+    from pathlib import Path as P
+    global CONN_OK
+    tmp = P(tempfile.mkdtemp(prefix="politidex-conn-"))
+    ok = True
+    files = {
+        "pas2": "https://www.fec.gov/files/bulk-downloads/2026/pas226.zip",
+        "oth": "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip",
+        "cm": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+        "ie": "https://www.fec.gov/files/bulk-downloads/2026/independent_expenditure_2026.csv",
+    }
+    need_24k = CONN_BULK.get("need_24k", True)
+    need_ie = CONN_BULK.get("need_ie", True)
+    blobs = {}
+    for key, url in files.items():
+        if key == "oth":
+            continue  # streamed to disk below
+        if key in ("pas2", "cm") and not need_24k:
+            continue
+        if key == "ie" and not need_ie:
+            continue
+        print("re-fetching", url, flush=True)
+        st, b = live(url)
+        if st != 200 or not b:
+            print("failed", url, "HTTP", st, flush=True)
+            ok = False
+            continue
+        blobs[key] = b
+        print("fetched", key, "bytes", len(b), flush=True)
+    if not ok:
+        CONN_OK = False
+        CONN_DONE.set()
+        return
+
+    def unzip_txt(blob, prefer):
+        with zipfile.ZipFile(io.BytesIO(blob)) as z:
+            names = z.namelist()
+            name = next((n for n in names if n.lower().endswith(prefer)), names[0])
+            return z.read(name)
+
+    def add_24k(text, source_file, only_lp=None):
+        n = 0
+        for line in text.splitlines():
+            c = line.split(b"|" if isinstance(line, bytes) else "|")
+            if isinstance(c[0], bytes):
+                c = [x.decode("utf-8", "replace") for x in c]
+            if len(c) < 20 or c[5].strip() != "24K":
+                continue
+            rid, gid = c[15].strip(), c[0].strip()
+            if only_lp is not None and rid not in only_lp:
+                continue
+            if c[19].strip() == "X":
+                continue
+            try:
+                amt = float(c[14] or 0)
+            except ValueError:
+                continue
+            key = (rid, gid, source_file)
+            tot, cnt = CONN_BULK["24k"].get(key, (0.0, 0))
+            CONN_BULK["24k"][key] = (round(tot + amt, 2), cnt + 1)
+            n += 1
+        return n
+
+    def add_24k_path(path, source_file, only_lp=None):
+        n = 0
+        with open(path, errors="replace") as fh:
+            for line in fh:
+                c = line.split("|")
+                if len(c) < 20 or c[5].strip() != "24K":
+                    continue
+                rid, gid = c[15].strip(), c[0].strip()
+                if only_lp is not None and rid not in only_lp:
+                    continue
+                if c[19].strip() == "X":
+                    continue
+                try:
+                    amt = float(c[14] or 0)
+                except ValueError:
+                    continue
+                key = (rid, gid, source_file)
+                tot, cnt = CONN_BULK["24k"].get(key, (0.0, 0))
+                CONN_BULK["24k"][key] = (round(tot + amt, 2), cnt + 1)
+                n += 1
+        return n
+
+    if need_24k:
+        pas2 = unzip_txt(blobs["pas2"], "itpas2.txt")
+        print("pas2 24K rows", add_24k(pas2.decode("utf-8", "replace"), "pas2"), flush=True)
+        cm_txt = unzip_txt(blobs["cm"], "cm.txt").decode("utf-8", "replace")
+        lp = set()
+        for line in cm_txt.splitlines():
+            c = line.split("|")
+            if len(c) < 13:
+                continue
+            cid = c[0].strip()
+            CONN_BULK["org_type"][cid] = c[12].strip()
+            if c[8].strip() == "D":
+                lp.add(cid)
+        lp |= CONN_BULK.get("oth_recipients") or set()
+        # Stream the large OTH file to disk; do not keep the unzipped text in memory.
+        import urllib.request
+        oth_zip = tmp / "oth26.zip"
+        oth_txt = tmp / "itoth.txt"
+        print("re-fetching OTH to disk", files["oth"], flush=True)
+        req = urllib.request.Request(files["oth"], headers={"User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r, open(oth_zip, "wb") as fh:
+                while True:
+                    chunk = r.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    fh.write(chunk)
+                st_oth = r.status
+        except Exception as e:
+            print("OTH download failed", type(e).__name__, flush=True)
+            CONN_OK = False
+            CONN_DONE.set()
+            return
+        if st_oth != 200:
+            print("OTH HTTP", st_oth, flush=True)
+            CONN_OK = False
+            CONN_DONE.set()
+            return
+        with zipfile.ZipFile(oth_zip) as z:
+            name = next((n for n in z.namelist() if n.lower().endswith("itoth.txt")), z.namelist()[0])
+            with z.open(name) as src, open(oth_txt, "wb") as dst:
+                while True:
+                    chunk = src.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    dst.write(chunk)
+        oth_zip.unlink(missing_ok=True)
+        print("oth 24K to LPs", add_24k_path(oth_txt, "oth", only_lp=lp), flush=True)
+        oth_txt.unlink(missing_ok=True)
+
+    if need_ie:
+        # Same notice/report dedupe as ingest/connections_fec.dedupe_ie_rows.
+        import csv as _csv
+        from connections_fec import dedupe_ie_rows
+        rdr = _csv.DictReader(io.StringIO(blobs["ie"].decode("utf-8", "replace")))
+        kept, _stats = dedupe_ie_rows(list(rdr))
+        for row in kept:
+            so = (row.get("sup_opp") or "").strip().upper()
+            if so not in ("S", "O"):
+                continue
+            try:
+                amt = float(row.get("exp_amo") or 0)
+            except ValueError:
+                continue
+            key = ((row.get("spe_id") or "").strip(), (row.get("cand_id") or "").strip(), so)
+            tot, cnt = CONN_BULK["ie"].get(key, (0.0, 0))
+            CONN_BULK["ie"][key] = (round(tot + amt, 2), cnt + 1)
+        print("ie pairs", len(CONN_BULK["ie"]), flush=True)
+    CONN_OK = True
+    CONN_DONE.set()
+
 def prefetch_fec_totals(claims):
     """Live re-fetch of candidate totals in batches of 50 IDs (same endpoint and filters as each claim's check URL)."""
     import urllib.parse
@@ -254,25 +508,46 @@ def save(data, claims, t0, note=""):
     write_json(BUILD / "site" / "verification-report.json", {**data["verification"], "blocked": fails})
 
 def main():
+    global CONN_OK
     """Stages (each checkpoints claims.json):
        --stage records : everything except FEC (Congress.gov, Clerk/Senate XML, rosters, White House)
        --stage elections : 2026 official state election results claims (ids e_*)
        --stage side-by-side : On the record Record A/B claims (rollcall-xml, primary-excerpt)
        --stage fec     : FEC claims (rate-limited key; resumable, checkpoints every 50 URLs)
+       --stage connections : FEC bulk 24K / IE re-sums and LDA excerpt checks
        --only-blocked  : re-check only claims not yet verified."""
     data = read_json(CLAIMS); claims = data["claims"]; t0 = now_iso()
     stage = sys.argv[sys.argv.index("--stage") + 1] if "--stage" in sys.argv else "records"
     only_pending = "--only-blocked" in sys.argv
-    is_fec = lambda c: c["check"]["kind"].startswith("fec")
+    CONN_KINDS = {"fec-bulk-24k", "fec-bulk-24k-category", "fec-bulk-ie", "lda-excerpt", "source-excerpt"}
+    is_conn = lambda c: c["check"]["kind"] in CONN_KINDS
+    is_fec = lambda c: c["check"]["kind"].startswith("fec") and c["check"]["kind"] not in CONN_KINDS
     is_el = lambda c: c["id"].startswith("e_")
     is_sbs = lambda c: c["check"]["kind"] in ("rollcall-xml", "primary-excerpt") or c["id"].startswith("sbs_")
     sel = {"fec": lambda c: is_fec(c), "elections": lambda c: is_el(c), "side-by-side": lambda c: is_sbs(c),
-           "records": lambda c: not is_fec(c) and not is_el(c) and not is_sbs(c)}[stage]
+           "connections": lambda c: is_conn(c),
+           "records": lambda c: not is_fec(c) and not is_el(c) and not is_sbs(c) and not is_conn(c)}[stage]
     pend = {i: c for i, c in claims.items() if sel(c) and not (only_pending and c.get("status") == "verified")}
     print("stage", stage, "claims to check", len(pend), flush=True)
     vote_sets = {}
     if stage == "fec":
         prefetch_fec_totals(pend)
+    elif stage == "connections":
+        need_24k = any(c["check"]["kind"].startswith("fec-bulk-24k") for c in pend.values())
+        need_ie = any(c["check"]["kind"] == "fec-bulk-ie" for c in pend.values())
+        need_bulk = need_24k or need_ie
+        if need_bulk:
+            # Include every leadership-PAC recipient cited in oth claims so the
+            # OTH scan is not limited to designation-D in the committee master.
+            oth_recs = {c["check"]["recipient_id"] for c in pend.values()
+                        if c["check"]["kind"] == "fec-bulk-24k" and c["check"].get("source_file") == "oth"}
+            CONN_BULK["oth_recipients"] = oth_recs
+            CONN_BULK["need_24k"] = need_24k
+            CONN_BULK["need_ie"] = need_ie
+            prefetch_connection_files()
+        else:
+            CONN_OK = True
+            CONN_DONE.set()
     elif any(c["check"]["kind"] in ("house-vote", "senate-vote", "derived-votes") for c in pend.values()):
         vote_sets = refetch_votes(["house", "senate"])
     def run(c):
@@ -288,7 +563,9 @@ def main():
         for i, ok, note in ex.map(run, items):
             c = claims[i]; c["status"] = "verified" if ok else "blocked"; c["verified_at"] = now_iso(); c["verify_note"] = note
             done += 1
-            if stage == "fec" and done % 500 == 0: save(data, claims, t0, f"fec checkpoint {done}/{len(items)}"); print("fec", done, flush=True)
+            if done % 500 == 0:
+                save(data, claims, t0, f"{stage} checkpoint {done}/{len(items)}")
+                print(stage, done, flush=True)
     save(data, claims, t0, f"stage {stage} complete")
     print(json.dumps(data["verification"], indent=1))
 

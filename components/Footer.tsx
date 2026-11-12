@@ -6,7 +6,8 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-3">
         <div>
           <div className="font-display text-2xl font-black masthead-shadow">POLITIDEX</div>
-          <p className="mt-2 text-[var(--color-muted)]">Open-source, non-profit, public-interest research. Every fact links to a public record.</p>
+          <p className="mt-2 text-[var(--color-muted)]">Open-source, non-profit, public-interest research. Every fact links to a public record. Code is licensed under AGPL-3.0; original data compilations under CC BY 4.0 where source terms allow.</p>
+          <p className="mt-2"><a className="link" href="https://github.com/achillesrogan/politidex" rel="noopener noreferrer">Source code on GitHub</a></p>
         </div>
         <div>
           <h2 className="tag mb-2">Sections</h2>

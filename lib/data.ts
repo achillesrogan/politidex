@@ -1,3 +1,4 @@
+import { fmtDate as fmtDateTz } from "@/lib/dates";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -29,6 +30,12 @@ export function profile(slug: string): any | null {
   return readJSON<any>(path.join("profiles", `${slug}.json`), null);
 }
 export function connections(): any { return readJSON<any>("connections.json", { cosponsor_pairs: [], pacs: [] }); }
+export function committeeHistory(code?: string | null): { code: string; name: string; chamber: string; claims: string[]; facts: { kind: string; label: string; claim: string }[] } | null {
+  if (!code) return null;
+  const all = readJSON<{ committees: Record<string, any> }>("committee-history.json", { committees: {} });
+  return all.committees?.[code] || null;
+}
+
 export function getStats() {
   const s = readJSON<any>("stats.json", { people: 0, congress: 0, executive: 0, votes: 0, claims: 0, retrieved: "" });
   const c = claims();
@@ -36,7 +43,7 @@ export function getStats() {
 }
 export function bySlug(): Map<string, Person> { return new Map(people().map((p) => [p.bioguide || p.slug, p])); }
 export const fmtUSD = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-export const fmtDate = (iso?: string) => (iso ? iso.slice(0, 10) : "");
+export const fmtDate = (iso?: string) => fmtDateTz(iso);
 
 /** Approved human-reviewed summary only (status 'approved' set by the editor). Every sentence must cite verified claims. */
 export function approvedSummary(slug: string): { sentences: { text: string; ids: string[] }[] } | null {
@@ -57,5 +64,13 @@ export function elections(): any | null {
 export function onTheRecord(): { entries: any[]; note?: string; generated?: string } {
   if (process.env.POLITIDEX_DATA === "0") return { entries: [] };
   return readJSON<any>("on-the-record.json", { entries: [] });
+}
+export function orgIndex(): { orgs: { slug: string; name: string; kind: string; member_count: number }[]; note?: string } {
+  if (process.env.POLITIDEX_DATA === "0") return { orgs: [] };
+  return readJSON<any>("orgs-index.json", { orgs: [] });
+}
+export function org(slug: string): any | null {
+  if (process.env.POLITIDEX_DATA === "0") return null;
+  return readJSON<any>(path.join("orgs", `${slug}.json`), null);
 }
 export const fmtInt = (n: number) => n.toLocaleString("en-US");

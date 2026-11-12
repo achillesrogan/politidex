@@ -8,9 +8,11 @@ easier to explore, with every published fact tied to a source anyone can open
 and check.
 
 The current site covers **profiles of current federal officeholders** and the
-**documented connections** between them, plus an **On the record** section
-that can place two independently verified records side by side without adding
-a conclusion. **Election results are not part of the site.**
+**documented connections** between them. Each profile has a Connections panel
+for committee contributions, lobbying-disclosure matches, independent
+expenditures, and covered-position (revolving-door) records, and there are
+pages for organizations that appear in those records. **Election results are
+not part of the site.**
 
 The live site is [https://www.politidex.icu](https://www.politidex.icu).
 Search indexing is off (`noindex`) until a public launch is approved.
@@ -25,17 +27,20 @@ source and **fails** if a rendered fact is missing a verified source.
 AI may help find, organize, and draft plain-language restatements, but it
 never publishes on its own. A draft may only restate already-verified claims,
 a second automated pass rejects unsupported sentences, and a human editor
-reviews every item before it can render. See `PLAN.md` and `/methodology`.
+approves every AI-drafted summary before it renders. See `PLAN.md` and `/methodology`.
 
 CI gates:
 
+- `ingest/test_match_validation.py` (prebuild): regression tests for lobbying
+  name/bill match rules and independent-expenditure notice deduplication.
 - `scripts/check-claims.mjs` (prebuild): every referenced claim exists and has
   a source URL, retrieval time, excerpt, check spec, and status.
 - `scripts/check-rendered.mjs` (postbuild): every prerendered page is scanned;
   the build fails if a rendered fact lacks a verified claim, if a page is
   missing `noindex`, if a source map would ship, if a key pattern appears in
-  client JavaScript, or if a banned or private denylist term appears. On the
-  record pages also reject causal wording.
+  client JavaScript, or if a banned or private denylist term appears. The
+  official repository URL (`https://github.com/achillesrogan/politidex`) is
+  ignored by the denylist scan so it can appear in the footer and About page.
 
 Templates render facts only through `<Fact claim=…>`, which returns nothing
 for unverified claims.
@@ -82,23 +87,23 @@ python3 congress.py         # Congress.gov members and bills (needs DATA_GOV_API
 # Committee rosters and the Cabinet page are fetched from clerk.house.gov,
 # senate.gov, and whitehouse.gov (see PLAN.md).
 python3 build.py            # claim objects
+python3 connections_fec.py  # official FEC bulk 24K + independent expenditures
+python3 connections_lda.py --crawl   # official LDA quarterly filings (resumable)
+python3 connections_lda.py --match
+python3 connections_build.py         # merge connection claims; does not wipe existing claims
 python3 verify.py           # live re-check of every claim (blocks failures)
-python3 side_by_side.py     # On the record entries from data/manual/on-the-record.json
-python3 verify.py --stage side-by-side
+python3 verify.py --stage connections
 python3 summaries.py        # optional drafts -> data/review-queue (pending_review)
 cd ..
-npm run build               # fails if any rendered fact lacks a verified claim
+npm run build               # prebuild runs match tests; build fails if any rendered fact lacks a verified claim
 ```
 
-`data/manual/` in this repository holds the public corrections log and the
-On the record catalog (currently no published entries). Editor-approved
-summaries live in `data/review-queue/` (gitignored) and render only when
-their status is `approved`.
+`data/manual/` in this repository holds the public corrections log.
+Editor-approved summaries live in `data/review-queue/` (gitignored) and
+render only when their status is `approved`.
 
-Election ingest scripts under `ingest/` and the former results UI under
-`attic/elections-ui/` are unused by the Next.js build. Official election
-results data is not included. The `/elections-2026` and `/elect/*` routes
-redirect to `/`.
+Official election results data is not included. The `/elections-2026` and
+`/elect/*` routes redirect to `/`.
 
 ## Contributing
 

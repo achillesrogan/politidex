@@ -35,7 +35,7 @@ export default function Home() {
           <ul className="prose-news mt-3">
             <li>Every claim carries a source link, a retrieval time, and the exact value it relies on.</li>
             <li>An automated verifier re-checks each source. Anything it cannot confirm is not published.</li>
-            <li>AI may only restate verified records, and a human reviews everything before it goes live.</li>
+            <li>AI may only restate verified records, and a human editor approves every AI-drafted summary before it renders.</li>
           </ul>
           <Link className="link" href="/methodology">The Verification Standard →</Link>
         </aside>

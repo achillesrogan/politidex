@@ -15,11 +15,14 @@ next-env.d.ts
 data/raw/
 data/verify-cache/
 data/build/
+data/review/
 data/review-queue/
 
 # Election results and unpublished investigation notes (not part of the public site)
+attic/
 data/manual/elections-2026.json
 data/manual/elections-2026-coverage.json
+data/manual/on-the-record.json
 data/manual/on-the-record-investigations.md
 
 # Caches, logs, and temp files
@@ -36,6 +39,7 @@ logs/
 # Screenshots and deploy artifacts
 screenshots/
 deploy-bundle.json.gz
+deploy-bundle-*.json.gz
 
 # OS
 .DS_Store

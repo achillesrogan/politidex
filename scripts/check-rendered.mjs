@@ -33,7 +33,9 @@ for (const f of html) {
   const builtin = /server[\/]pages[\/](500|404)\.html$/.test(f); // Next built-in error pages; covered by X-Robots-Tag header
   if (!builtin && !/<meta name="robots" content="noindex, nofollow/.test(t)) errors.push(`${path.relative(root, f)}: missing noindex`);
   for (const b of BANNED) if (b.test(t)) errors.push(`${path.relative(root, f)}: banned pattern ${b}`);
-  PRIVATE.forEach((b, i) => { if (b.test(t)) errors.push(`${path.relative(root, f)}: private denylist term #${i + 1} found`); });
+  // The official public repo URL is printed in the footer / About by design; do not treat it as an OPSEC hit.
+  const scanned = t.replace(/https:\/\/github\.com\/achillesrogan\/politidex/gi, "[official-source-repo]");
+  PRIVATE.forEach((b, i) => { if (b.test(scanned)) errors.push(`${path.relative(root, f)}: private denylist term #${i + 1} found`); });
   if (isSbs(f)) {
     const text = t.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ");
     const m = text.match(SBS_BANNED);

@@ -17,3 +17,6 @@ data/manual/on-the-record-investigations.md
 data/manual/elections-2026.json
 data/manual/elections-2026-coverage.json
 attic/
+data/review/
+deploy-bundle-*.json.gz
+app/on-the-record/
