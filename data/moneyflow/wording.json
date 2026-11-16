@@ -1,0 +1,14 @@
+{
+ "fungibility_note": "Reported money out of this account. Money in an account is fungible, so this is not a record that a particular dollar went to a particular payee.",
+ "edge_kinds": [
+  "reported contribution",
+  "reported transfer",
+  "reported disbursement",
+  "spent"
+ ],
+ "individual_bucket_name": "reported assistance to individuals — not itemized",
+ "other_bucket_name": "other reported disbursements",
+ "terminal_vendor_label": "Spent",
+ "top_payees": 25,
+ "cycle": 2026
+}

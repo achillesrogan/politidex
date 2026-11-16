@@ -1,0 +1,611 @@
+{
+ "schema": "politidex.moneyflow.shard.v1",
+ "cycle": 2026,
+ "fungibility_note": "Reported money out of this account. Money in an account is fungible, so this is not a record that a particular dollar went to a particular payee.",
+ "node": {
+  "id": "committee:C00363986",
+  "kind": "committee",
+  "official_id": "C00363986",
+  "name": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC",
+  "terminal": false,
+  "terminal_label": null,
+  "period": {
+   "cycle": 2026,
+   "coverage_end": "2026-09-30"
+  },
+  "reported_in": "1401966.97",
+  "reported_out": "1475714.96",
+  "official_total_out": "1475714.96",
+  "party": null,
+  "committee_type": "Q",
+  "committee_type_label": "PAC - qualified",
+  "designation": "U",
+  "designation_label": "Unauthorized",
+  "org_type": "T",
+  "org_type_label": "Trade association",
+  "connected_organization": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE",
+  "state": "TX",
+  "source": {
+   "id": "c_96695de08a1ff7",
+   "text": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) reported receipts of 1401966.97 and total disbursements of 1475714.96 in the 2026 cycle, coverage end 2026-09-30, in the FEC PAC and party summary file.",
+   "value": {
+    "TTL_DISB": 147571496,
+    "TTL_RECEIPTS": 140196697
+   },
+   "excerpt": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) reported receipts of 1401966.97 and total disbursements of 1475714.96 in the 2026 cycle, coverage end 2026-09-30, in the FEC PAC and party summary file.",
+   "source_name": "Federal Election Commission",
+   "source_url": "https://www.fec.gov/data/committee/C00363986/?cycle=2026&tab=spending",
+   "check": {
+    "kind": "fec-committee-summary",
+    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+    "cycle": 2026,
+    "committee_id": "C00363986",
+    "fields": {
+     "TTL_RECEIPTS": 140196697,
+     "TTL_DISB": 147571496,
+     "CVG_END_DT": "2026-09-30"
+    },
+    "image_number": null,
+    "sub_id": null,
+    "filing_id": null
+   },
+   "retrieved_at": "2026-11-16T23:46:17+00:00",
+   "status": "unverified"
+  }
+ },
+ "children": [
+  {
+   "node": {
+    "id": "committee:C00030718",
+    "kind": "committee",
+    "official_id": "C00030718",
+    "name": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE",
+    "terminal": false,
+    "terminal_label": null,
+    "period": {
+     "cycle": 2026,
+     "coverage_end": "2026-10-14"
+    },
+    "reported_in": "16827269.40",
+    "reported_out": "19512474.57",
+    "official_total_out": "19512474.57",
+    "source": {
+     "id": "c_37c4d58e122209",
+     "text": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE (C00030718) has official total disbursements 19512474.57 in the 2026 cycle, coverage end 2026-10-14.",
+     "value": {
+      "TTL_DISB": 1951247457,
+      "TTL_RECEIPTS": 1682726940
+     },
+     "excerpt": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE (C00030718) has official total disbursements 19512474.57 in the 2026 cycle, coverage end 2026-10-14.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/data/committee/C00030718/?cycle=2026&tab=spending",
+     "check": {
+      "kind": "fec-committee-summary",
+      "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+      "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+      "cycle": 2026,
+      "committee_id": "C00030718",
+      "fields": {
+       "TTL_DISB": 1951247457,
+       "TTL_RECEIPTS": 1682726940,
+       "CVG_END_DT": "2026-10-14"
+      },
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:aedc66f0065c14c9",
+    "from": "committee:C00363986",
+    "to": "committee:C00030718",
+    "kind": "reported transfer",
+    "amount": "1444705.00",
+    "amount_cents": 144470500,
+    "count": 2,
+    "purpose": "Transfer out to affiliated committee",
+    "purpose_code": "24G",
+    "source": {
+     "id": "c_a7ea3fdb9784ba",
+     "text": "Reported transfer from C00363986 to NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE, sum 1444705.00, 2 itemized rows.",
+     "value": 144470500,
+     "excerpt": "Filer C00363986, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1444705.00, payee NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE. Purpose code 24G. Sample image 202507309764372109, sub_id 4073120251213010323.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507309764372109",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 144470500,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24G",
+      "sample_image_number": "202507309764372109",
+      "sample_sub_id": "4073120251213010323",
+      "sample_filing_id": "1907673",
+      "edge_kind": "reported transfer"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:1e19947d6213056a",
+    "kind": "business",
+    "official_id": null,
+    "name": "UNITED STATES TREASURY",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_9718d7fd53e10e",
+     "text": "Payee UNITED STATES TREASURY as reported on itemized disbursements filed by C00363986.",
+     "value": {
+      "reported_name": "UNITED STATES TREASURY",
+      "official_id": null
+     },
+     "excerpt": "Filer C00363986, 2026 cycle: 2 itemized rows, memo code X excluded, sum 5761.00, payee UNITED STATES TREASURY. Purpose code 001. Sample image 202607149874974475, sub_id 4072220261536333307.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202607149874974475",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 576100,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202607149874974475",
+      "sample_sub_id": "4072220261536333307",
+      "sample_filing_id": "1991871",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:0b2486e69bd854de",
+    "from": "committee:C00363986",
+    "to": "business:1e19947d6213056a",
+    "kind": "spent",
+    "amount": "5761.00",
+    "amount_cents": 576100,
+    "count": 2,
+    "purpose": "Administrative/salary/overhead expenses (e.g., rent, staff salaries, postage, office supplies, equipment, furniture, ballot access fees, petition drives, party fees and legal and accounting expenses)",
+    "purpose_code": "001",
+    "source": {
+     "id": "c_6591f1301f7bf9",
+     "text": "Spent from C00363986 to UNITED STATES TREASURY, sum 5761.00, 2 itemized rows.",
+     "value": 576100,
+     "excerpt": "Filer C00363986, 2026 cycle: 2 itemized rows, memo code X excluded, sum 5761.00, payee UNITED STATES TREASURY. Purpose code 001. Sample image 202607149874974475, sub_id 4072220261536333307.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202607149874974475",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 576100,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202607149874974475",
+      "sample_sub_id": "4072220261536333307",
+      "sample_filing_id": "1991871",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:a350befe8dc92b18",
+    "kind": "business",
+    "official_id": null,
+    "name": "FROST BANK",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_328e0ef7eb13f3",
+     "text": "Payee FROST BANK as reported on itemized disbursements filed by C00363986.",
+     "value": {
+      "reported_name": "FROST BANK",
+      "official_id": null
+     },
+     "excerpt": "Filer C00363986, 2026 cycle: 24 itemized rows, memo code X excluded, sum 4270.86, payee FROST BANK. Purpose code 001. Sample image 202601319825852127, sub_id 4022320261311754493.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319825852127",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 427086,
+      "transaction_count": 24,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202601319825852127",
+      "sample_sub_id": "4022320261311754493",
+      "sample_filing_id": "1943966",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:7cf7522e0bfd1980",
+    "from": "committee:C00363986",
+    "to": "business:a350befe8dc92b18",
+    "kind": "spent",
+    "amount": "4270.86",
+    "amount_cents": 427086,
+    "count": 24,
+    "purpose": "Administrative/salary/overhead expenses (e.g., rent, staff salaries, postage, office supplies, equipment, furniture, ballot access fees, petition drives, party fees and legal and accounting expenses)",
+    "purpose_code": "001",
+    "source": {
+     "id": "c_55aa56fb154887",
+     "text": "Spent from C00363986 to FROST BANK, sum 4270.86, 24 itemized rows.",
+     "value": 427086,
+     "excerpt": "Filer C00363986, 2026 cycle: 24 itemized rows, memo code X excluded, sum 4270.86, payee FROST BANK. Purpose code 001. Sample image 202601319825852127, sub_id 4022320261311754493.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319825852127",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 427086,
+      "transaction_count": 24,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202601319825852127",
+      "sample_sub_id": "4022320261311754493",
+      "sample_filing_id": "1943966",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:d0d76209f74ce2bd",
+    "kind": "business",
+    "official_id": null,
+    "name": "ATCHLEY & ASSOCIATES, LLP",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_75e133f727e9df",
+     "text": "Payee ATCHLEY & ASSOCIATES, LLP as reported on itemized disbursements filed by C00363986.",
+     "value": {
+      "reported_name": "ATCHLEY & ASSOCIATES, LLP",
+      "official_id": null
+     },
+     "excerpt": "Filer C00363986, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1640.00, payee ATCHLEY & ASSOCIATES, LLP. Purpose code 001. Sample image 202601319825852127, sub_id 4022320261311754492.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319825852127",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 164000,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202601319825852127",
+      "sample_sub_id": "4022320261311754492",
+      "sample_filing_id": "1943966",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:bea10fff02b8d994",
+    "from": "committee:C00363986",
+    "to": "business:d0d76209f74ce2bd",
+    "kind": "spent",
+    "amount": "1640.00",
+    "amount_cents": 164000,
+    "count": 2,
+    "purpose": "Administrative/salary/overhead expenses (e.g., rent, staff salaries, postage, office supplies, equipment, furniture, ballot access fees, petition drives, party fees and legal and accounting expenses)",
+    "purpose_code": "001",
+    "source": {
+     "id": "c_08de1833b3776f",
+     "text": "Spent from C00363986 to ATCHLEY & ASSOCIATES, LLP, sum 1640.00, 2 itemized rows.",
+     "value": 164000,
+     "excerpt": "Filer C00363986, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1640.00, payee ATCHLEY & ASSOCIATES, LLP. Purpose code 001. Sample image 202601319825852127, sub_id 4022320261311754492.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319825852127",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 164000,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202601319825852127",
+      "sample_sub_id": "4022320261311754492",
+      "sample_filing_id": "1943966",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:6828fabd3aee7652",
+    "kind": "business",
+    "official_id": null,
+    "name": "ATCHLEY & ASSOCIATES LLP",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_96273b3ca31620",
+     "text": "Payee ATCHLEY & ASSOCIATES LLP as reported on itemized disbursements filed by C00363986.",
+     "value": {
+      "reported_name": "ATCHLEY & ASSOCIATES LLP",
+      "official_id": null
+     },
+     "excerpt": "Filer C00363986, 2026 cycle: 1 itemized rows, memo code X excluded, sum 892.50, payee ATCHLEY & ASSOCIATES LLP. Purpose code 001. Sample image 202607149874974474, sub_id 4072220261536333302.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202607149874974474",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 89250,
+      "transaction_count": 1,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202607149874974474",
+      "sample_sub_id": "4072220261536333302",
+      "sample_filing_id": "1991871",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:33b586504a0cf45d",
+    "from": "committee:C00363986",
+    "to": "business:6828fabd3aee7652",
+    "kind": "spent",
+    "amount": "892.50",
+    "amount_cents": 89250,
+    "count": 1,
+    "purpose": "Administrative/salary/overhead expenses (e.g., rent, staff salaries, postage, office supplies, equipment, furniture, ballot access fees, petition drives, party fees and legal and accounting expenses)",
+    "purpose_code": "001",
+    "source": {
+     "id": "c_340bc535533f50",
+     "text": "Spent from C00363986 to ATCHLEY & ASSOCIATES LLP, sum 892.50, 1 itemized rows.",
+     "value": 89250,
+     "excerpt": "Filer C00363986, 2026 cycle: 1 itemized rows, memo code X excluded, sum 892.50, payee ATCHLEY & ASSOCIATES LLP. Purpose code 001. Sample image 202607149874974474, sub_id 4072220261536333302.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202607149874974474",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "amount_cents": 89250,
+      "transaction_count": 1,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": "001",
+      "sample_image_number": "202607149874974474",
+      "sample_sub_id": "4072220261536333302",
+      "sample_filing_id": "1991871",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "residual:C00363986:other",
+    "kind": "residual",
+    "official_id": null,
+    "name": "other reported disbursements",
+    "terminal": true,
+    "terminal_label": null,
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_5af981e2911618",
+     "text": "other reported disbursements for C00363986, sum 18445.60.",
+     "value": 1844560,
+     "excerpt": "Remainder of reported disbursements for TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) in the 2026 cycle: itemized payees below the top 25 (0.00), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (18445.60). Sum 18445.60. No payee names from the remainder are stored.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+     "check": {
+      "kind": "fec-residual-bucket",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "bucket": "other",
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "memo_code_x_excluded": true,
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null,
+      "payee_names_stored": false,
+      "payees_below_top_cents": 0,
+      "entity_type_unclear_cents": 0,
+      "entity_type_unclear_count": 0,
+      "not_in_itemized_files_cents": 1844560,
+      "top_n": 25,
+      "amount_cents": 1844560
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:c3da1ae1d3cad900",
+    "from": "committee:C00363986",
+    "to": "residual:C00363986:other",
+    "kind": "reported disbursement",
+    "amount": "18445.60",
+    "amount_cents": 1844560,
+    "count": 0,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_5af981e2911618",
+     "text": "other reported disbursements for C00363986, sum 18445.60.",
+     "value": 1844560,
+     "excerpt": "Remainder of reported disbursements for TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) in the 2026 cycle: itemized payees below the top 25 (0.00), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (18445.60). Sum 18445.60. No payee names from the remainder are stored.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+     "check": {
+      "kind": "fec-residual-bucket",
+      "cycle": 2026,
+      "committee_id": "C00363986",
+      "bucket": "other",
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "memo_code_x_excluded": true,
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null,
+      "payee_names_stored": false,
+      "payees_below_top_cents": 0,
+      "entity_type_unclear_cents": 0,
+      "entity_type_unclear_count": 0,
+      "not_in_itemized_files_cents": 1844560,
+      "top_n": 25,
+      "amount_cents": 1844560
+     },
+     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "status": "unverified"
+    }
+   }
+  }
+ ],
+ "reconciliation": {
+  "official_total_out": "1475714.96",
+  "official_total_out_cents": 147571496,
+  "itemized_cents": 145726936,
+  "individuals_cents": 0,
+  "unclear_entity_cents": 0,
+  "below_top_cents": 0,
+  "not_in_itemized_files_cents": 1844560,
+  "other_bucket_cents": 1844560,
+  "child_edge_cents": 147571496,
+  "ok": true,
+  "tolerance_cents": 0
+ }
+}

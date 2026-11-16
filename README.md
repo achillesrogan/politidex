@@ -92,11 +92,21 @@ python3 connections_lda.py --crawl   # official LDA quarterly filings (resumable
 python3 connections_lda.py --match
 python3 connections_build.py         # merge connection claims; does not wipe existing claims
 python3 verify.py           # live re-check of every claim (blocks failures)
+python3 moneyflow.py fetch             # official FEC bulk files for the 2026 cycle (no API key)
+python3 moneyflow.py build             # pilot money-flow shards; fails if a shard does not reconcile
 python3 verify.py --stage connections
 python3 summaries.py        # optional drafts -> data/review-queue (pending_review)
 cd ..
 npm run build               # prebuild runs match tests; build fails if any rendered fact lacks a verified claim
 ```
+
+`ingest/moneyflow.py` builds the campaign money-flow graph for the 2026 cycle from
+FEC bulk files (committee master, committee-to-committee transactions,
+contributions to candidates, operating expenditures, and the PAC and party
+summary). It does not read an API key and does not download individual
+contribution files. Pilot shards are written to `data/moneyflow/`; the web
+app does not import them. A committee whose itemized disbursements do not fit
+under the official summary total is not given a shard.
 
 `data/manual/` in this repository holds the public corrections log.
 Editor-approved summaries live in `data/review-queue/` (gitignored) and
