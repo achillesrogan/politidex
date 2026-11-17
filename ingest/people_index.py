@@ -331,33 +331,97 @@ def _name_pieces(raw):
     return [tok for tok in re.split(r"[^A-Z]+", text.upper()) if tok]
 
 
-def _refund_names_cluster(raw, ident):
-    """Hold a cluster when the refund carries its last name.
+def _last_name_index(groups):
+    """Normalized pieces once per distinct last name, plus a piece index.
 
-    The cluster last name and the refund use the same pieces. Every last-name
-    piece has to show up among the refund's words, or the joined last name has
-    to sit inside the refund's joined letters. The first name is not required.
-    A blank refund matches nothing.
+    The joined-substring check uses those distinct last names, not every cluster.
     """
-    last_pieces = _name_pieces(ident[0])
-    refund_pieces = _name_pieces(raw)
-    if not last_pieces or not refund_pieces:
-        return False
-    if all(piece in refund_pieces for piece in last_pieces):
-        return True
-    return "".join(last_pieces) in "".join(refund_pieces)
+    bares = {}
+    pieces_of = {}
+    joined_of = {}
+    by_piece = {}
+    for ident in groups:
+        last = ident[0]
+        bare = (last, ident[1])
+        known = bares.get(last)
+        if known is None:
+            parts = _name_pieces(last)
+            pieces_of[last] = parts
+            joined_of[last] = "".join(parts)
+            bares[last] = [bare]
+            for part in set(parts):
+                by_piece.setdefault(part, []).append(last)
+        elif bare not in known:
+            known.append(bare)
+    by_prefix = {}
+    shorts = []
+    for last, joined in joined_of.items():
+        if len(joined) < 3:
+            shorts.append(last)
+        else:
+            by_prefix.setdefault(joined[:3], []).append(last)
+    return pieces_of, joined_of, by_piece, by_prefix, shorts, bares
+
+
+def _refund_matching_bares(index, raw):
+    """(last, first) pairs a refund might belong to. A blank name matches none."""
+    pieces_of, joined_of, by_piece, by_prefix, shorts, bares = index
+    parts = _name_pieces(raw)
+    if not parts:
+        return []
+    counts = {}
+    for part in set(parts):
+        for last in by_piece.get(part, ()):
+            counts[last] = counts.get(last, 0) + 1
+    seen = set()
+    matched = []
+    for last, count in counts.items():
+        if count == len(set(pieces_of[last])):
+            seen.add(last)
+            matched.append(last)
+    joined_refund = "".join(parts)
+    if len(joined_refund) >= 3:
+        seen_prefix = set()
+        limit = len(joined_refund) - 2
+        for i in range(limit):
+            pref = joined_refund[i:i + 3]
+            if pref in seen_prefix:
+                continue
+            seen_prefix.add(pref)
+            for last in by_prefix.get(pref, ()):
+                if last in seen:
+                    continue
+                joined = joined_of[last]
+                if joined in joined_refund:
+                    seen.add(last)
+                    matched.append(last)
+    for last in shorts:
+        if last in seen:
+            continue
+        joined = joined_of[last]
+        if joined and joined in joined_refund:
+            seen.add(last)
+            matched.append(last)
+    out = []
+    for last in matched:
+        out.extend(bares[last])
+    return out
 
 
 def _apply_refunds(groups, refunds):
     """Subtract a refund only when one cluster shares name, city, and state.
 
     Any other refund holds back every cluster with that last and first name.
+    Clusters are indexed by that place key.
     """
+    by_place = {}
+    for ident, members in groups.items():
+        by_place.setdefault(ident[:6], []).append(members)
     unmatched = []
     withheld = set()
     for refund in refunds:
         place = _place_key(refund)
-        matches = [members for ident, members in groups.items() if place and ident[:6] == place]
+        matches = by_place.get(place, []) if place else []
         name = parse_person_name(refund.get("name")) or {}
         bare = (name.get("last") or "", name.get("first") or "")
         if place and len(matches) == 1:
@@ -411,11 +475,9 @@ def build_index(rows, retrieved_at):
             unparsed_refunds.append(refund)
             continue
         by_bare.setdefault((last, first), []).append((None, [(refund, "refund did not match one cluster")]))
+    last_names = _last_name_index(groups)
     for refund in unparsed_refunds:
-        touched = set()
-        for ident in groups:
-            if _refund_names_cluster(refund.get("name"), ident):
-                touched.add((ident[0], ident[1]))
+        touched = _refund_matching_bares(last_names, refund.get("name"))
         for last, first in touched:
             withheld_names.add((last, first))
             by_bare.setdefault((last, first), []).append((None, [(refund, "refund name could not be parsed")]))

@@ -1,6 +1,7 @@
 """Synthetic donors only. No real FEC names."""
 import json
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -319,6 +320,39 @@ def test_rebuild_and_links():
     check("a role the source does not list as an office is dropped", P.link_officer_donations(nameless, rows, "2026-11-17T02:30:00+00:00") is None)
 
 
+def _wide_name(i):
+    """Eight letters, each starting with Q, so one refund cannot contain two of them."""
+    chars = ["Q"]
+    n = i
+    for _ in range(7):
+        chars.append(chr(ord("A") + (n % 26)))
+        n //= 26
+    return "".join(chars)
+
+
+def test_refund_check_is_fast():
+    print("speed")
+    rows = []
+    for i in range(60_000):
+        rows.append(row(
+            "%s, FIRST" % _wide_name(i),
+            1_500_000,
+            sub_id=str(i + 1),
+            tran_id="T%06d" % i,
+            city="CITY%03d" % (i % 200),
+            employer="EMPLOYER %d" % (i % 40),
+        ))
+    for j in range(1_000):
+        rows.append(row("NN %s" % _wide_name(j), 100_000, sub_id="p%d" % j, txn_type="22Y"))
+    for j in range(1_000):
+        rows.append(row("Z%s" % _wide_name(1_000 + j), 100_000, sub_id="j%d" % j, txn_type="22Y"))
+    started = time.perf_counter()
+    built = P.build_index(rows, "2026-11-17T18:40:00+00:00")
+    elapsed = time.perf_counter() - started
+    check("60k clusters and 2k refunds finish in under 10 seconds (%.2fs)" % elapsed, elapsed < 10)
+    check("those refunds hold only the last names they name", len(built["published"]) == 58_000, str(len(built["published"])))
+
+
 def test_parser_drops_zip_and_scope_is_empty():
     print("parser")
     line = "|".join([
@@ -340,6 +374,7 @@ if __name__ == "__main__":
     test_same_name_is_not_linked()
     test_address_and_memo_and_duplicates()
     test_rebuild_and_links()
+    test_refund_check_is_fast()
     test_parser_drops_zip_and_scope_is_empty()
     if failures:
         print("FAILED", len(failures))
