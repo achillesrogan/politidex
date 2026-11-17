@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import HowToRead from "@/components/HowToRead";
 import PageHead from "@/components/PageHead";
 import MoneyFlowExplorer from "@/components/moneyflow/MoneyFlowExplorer";
 
@@ -19,6 +20,7 @@ export default function MoneyFlowPage() {
         title="Reported money out"
         dek="Reported disbursements from a committee account for the current FEC cycle. Open a recipient when that account has its own record."
       />
+      <HowToRead />
       <MoneyFlowExplorer note={words.fungibility_note} cycle={words.cycle} />
     </div>
   );

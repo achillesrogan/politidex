@@ -1,3 +1,4 @@
+import HowToRead from "@/components/HowToRead";
 import PageHead from "@/components/PageHead";
 import { SITE } from "@/lib/site";
 export const metadata = { title: "Methodology & Verification Standard" };
@@ -5,6 +6,7 @@ export default function Methodology() {
   return (
     <div className="max-w-3xl">
       <PageHead kicker="Methodology" title="The Verification Standard" dek="Zero unsourced claims. If a statement cannot be traced to a credible primary source and re-checked automatically, it does not appear on Politidex." />
+      <HowToRead />
       <div className="prose-news">
         <h2>1. Every claim is an object with proof attached</h2>
         <p>Each fact shown on the site — a party affiliation, a vote position, a dollar figure, a committee seat, a connection — is stored as a <em>claim object</em> with:</p>
