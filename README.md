@@ -108,6 +108,13 @@ contribution files. Pilot shards are written to `data/moneyflow/`; the web
 app does not import them. A committee whose itemized disbursements do not fit
 under the official summary total is not given a shard.
 
+`ingest/people_index.py` is a separate donor index. It can read the FEC
+individual-contributions file, which stays in `data/raw/` and is not committed.
+A person is published only when matching itemized rows total at least
+$10,000.00. Rows are not joined on a name alone. The 2026 file is about 2.42 GB
+compressed, so this checkpoint does not download it and does not publish any
+real person. `data/people/review.json` is the scope note for that decision.
+
 `data/manual/` in this repository holds the public corrections log.
 Editor-approved summaries live in `data/review-queue/` (gitignored) and
 render only when their status is `approved`.
