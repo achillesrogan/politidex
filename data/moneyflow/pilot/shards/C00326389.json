@@ -52,6 +52,39 @@
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
    "status": "unverified"
+  },
+  "profile": {
+   "committee_id": "C00326389",
+   "committee_type": "Q",
+   "designation": "U",
+   "party": null,
+   "org_type": "V",
+   "connected_organization": "AMALGAMATED SUGAR COMPANY",
+   "state": "ID",
+   "filing_frequency": "M",
+   "source": {
+    "id": "c_56481bf6d8114f",
+    "text": "Committee master C00326389; type Q; designation U; party blank; filing frequency M; interest group V; connected organization AMALGAMATED SUGAR COMPANY; state ID.",
+    "value": {
+     "committee_type": "Q",
+     "designation": "U",
+     "party": null,
+     "org_type": "V",
+     "filing_frequency": "M",
+     "state": "ID"
+    },
+    "excerpt": "Committee master C00326389; type Q; designation U; party blank; filing frequency M; interest group V; connected organization AMALGAMATED SUGAR COMPANY; state ID.",
+    "source_name": "Federal Election Commission",
+    "source_url": "https://www.fec.gov/data/committee/C00326389/?cycle=2026&tab=spending",
+    "check": {
+     "kind": "fec-committee-master",
+     "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "committee_id": "C00326389"
+    },
+    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "status": "unverified"
+   }
   }
  },
  "children": [
@@ -97,6 +130,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00063586",
+     "committee_type": "Q",
+     "designation": "B",
+     "party": null,
+     "org_type": "T",
+     "connected_organization": "UNITED STATES BEET SUGAR ASSOCIATION",
+     "state": "DC",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_0c368442a526d3",
+      "text": "Committee master C00063586; type Q; designation B; party blank; filing frequency Q; interest group T; connected organization UNITED STATES BEET SUGAR ASSOCIATION; state DC.",
+      "value": {
+       "committee_type": "Q",
+       "designation": "B",
+       "party": null,
+       "org_type": "T",
+       "filing_frequency": "Q",
+       "state": "DC"
+      },
+      "excerpt": "Committee master C00063586; type Q; designation B; party blank; filing frequency Q; interest group T; connected organization UNITED STATES BEET SUGAR ASSOCIATION; state DC.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00063586/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00063586"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -182,6 +248,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00167684",
+     "committee_type": "Q",
+     "designation": "U",
+     "party": null,
+     "org_type": "T",
+     "connected_organization": "AMERICAN SUGARBEET GROWERS ASSOCIATION PAC",
+     "state": "DC",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_ce19efdb865e4a",
+      "text": "Committee master C00167684; type Q; designation U; party blank; filing frequency Q; interest group T; connected organization AMERICAN SUGARBEET GROWERS ASSOCIATION PAC; state DC.",
+      "value": {
+       "committee_type": "Q",
+       "designation": "U",
+       "party": null,
+       "org_type": "T",
+       "filing_frequency": "Q",
+       "state": "DC"
+      },
+      "excerpt": "Committee master C00167684; type Q; designation U; party blank; filing frequency Q; interest group T; connected organization AMERICAN SUGARBEET GROWERS ASSOCIATION PAC; state DC.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00167684/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00167684"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -271,6 +370,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00331397",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "RISE PROJECT",
+     "state": "ID",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_9f90639ff35717",
+      "text": "Committee master C00331397; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization RISE PROJECT; state ID.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "ID"
+      },
+      "excerpt": "Committee master C00331397; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization RISE PROJECT; state ID.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00331397/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00331397"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -360,6 +492,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00440362",
+     "committee_type": "S",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "ONE TEAM SENATE MAJORITY",
+     "state": "ID",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_2e64d3c7462345",
+      "text": "Committee master C00440362; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization ONE TEAM SENATE MAJORITY; state ID.",
+      "value": {
+       "committee_type": "S",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "ID"
+      },
+      "excerpt": "Committee master C00440362; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization ONE TEAM SENATE MAJORITY; state ID.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00440362/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00440362"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -445,6 +610,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00771246",
+     "committee_type": "N",
+     "designation": "J",
+     "party": null,
+     "org_type": null,
+     "connected_organization": "NONE",
+     "state": "VA",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_65b43038104c50",
+      "text": "Committee master C00771246; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "value": {
+       "committee_type": "N",
+       "designation": "J",
+       "party": null,
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "VA"
+      },
+      "excerpt": "Committee master C00771246; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00771246/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00771246"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -534,6 +732,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00926345",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "SELL",
+     "state": "TX",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_41445926c1917f",
+      "text": "Committee master C00926345; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization SELL; state TX.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "TX"
+      },
+      "excerpt": "Committee master C00926345; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization SELL; state TX.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00926345/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00926345"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -623,6 +854,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00725465",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "GT FARM TEAM III",
+     "state": "OR",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_57567c623b6587",
+      "text": "Committee master C00725465; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization GT FARM TEAM III; state OR.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "OR"
+      },
+      "excerpt": "Committee master C00725465; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization GT FARM TEAM III; state OR.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00725465/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00725465"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -712,6 +976,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00482737",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "AUSTIN SCOTT VICTORY FUND",
+     "state": "GA",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_2c96bab4cd66be",
+      "text": "Committee master C00482737; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization AUSTIN SCOTT VICTORY FUND; state GA.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "GA"
+      },
+      "excerpt": "Committee master C00482737; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization AUSTIN SCOTT VICTORY FUND; state GA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00482737/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00482737"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -801,6 +1098,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00501643",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "ROUZER CONGRESSIONAL TRUST",
+     "state": "NC",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_64477537693ae8",
+      "text": "Committee master C00501643; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization ROUZER CONGRESSIONAL TRUST; state NC.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "NC"
+      },
+      "excerpt": "Committee master C00501643; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization ROUZER CONGRESSIONAL TRUST; state NC.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00501643/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00501643"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -890,6 +1220,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00728238",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": null,
+     "state": "CO",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_c3a06680c2a2fd",
+      "text": "Committee master C00728238; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state CO.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "CO"
+      },
+      "excerpt": "Committee master C00728238; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state CO.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00728238/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00728238"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -979,6 +1342,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00849844",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "GROW THE MAJORITY",
+     "state": "CO",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_2305a0503c4826",
+      "text": "Committee master C00849844; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization GROW THE MAJORITY; state CO.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "CO"
+      },
+      "excerpt": "Committee master C00849844; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization GROW THE MAJORITY; state CO.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00849844/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00849844"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1068,6 +1464,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00869370",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "E-PAC MAJORITY MAKERS",
+     "state": "ND",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_fb9b8c5ef60dd4",
+      "text": "Committee master C00869370; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization E-PAC MAJORITY MAKERS; state ND.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "ND"
+      },
+      "excerpt": "Committee master C00869370; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization E-PAC MAJORITY MAKERS; state ND.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00869370/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00869370"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1153,6 +1582,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00002238",
+     "committee_type": "Q",
+     "designation": "B",
+     "party": null,
+     "org_type": "T",
+     "connected_organization": "NATIONAL COUNCIL OF FARMER COOPERATIVES",
+     "state": "DC",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_3119fbf0be5e29",
+      "text": "Committee master C00002238; type Q; designation B; party blank; filing frequency M; interest group T; connected organization NATIONAL COUNCIL OF FARMER COOPERATIVES; state DC.",
+      "value": {
+       "committee_type": "Q",
+       "designation": "B",
+       "party": null,
+       "org_type": "T",
+       "filing_frequency": "M",
+       "state": "DC"
+      },
+      "excerpt": "Committee master C00002238; type Q; designation B; party blank; filing frequency M; interest group T; connected organization NATIONAL COUNCIL OF FARMER COOPERATIVES; state DC.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00002238/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00002238"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1238,6 +1700,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00027466",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "YOUNG VICTORY COMMITTEE",
+     "state": "DC",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_4c8fdc7a07e05e",
+      "text": "Committee master C00027466; type Y; designation U; party REP; filing frequency M; interest group blank; connected organization YOUNG VICTORY COMMITTEE; state DC.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "DC"
+      },
+      "excerpt": "Committee master C00027466; type Y; designation U; party REP; filing frequency M; interest group blank; connected organization YOUNG VICTORY COMMITTEE; state DC.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00027466/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00027466"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1323,6 +1818,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00409003",
+     "committee_type": "Q",
+     "designation": "D",
+     "party": null,
+     "org_type": null,
+     "connected_organization": null,
+     "state": "SD",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_ecc26005a60fc0",
+      "text": "Committee master C00409003; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization blank; state SD.",
+      "value": {
+       "committee_type": "Q",
+       "designation": "D",
+       "party": null,
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "SD"
+      },
+      "excerpt": "Committee master C00409003; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization blank; state SD.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00409003/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00409003"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1412,6 +1940,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00409581",
+     "committee_type": "S",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "THUNE VICTORY COMMITTEE",
+     "state": "SD",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_91d89b1166403e",
+      "text": "Committee master C00409581; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization THUNE VICTORY COMMITTEE; state SD.",
+      "value": {
+       "committee_type": "S",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "SD"
+      },
+      "excerpt": "Committee master C00409581; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization THUNE VICTORY COMMITTEE; state SD.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00409581/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00409581"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1501,6 +2062,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00412890",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "ADRIAN SMITH VICTORY FUND",
+     "state": "NE",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_48364be91dcacb",
+      "text": "Committee master C00412890; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization ADRIAN SMITH VICTORY FUND; state NE.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "NE"
+      },
+      "excerpt": "Committee master C00412890; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization ADRIAN SMITH VICTORY FUND; state NE.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00412890/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00412890"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1590,6 +2184,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00444620",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "TEAM GT",
+     "state": "PA",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_4183a276858631",
+      "text": "Committee master C00444620; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization TEAM GT; state PA.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "PA"
+      },
+      "excerpt": "Committee master C00444620; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization TEAM GT; state PA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00444620/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00444620"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1675,6 +2302,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00461996",
+     "committee_type": "Q",
+     "designation": "D",
+     "party": null,
+     "org_type": null,
+     "connected_organization": null,
+     "state": "TN",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_6101dcb9d870b0",
+      "text": "Committee master C00461996; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization blank; state TN.",
+      "value": {
+       "committee_type": "Q",
+       "designation": "D",
+       "party": null,
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "TN"
+      },
+      "excerpt": "Committee master C00461996; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization blank; state TN.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00461996/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00461996"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1760,6 +2420,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00493072",
+     "committee_type": "Q",
+     "designation": "D",
+     "party": null,
+     "org_type": null,
+     "connected_organization": "HOEVEN",
+     "state": "ND",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_99d6b8d5e6ed3e",
+      "text": "Committee master C00493072; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization HOEVEN; state ND.",
+      "value": {
+       "committee_type": "Q",
+       "designation": "D",
+       "party": null,
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "ND"
+      },
+      "excerpt": "Committee master C00493072; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization HOEVEN; state ND.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00493072/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00493072"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1849,6 +2542,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00499392",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "VITORIA PAC",
+     "state": "CA",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_c9e1507b4549e4",
+      "text": "Committee master C00499392; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization VITORIA PAC; state CA.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "CA"
+      },
+      "excerpt": "Committee master C00499392; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization VITORIA PAC; state CA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00499392/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00499392"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1938,6 +2664,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00608695",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "JOHNSON LEADERSHIP FUND",
+     "state": "VA",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_d8a9867940ba3a",
+      "text": "Committee master C00608695; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization JOHNSON LEADERSHIP FUND; state VA.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "VA"
+      },
+      "excerpt": "Committee master C00608695; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization JOHNSON LEADERSHIP FUND; state VA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00608695/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00608695"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -2027,6 +2786,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00648295",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "GT FARM TEAM",
+     "state": "ID",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_8d21b997d08922",
+      "text": "Committee master C00648295; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization GT FARM TEAM; state ID.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "ID"
+      },
+      "excerpt": "Committee master C00648295; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization GT FARM TEAM; state ID.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00648295/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00648295"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -2112,6 +2904,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00649574",
+     "committee_type": "N",
+     "designation": "J",
+     "party": null,
+     "org_type": null,
+     "connected_organization": "NONE",
+     "state": "VA",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_cfa2f3191e4fb0",
+      "text": "Committee master C00649574; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "value": {
+       "committee_type": "N",
+       "designation": "J",
+       "party": null,
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "VA"
+      },
+      "excerpt": "Committee master C00649574; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00649574/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00649574"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -2201,6 +3026,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00764381",
+     "committee_type": "H",
+     "designation": "P",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": null,
+     "state": "OH",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_eb54fa4c6f41de",
+      "text": "Committee master C00764381; type H; designation P; party DEM; filing frequency Q; interest group blank; connected organization blank; state OH.",
+      "value": {
+       "committee_type": "H",
+       "designation": "P",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "OH"
+      },
+      "excerpt": "Committee master C00764381; type H; designation P; party DEM; filing frequency Q; interest group blank; connected organization blank; state OH.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00764381/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00764381"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {

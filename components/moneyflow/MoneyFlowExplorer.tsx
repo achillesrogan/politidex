@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { fmtDate } from "@/lib/dates";
+import RecordPopover from "@/components/RecordPopover";
 import {
   DEFAULT_DEPTH,
+  FLOW_LEGEND,
+  FLOW_PALETTE,
   FUNGIBILITY_NOTE,
   INDIVIDUALS_NOTE,
   MAX_DEPTH,
@@ -11,10 +14,12 @@ import {
   applyFilters,
   buildVisible,
   createNestedList,
+  entityFacts,
   formatMoney,
   dollarsToCents,
   layoutTree,
   linkPath,
+  plainCommitteeKind,
   presentCommittees,
   purposeCodes,
   shardUrl,
@@ -30,7 +35,7 @@ type Source = {
   check?: { image_number?: string | null; sample_image_number?: string | null; sub_id?: string | null; sample_sub_id?: string | null; sample_filing_id?: string | null; filing_id?: string | null };
 };
 type Committee = { committee_id: string; name: string; party?: string | null; official_total_out: string; coverage_end?: string | null; selection_rule?: string };
-type Card = { source: Source; title: string; bucketNote: string | null } | null;
+type Card = { source: Source; title: string; bucketNote: string | null; profile: any } | null;
 
 const KINDS = ["any", "party", "committee", "candidate_committee", "business", "residual"];
 
@@ -56,8 +61,8 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
   const [kind, setKind] = useState("any");
   const [purpose, setPurpose] = useState("any");
   const [card, setCard] = useState<Card>(null);
+  const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
   const [error, setError] = useState("");
-  const dialogRef = useRef<HTMLDialogElement>(null);
   const loaded = useMemo(() => new Map(Object.entries(shards)), [shards]);
   const shardIds = useMemo(() => new Set(committees.map((c) => c.committee_id)), [committees]);
   const ordered = useMemo(() => presentCommittees(committees), [committees]);
@@ -107,14 +112,13 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
     setShards((prev) => ({ ...prev, [row.officialId]: shard }));
   }
 
-  function showRecord(source: Source, title: string, bucketNote: string | null) {
+  function showRecord(source: Source, title: string, bucketNote: string | null, profile?: any, event?: { clientX?: number; clientY?: number }) {
     if (!source?.source_url || !source.excerpt) return;
-    setCard({ source, title, bucketNote });
+    if (event && Number.isFinite(event.clientX) && Number.isFinite(event.clientY)) {
+      setAnchor({ x: event.clientX as number, y: event.clientY as number });
+    }
+    setCard({ source, title, bucketNote, profile: profile || null });
   }
-
-  useEffect(() => {
-    if (card && dialogRef.current && !dialogRef.current.open) dialogRef.current.showModal();
-  }, [card]);
 
   const shard = active ? shards[active] : null;
   const filters = { minCents: dollarsToCents(minDollars), kind, purpose, cycle };
@@ -177,44 +181,64 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
           <div className="moneyflow-legend">
             <p>{INDIVIDUALS_NOTE}</p>
             <p>{OTHER_NOTE}</p>
-            <p>Line width follows the reported amount. The amount is also written as text.</p>
+            <p>Line width follows the reported amount. The amount is also written as text. The same colors are used for every committee.</p>
+            <ul className="moneyflow-key" aria-label="Colors by reported kind">
+              {FLOW_LEGEND.map((item) => (
+                <li key={item.id}>
+                  <span className="moneyflow-swatch" style={{ background: item.color }} aria-hidden="true" />
+                  <span>{item.label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="moneyflow-graph" role="group" aria-label="Reported money out tree">
             <svg width={layout.width} height={layout.height} className="moneyflow-svg">
               {layout.links.map((link: any) => (
-                <path key={link.key} d={linkPath(link)} className="moneyflow-stroke" strokeWidth={strokeWidth(link.cents, layout.maxCents)} fill="none" />
+                <path key={link.key} d={linkPath(link)} className="moneyflow-stroke" stroke={FLOW_PALETTE[link.flow]?.color || FLOW_PALETTE.account.color} strokeWidth={strokeWidth(link.cents, layout.maxCents)} fill="none" />
               ))}
-              {layout.nodes.map((node: any) => (
-                <foreignObject key={node.key} x={node.x} y={node.y} width={248} height={72}>
-                  <div className="moneyflow-node">
-                    <button type="button" className="moneyflow-node-btn" aria-expanded={node.data.expandable ? (node.data.expanded ? "true" : "false") : undefined} onClick={() => (node.data.expandable ? toggle(node.data) : showRecord(node.data.nodeSource, node.data.name, node.data.bucketNote))}>
-                      <span className="moneyflow-node-name">{node.data.name}</span>
-                      <span className="moneyflow-node-amt">{formatMoney(node.data.amount)}{node.data.edgeKind && node.data.edgeKind.toLowerCase() !== String(node.data.terminalLabel || "").toLowerCase() ? ` · ${node.data.edgeKind}` : ""}{node.data.terminalLabel ? ` · ${node.data.terminalLabel}` : ""}</span>
-                    </button>
-                    <button type="button" className="moneyflow-record" onClick={() => showRecord(node.data.edgeSource || node.data.nodeSource, node.data.edgeKind || node.data.name, node.data.bucketNote)}>Record</button>
-                  </div>
-                </foreignObject>
-              ))}
+              {layout.nodes.map((node: any) => {
+                const plain = plainCommitteeKind(node.data.profile);
+                const color = FLOW_PALETTE[node.data.flow]?.color || FLOW_PALETTE.account.color;
+                return (
+                  <foreignObject key={node.key} x={node.x} y={node.y} width={248} height={118}>
+                    <div className="moneyflow-node" style={{ borderLeft: `4px solid ${color}` }}>
+                      <button type="button" className="moneyflow-node-btn" aria-expanded={node.data.expandable ? (node.data.expanded ? "true" : "false") : undefined} onClick={(event) => (node.data.expandable ? toggle(node.data) : showRecord(node.data.nodeSource, node.data.name, node.data.bucketNote, node.data.profile, event))}>
+                        <span className="moneyflow-node-name">{node.data.name}</span>
+                        {plain ? <span className="moneyflow-node-kind">{plain}</span> : null}
+                        <span className="moneyflow-node-amt">{formatMoney(node.data.amount)}{node.data.edgeKind && node.data.edgeKind.toLowerCase() !== String(node.data.terminalLabel || "").toLowerCase() ? ` · ${node.data.edgeKind}` : ""}{node.data.terminalLabel ? ` · ${node.data.terminalLabel}` : ""}</span>
+                      </button>
+                      <button type="button" className="moneyflow-record" onClick={(event) => showRecord(node.data.edgeSource || node.data.nodeSource, node.data.edgeKind || node.data.name, node.data.bucketNote, node.data.profile, event)}>Record</button>
+                    </div>
+                  </foreignObject>
+                );
+              })}
             </svg>
           </div>
           {createNestedList(view, { onToggle: toggle, onRecord: showRecord })}
         </section>
       ) : null}
 
-      <dialog
-        ref={dialogRef}
-        className="moneyflow-dialog newspaper-card"
-        onClick={(e) => {
-          if (e.target === dialogRef.current) dialogRef.current?.close();
-        }}
-        onClose={() => setCard(null)}
-      >
+      <RecordPopover open={Boolean(card)} anchor={anchor} onClose={() => setCard(null)}>
         {card ? (
           <div>
             <p className="tag text-[var(--color-record)]">Official record</p>
             <h3 className="font-display text-xl font-bold mt-1">{card.title}</h3>
             <p className="moneyflow-note mt-3" role="note">{fungibility}</p>
             {card.bucketNote ? <p className="mt-3">{card.bucketNote}</p> : null}
+            {entityFacts(card.profile).length ? (
+              <ul className="moneyflow-facts">
+                {entityFacts(card.profile).map((fact) => (
+                  <li key={fact.label}>
+                    <span className="tag">{fact.label}</span>
+                    <p>{fact.text}</p>
+                    <a className="link" href={fact.href} rel="noopener noreferrer">{fact.linkLabel}</a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {card.profile?.source?.excerpt ? (
+              <blockquote className="mt-2 text-sm border-l-2 border-[var(--color-rule)] pl-3">{card.profile.source.excerpt}</blockquote>
+            ) : null}
             <p className="mt-3">{card.source.text || card.source.excerpt}</p>
             <ul className="mt-3 text-sm text-[var(--color-muted)]">
               {filingBits(card.source).map((bit) => <li key={bit}>{bit}</li>)}
@@ -222,10 +246,9 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
             <p className="mt-3 text-sm">Source: {card.source.source_name}{card.source.retrieved_at ? ` · retrieved ${fmtDate(card.source.retrieved_at)}` : ""}</p>
             <blockquote className="mt-2 text-sm border-l-2 border-[var(--color-rule)] pl-3">{card.source.excerpt}</blockquote>
             <p className="mt-2 text-sm"><a className="link" href={card.source.source_url} rel="noopener noreferrer">Open the cited source</a></p>
-            <form method="dialog" className="mt-4"><button type="submit" className="moneyflow-text-btn">Close</button></form>
           </div>
         ) : null}
-      </dialog>
+      </RecordPopover>
     </div>
   );
 }

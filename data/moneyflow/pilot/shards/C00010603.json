@@ -52,6 +52,39 @@
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
    "status": "unverified"
+  },
+  "profile": {
+   "committee_id": "C00010603",
+   "committee_type": "Y",
+   "designation": "U",
+   "party": "DEM",
+   "org_type": null,
+   "connected_organization": "DEMOCRATIC GRASSROOTS VICTORY FUND",
+   "state": "DC",
+   "filing_frequency": "M",
+   "source": {
+    "id": "c_52cc57742cfe81",
+    "text": "Committee master C00010603; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC GRASSROOTS VICTORY FUND; state DC.",
+    "value": {
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "filing_frequency": "M",
+     "state": "DC"
+    },
+    "excerpt": "Committee master C00010603; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC GRASSROOTS VICTORY FUND; state DC.",
+    "source_name": "Federal Election Commission",
+    "source_url": "https://www.fec.gov/data/committee/C00010603/?cycle=2026&tab=spending",
+    "check": {
+     "kind": "fec-committee-master",
+     "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "committee_id": "C00010603"
+    },
+    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "status": "unverified"
+   }
   }
  },
  "children": [
@@ -991,6 +1024,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00155952",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DEMOCRATIC GRASSROOTS VICTORY FUND",
+     "state": "VA",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_482160d0b8066e",
+      "text": "Committee master C00155952; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC GRASSROOTS VICTORY FUND; state VA.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "VA"
+      },
+      "excerpt": "Committee master C00155952; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC GRASSROOTS VICTORY FUND; state VA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00155952/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00155952"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1165,6 +1231,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00104471",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DNC STATE PARTY VICTORY FUND",
+     "state": "NJ",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_4a0e6bff76a266",
+      "text": "Committee master C00104471; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC STATE PARTY VICTORY FUND; state NJ.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "NJ"
+      },
+      "excerpt": "Committee master C00104471; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC STATE PARTY VICTORY FUND; state NJ.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00104471/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00104471"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -2059,6 +2158,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00167130",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": "C",
+     "connected_organization": "DNC SERVICES CORPORATION/DEMOCRATIC NATIONAL COMMITTEE",
+     "state": "PA",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_4e3060411a786d",
+      "text": "Committee master C00167130; type Y; designation U; party DEM; filing frequency M; interest group C; connected organization DNC SERVICES CORPORATION/DEMOCRATIC NATIONAL COMMITTEE; state PA.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": "C",
+       "filing_frequency": "M",
+       "state": "PA"
+      },
+      "excerpt": "Committee master C00167130; type Y; designation U; party DEM; filing frequency M; interest group C; connected organization DNC SERVICES CORPORATION/DEMOCRATIC NATIONAL COMMITTEE; state PA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00167130/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00167130"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {

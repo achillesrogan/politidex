@@ -1,6 +1,7 @@
 "use client";
-import { useRef } from "react";
+import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
+import RecordPopover from "@/components/RecordPopover";
 
 export type SourceLink = { label: string; href: string };
 export type SourceCardInfo = {
@@ -15,20 +16,22 @@ export type SourceCardInfo = {
 };
 
 export default function SourceCard({ card, children }: { card: SourceCardInfo; children: React.ReactNode }) {
-  const ref = useRef<HTMLDialogElement>(null);
+  const [open, setOpen] = useState(false);
+  const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
   return (
     <div className="conn-row">
       <div className="min-w-0 flex-1">{children}</div>
-      <button type="button" className="conn-card-btn" onClick={() => ref.current?.showModal()}>
-        Record
-      </button>
-      <dialog
-        ref={ref}
-        className="conn-dialog newspaper-card"
-        onClick={(e) => {
-          if (e.target === ref.current) ref.current?.close();
+      <button
+        type="button"
+        className="conn-card-btn"
+        onClick={(event) => {
+          setAnchor({ x: event.clientX, y: event.clientY });
+          setOpen(true);
         }}
       >
+        Record
+      </button>
+      <RecordPopover open={open} anchor={anchor} onClose={() => setOpen(false)}>
         <p className="tag text-[var(--color-record)]">Official record</p>
         <h3 className="font-display text-xl font-bold mt-1">{card.title}</h3>
         <p className="mt-3 text-[1.05rem] leading-relaxed">{card.summary}</p>
@@ -68,12 +71,7 @@ export default function SourceCard({ card, children }: { card: SourceCardInfo; c
             </a>
           </p>
         </details>
-        <form method="dialog" className="mt-4">
-          <button type="submit" className="conn-card-btn">
-            Close
-          </button>
-        </form>
-      </dialog>
+      </RecordPopover>
     </div>
   );
 }

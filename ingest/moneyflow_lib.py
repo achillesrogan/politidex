@@ -187,6 +187,14 @@ DESIGNATION = {
     "P": "Principal campaign committee of a candidate",
     "U": "Unauthorized",
 }
+FILING_FREQUENCY = {
+    "A": "Administratively terminated",
+    "D": "Debt",
+    "M": "Monthly filer",
+    "Q": "Quarterly filer",
+    "T": "Terminated",
+    "W": "Waived",
+}
 
 PERSON_ENTITY = frozenset({"IND", "CAN"})
 COMMITTEE_ENTITY = frozenset({"CCM", "COM", "PAC", "PTY"})
@@ -313,6 +321,107 @@ def image_url(image):
 
 def committee_url(committee_id):
     return "https://www.fec.gov/data/committee/%s/?cycle=%d&tab=spending" % (committee_id, CYCLE)
+
+
+def connected_org_is_private(name):
+    """Hide a connected-organization value only when it is shaped like a personal name.
+
+    A one-word sponsor and a multi-word organization name stay. Last-name/first-name,
+    a bare given name plus surname, and a middle initial are omitted.
+    """
+    if not name or not name_is_private_person(name, ""):
+        return False
+    if "," in name:
+        return True
+    toks = _name_tokens(_prepare_payee_name(name))
+    if len(toks) == 1:
+        return False
+    single = [i for i, tok in enumerate(toks) if len(tok) == 1]
+    if len(single) == 1 and single[0] not in (0, len(toks) - 1):
+        return True
+    return len(toks) == 2
+
+
+def committee_profile(row, retrieved_at):
+    """Factual committee-master fields. A person-like connected-organization name is omitted."""
+    cid = row.get("committee_id")
+    if not cid:
+        return None
+    connected = row.get("connected_organization") or None
+    if connected and connected_org_is_private(connected):
+        connected = None
+    freq = row.get("filing_frequency") or ""
+    if freq not in FILING_FREQUENCY:
+        freq = ""
+    excerpt = (
+        "Committee master %s; type %s; designation %s; party %s; "
+        "filing frequency %s; interest group %s; connected organization %s; state %s."
+        % (
+            cid,
+            row.get("committee_type") or "blank",
+            row.get("designation") or "blank",
+            row.get("party") or "blank",
+            freq or "blank",
+            row.get("org_type") or "blank",
+            connected or "blank",
+            row.get("state") or "blank",
+        )
+    )
+    return {
+        "committee_id": cid,
+        "committee_type": row.get("committee_type") or None,
+        "designation": row.get("designation") or None,
+        "party": row.get("party") or None,
+        "org_type": row.get("org_type") or None,
+        "connected_organization": connected,
+        "state": row.get("state") or None,
+        "filing_frequency": freq or None,
+        "source": claim(
+            excerpt,
+            {
+                "committee_type": row.get("committee_type") or None,
+                "designation": row.get("designation") or None,
+                "party": row.get("party") or None,
+                "org_type": row.get("org_type") or None,
+                "filing_frequency": freq or None,
+                "state": row.get("state") or None,
+            },
+            excerpt,
+            committee_url(cid),
+            {
+                "kind": "fec-committee-master",
+                "file_url": FILE_URLS["cm"],
+                "description_url": DESC_URLS["cm"],
+                "committee_id": cid,
+            },
+            retrieved_at,
+            "profile",
+            cid,
+        ),
+    }
+
+
+def attach_profiles(shard, master):
+    """Add committee-master profiles onto committee nodes. Amounts are not changed."""
+    retrieved = ((shard.get("node") or {}).get("source") or {}).get("retrieved_at")
+    if not retrieved:
+        return shard
+
+    def apply(node):
+        oid = node.get("official_id")
+        row = master.get(oid) if oid else None
+        if not row:
+            return
+        profile = committee_profile(row, retrieved)
+        node["profile"] = profile
+        if "connected_organization" in node:
+            node["connected_organization"] = profile.get("connected_organization")
+
+    apply(shard["node"])
+    for child in shard.get("children") or []:
+        if child.get("node"):
+            apply(child["node"])
+    return shard
 
 
 def _norm_name(name):
@@ -642,12 +751,14 @@ def parse_master_line(line):
         return None
     state = c[6].strip().upper()
     connected = c[13].strip()
+    freq = c[11].strip().upper()
     return {
         "committee_id": cid,
         "name": c[1].strip(),
         "designation": c[8].strip(),
         "committee_type": c[9].strip(),
         "party": c[10].strip(),
+        "filing_frequency": freq if freq in FILING_FREQUENCY else None,
         "org_type": c[12].strip(),
         "connected_organization": connected or None,
         "state": state if len(state) == 2 and state.isalpha() else None,
@@ -813,7 +924,7 @@ def _file_urls(sources):
     return [FILE_URLS[s] for s in sorted(sources or []) if s in FILE_URLS]
 
 
-def build_shard(committee, records, retrieved_at, summaries, top_n=TOP_PAYEES):
+def build_shard(committee, records, retrieved_at, summaries, top_n=TOP_PAYEES, master=None):
     """Build one committee shard. records are aggregated payee dicts for this filer only.
 
     committee: id, name, committee_type, designation, party, org_type,
@@ -852,7 +963,7 @@ def build_shard(committee, records, retrieved_at, summaries, top_n=TOP_PAYEES):
     cid = committee["committee_id"]
     children = []
     for rec in top:
-        children.append(_named_child(cid, rec, retrieved_at, summaries))
+        children.append(_named_child(cid, rec, retrieved_at, summaries, master))
     if individuals != 0:
         children.append(_residual_child(
             cid, "individuals", INDIVIDUAL_BUCKET_NAME, individuals, ind_count,
@@ -956,6 +1067,7 @@ def _root_node(committee, retrieved_at):
     if committee.get("type_conflict"):
         check["committee_type_master"] = committee.get("committee_type")
         check["committee_type_summary"] = committee.get("summary_committee_type")
+    profile = committee_profile(committee, retrieved_at)
     node = {
         "id": "committee:" + cid,
         "kind": _root_kind(committee),
@@ -974,8 +1086,9 @@ def _root_node(committee, retrieved_at):
         "designation_label": DESIGNATION.get(committee.get("designation") or ""),
         "org_type": committee.get("org_type") or None,
         "org_type_label": ORG_TYPE.get(committee.get("org_type") or ""),
-        "connected_organization": committee.get("connected_organization"),
+        "connected_organization": profile.get("connected_organization") if profile else None,
         "state": committee.get("state"),
+        "profile": profile,
         "source": claim(
             text, {"TTL_DISB": official, "TTL_RECEIPTS": receipts}, text,
             committee_url(cid), check, retrieved_at, "root", cid, official, receipts,
@@ -984,7 +1097,7 @@ def _root_node(committee, retrieved_at):
     return node
 
 
-def _named_child(parent_id, rec, retrieved_at, summaries):
+def _named_child(parent_id, rec, retrieved_at, summaries, master=None):
     official_id = rec.get("official_id")
     summary = summaries.get(official_id) if official_id else None
     their_total = summary.get("disbursements_cents") if summary else None
@@ -1082,6 +1195,13 @@ def _named_child(parent_id, rec, retrieved_at, summaries):
         "source": claim(node_text, node_value, node_text if summary else excerpt, node_source_url, node_check, retrieved_at,
                         "node", node_id, parent_id, their_total if their_total is not None else amount),
     }
+    profile_row = None
+    if official_id and master and official_id in master:
+        profile_row = master[official_id]
+    elif summary and summary.get("committee_type"):
+        profile_row = summary
+    if profile_row and profile_row.get("committee_id"):
+        node["profile"] = committee_profile(profile_row, retrieved_at)
     return {"node": node, "edge": edge}
 
 

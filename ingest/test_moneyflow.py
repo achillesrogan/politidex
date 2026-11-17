@@ -58,6 +58,7 @@ def test_parsers_drop_address_and_people_columns():
     check("master drops zip", zip_code not in blob)
     check("master drops candidate id", "H0AL00000" not in blob)
     check("master has no forbidden keys", not M.public_problems(row))
+    check("master keeps filing frequency", row["filing_frequency"] == "M")
 
     # Individual-contribution column (index 7) and refund column must not be parsed.
     fields = ["C00000059", "SOME PAC", "Q", "U", "M", "10.00", "0", "SENTINEL_INDIV_CONTRIB"] + ["0"] * 19
@@ -361,6 +362,51 @@ def test_committed_pilot_shards():
                       or ch["edge"]["source"]["check"].get("payee_names_stored") is False)
 
 
+def test_committee_profile_is_factual_and_drops_a_person_like_sponsor():
+    print("profile")
+    sponsor = "JANE Q DOE"
+    org = "HALLMARK CARDS, INC."
+    master = {
+        "C00000011": {
+            "committee_id": "C00000011", "name": "EXAMPLE SSF", "committee_type": "Q",
+            "designation": "U", "party": "", "org_type": "C", "filing_frequency": "Q",
+            "connected_organization": org, "state": "MO",
+        },
+        "C00000012": {
+            "committee_id": "C00000012", "name": "EXAMPLE PERSON SPONSOR", "committee_type": "Q",
+            "designation": "U", "party": "DEM", "org_type": "", "filing_frequency": "M",
+            "connected_organization": sponsor, "state": "KS",
+        },
+    }
+    shard = {
+        "node": {
+            "official_id": "C00000011",
+            "connected_organization": org,
+            "source": {"retrieved_at": "2026-11-17T00:00:00+00:00"},
+            "official_total_out": "10.00",
+        },
+        "children": [
+            {"node": {"official_id": "C00000012", "kind": "committee"}, "edge": {"amount_cents": 100}},
+            {"node": {"official_id": None, "kind": "business", "name": "ACME"}, "edge": {"amount_cents": 50}},
+        ],
+    }
+    before = [shard["node"]["official_total_out"], shard["children"][0]["edge"]["amount_cents"]]
+    M.attach_profiles(shard, master)
+    check("profile does not change amounts", [shard["node"]["official_total_out"], shard["children"][0]["edge"]["amount_cents"]] == before)
+    check("organization sponsor is kept", shard["node"]["profile"]["connected_organization"] == org)
+    check("person-like sponsor is omitted", sponsor not in json.dumps(shard))
+    slogan = "QUIET HARBOR LEAGUE"
+    kept = M.committee_profile({
+        "committee_id": "C00000013", "committee_type": "Y", "designation": "U",
+        "party": "REP", "org_type": "", "filing_frequency": "M",
+        "connected_organization": slogan, "state": "DC",
+    }, "2026-11-17T00:00:00+00:00")
+    check("multi-word organization sponsor is kept", kept["connected_organization"] == slogan)
+    check("business node has no profile", "profile" not in shard["children"][1]["node"])
+    check("profile source is the committee page", shard["node"]["profile"]["source"]["source_url"].startswith("https://www.fec.gov/data/committee/"))
+    check("profile has no forbidden keys", not M.public_problems(shard))
+
+
 def test_sources_do_not_name_indiv_files():
     print("files")
     blob = json.dumps(M.FILE_URLS)
@@ -378,6 +424,8 @@ def test_web_app_does_not_import_shards():
         for path in base.rglob("*"):
             if path.suffix not in {".ts", ".tsx", ".js", ".mjs"}:
                 continue
+            if path.name.endswith(".test.mjs"):
+                continue
             text = path.read_text(errors="replace")
             if "data/moneyflow" in text or "moneyflow_lib" in text:
                 hit.append(str(path.relative_to(ROOT)))
@@ -391,6 +439,7 @@ if __name__ == "__main__":
     test_reconciliation()
     test_pilot_selection_is_symmetric()
     test_transaction_direction_and_dates()
+    test_committee_profile_is_factual_and_drops_a_person_like_sponsor()
     test_sources_do_not_name_indiv_files()
     test_web_app_does_not_import_shards()
     test_committed_pilot_shards()

@@ -52,6 +52,39 @@
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
    "status": "unverified"
+  },
+  "profile": {
+   "committee_id": "C00298000",
+   "committee_type": "W",
+   "designation": "U",
+   "party": null,
+   "org_type": "W",
+   "connected_organization": null,
+   "state": "GA",
+   "filing_frequency": "Q",
+   "source": {
+    "id": "c_c63032738de4d8",
+    "text": "Committee master C00298000; type W; designation U; party blank; filing frequency Q; interest group W; connected organization blank; state GA.",
+    "value": {
+     "committee_type": "W",
+     "designation": "U",
+     "party": null,
+     "org_type": "W",
+     "filing_frequency": "Q",
+     "state": "GA"
+    },
+    "excerpt": "Committee master C00298000; type W; designation U; party blank; filing frequency Q; interest group W; connected organization blank; state GA.",
+    "source_name": "Federal Election Commission",
+    "source_url": "https://www.fec.gov/data/committee/C00298000/?cycle=2026&tab=spending",
+    "check": {
+     "kind": "fec-committee-master",
+     "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "committee_id": "C00298000"
+    },
+    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "status": "unverified"
+   }
   }
  },
  "children": [
@@ -1525,6 +1558,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00544684",
+     "committee_type": "S",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": "TRANSPORTATION TRUST FUND",
+     "state": "WI",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_2833bf67633720",
+      "text": "Committee master C00544684; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization TRANSPORTATION TRUST FUND; state WI.",
+      "value": {
+       "committee_type": "S",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "WI"
+      },
+      "excerpt": "Committee master C00544684; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization TRANSPORTATION TRUST FUND; state WI.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00544684/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00544684"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1614,6 +1680,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00901918",
+     "committee_type": "S",
+     "designation": "P",
+     "party": "REP",
+     "org_type": null,
+     "connected_organization": null,
+     "state": "TX",
+     "filing_frequency": "Q",
+     "source": {
+      "id": "c_5dca06964078c2",
+      "text": "Committee master C00901918; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state TX.",
+      "value": {
+       "committee_type": "S",
+       "designation": "P",
+       "party": "REP",
+       "org_type": null,
+       "filing_frequency": "Q",
+       "state": "TX"
+      },
+      "excerpt": "Committee master C00901918; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state TX.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00901918/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00901918"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {

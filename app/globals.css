@@ -62,7 +62,13 @@ table { border-collapse: collapse; }
 .moneyflow-start-meta { display: block; margin-top: .25rem; color: var(--color-muted); font-size: .9rem; }
 .moneyflow-stage { margin-top: 1.25rem; }
 .moneyflow-graph { overflow: auto; border: 1px solid var(--color-rule); background: #fff; margin-top: .75rem; }
-.moneyflow-stroke { stroke: #1f4e79; }
+.moneyflow-stroke { fill: none; }
+.moneyflow-node-kind { display: block; color: var(--color-muted); font-size: .78rem; }
+.moneyflow-key { display: flex; flex-wrap: wrap; gap: .4rem .9rem; list-style: none; padding: 0; margin: .5rem 0 0; }
+.moneyflow-key li { display: flex; align-items: center; gap: .4rem; color: var(--color-ink); }
+.moneyflow-swatch { width: .85rem; height: .85rem; border: 1px solid var(--color-ink); flex: none; }
+.moneyflow-facts { list-style: none; padding: 0; margin: .75rem 0 0; display: grid; gap: .75rem; }
+.moneyflow-facts p { margin: .2rem 0; }
 .moneyflow-node { font-family: var(--font-serif); }
 .moneyflow-node-btn, .moneyflow-record, .moneyflow-text-btn { color: var(--color-ink); background: #fff; border: 1px solid var(--color-rule); }
 .moneyflow-node-btn { display: block; width: 100%; text-align: left; padding: .25rem .4rem; }
@@ -75,9 +81,65 @@ table { border-collapse: collapse; }
 .moneyflow-list-row { display: flex; flex-wrap: wrap; gap: .35rem .6rem; align-items: baseline; }
 .moneyflow-list-name { font-weight: 700; }
 .moneyflow-bar { display: block; height: .45rem; background: #eceae4; margin: .3rem 0 .5rem; }
-.moneyflow-bar > span { display: block; height: 100%; background: #1f4e79; }
-.moneyflow-dialog { border: 1px solid var(--color-rule); background: #fff; max-width: 40rem; width: calc(100% - 2rem); padding: 1.25rem; color: var(--color-ink); }
-.moneyflow-dialog::backdrop { background: #1a1a1a73; }
+.moneyflow-bar > span { display: block; height: 100%; }
+.record-popover {
+  position: fixed;
+  margin: 0;
+  inset: auto;
+  max-width: 36rem;
+  width: min(36rem, calc(100vw - 1.5rem));
+  max-height: min(32rem, calc(100vh - 1.5rem));
+  overflow: auto;
+  padding: 0;
+  border: 1px solid var(--color-rule);
+  background: #fff;
+  color: var(--color-ink);
+}
+.record-popover::backdrop { background: #1a1a1a73; }
+.record-popover-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .45rem .7rem;
+  border-bottom: 1px solid var(--color-rule);
+  background: var(--color-paper-2);
+}
+.record-popover-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  cursor: grab;
+  touch-action: none;
+  border: 1px solid var(--color-ink);
+  background: #fff;
+  color: var(--color-ink);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .35rem .55rem;
+}
+.record-popover-handle:active { cursor: grabbing; }
+.record-popover-grip { width: 1.4rem; height: .28rem; border-radius: 99px; background: var(--color-ink); }
+.record-popover-close, .conn-card-btn {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .35rem .6rem;
+  border: 1px solid var(--color-rule);
+  background: #fff;
+  color: var(--color-ink);
+}
+.record-popover-body { padding: 1rem 1.15rem 1.15rem; }
+.record-popover-handle:focus-visible, .record-popover-close:focus-visible, .conn-card-btn:focus-visible { outline: 2px solid var(--color-record); outline-offset: 2px; }
+.record-popover.is-sheet { max-height: 70vh; }
 .moneyflow-error { margin-top: .75rem; }
 @media (max-width: 800px) {
   .moneyflow-graph { display: none; }

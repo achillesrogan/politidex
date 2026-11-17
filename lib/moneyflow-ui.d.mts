@@ -18,4 +18,14 @@ export function canExpand(node: any, depth: number, shardIds: Set<string> | null
 export function buildVisible(shard: any, opts?: any, depth?: number): any;
 export function layoutTree(view: any): { width: number; height: number; nodes: any[]; links: any[]; maxCents: number };
 export function linkPath(link: { x1: number; y1: number; x2: number; y2: number }): string;
-export function createNestedList(view: any, handlers?: { onToggle?: (row: any) => void; onRecord?: (source: any, title: string, bucketNote: string | null) => void }): any;
+export const FLOW_PALETTE: Record<string, { id: string; label: string; color: string }>;
+export const FLOW_LEGEND: Array<{ id: string; label: string; color: string }>;
+export const FEC_TYPE_URL: string;
+export const FEC_MASTER_URL: string;
+export const FEC_NONCONNECTED_URL: string;
+export function contrastRatio(foreground: string, background: string): number;
+export function flowOf(node: any): string;
+export function flowColor(node: any): string;
+export function plainCommitteeKind(profile: any): string | null;
+export function entityFacts(profile: any): Array<{ label: string; text: string; href: string; linkLabel: string }>;
+export function createNestedList(view: any, handlers?: { onToggle?: (row: any) => void; onRecord?: (source: any, title: string, bucketNote: string | null, profile?: any, event?: any) => void }): any;
