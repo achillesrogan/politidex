@@ -1,0 +1,15 @@
+{
+  "retrieved_at": "2026-11-17T07:29:37Z",
+  "retrieved_on": "2026-11-17",
+  "host": "www.congress.gov",
+  "unique_urls": 6168,
+  "ok": 6168,
+  "not_found": 0,
+  "error": 0,
+  "by_kind": {
+    "member": 539,
+    "bill": 5629
+  },
+  "method": "Each stored https://www.congress.gov bill URL was checked as GET /v3/bill/{congress}/{type}/{number}, and each stored member URL as GET /v3/member/{bioguideId}. HTTP 200 counts as OK. No API key is stored in this repository, and the build does not call the API.",
+  "display": "This is a record of the check. It is not rendered as a site statistic."
+}
