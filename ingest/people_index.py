@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from decimal import Decimal, ROUND_HALF_UP
 
 from moneyflow_lib import in_cycle, is_memo, parse_fec_date
@@ -41,7 +42,8 @@ BUSINESS_METHODS = frozenset({"company_domain", "sec_edgar", "state_registry"})
 _SUFFIXES = frozenset({"JR", "SR", "II", "III", "IV"})
 # MRS, MS, and MISS stay in the name. "DOE, MRS JOHN" is not "DOE, JOHN".
 # MR, DR, and the rest are dropped only after a first name is already kept.
-_HONORIFICS = frozenset({"MR", "DR", "PROF", "HON", "REV", "SIR"})
+# HON stays too: a trailing HON can be a middle name.
+_HONORIFICS = frozenset({"MR", "DR", "PROF", "REV", "SIR"})
 _GENERIC_WORK = frozenset({
     "RETIRED", "NONE", "NOT EMPLOYED", "SELF EMPLOYED", "SELF-EMPLOYED",
     "INFORMATION REQUESTED", "INFORMATION REQUESTED PER BEST EFFORTS",
@@ -321,6 +323,54 @@ def to_public(person):
     return out
 
 
+def _refund_tokens(raw):
+    """Split a refund name on every character that is not a letter."""
+    return [tok for tok in re.split(r"[^A-Za-z]+", (raw or "").upper()) if tok]
+
+
+def _single_token_names_cluster(blob, last, first):
+    """One unsplit token. The last name, or the two names joined, may sit inside it."""
+    if last and last in blob:
+        return True
+    if not first or not last:
+        return False
+    return (first + last) in blob or (last + first) in blob
+
+
+def _token_contains(token, name):
+    """The name is the token, or a piece of a hyphenated or concatenated token."""
+    return bool(name) and (token == name or (len(token) > len(name) and name in token))
+
+
+def _refund_names_cluster(raw, ident):
+    """Whether an unparsed refund might belong to this cluster.
+
+    A blank name matches nothing. A last name alone, such as "DOE,", holds every
+    cluster with that last name. One unsplit token such as "JOHNDOE" matches when
+    the last name or the joined names appear in it. Otherwise the last name has to
+    match a token, or sit inside a hyphenated or concatenated token, and the first
+    name or first initial has to match too.
+    """
+    text = (raw or "").strip()
+    if not any(ch.isalpha() for ch in text):
+        return False
+    last, first = ident[0], ident[1]
+    tokens = _refund_tokens(text)
+    if not tokens:
+        return False
+    if len(tokens) == 1 and re.fullmatch(r"[A-Za-z]+", text):
+        return _single_token_names_cluster(tokens[0], last, first)
+    if len(tokens) == 1:
+        return tokens[0] == last
+    initial = first[:1] if first else ""
+    last_ok = any(_token_contains(tok, last) for tok in tokens)
+    first_ok = any(
+        tok == first or (len(tok) == 1 and tok == initial) or (first and len(tok) > len(first) and first in tok)
+        for tok in tokens
+    )
+    return last_ok and first_ok
+
+
 def _apply_refunds(groups, refunds):
     """Subtract a refund only when one cluster shares name, city, and state.
 
@@ -385,10 +435,9 @@ def build_index(rows, retrieved_at):
             continue
         by_bare.setdefault((last, first), []).append((None, [(refund, "refund did not match one cluster")]))
     for refund in unparsed_refunds:
-        words = set(tok for tok in _norm(refund.get("name")).replace(",", " ").split() if tok)
         touched = set()
         for ident in groups:
-            if ident[0] in words and ident[1] in words:
+            if _refund_names_cluster(refund.get("name"), ident):
                 touched.add((ident[0], ident[1]))
         for last, first in touched:
             withheld_names.add((last, first))

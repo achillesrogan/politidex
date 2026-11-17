@@ -219,12 +219,37 @@ def test_address_and_memo_and_duplicates():
         row("DOE, MRS JOHN", 600_000, sub_id="2"),
     ], "2026-11-17T02:30:00+00:00")
     check("MRS JOHN is not merged into JOHN", spouses["published"] == [])
-    check("MS stays on the name", P.parse_person_name("DOE, JOHN MS")["middle"] == "MS" and P.parse_person_name("DOE, JOHN Q MR")["middle"] == "Q")
+    check("MS stays on the name", P.parse_person_name("DOE, JOHN MS")["middle"] == "MS")
+    check("MR after the first name is not part of the middle name", P.parse_person_name("DOE, JOHN Q MR")["middle"] == "Q")
+    check("a trailing HON stays on the name", P.parse_person_name("DOE, JOHN HON")["middle"] == "HON")
     reversed_name = P.build_index([
         row("DOE, JOHN Q", 1_500_000),
         row("JOHN Q DOE", 900_000, sub_id="2", txn_type="22Y"),
     ], "2026-11-17T02:30:00+00:00")
     check("an unparsed refund that names the donor is not left published", reversed_name["published"] == [])
+    for refund_name in ("J DOE", "JOHN/DOE", "JOHN DOE-SMITH", "DOE,", "JOHNDOE"):
+        held = P.build_index([
+            row("DOE, JOHN Q", 1_500_000),
+            row(refund_name, 900_000, sub_id="2", txn_type="22Y"),
+        ], "2026-11-17T02:30:00+00:00")
+        check(
+            "refund %s does not publish DOE, JOHN Q" % refund_name,
+            held["published"] == [] and any(item["name"] == "DOE, JOHN" for item in held["unlinked"]),
+        )
+    surname_only = P.build_index([
+        row("DOE, JOHN Q", 1_500_000),
+        row("DOE, JANE QUINN", 1_500_000, sub_id="2", employer="OTHER SCHOOL"),
+        row("DOE,", 900_000, sub_id="3", txn_type="22Y"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a last-name-only refund holds every DOE cluster", surname_only["published"] == [])
+    blank_refund = P.build_index([
+        row("DOE, JOHN Q", 1_500_000),
+        row("   ", 900_000, sub_id="2", txn_type="22Y"),
+    ], "2026-11-17T02:30:00+00:00")
+    check(
+        "a blank refund name stays in review",
+        len(blank_refund["published"]) == 1 and blank_refund["published"][0]["amount"] == "15000.00",
+    )
     late = P.build_index([
         row("DOE, JANE QUINN", 1_500_000, tran_id="SA5", date="2026-04-02", file_num="2", amend="N"),
         row("DOE, JANE QUINN", 1_500_000, tran_id="SA5", date="2026-03-01", sub_id="2", file_num="1", amend="A"),
