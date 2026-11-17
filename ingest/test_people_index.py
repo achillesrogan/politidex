@@ -351,9 +351,14 @@ def test_refund_check_is_fast():
     refunds = 2_000
     calls = {"n": 0}
     original = P._name_pieces
+    # The indexed check is about one call per cluster last name plus one per refund.
+    # Checking every cluster calls it twice per pair, about 240 million times here.
+    limit = 2 * (clusters + refunds)
 
     def counted(raw):
         calls["n"] += 1
+        if calls["n"] > limit:
+            raise RuntimeError("name-piece calls passed %d" % limit)
         return original(raw)
 
     # Both the indexed check and the old per-cluster check call _name_pieces.
@@ -364,9 +369,6 @@ def test_refund_check_is_fast():
         elapsed = time.perf_counter() - started
     finally:
         P._name_pieces = original
-    # The indexed check is about one call per cluster last name plus one per refund.
-    # Checking every cluster calls it twice per pair, about 240 million times here.
-    limit = 2 * (clusters + refunds)
     check(
         "name-piece calls stay under twice the clusters plus the refunds",
         calls["n"] < limit,

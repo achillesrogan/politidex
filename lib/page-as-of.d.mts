@@ -12,3 +12,7 @@ export function profileAsOf(
   committeeCodes?: Array<string | null | undefined>,
   sites?: Record<string, { retrieved_at?: string | null; website_retrieved_at?: string | null } | null> | ((code?: string | null) => { retrieved_at?: string | null; website_retrieved_at?: string | null } | null | undefined),
 ): string | null;
+export function ldaClaimDates(
+  ties?: { lobbying?: { rows?: Array<{ claim?: string | null }> }; revolving?: { rows?: Array<{ claim?: string | null }> } } | null,
+  retrievedAt?: (claimId?: string | null) => string | null | undefined,
+): string[];
