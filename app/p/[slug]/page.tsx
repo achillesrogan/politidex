@@ -4,6 +4,8 @@ import Link from "next/link";
 import Fact from "@/components/Fact";
 import { RecordModule, AnalysisModule } from "@/components/Module";
 import { people, profile, verified, fmtUSD, claims, approvedSummary, committeeHistory } from "@/lib/data";
+import { approvedCommitteeFacts, committeeSite } from "@/lib/committees";
+import { publicSourceHref } from "@/lib/source-href.mjs";
 import ConnectionsPanel from "@/components/ConnectionsPanel";
 import { fmtDate } from "@/lib/dates";
 
@@ -47,7 +49,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
               {pr.facts.map((f: any) => verified(f.claim) && (
                 <div key={f.label} className="contents">
                   <dt className="font-semibold">{f.label}</dt>
-                  <dd className="min-w-0 break-words"><Fact claim={track(f.claim)}>{f.link ? <a className="link" href={f.link} rel="noopener noreferrer">{f.value}</a> : f.value}</Fact></dd>
+                  <dd className="min-w-0 break-words"><Fact claim={track(f.claim)}>{f.link && publicSourceHref(f.link) ? <a className="link" href={publicSourceHref(f.link) || undefined} rel="noopener noreferrer">{f.value}</a> : f.value}</Fact></dd>
                 </div>
               ))}
             </dl>
@@ -57,25 +59,45 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
             <RecordModule title="Committee assignments">
               <ul className="grid gap-1">
                 {pr.committees.filter((c: any) => c?.name && verified(c.claim)).map((c: any) => {
+                  const claim = verified(c.claim);
+                  if (!claim) return null;
+                  track(c.claim);
                   const meta = committeeHistory(c.code);
                   const hist = (c.history_claims || []).map((id: string) => {
-                    const claim = verified(id);
-                    if (!claim) return null;
+                    const history = verified(id);
+                    if (!history) return null;
+                    track(id);
                     const fact = meta?.facts?.find((x: any) => x.claim === id);
                     return {
-                      id: claim.id,
+                      id: history.id,
                       label: fact?.label || "Official record",
-                      text: String(claim.text),
-                      excerpt: claim.excerpt,
-                      source_name: claim.source_name,
-                      source_url: claim.source_url,
-                      retrieved_at: claim.retrieved_at,
+                      text: String(history.text),
+                      excerpt: history.excerpt,
+                      source_name: history.source_name,
+                      source_url: history.source_url,
+                      retrieved_at: history.retrieved_at,
                     };
                   }).filter(Boolean);
+                  const site = committeeSite(c.code);
+                  const summary = approvedCommitteeFacts(c.code).map((f) => ({
+                    label: f.kind === "created" ? "Established" : f.kind === "purpose" ? "Jurisdiction" : f.kind === "roster" ? "Roster" : "Official record",
+                    text: f.text,
+                    excerpt: f.excerpt,
+                    source_name: f.source_name,
+                    source_url: f.source_url,
+                    retrieved_at: f.retrieved_at,
+                  }));
                   return (
-                    <li key={c.code || c.claim} className="flex flex-wrap items-baseline gap-2">
-                      <Fact claim={track(c.claim)}>{c.name}{c.role && c.role !== "Member" ? ` — ${c.role}` : ""}</Fact>
-                      {hist.length > 0 && <CommitteeInfo name={c.name} facts={hist} />}
+                    <li key={c.code || c.claim}>
+                      <CommitteeInfo
+                        name={c.name}
+                        role={c.role}
+                        claimId={claim.id}
+                        website={site?.website}
+                        membershipUrl={claim.source_url}
+                        facts={hist}
+                        summary={summary}
+                      />
                     </li>
                   );
                 })}
@@ -106,7 +128,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
           {pr.bills?.some((b: any) => verified(b.claim)) && (
             <RecordModule title="Recently sponsored legislation (119th Congress)">
               <ul className="grid gap-2">
-                {pr.bills.map((b: any) => <Fact key={b.claim} as="li" claim={track(b.claim)}><a className="link" href={b.url} rel="noopener noreferrer">{b.label}</a> — {b.title} <span className="text-[var(--color-muted)]">({b.date})</span></Fact>)}
+                {pr.bills.map((b: any) => <Fact key={b.claim} as="li" claim={track(b.claim)}>{publicSourceHref(b.url) ? <a className="link" href={publicSourceHref(b.url) || undefined} rel="noopener noreferrer">{b.label}</a> : b.label} — {b.title} <span className="text-[var(--color-muted)]">({b.date})</span></Fact>)}
               </ul>
             </RecordModule>
           )}
@@ -144,7 +166,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
           {!pr.ties?.money?.rows?.length && pr.pacs?.some((x: any) => verified(x.claim)) && (
             <RecordModule title="Political committees giving the most">
               <ul className="grid gap-2">
-                {pr.pacs.map((x: any) => <Fact key={x.committee_id} as="li" claim={track(x.claim)}><a className="link" href={x.url} rel="noopener noreferrer">{x.name}</a> — {fmtUSD(x.largest)} <span className="text-[var(--color-muted)] text-sm">({x.count} {x.count === 1 ? "payment" : "payments"})</span></Fact>)}
+                {pr.pacs.map((x: any) => <Fact key={x.committee_id} as="li" claim={track(x.claim)}>{publicSourceHref(x.url) ? <a className="link" href={publicSourceHref(x.url) || undefined} rel="noopener noreferrer">{x.name}</a> : x.name} — {fmtUSD(x.largest)} <span className="text-[var(--color-muted)] text-sm">({x.count} {x.count === 1 ? "payment" : "payments"})</span></Fact>)}
               </ul>
               <p className="mt-3 text-sm text-[var(--color-muted)]">Totals the paying committees reported to the FEC as disbursements to this member’s principal campaign committee in 2025–26. Includes PACs, party committees, and joint fundraising committees. Individual donors are never shown.</p>
             </RecordModule>
@@ -159,7 +181,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
                     <Fact claim={track(c.claim)}>{c.partner_slug ? <Link className="link" href={`/p/${c.partner_slug}`}>{c.partner_name}</Link> : c.partner_name} — {c.count} bills</Fact>
                     <ul className="text-sm mt-1 pl-3 border-l border-[var(--color-rule)]">
                       {c.examples.filter((e: any) => verified(e.claim) && verified(e.sponsor_claim)).map((e: any) => (
-                        <Fact key={e.claim} as="li" claim={track(e.claim)}><a className="link" href={e.url} rel="noopener noreferrer">{e.label}</a> {e.title}</Fact>
+                        <Fact key={e.claim} as="li" claim={track(e.claim)}>{publicSourceHref(e.url) ? <a className="link" href={publicSourceHref(e.url) || undefined} rel="noopener noreferrer">{e.label}</a> : e.label} {e.title}</Fact>
                       ))}
                     </ul>
                   </li>

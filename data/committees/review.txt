@@ -1,0 +1,473 @@
+Proposed committee summaries. None are approved. The site does not render these sentences until review_status is approved.
+Retrieved 2026-11-17T02:54:55+00:00
+Every entry is proposed. The site renders a sentence only after review_status is approved. Bill-referral counts are omitted because no Congress.gov API key was available in this environment.
+
+## SSAP  status=proposed
+- [roster] Chair: Collins, Susan M. (R-ME). Ranking Member: Murray, Patty (D-WA). Total Members: 29.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Collins, Susan M. (R-ME) Murray, Patty (D-WA) 29
+- [created] The Senate Committee on Appropriations was created on March 6, 1867, when the Senate agreed by unanimous consent to a resolution by Senator Anthony.
+  source: U.S. Senate Committee on Appropriations, official history https://www.appropriations.senate.gov/about/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Without further discussion, Anthony's resolution was considered by unanimous consent and agreed to, giving birth to the Senate Committee on Appropriations on March 6, 1867.
+
+## SSAF  status=proposed
+- [roster] Chair: Boozman, John (R-AR). Ranking Member: Klobuchar, Amy (D-MN). Total Members: 23.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Boozman, John (R-AR) Klobuchar, Amy (D-MN) 23
+- [created] On December 9, 1825, by a vote of 22-14, the Senate approved a resolution creating a standing Committee on Agriculture.
+  source: U.S. Senate Committee on Agriculture, Nutrition, and Forestry, official history https://www.agriculture.senate.gov/about/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On December 9, 1825, by a vote of 22-14, the Senate approved a resolution creating a standing Committee on Agriculture.
+
+## SPAG  status=proposed
+- [roster] Chair: Scott, Rick (R-FL). Ranking Member: Gillibrand, Kirsten E. (D-NY). Total Members: 13.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Scott, Rick (R-FL) Gillibrand, Kirsten E. (D-NY) 13
+- [created] The Senate Special Committee on Aging was first established in 1961 as a temporary committee.
+  source: U.S. Senate Special Committee on Aging, official about page https://www.aging.senate.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Senate Special Committee on Aging was first established in 1961 as a temporary committee.
+- [purpose] Special committees have no legislative authority; they can study issues, conduct oversight of programs, and advance important causes.
+  source: U.S. Senate Special Committee on Aging, official about page https://www.aging.senate.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: While special committees have no legislative authority, they can study issues, conduct oversight of programs, and advance important causes.
+
+## SSAS  status=proposed
+- [roster] Chair: Wicker, Roger F. (R-MS). Ranking Member: Reed, Jack (D-RI). Total Members: 27.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Wicker, Roger F. (R-MS) Reed, Jack (D-RI) 27
+- [created] The Senate Committees on Military Affairs, on the Militia, and Naval Affairs were established on December 10, 1816; the Legislative Reorganization Act of 1946 combined the Military Affairs and Naval Affairs Committees into the current Committee on Armed Services.
+  source: U.S. Senate Committee on Armed Services, official history https://www.armed-services.senate.gov/about/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Senate Committees on Military Affairs; on the Militia; and Naval Affairs were established on December 10, 1816.
+- [purpose] As specified in Rule XXV of the Standing Rules of the Senate, the Committee on Armed Services has jurisdiction that includes aeronautical and space activities peculiar to or primarily associated with the development of weapons systems or military operations.
+  source: U.S. Senate Committee on Armed Services, official history https://www.armed-services.senate.gov/about/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: As specified in Rule XXV, 1(c)(1) of the Standing Rules of the Senate, the Committee on Armed Services' has the following jurisdiction: Aeronautical and space activities peculiar to or primarily associated with the development of weapons sy
+
+## SSBK  status=proposed
+- [roster] Chair: Scott, Tim (R-SC). Ranking Member: Warren, Elizabeth (D-MA). Total Members: 24.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Scott, Tim (R-SC) Warren, Elizabeth (D-MA) 24
+- [created] Until 1913 the Senate operated without a banking committee; the Senate established its banking committee on March 15, 1913.
+  source: U.S. Senate, official history (Senate Banking Committee established) https://www.senate.gov/about/origins-foundations/committee-system/banking-committee-established.htm retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Until 1913, the Senate operated without a banking committee. Unlike the House of Representatives, which had created its own banking panel in 1865, the Senate chose to refer banking and currency legislation to its Committee on Finance. When 
+
+## SSBU  status=proposed
+- [roster] Chair: Johnson, Ron (R-WI). Ranking Member: Merkley, Jeff (D-OR). Total Members: 21.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Johnson, Ron (R-WI) Merkley, Jeff (D-OR) 21
+- [created] The Congressional Budget and Impoundment Control Act of 1974 established standing budget committees in both chambers of Congress.
+  source: U.S. House Committee on the Budget, official about page https://budget.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Budget Act also established standing committees in both chambers of Congress with jurisdiction over, among other things, the concurrent resolution on the budget.
+
+## SSCM  status=proposed
+- [roster] Chair: Cruz, Ted (R-TX). Ranking Member: Cantwell, Maria (D-WA). Total Members: 28.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Cruz, Ted (R-TX) Cantwell, Maria (D-WA) 28
+- [created] The official history of the Senate Committee on Commerce, Science, and Transportation lists the Committee on Commerce and Manufactures (1816–1825) among its progenitor committees.
+  source: U.S. Senate Committee on Commerce, Science, and Transportation, official committee history https://www.commerce.senate.gov/about/committee-history/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Briefly stated, the progenitor committees are: Committee on Commerce and Manufactures (1816-1825) Committee on Commerce (1825-1946, 1961-1977)
+
+## SSEG  status=proposed
+- [roster] Chair: Lee, Mike (R-UT). Ranking Member: Heinrich, Martin (D-NM). Total Members: 20.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Lee, Mike (R-UT) Heinrich, Martin (D-NM) 20
+- [created] The Senate Committee on Energy and Natural Resources traces its roots to the Committee on Public Lands, established in 1816; the modern committee was established in 1977 during a major reorganization of the Senate committee system.
+  source: U.S. Senate Committee on Energy and Natural Resources, official history https://www.energy.senate.gov/about/history-rules/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The U.S. Senate Committee on Energy and Natural Resources traces its roots to the Committee on Public Lands, established in 1816 as one of the Senate’s first permanent standing committees.
+
+## SSEV  status=proposed
+- [roster] Chair: Capito, Shelley Moore (R-WV). Ranking Member: Whitehouse, Sheldon (D-RI). Total Members: 19.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Capito, Shelley Moore (R-WV) Whitehouse, Sheldon (D-RI) 19
+- [created] In 1837, the Senate created the Committee on Public Buildings and Grounds, a predecessor of today’s Committee on Environment and Public Works; in 1947 the panel was renamed the Committee on Public Works.
+  source: U.S. Senate Committee on Environment and Public Works, official history https://www.epw.senate.gov/public/index.cfm/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: In 1837, the Senate created the Committee on Public Buildings and Grounds to oversee the development of the Federal buildings in the young, but growing Federal City of Washington, DC. In 1947, during a reorganization of Senate committees, t
+
+## SSFI  status=proposed
+- [roster] Chair: Crapo, Mike (R-ID). Ranking Member: Wyden, Ron (D-OR). Total Members: 27.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Crapo, Mike (R-ID) Wyden, Ron (D-OR) 27
+- [created] On December 10, 1816, the Senate approved Senator Barbour’s resolution establishing standing committees, dropping the “Ways and Means” title in favor of a Committee on Finance.
+  source: U.S. Senate, official history (standing committees created) https://www.senate.gov/about/origins-foundations/committee-system/standing-committees-created.htm retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On December 10, 1816, the Senate approved Barbour’s resolution with one minor revision—dropping the "Ways and Means" title in favor of a Committee on Finance.
+
+## SSFR  status=proposed
+- [roster] Chair: Risch, James E. (R-ID). Ranking Member: Shaheen, Jeanne (D-NH). Total Members: 22.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Risch, James E. (R-ID) Shaheen, Jeanne (D-NH) 22
+- [created] The Senate Foreign Relations Committee was established in 1816 as one of the original standing committees of the Senate.
+  source: U.S. Senate Committee on Foreign Relations, official history https://www.foreign.senate.gov/about/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Senate Foreign Relations Committee was established in 1816 as one of the original ten standing committees of the Senate.
+
+## SSGA  status=proposed
+- [roster] Chair: Paul, Rand (R-KY). Ranking Member: Peters, Gary C. (D-MI). Total Members: 15.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Paul, Rand (R-KY) Peters, Gary C. (D-MI) 15
+- [created] The official history of the Senate Committee on Homeland Security and Governmental Affairs traces the committee’s origins to 1816.
+  source: U.S. Senate Committee on Homeland Security and Governmental Affairs, official history https://www.hsgac.senate.gov/about/history/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The origins of the Homeland Security and Governmental Affairs Senate Committee can be traced back to 1816.
+- [purpose] The Committee on Homeland Security and Governmental Affairs is the chief oversight committee of the United States Senate.
+  source: U.S. Senate Committee on Homeland Security and Governmental Affairs, official history https://www.hsgac.senate.gov/about/history/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Today, the Committee on Homeland Security and Governmental Affairs is the chief oversight committee of the United States Senate.
+
+## SSHR  status=proposed
+- [roster] Chair: Cassidy, Bill (R-LA). Ranking Member: Sanders, Bernard (I-VT). Total Members: 23.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Cassidy, Bill (R-LA) Sanders, Bernard (I-VT) 23
+- [purpose] Under Rule 25 of the Standing Rules of the Senate, the Committee on Health, Education, Labor, and Pensions is referred measures relating to education, labor, health, and public welfare.
+  source: U.S. Senate Committee on Health, Education, Labor, and Pensions, official about page https://www.help.senate.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Committee on Health, Education, Labor and Pensions, to which committee shall be referred all proposed legislation, messages, petitions, memorials, and other matters relating to the following subjects: Measures relating to education, labor, 
+
+## SSJU  status=proposed
+- [roster] Chair: Grassley, Chuck (R-IA). Ranking Member: Durbin, Richard J. (D-IL). Total Members: 22.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Grassley, Chuck (R-IA) Durbin, Richard J. (D-IL) 22
+- [created] On December 10, 1816, the Senate approved Senator Barbour’s resolution establishing 11 standing committees, including a Committee on the Judiciary.
+  source: U.S. Senate, official history (standing committees created) https://www.senate.gov/about/origins-foundations/committee-system/standing-committees-created.htm retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Instead of creating a host of select committees to address each issue, however, on December 5, 1816, Senator Barbour submitted his proposal to establish 11 standing committees: 1) Foreign Relations, 2) Ways and Means, 3) Commerce and Manufa
+
+## SSRA  status=proposed
+- [roster] Chair: McConnell, Mitch (R-KY). Ranking Member: Padilla, Alex (D-CA). Total Members: 17.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: McConnell, Mitch (R-KY) Padilla, Alex (D-CA) 17
+- [created] The first Senate, convening in March 1789, established a committee to prepare a system of rules; a Committee on Rules has continued in the Senate since a forerunner was created in 1867.
+  source: U.S. Senate Committee on Rules and Administration, official about page https://www.rules.senate.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Our origins date back to the early days of the Republic when the first Senate convened in March 1789 and established a committee to prepare a system of rules for conducting business in the Senate. In 1867 in the aftermath of the Civil War a
+
+## SSSB  status=proposed
+- [roster] Chair: Ernst, Joni (R-IA). Ranking Member: Markey, Edward J. (D-MA). Total Members: 19.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ernst, Joni (R-IA) Markey, Edward J. (D-MA) 19
+- [created] On October 8, 1940, the Senate established a special committee on small-business problems; it became the standing Committee on Small Business on March 25, 1981, and was renamed the Committee on Small Business and Entrepreneurship on June 29, 2001.
+  source: U.S. Senate Committee on Small Business and Entrepreneurship, official history https://www.sbc.senate.gov/public/index.cfm/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On October 8, 1940, the Senate established the Special Committee to Study and Survey Problems of Small Business Enterprises (also known as the Special Committee to Study Problems of American Small Business).
+
+## SSVA  status=proposed
+- [roster] Chair: Moran, Jerry (R-KS). Ranking Member: Blumenthal, Richard (D-CT). Total Members: 19.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Moran, Jerry (R-KS) Blumenthal, Richard (D-CT) 19
+- [created] The Senate Committee on Veterans' Affairs was created in 1970 to transfer responsibilities for veterans from the Finance and Labor committees to a single panel.
+  source: U.S. Senate Committee on Veterans' Affairs, official about page https://www.veterans.senate.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Veterans' Affairs committee was created in 1970 to transfer responsibilities for veterans from the Finance and Labor committees to a single panel.
+
+## SLIN  status=proposed
+- [roster] Chair: Cotton, Tom (R-AR). Ranking Member: Warner, Mark R. (D-VA) *. Total Members: 21.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Cotton, Tom (R-AR) Warner, Mark R. (D-VA) * 21
+
+## SLIA  status=proposed
+- [roster] Chair: Murkowski, Lisa (R-AK). Ranking Member: Schatz, Brian (D-HI) *. Total Members: 11.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Murkowski, Lisa (R-AK) Schatz, Brian (D-HI) * 11
+
+## SLET  status=proposed
+- [roster] Chair: Lankford, James (R-OK). Ranking Member: Coons, Christopher A. (D-DE) *. Total Members: 6.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Lankford, James (R-OK) Coons, Christopher A. (D-DE) * 6
+- [created] The permanent Select Committee on Ethics was created in 1977 to replace the Select Committee on Standards and Conduct.
+  source: U.S. Senate Select Committee on Ethics, official history https://www.ethics.senate.gov/public/index.cfm/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: In response, the permanent Select Committee on Ethics was created in 1977 to replace the Select Committee on Standards and Conduct.
+
+## JSEC  status=proposed
+- [roster] Chair: Schmitt, Eric (R-MO) *. Ranking Member: Hassan, Margaret Wood (D-NH). Total Members: 10.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Schmitt, Eric (R-MO) * Hassan, Margaret Wood (D-NH) 10
+
+## JSLC  status=proposed
+- [roster] Chair: McConnell, Mitch (R-KY) *. Total Members: 5.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: McConnell, Mitch (R-KY) * 5
+
+## JSPR  status=proposed
+- [roster] Chair: McConnell, Mitch (R-KY). Total Members: 5.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: McConnell, Mitch (R-KY) 5
+
+## JSTX  status=proposed
+- [roster] Chair: Crapo, Mike (R-ID). Total Members: 5.
+  source: U.S. Senate committee list https://www.senate.gov/committees/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Crapo, Mike (R-ID) 5
+
+## AG00  status=proposed
+- [roster] Chair: Glenn Thompson.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AG00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Glenn Thompson
+- [roster] Ratio: 29 / 25.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AG00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 29 / 25
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AG00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] The House Committee on Agriculture was created on May 3, 1820, after the House agreed to a resolution submitted by Mr. Williams of North Carolina.
+  source: U.S. House Committee on Agriculture, official committee history https://agriculture.house.gov/about/committee-history.htm retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On motion of Mr. Williams of North Carolina, the House took up and proceeded to consider the resolution submitted by him on the 29th ultimo, for the appointment of a standing committee to be denominated “The Committee on Agriculture;” and t
+- [purpose] The House Committee on Agriculture’s jurisdiction, as originally defined, covered “subjects relating to agriculture.”
+  source: U.S. House Committee on Agriculture, official committee history https://agriculture.house.gov/about/committee-history.htm retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The jurisdiction of the committee, as originally defined, covered simply "subjects relating to agriculture."
+
+## AP00  status=proposed
+- [roster] Chair: Tom Cole.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AP00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Tom Cole
+- [roster] Ratio: 35 / 28.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AP00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 35 / 28
+- [roster] Subcommittees listed: 12.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AP00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] On March 2, 1865, the House of Representatives created the Committee on Appropriations by separating appropriating duties from the Committee on Ways and Means.
+  source: U.S. House Committee on Appropriations, official history https://appropriations.house.gov/about/history retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On March 2, 1865, the House of Representatives separated the appropriating and banking and currency duties from the Committee on Ways and Means, which was first established in 1789, and assigned them to two new committees - the Committee on
+
+## AS00  status=proposed
+- [roster] Chair: Mike Rogers.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AS00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Mike Rogers
+- [roster] Ratio: 30 / 27.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AS00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 30 / 27
+- [roster] Subcommittees listed: 7.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/AS00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## BU00  status=proposed
+- [roster] Chair: Jodey C. Arrington.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/BU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Jodey C. Arrington
+- [roster] Ratio: 21 / 16.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/BU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 21 / 16
+- [created] The Congressional Budget and Impoundment Control Act of 1974 established standing budget committees in both chambers of Congress.
+  source: U.S. House Committee on the Budget, official about page https://budget.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Budget Act also established standing committees in both chambers of Congress with jurisdiction over, among other things, the concurrent resolution on the budget.
+- [purpose] Under House Rule X, clause 1(d), the House Budget Committee has jurisdiction over the concurrent resolution on the budget, special controls over the federal budget, and the budget process generally.
+  source: U.S. House Committee on the Budget, official about page https://budget.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: House Rule X, clause 1(d) states that the Budget Committee will have jurisdiction over the concurrent resolution on the budget; other matters required to be referred to it pursuant to the Budget Act; establishment, extension, and enforcemen
+
+## ED00  status=proposed
+- [roster] Chair: Tim Walberg.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/ED00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Tim Walberg
+- [roster] Ratio: 21 / 16.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/ED00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 21 / 16
+- [roster] Subcommittees listed: 4.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/ED00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## IF00  status=proposed
+- [roster] Chair: Brett Guthrie.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/IF00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Brett Guthrie
+- [roster] Ratio: 30 / 24.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/IF00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 30 / 24
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/IF00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] The committee now called Energy and Commerce was originally established on December 14, 1795, as the Committee on Commerce and Manufactures.
+  source: U.S. House Committee on Energy and Commerce, official about page https://energycommerce.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The committee was originally established on December 14, 1795, as the Committee on Commerce and Manufactures when the growing demands of the young nation required that Congress establish a permanent panel to exercise its constitutional auth
+- [purpose] The House Committee on Energy and Commerce is the oldest standing legislative committee in the U.S. House of Representatives and is vested with the broadest jurisdiction of any congressional authorizing committee.
+  source: U.S. House Committee on Energy and Commerce, official about page https://energycommerce.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Committee on Energy and Commerce is the oldest standing legislative committee in the U.S. House of Representatives and is vested with the broadest jurisdiction of any congressional authorizing committee.
+
+## SO00  status=proposed
+- [roster] Chair: Michael Guest.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SO00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Michael Guest
+- [roster] Ratio: 5 / 5.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SO00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 5 / 5
+
+## BA00  status=proposed
+- [roster] Chair: J. French Hill.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/BA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: J. French Hill
+- [roster] Ratio: 30 / 24.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/BA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 30 / 24
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/BA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [purpose] The House Financial Services Committee has jurisdiction over issues pertaining to the economy, the banking system, housing, insurance, and securities and exchanges.
+  source: U.S. House Committee on Financial Services, official about page https://financialservices.house.gov/about/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The House Financial Services Committee has jurisdiction over issues pertaining to the economy, the banking system, housing, insurance, and securities and exchanges.
+
+## FA00  status=proposed
+- [roster] Chair: Brian J. Mast.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/FA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Brian J. Mast
+- [roster] Ratio: 28 / 25.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/FA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 28 / 25
+- [roster] Subcommittees listed: 7.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/FA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## HM00  status=proposed
+- [roster] Chair: Andrew R. Garbarino.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/HM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Andrew R. Garbarino
+- [roster] Ratio: 18 / 15.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/HM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 18 / 15
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/HM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] The Committee on Homeland Security was created as a nine-member select committee on June 19, 2002, and became a permanent standing committee on January 4, 2005.
+  source: History, Art & Archives, U.S. House of Representatives, Committees fact sheet https://history.house.gov/Education/Fact-Sheets/Committees-Fact-Sheet2/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: In the wake of the September 11, 2001, terrorist attacks, the Committee on Homeland Security was created as a nine-member select committee on June 19, 2002. With a jurisdiction to provide congressional oversight of the newly created Departm
+- [purpose] Pursuant to clause 1(j) of House Rule X, the Committee on Homeland Security has legislative jurisdiction over overall homeland security policy.
+  source: U.S. House Committee on Homeland Security, official about page https://homeland.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Pursuant to clause 1(j) of House Rule X, the Committee has the following legislative jurisdiction : (1) Overall homeland security policy.
+
+## HA00  status=proposed
+- [roster] Chair: Bryan Steil.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/HA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Bryan Steil
+- [roster] Ratio: 8 / 4.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/HA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 8 / 4
+- [roster] Subcommittees listed: 2.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/HA00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [purpose] The Committee on House Administration’s jurisdiction over federal elections requires it to consider proposals to amend federal election law and to monitor congressional elections across the United States.
+  source: U.S. House Committee on House Administration, official about page https://cha.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Committee's jurisdiction over federal elections requires it to consider proposals to amend federal election law and to monitor congressional elections across the United States.
+
+## JU00  status=proposed
+- [roster] Chair: Jim Jordan.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/JU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Jim Jordan
+- [roster] Ratio: 25 / 19.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/JU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 25 / 19
+- [roster] Subcommittees listed: 7.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/JU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] On June 3, 1813, a standing committee on the Judiciary was established by the House of Representatives to consider legislation relating to judicial proceedings.
+  source: U.S. House Committee on the Judiciary, official about page https://judiciary.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On June 3, 1813, a standing committee on the Judiciary was established by the House of Representatives to consider legislation relating to judicial proceedings.
+- [purpose] The House Committee on the Judiciary has jurisdiction over matters relating to the administration of justice in federal courts, administrative bodies, and law enforcement agencies.
+  source: U.S. House Committee on the Judiciary, official about page https://judiciary.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Committee on the Judiciary has been called the lawyer for the House of Representatives because of its jurisdiction over matters relating to the administration of justice in federal courts, administrative bodies, and law enforcement agen
+
+## II00  status=proposed
+- [roster] Chair: Bruce Westerman.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/II00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Bruce Westerman
+- [roster] Ratio: 25 / 20.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/II00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 25 / 20
+- [roster] Subcommittees listed: 5.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/II00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] The House Committee on Natural Resources traces its jurisdictional history to the Committee on Public Lands, which was created on December 17, 1805, on a motion by Representative William Findley of Pennsylvania.
+  source: U.S. House Committee on Natural Resources, official about page https://naturalresources.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The House Committee on Natural Resources can trace its jurisdictional history to the Committee on Public Lands, which was created on December 17, 1805, on a motion by Representative William Findley, a Democratic-Republican from Pennsylvania
+
+## GO00  status=proposed
+- [roster] Chair: James Comer.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/GO00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: James Comer
+- [roster] Ratio: 26 / 21.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/GO00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 26 / 21
+- [roster] Subcommittees listed: 7.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/GO00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## RU00  status=proposed
+- [roster] Chair: Virginia Foxx.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/RU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Virginia Foxx
+- [roster] Ratio: 9 / 4.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/RU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 9 / 4
+- [roster] Subcommittees listed: 2.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/RU00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] The House Committee on Rules was first formally constituted on April 2, 1789.
+  source: U.S. House Committee on Rules, official about page https://rules.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Committee on Rules is amongst the oldest standing committees in the House, having been first formally constituted on April 2, 1789.
+- [purpose] The Rules Committee has two broad categories of jurisdiction: special orders for the consideration of legislation (special rules) and original jurisdiction matters.
+  source: U.S. House Committee on Rules, official about page https://rules.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Rules Committee has two broad categories of jurisdiction: special orders for the consideration of legislation (known as " special rules " or "rules") and original jurisdiction matters.
+
+## SY00  status=proposed
+- [roster] Chair: Brian Babin.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SY00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Brian Babin
+- [roster] Ratio: 22 / 18.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SY00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 22 / 18
+- [roster] Subcommittees listed: 5.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SY00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## SM00  status=proposed
+- [roster] Chair: Roger Williams.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Roger Williams
+- [roster] Ratio: 15 / 12.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 15 / 12
+- [roster] Subcommittees listed: 5.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/SM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] On December 4, 1941, the House of Representatives created the first House Select Committee on Small Business; it was made a permanent standing committee on January 5, 1975.
+  source: U.S. House Committee on Small Business, official about page https://smallbusiness.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: On December 4, 1941, the U. S. House of Representatives created the first House Select Committee on Small Business. The select committee was established in response to a growing number of small business activists and organizations advocatin
+
+## PW00  status=proposed
+- [roster] Chair: Sam Graves.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/PW00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Sam Graves
+- [roster] Ratio: 36 / 31.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/PW00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 36 / 31
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/PW00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [purpose] The House Committee on Transportation and Infrastructure has jurisdiction over all modes of transportation: aviation, highways and bridges, transit and rail, pipelines, and maritime and waterborne transportation.
+  source: U.S. House Committee on Transportation and Infrastructure, official about page https://transportation.house.gov/about retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Committee has jurisdiction over all modes of transportation – our aviation system, highways and bridges, transit and rail transportation, pipelines, and maritime and waterborne transportation.
+
+## VR00  status=proposed
+- [roster] Chair: Mike Bost.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/VR00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Mike Bost
+- [roster] Ratio: 14 / 11.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/VR00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 14 / 11
+- [roster] Subcommittees listed: 5.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/VR00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## WM00  status=proposed
+- [roster] Chair: Jason Smith.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/WM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Jason Smith
+- [roster] Ratio: 26 / 19.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/WM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 26 / 19
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/WM00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+- [created] The Committee on Ways and Means was first established as a select committee on July 24, 1789, was reappointed in 1795, and was formally listed as a standing committee in the House Rules on January 7, 1802.
+  source: U.S. House Committee on Ways and Means, official about page https://waysandmeans.house.gov/about/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: First established as a select committee on July 24, 1789, it was discharged less than two months later. The committee was reappointed from the first session of the Fourth Congress in 1795, and was formally listed as a standing committee in 
+- [purpose] The Committee on Ways and Means is the oldest committee of the United States Congress and is the chief tax-writing committee in the House of Representatives.
+  source: U.S. House Committee on Ways and Means, official about page https://waysandmeans.house.gov/about/ retrieved 2026-11-17T02:54:55+00:00
+  excerpt: The Committee on Ways and Means is the oldest committee of the United States Congress, and is the chief tax-writing committee in the House of Representatives.
+
+## IG00  status=proposed
+- [roster] Ratio: 15 / 12.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/IG00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 15 / 12
+- [roster] Subcommittees listed: 6.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/IG00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Subcommittees
+
+## ZS00  status=proposed
+- [roster] Ratio: 13 / 11.
+  source: Office of the Clerk, U.S. House https://clerk.house.gov/committees/ZS00 retrieved 2026-11-17T02:54:55+00:00
+  excerpt: Ratio 13 / 11

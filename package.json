@@ -10,7 +10,8 @@
     "build": "next build && node scripts/check-rendered.mjs",
     "start": "next start",
     "check:rendered": "node scripts/check-rendered.mjs",
-    "check:purposes": "python3 ingest/moneyflow_purposes.py"
+    "check:purposes": "python3 ingest/moneyflow_purposes.py",
+    "check:links": "node scripts/check-links.mjs"
   },
   "dependencies": {
     "d3-hierarchy": "^3.1.2",
