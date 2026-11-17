@@ -1,0 +1,2093 @@
+{
+ "retrieved_at": "2026-11-17T02:54:55+00:00",
+ "sources": [
+  {
+   "name": "U.S. Senate committee list",
+   "url": "https://www.senate.gov/committees/",
+   "retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  {
+   "name": "Office of the Clerk, U.S. House committee profiles",
+   "url": "https://clerk.house.gov/committees",
+   "retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  {
+   "name": "U.S. House committee list",
+   "url": "https://www.house.gov/committees",
+   "retrieved_at": "2026-11-17T02:54:55+00:00"
+  }
+ ],
+ "note": "Websites were requested and kept only when the response was HTTPS 200 on a .gov host. Subcommittee rows without their own official website have website null.",
+ "committees": {
+  "SSAP": {
+   "code": "SSAP",
+   "name": "Appropriations",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.appropriations.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSAP01": {
+   "code": "SSAP01",
+   "name": "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP16": {
+   "code": "SSAP16",
+   "name": "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP02": {
+   "code": "SSAP02",
+   "name": "Subcommittee on Department of Defense",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP14": {
+   "code": "SSAP14",
+   "name": "Subcommittee on Department of Homeland Security",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP17": {
+   "code": "SSAP17",
+   "name": "Subcommittee on Department of Interior, Environment, and Related Agencies",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP18": {
+   "code": "SSAP18",
+   "name": "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP22": {
+   "code": "SSAP22",
+   "name": "Subcommittee on Energy and Water Development",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP23": {
+   "code": "SSAP23",
+   "name": "Subcommittee on Financial Services and General Government",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP08": {
+   "code": "SSAP08",
+   "name": "Subcommittee on Legislative Branch",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP19": {
+   "code": "SSAP19",
+   "name": "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP20": {
+   "code": "SSAP20",
+   "name": "Subcommittee on State, Foreign Operations, and Related Programs",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAP24": {
+   "code": "SSAP24",
+   "name": "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies",
+   "chamber": "senate",
+   "parent": "SSAP",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAF": {
+   "code": "SSAF",
+   "name": "Agriculture, Nutrition, and Forestry",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.agriculture.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSAF13": {
+   "code": "SSAF13",
+   "name": "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+   "chamber": "senate",
+   "parent": "SSAF",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAF14": {
+   "code": "SSAF14",
+   "name": "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+   "chamber": "senate",
+   "parent": "SSAF",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAF16": {
+   "code": "SSAF16",
+   "name": "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+   "chamber": "senate",
+   "parent": "SSAF",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAF17": {
+   "code": "SSAF17",
+   "name": "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+   "chamber": "senate",
+   "parent": "SSAF",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAF15": {
+   "code": "SSAF15",
+   "name": "Subcommittee on Rural Development, Energy, and Credit",
+   "chamber": "senate",
+   "parent": "SSAF",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SPAG": {
+   "code": "SPAG",
+   "name": "Special Committee on Aging",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.aging.senate.gov",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSAS": {
+   "code": "SSAS",
+   "name": "Armed Services",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.armed-services.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSAS14": {
+   "code": "SSAS14",
+   "name": "Subcommittee on Airland",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAS21": {
+   "code": "SSAS21",
+   "name": "Subcommittee on Cybersecurity",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAS20": {
+   "code": "SSAS20",
+   "name": "Subcommittee on Emerging Threats and Capabilities",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAS17": {
+   "code": "SSAS17",
+   "name": "Subcommittee on Personnel",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAS15": {
+   "code": "SSAS15",
+   "name": "Subcommittee on Readiness and Management Support",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAS13": {
+   "code": "SSAS13",
+   "name": "Subcommittee on Seapower",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSAS16": {
+   "code": "SSAS16",
+   "name": "Subcommittee on Strategic Forces",
+   "chamber": "senate",
+   "parent": "SSAS",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBK": {
+   "code": "SSBK",
+   "name": "Banking, Housing, and Urban Affairs",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.banking.senate.gov//",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSBK13": {
+   "code": "SSBK13",
+   "name": "Subcommittee on Digital Assets",
+   "chamber": "senate",
+   "parent": "SSBK",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBK12": {
+   "code": "SSBK12",
+   "name": "Subcommittee on Economic Policy",
+   "chamber": "senate",
+   "parent": "SSBK",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBK08": {
+   "code": "SSBK08",
+   "name": "Subcommittee on Financial Institutions and Consumer Protection",
+   "chamber": "senate",
+   "parent": "SSBK",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBK09": {
+   "code": "SSBK09",
+   "name": "Subcommittee on Housing, Transportation, and Community Development",
+   "chamber": "senate",
+   "parent": "SSBK",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBK05": {
+   "code": "SSBK05",
+   "name": "Subcommittee on National Security and International Trade and Finance",
+   "chamber": "senate",
+   "parent": "SSBK",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBK04": {
+   "code": "SSBK04",
+   "name": "Subcommittee on Securities, Insurance, and Investment",
+   "chamber": "senate",
+   "parent": "SSBK",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSBU": {
+   "code": "SSBU",
+   "name": "Budget",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.budget.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSCM": {
+   "code": "SSCM",
+   "name": "Commerce, Science, and Transportation",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.commerce.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSCM33": {
+   "code": "SSCM33",
+   "name": "Subcommittee on Aviation, Space, and Innovation",
+   "chamber": "senate",
+   "parent": "SSCM",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSCM36": {
+   "code": "SSCM36",
+   "name": "Subcommittee on Coast Guard, Maritime, and Fisheries",
+   "chamber": "senate",
+   "parent": "SSCM",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSCM35": {
+   "code": "SSCM35",
+   "name": "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+   "chamber": "senate",
+   "parent": "SSCM",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSCM37": {
+   "code": "SSCM37",
+   "name": "Subcommittee on Science, Manufacturing, and Competitiveness",
+   "chamber": "senate",
+   "parent": "SSCM",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSCM38": {
+   "code": "SSCM38",
+   "name": "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+   "chamber": "senate",
+   "parent": "SSCM",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSCM34": {
+   "code": "SSCM34",
+   "name": "Subcommittee on Telecommunications and Media",
+   "chamber": "senate",
+   "parent": "SSCM",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEG": {
+   "code": "SSEG",
+   "name": "Energy and Natural Resources",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.energy.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSEG01": {
+   "code": "SSEG01",
+   "name": "Subcommittee on Energy",
+   "chamber": "senate",
+   "parent": "SSEG",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEG04": {
+   "code": "SSEG04",
+   "name": "Subcommittee on National Parks",
+   "chamber": "senate",
+   "parent": "SSEG",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEG03": {
+   "code": "SSEG03",
+   "name": "Subcommittee on Public Lands, Forests, and Mining",
+   "chamber": "senate",
+   "parent": "SSEG",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEG07": {
+   "code": "SSEG07",
+   "name": "Subcommittee on Water and Power",
+   "chamber": "senate",
+   "parent": "SSEG",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEV": {
+   "code": "SSEV",
+   "name": "Environment and Public Works",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.epw.senate.gov/public/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSEV09": {
+   "code": "SSEV09",
+   "name": "Subcommittee on Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight",
+   "chamber": "senate",
+   "parent": "SSEV",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEV10": {
+   "code": "SSEV10",
+   "name": "Subcommittee on Clean Air, Climate, and Nuclear Innovation and Safety",
+   "chamber": "senate",
+   "parent": "SSEV",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEV15": {
+   "code": "SSEV15",
+   "name": "Subcommittee on Fisheries, Water, and Wildlife",
+   "chamber": "senate",
+   "parent": "SSEV",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSEV08": {
+   "code": "SSEV08",
+   "name": "Subcommittee on Transportation and Infrastructure",
+   "chamber": "senate",
+   "parent": "SSEV",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFI": {
+   "code": "SSFI",
+   "name": "Finance",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.finance.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSFI12": {
+   "code": "SSFI12",
+   "name": "Subcommittee on Energy, Natural Resources, and Infrastructure",
+   "chamber": "senate",
+   "parent": "SSFI",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFI14": {
+   "code": "SSFI14",
+   "name": "Subcommittee on Fiscal Responsibility and Economic Growth",
+   "chamber": "senate",
+   "parent": "SSFI",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFI10": {
+   "code": "SSFI10",
+   "name": "Subcommittee on Health Care",
+   "chamber": "senate",
+   "parent": "SSFI",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFI13": {
+   "code": "SSFI13",
+   "name": "Subcommittee on International Trade, Customs, and Global Competitiveness",
+   "chamber": "senate",
+   "parent": "SSFI",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFI02": {
+   "code": "SSFI02",
+   "name": "Subcommittee on Social Security, Pensions, and Family Policy",
+   "chamber": "senate",
+   "parent": "SSFI",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFI11": {
+   "code": "SSFI11",
+   "name": "Subcommittee on Taxation and IRS Oversight",
+   "chamber": "senate",
+   "parent": "SSFI",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR": {
+   "code": "SSFR",
+   "name": "Foreign Relations",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.foreign.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSFR09": {
+   "code": "SSFR09",
+   "name": "Subcommittee on Africa and Global Health Policy",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR02": {
+   "code": "SSFR02",
+   "name": "Subcommittee on East Asia, the Pacific, and International Cybersecurity Policy",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR01": {
+   "code": "SSFR01",
+   "name": "Subcommittee on Europe and Regional Security Cooperation",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR15": {
+   "code": "SSFR15",
+   "name": "Subcommittee on Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR07": {
+   "code": "SSFR07",
+   "name": "Subcommittee on Near East, South Asia, Central Asia, and Counterterrorism",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR14": {
+   "code": "SSFR14",
+   "name": "Subcommittee on State Department and USAID Management, International Operations, and Bilateral International Development",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSFR06": {
+   "code": "SSFR06",
+   "name": "Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues",
+   "chamber": "senate",
+   "parent": "SSFR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSGA": {
+   "code": "SSGA",
+   "name": "Homeland Security and Governmental Affairs",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.hsgac.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSGA01": {
+   "code": "SSGA01",
+   "name": "Permanent Subcommittee on Investigations",
+   "chamber": "senate",
+   "parent": "SSGA",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSGA22": {
+   "code": "SSGA22",
+   "name": "Subcommittee on Border Management, Federal Workforce, and Regulatory Affairs",
+   "chamber": "senate",
+   "parent": "SSGA",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSGA20": {
+   "code": "SSGA20",
+   "name": "Subcommittee on Disaster Management, District of Columbia, and Census",
+   "chamber": "senate",
+   "parent": "SSGA",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSHR": {
+   "code": "SSHR",
+   "name": "Health, Education, Labor, and Pensions",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.help.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSHR09": {
+   "code": "SSHR09",
+   "name": "Subcommittee on Education and the American Family",
+   "chamber": "senate",
+   "parent": "SSHR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSHR11": {
+   "code": "SSHR11",
+   "name": "Subcommittee on Employment and Workplace Safety",
+   "chamber": "senate",
+   "parent": "SSHR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSHR12": {
+   "code": "SSHR12",
+   "name": "Subcommittee on Primary Health and Retirement Security",
+   "chamber": "senate",
+   "parent": "SSHR",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU": {
+   "code": "SSJU",
+   "name": "Judiciary",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.judiciary.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSJU01": {
+   "code": "SSJU01",
+   "name": "Subcommittee on Antitrust, Competition Policy, and Consumer Rights",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU04": {
+   "code": "SSJU04",
+   "name": "Subcommittee on Border Security and Immigration",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU22": {
+   "code": "SSJU22",
+   "name": "Subcommittee on Crime and Counterterrorism",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU25": {
+   "code": "SSJU25",
+   "name": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU26": {
+   "code": "SSJU26",
+   "name": "Subcommittee on Intellectual Property",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU28": {
+   "code": "SSJU28",
+   "name": "Subcommittee on Privacy, Technology, and the Law",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSJU21": {
+   "code": "SSJU21",
+   "name": "Subcommittee on the Constitution",
+   "chamber": "senate",
+   "parent": "SSJU",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SSRA": {
+   "code": "SSRA",
+   "name": "Rules and Administration",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.rules.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSSB": {
+   "code": "SSSB",
+   "name": "Small Business and Entrepreneurship",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.sbc.senate.gov/public/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SSVA": {
+   "code": "SSVA",
+   "name": "Veterans' Affairs",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.veterans.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SLIN": {
+   "code": "SLIN",
+   "name": "Select Committee on Intelligence",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.intelligence.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SLIA": {
+   "code": "SLIA",
+   "name": "Indian Affairs",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.indian.senate.gov/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SLET": {
+   "code": "SLET",
+   "name": "Select Committee on Ethics",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.ethics.senate.gov/public/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "JSEC": {
+   "code": "JSEC",
+   "name": "Joint Economic Committee",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.jec.senate.gov/public/",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "JSLC": {
+   "code": "JSLC",
+   "name": "Joint Committee on the Library",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.senate.gov/general/committee_membership/committee_memberships_JSLC.htm",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "JSPR": {
+   "code": "JSPR",
+   "name": "Joint Committee on Printing",
+   "chamber": "senate",
+   "parent": null,
+   "website": "https://www.senate.gov/general/committee_membership/committee_memberships_JSPR.htm",
+   "website_source_url": "https://www.senate.gov/committees/",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "JSTX": {
+   "code": "JSTX",
+   "name": "Joint Committee on Taxation",
+   "chamber": "senate",
+   "parent": null,
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG00": {
+   "code": "AG00",
+   "name": "Committee on Agriculture",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://agriculture.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/AG00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "AP00": {
+   "code": "AP00",
+   "name": "Committee on Appropriations",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://appropriations.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/AP00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "AS00": {
+   "code": "AS00",
+   "name": "Committee on Armed Services",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://armedservices.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/AS00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "BU00": {
+   "code": "BU00",
+   "name": "Committee on the Budget",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://budget.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/BU00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "ED00": {
+   "code": "ED00",
+   "name": "Committee on Education and Workforce",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://edworkforce.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/ED00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "IF00": {
+   "code": "IF00",
+   "name": "Committee on Energy and Commerce",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://energycommerce.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/IF00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SO00": {
+   "code": "SO00",
+   "name": "Committee on Ethics",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://ethics.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/SO00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "BA00": {
+   "code": "BA00",
+   "name": "Committee on Financial Services",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://financialservices.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/BA00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "FA00": {
+   "code": "FA00",
+   "name": "Committee on Foreign Affairs",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://foreignaffairs.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/FA00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "HM00": {
+   "code": "HM00",
+   "name": "Committee on Homeland Security",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://homeland.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/HM00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "HA00": {
+   "code": "HA00",
+   "name": "Committee on House Administration",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://cha.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/HA00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "JU00": {
+   "code": "JU00",
+   "name": "Committee on the Judiciary",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://judiciary.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/JU00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "II00": {
+   "code": "II00",
+   "name": "Committee on Natural Resources",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://naturalresources.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/II00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "GO00": {
+   "code": "GO00",
+   "name": "Committee on Oversight and Government Reform",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://oversight.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/GO00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "RU00": {
+   "code": "RU00",
+   "name": "Committee on Rules",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://rules.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/RU00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SY00": {
+   "code": "SY00",
+   "name": "Committee on Science, Space, and Technology",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://science.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/SY00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "SM00": {
+   "code": "SM00",
+   "name": "Committee on Small Business",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://smallbusiness.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/SM00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "PW00": {
+   "code": "PW00",
+   "name": "Committee on Transportation and Infrastructure",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://transportation.house.gov/splash.aspx",
+   "website_source_url": "https://clerk.house.gov/committees/PW00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "VR00": {
+   "code": "VR00",
+   "name": "Committee on Veterans' Affairs",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://veterans.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/VR00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "WM00": {
+   "code": "WM00",
+   "name": "Committee on Ways and Means",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://waysandmeans.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/WM00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "IG00": {
+   "code": "IG00",
+   "name": "Permanent Select Committee on Intelligence",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://intelligence.house.gov/",
+   "website_source_url": "https://clerk.house.gov/committees/IG00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "ZS00": {
+   "code": "ZS00",
+   "name": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+   "chamber": "house",
+   "parent": null,
+   "website": "https://chinaselectcommittee.house.gov/",
+   "website_source_url": "https://www.house.gov/committees",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "EC00": {
+   "code": "EC00",
+   "name": "Joint Economic Committee",
+   "chamber": "joint",
+   "parent": null,
+   "website": "https://www.jec.senate.gov/public/",
+   "website_source_url": "https://clerk.house.gov/committees/EC00",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "JL00": {
+   "code": "JL00",
+   "name": "Joint Committee on the Library",
+   "chamber": "joint",
+   "parent": null,
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JP00": {
+   "code": "JP00",
+   "name": "Joint Committee on Printing",
+   "chamber": "joint",
+   "parent": null,
+   "website": "https://cha.house.gov/joint-committee-on-printing",
+   "website_source_url": "https://www.house.gov/committees",
+   "website_retrieved_at": "2026-11-17T02:54:55+00:00"
+  },
+  "IT00": {
+   "code": "IT00",
+   "name": "Joint Committee on Taxation",
+   "chamber": "joint",
+   "parent": null,
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG22": {
+   "code": "AG22",
+   "name": "Commodity Markets, Digital Assets, and Rural Development Subcommittee",
+   "chamber": "house",
+   "parent": "AG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG14": {
+   "code": "AG14",
+   "name": "Conservation, Research, and Biotechnology Subcommittee",
+   "chamber": "house",
+   "parent": "AG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG15": {
+   "code": "AG15",
+   "name": "Forestry and Horticulture Subcommittee",
+   "chamber": "house",
+   "parent": "AG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG16": {
+   "code": "AG16",
+   "name": "General Farm Commodities, Risk Management, and Credit Subcommittee",
+   "chamber": "house",
+   "parent": "AG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG29": {
+   "code": "AG29",
+   "name": "Livestock, Dairy, and Poultry Subcommittee",
+   "chamber": "house",
+   "parent": "AG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AG03": {
+   "code": "AG03",
+   "name": "Nutrition and Foreign Agriculture Subcommittee",
+   "chamber": "house",
+   "parent": "AG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP01": {
+   "code": "AP01",
+   "name": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP19": {
+   "code": "AP19",
+   "name": "Commerce, Justice, Science, and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP02": {
+   "code": "AP02",
+   "name": "Defense Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP10": {
+   "code": "AP10",
+   "name": "Energy and Water Development and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP23": {
+   "code": "AP23",
+   "name": "Financial Services and General Government Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP15": {
+   "code": "AP15",
+   "name": "Homeland Security Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP06": {
+   "code": "AP06",
+   "name": "Interior, Environment, and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP07": {
+   "code": "AP07",
+   "name": "Labor, Health and Human Services, Education, and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP24": {
+   "code": "AP24",
+   "name": "Legislative Branch Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP18": {
+   "code": "AP18",
+   "name": "Military Construction, Veterans Affairs, and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP04": {
+   "code": "AP04",
+   "name": "National Security, Department of State, and Related Programs Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AP20": {
+   "code": "AP20",
+   "name": "Transportation, Housing and Urban Development, and Related Agencies Subcommittee",
+   "chamber": "house",
+   "parent": "AP00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS35": {
+   "code": "AS35",
+   "name": "Cyber, Information Technologies, and Innovation Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS26": {
+   "code": "AS26",
+   "name": "Intelligence and Special Operations Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS02": {
+   "code": "AS02",
+   "name": "Military Personnel Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS03": {
+   "code": "AS03",
+   "name": "Readiness Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS28": {
+   "code": "AS28",
+   "name": "Seapower and Projection Forces Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS29": {
+   "code": "AS29",
+   "name": "Strategic Forces Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "AS25": {
+   "code": "AS25",
+   "name": "Tactical Air and Land Forces Subcommittee",
+   "chamber": "house",
+   "parent": "AS00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "ED14": {
+   "code": "ED14",
+   "name": "Early Childhood, Elementary, and Secondary Education Subcommittee",
+   "chamber": "house",
+   "parent": "ED00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "ED02": {
+   "code": "ED02",
+   "name": "Health, Employment, Labor, and Pensions Subcommittee",
+   "chamber": "house",
+   "parent": "ED00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "ED13": {
+   "code": "ED13",
+   "name": "Higher Education and Workforce Development Subcommittee",
+   "chamber": "house",
+   "parent": "ED00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "ED10": {
+   "code": "ED10",
+   "name": "Workforce Protections Subcommittee",
+   "chamber": "house",
+   "parent": "ED00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IF17": {
+   "code": "IF17",
+   "name": "Commerce, Manufacturing, and Trade Subcommittee",
+   "chamber": "house",
+   "parent": "IF00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IF16": {
+   "code": "IF16",
+   "name": "Communications and Technology Subcommittee",
+   "chamber": "house",
+   "parent": "IF00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IF03": {
+   "code": "IF03",
+   "name": "Energy Subcommittee",
+   "chamber": "house",
+   "parent": "IF00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IF18": {
+   "code": "IF18",
+   "name": "Environment Subcommittee",
+   "chamber": "house",
+   "parent": "IF00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IF14": {
+   "code": "IF14",
+   "name": "Health Subcommittee",
+   "chamber": "house",
+   "parent": "IF00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IF02": {
+   "code": "IF02",
+   "name": "Oversight and Investigations Subcommittee",
+   "chamber": "house",
+   "parent": "IF00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "BA16": {
+   "code": "BA16",
+   "name": "Capital Markets Subcommittee",
+   "chamber": "house",
+   "parent": "BA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "BA21": {
+   "code": "BA21",
+   "name": "Digital Assets, Financial Technology, and Artificial Intelligence Subcommittee",
+   "chamber": "house",
+   "parent": "BA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "BA20": {
+   "code": "BA20",
+   "name": "Financial Institutions Subcommittee",
+   "chamber": "house",
+   "parent": "BA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "BA04": {
+   "code": "BA04",
+   "name": "Housing and Insurance Subcommittee",
+   "chamber": "house",
+   "parent": "BA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "BA10": {
+   "code": "BA10",
+   "name": "National Security, Illicit Finance, and International Financial Institutions Subcommittee",
+   "chamber": "house",
+   "parent": "BA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "BA09": {
+   "code": "BA09",
+   "name": "Oversight and Investigations Subcommittee",
+   "chamber": "house",
+   "parent": "BA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA16": {
+   "code": "FA16",
+   "name": "Africa Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA05": {
+   "code": "FA05",
+   "name": "East Asia and Pacific Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA14": {
+   "code": "FA14",
+   "name": "Europe Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA13": {
+   "code": "FA13",
+   "name": "Middle East and North Africa Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA17": {
+   "code": "FA17",
+   "name": "Oversight and Intelligence Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA19": {
+   "code": "FA19",
+   "name": "South and Central Asia Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "FA07": {
+   "code": "FA07",
+   "name": "Western Hemisphere Subcommittee",
+   "chamber": "house",
+   "parent": "FA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HM11": {
+   "code": "HM11",
+   "name": "Border Security and Enforcement Subcommittee",
+   "chamber": "house",
+   "parent": "HM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HM05": {
+   "code": "HM05",
+   "name": "Counterterrorism and Intelligence Subcommittee",
+   "chamber": "house",
+   "parent": "HM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HM08": {
+   "code": "HM08",
+   "name": "Cybersecurity and Infrastructure Protection Subcommittee",
+   "chamber": "house",
+   "parent": "HM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HM12": {
+   "code": "HM12",
+   "name": "Emergency Management and Technology Subcommittee",
+   "chamber": "house",
+   "parent": "HM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HM09": {
+   "code": "HM09",
+   "name": "Oversight, Investigations, and Accountability Subcommittee",
+   "chamber": "house",
+   "parent": "HM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HM07": {
+   "code": "HM07",
+   "name": "Transportation and Maritime Security Subcommittee",
+   "chamber": "house",
+   "parent": "HM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HA08": {
+   "code": "HA08",
+   "name": "Elections Subcommittee",
+   "chamber": "house",
+   "parent": "HA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "HA27": {
+   "code": "HA27",
+   "name": "Modernization and Innovation Subcommittee",
+   "chamber": "house",
+   "parent": "HA00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JU03": {
+   "code": "JU03",
+   "name": "Courts, Intellectual Property, Artificial Intelligence, and the Internet Subcommittee",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JU08": {
+   "code": "JU08",
+   "name": "Crime and Federal Government Surveillance Subcommittee",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JU01": {
+   "code": "JU01",
+   "name": "Immigration Integrity, Security, and Enforcement Subcommittee",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JU13": {
+   "code": "JU13",
+   "name": "Oversight Subcommittee",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JU05": {
+   "code": "JU05",
+   "name": "The Administrative State, Regulatory Reform, and Antitrust Subcommittee",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "JU10": {
+   "code": "JU10",
+   "name": "The Constitution and Limited Government Subcommittee",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "QJ00": {
+   "code": "QJ00",
+   "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+   "chamber": "house",
+   "parent": "JU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "II06": {
+   "code": "II06",
+   "name": "Energy and Mineral Resources Subcommittee",
+   "chamber": "house",
+   "parent": "II00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "II10": {
+   "code": "II10",
+   "name": "Federal Lands Subcommittee",
+   "chamber": "house",
+   "parent": "II00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "II24": {
+   "code": "II24",
+   "name": "Indian and Insular Affairs Subcommittee",
+   "chamber": "house",
+   "parent": "II00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "II15": {
+   "code": "II15",
+   "name": "Oversight and Investigations Subcommittee",
+   "chamber": "house",
+   "parent": "II00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "II13": {
+   "code": "II13",
+   "name": "Water, Wildlife and Fisheries Subcommittee",
+   "chamber": "house",
+   "parent": "II00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO12": {
+   "code": "GO12",
+   "name": "Cybersecurity, Information Technology, and Government Innovation Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO16": {
+   "code": "GO16",
+   "name": "Delivering on Government Efficiency Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO05": {
+   "code": "GO05",
+   "name": "Economic Growth, Energy Policy, and Regulatory Affairs Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO33": {
+   "code": "GO33",
+   "name": "Federal Law Enforcement Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO24": {
+   "code": "GO24",
+   "name": "Government Operations Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO27": {
+   "code": "GO27",
+   "name": "Health Care and Financial Services Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "GO06": {
+   "code": "GO06",
+   "name": "Military and Foreign Affairs Subcommittee",
+   "chamber": "house",
+   "parent": "GO00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "RU02": {
+   "code": "RU02",
+   "name": "Legislative and Budget Process Subcommittee",
+   "chamber": "house",
+   "parent": "RU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "RU04": {
+   "code": "RU04",
+   "name": "Rules and Organization of the House Subcommittee",
+   "chamber": "house",
+   "parent": "RU00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SY20": {
+   "code": "SY20",
+   "name": "Energy Subcommittee",
+   "chamber": "house",
+   "parent": "SY00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SY18": {
+   "code": "SY18",
+   "name": "Environment Subcommittee",
+   "chamber": "house",
+   "parent": "SY00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SY21": {
+   "code": "SY21",
+   "name": "Investigations and Oversight Subcommittee",
+   "chamber": "house",
+   "parent": "SY00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SY15": {
+   "code": "SY15",
+   "name": "Research and Technology Subcommittee",
+   "chamber": "house",
+   "parent": "SY00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SY16": {
+   "code": "SY16",
+   "name": "Space and Aeronautics Subcommittee",
+   "chamber": "house",
+   "parent": "SY00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SM23": {
+   "code": "SM23",
+   "name": "Contracting and Infrastructure Subcommittee",
+   "chamber": "house",
+   "parent": "SM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SM27": {
+   "code": "SM27",
+   "name": "Economic Growth, Tax, and Capital Access Subcommittee",
+   "chamber": "house",
+   "parent": "SM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SM22": {
+   "code": "SM22",
+   "name": "Innovation, Entrepreneurship, and Workforce Development Subcommittee",
+   "chamber": "house",
+   "parent": "SM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SM24": {
+   "code": "SM24",
+   "name": "Oversight, Investigations, and Regulations Subcommittee",
+   "chamber": "house",
+   "parent": "SM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "SM21": {
+   "code": "SM21",
+   "name": "Rural Development, Energy, and Supply Chains Subcommittee",
+   "chamber": "house",
+   "parent": "SM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "PW05": {
+   "code": "PW05",
+   "name": "Aviation Subcommittee",
+   "chamber": "house",
+   "parent": "PW00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "PW07": {
+   "code": "PW07",
+   "name": "Coast Guard and Maritime Transportation Subcommittee",
+   "chamber": "house",
+   "parent": "PW00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "PW13": {
+   "code": "PW13",
+   "name": "Economic Development, Public Buildings, and Emergency Management Subcommittee",
+   "chamber": "house",
+   "parent": "PW00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "PW12": {
+   "code": "PW12",
+   "name": "Highways and Transit Subcommittee",
+   "chamber": "house",
+   "parent": "PW00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "PW14": {
+   "code": "PW14",
+   "name": "Railroads, Pipelines, and Hazardous Materials Subcommittee",
+   "chamber": "house",
+   "parent": "PW00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "PW02": {
+   "code": "PW02",
+   "name": "Water Resources and Environment Subcommittee",
+   "chamber": "house",
+   "parent": "PW00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "VR09": {
+   "code": "VR09",
+   "name": "Disability Assistance and Memorial Affairs Subcommittee",
+   "chamber": "house",
+   "parent": "VR00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "VR10": {
+   "code": "VR10",
+   "name": "Economic Opportunity Subcommittee",
+   "chamber": "house",
+   "parent": "VR00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "VR03": {
+   "code": "VR03",
+   "name": "Health Subcommittee",
+   "chamber": "house",
+   "parent": "VR00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "VR08": {
+   "code": "VR08",
+   "name": "Oversight and Investigations Subcommittee",
+   "chamber": "house",
+   "parent": "VR00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "VR11": {
+   "code": "VR11",
+   "name": "Technology Modernization Subcommittee",
+   "chamber": "house",
+   "parent": "VR00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "WM02": {
+   "code": "WM02",
+   "name": "Health Subcommittee",
+   "chamber": "house",
+   "parent": "WM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "WM06": {
+   "code": "WM06",
+   "name": "Oversight Subcommittee",
+   "chamber": "house",
+   "parent": "WM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "WM01": {
+   "code": "WM01",
+   "name": "Social Security Subcommittee",
+   "chamber": "house",
+   "parent": "WM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "WM05": {
+   "code": "WM05",
+   "name": "Tax Subcommittee",
+   "chamber": "house",
+   "parent": "WM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "WM04": {
+   "code": "WM04",
+   "name": "Trade Subcommittee",
+   "chamber": "house",
+   "parent": "WM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "WM03": {
+   "code": "WM03",
+   "name": "Work and Welfare Subcommittee",
+   "chamber": "house",
+   "parent": "WM00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IG01": {
+   "code": "IG01",
+   "name": "Central Intelligence Agency Subcommittee",
+   "chamber": "house",
+   "parent": "IG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IG04": {
+   "code": "IG04",
+   "name": "Defense Intelligence and Overhead Architecture Subcommittee",
+   "chamber": "house",
+   "parent": "IG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IG06": {
+   "code": "IG06",
+   "name": "National Intelligence Enterprise Subcommittee",
+   "chamber": "house",
+   "parent": "IG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IG02": {
+   "code": "IG02",
+   "name": "National Security Agency and Cyber Subcommittee",
+   "chamber": "house",
+   "parent": "IG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IG11": {
+   "code": "IG11",
+   "name": "Open Source Intelligence Subcommittee",
+   "chamber": "house",
+   "parent": "IG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  },
+  "IG09": {
+   "code": "IG09",
+   "name": "Oversight and Investigations Subcommittee",
+   "chamber": "house",
+   "parent": "IG00",
+   "website": null,
+   "website_source_url": null,
+   "website_retrieved_at": null
+  }
+ }
+}
