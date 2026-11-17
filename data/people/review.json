@@ -1,0 +1,12 @@
+{
+ "schema": "politidex.people.review.v1",
+ "status": "not_run",
+ "published_people": [],
+ "threshold": "10000.00",
+ "indiv_zip_bytes": 2602361290,
+ "indiv_zip_last_modified": "Sun, 15 Nov 2026 17:10:23 GMT",
+ "file_url": "https://www.fec.gov/files/bulk-downloads/2026/indiv26.zip",
+ "description_url": "https://www.fec.gov/campaign-finance-data/contributions-individuals-file-description/",
+ "notice": "Contributor information may not be sold or used for the purpose of soliciting contributions or for commercial purposes (52 U.S.C. \u00a7 30111(a)(4)).",
+ "reason": "The 2026 individual-contributions file is 2,602,361,290 bytes compressed. This checkpoint does not download it and does not publish any real person. Business-site, SEC, IRS Form 990, and state-registry lookups are not run. The qualification rules are implemented and covered by synthetic tests."
+}
