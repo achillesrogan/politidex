@@ -3,6 +3,8 @@ import { Playfair_Display, Crimson_Text } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import PageTrust from "@/components/PageTrust";
+import { getStats } from "@/lib/data";
 import { SITE } from "@/lib/site";
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", display: "swap" });
@@ -29,6 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <div className="border-b border-[var(--color-rule)] bg-[#fff8e1] text-center px-4 py-2 text-sm font-sans text-[#5c4400]">
           <strong>In development.</strong> Politidex is an early, unlaunched build. Coverage is incomplete, and every fact shown links to its public source.
+        </div>
+        <div className="border-b border-[var(--color-rule)] text-center px-4 py-2">
+          <PageTrust retrieved={getStats().retrieved || null} />
         </div>
         <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 py-8">{children}</main>
         <Footer />

@@ -1,4 +1,5 @@
 import PageHead from "@/components/PageHead";
+import PageTrust from "@/components/PageTrust";
 import { SITE } from "@/lib/site";
 import log from "@/data/manual/corrections-log.json";
 export const metadata = { title: "Corrections" };
@@ -8,6 +9,7 @@ export default function Corrections() {
   return (
     <div className="max-w-3xl">
       <PageHead kicker="Accountability" title="Corrections" dek="We correct errors openly. Every correction is dated and listed here." />
+      <PageTrust />
       <div className="prose-news">
         <h2>Report an error</h2>
         <p>Email <a href={`mailto:${SITE.correctionsEmail}`}>{SITE.correctionsEmail}</a> with the page link, what is wrong, and a link to a public record that shows the correct information. Please do not send private personal information about anyone.</p>
