@@ -1,15 +1,12 @@
-import fs from "node:fs";
-import path from "node:path";
 import { coverageSentence } from "@/lib/career-coverage.mjs";
+import { readCoverage } from "@/lib/career-record.mjs";
 
-export default function SourceCoverage() {
-  let year: number | null = null;
+export default function SourceCoverage({ firstYear }: { firstYear?: number | null }) {
+  let sentence = "";
   try {
-    const file = path.join(process.cwd(), "data", "career", "congress.json");
-    const data = JSON.parse(fs.readFileSync(file, "utf8")) as { earliest_year?: unknown };
-    if (Number.isInteger(data.earliest_year)) year = data.earliest_year as number;
+    sentence = coverageSentence(firstYear ?? null, readCoverage());
   } catch {
-    year = null;
+    return null;
   }
-  return <p className="mt-2 text-sm text-[var(--color-muted)]">{coverageSentence(year)}</p>;
+  return <p className="mt-2 text-sm text-[var(--color-muted)]">{sentence}</p>;
 }

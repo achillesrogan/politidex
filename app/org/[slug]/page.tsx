@@ -1,4 +1,3 @@
-import SourceCoverage from "@/components/SourceCoverage";
 import { notFound } from "next/navigation";
 import Fact from "@/components/Fact";
 import EntityLink from "@/components/EntityLink";
@@ -57,7 +56,6 @@ export default async function OrgPage({ params }: { params: Promise<{ slug: stri
           })}>{o.name}</EntityLink>
         </h1>
         <div className="mt-3"><PageTrust retrieved={latestRetrieved(members.map((m: { claim?: string }) => verified(m.claim)?.retrieved_at))} /></div>
-        <SourceCoverage />
         {o.connected_org && <p className="text-lg text-[var(--color-muted)] mt-1">Connected organization (as listed with FEC): {o.connected_org}</p>}
       </header>
       <section className="newspaper-card p-5 sm:p-6 border-l-4 !border-l-[var(--color-record)]">

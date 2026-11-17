@@ -9,6 +9,7 @@ files are refused. This script is not part of npm run build.
 """
 from __future__ import annotations
 
+import json
 import sys
 import urllib.request
 from pathlib import Path
@@ -162,6 +163,76 @@ def write_derived(saved):
     }
     write_json(ROOT / "data" / "career" / "fec.json", derived)
     print("wrote data/career/fec.json", flush=True)
+
+
+def member_committees(fec_to_bioguide, retrieved_at=None):
+    """Committees whose filed candidate id maps to one bioguide.
+
+    The map is candidate id to bioguide. A candidate id that maps to more than
+    one bioguide is omitted. Individual contribution files are not read.
+    """
+    import zipfile
+    chosen = {}
+    for cand, bio in fec_to_bioguide.items():
+        if not cand or not bio:
+            continue
+        chosen.setdefault(cand, set()).add(bio)
+    usable = {cand: next(iter(bios)) for cand, bios in chosen.items() if len(bios) == 1}
+    found = {}
+    for year in range(1980, 2028, 2):
+        path = RAW / "career-fec" / ("cm%02d.zip" % (year % 100))
+        if not path.exists():
+            continue
+        with zipfile.ZipFile(path) as archive:
+            names = [name for name in archive.namelist() if not name.endswith("/")]
+            if not names:
+                continue
+            with archive.open(names[0]) as handle:
+                for raw in handle:
+                    parts = raw.decode("latin-1").rstrip("\r\n").split("|")
+                    if len(parts) < 15:
+                        continue
+                    cand = parts[14].strip()
+                    bio = usable.get(cand)
+                    if not bio:
+                        continue
+                    committee_id = parts[0].strip()
+                    if not committee_id.startswith("C"):
+                        continue
+                    key = (bio, committee_id)
+                    row = found.get(key)
+                    if row is None:
+                        row = {
+                            "committee_id": committee_id,
+                            "name": parts[1].strip(),
+                            "candidate_id": cand,
+                            "designation": parts[8].strip(),
+                            "cycles": [],
+                        }
+                        found[key] = row
+                    if year not in row["cycles"]:
+                        row["cycles"].append(year)
+                    name = parts[1].strip()
+                    if len(name) > len(row["name"]):
+                        row["name"] = name
+    members = {}
+    for (bio, _cid), row in found.items():
+        members.setdefault(bio, []).append(row)
+    for rows in members.values():
+        rows.sort(key=lambda item: (item["cycles"][0], item["committee_id"]))
+    derived = {
+        "retrieved_at": retrieved_at or now_iso(),
+        "source_name": "Federal Election Commission",
+        "source_url": "https://www.fec.gov/files/bulk-downloads/",
+        "begins": 1980,
+        "excludes": "individual contribution files",
+        "note": "A committee is listed when its filed candidate id is an FEC id for that bioguide. The public committee page is https://www.fec.gov/data/committee/{id}/.",
+        "members": members,
+    }
+    path = ROOT / "data" / "career" / "fec-members.json"
+    path.write_text(json.dumps(derived, separators=(",", ":"), ensure_ascii=False))
+    print("wrote", path, len(members), "members", flush=True)
+    return derived
 
 
 if __name__ == "__main__":

@@ -178,7 +178,6 @@ def sponsored_of(pages):
                 "congress": congress,
                 "type": bill_type,
                 "number": str(number),
-                "url": url,
             })
     return bills
 
@@ -198,44 +197,71 @@ def read_bioguides(argv):
 
 
 def assemble(member_dir=RAW):
-    members = []
+    """Compact members keyed by bioguide. Bill URLs are rebuilt with public_bill_url."""
+    members = {}
     earliest = None
     if not member_dir.exists():
-        return {"members": [], "earliest_year": None}
+        return {"members": {}, "earliest_year": None}
     for path in sorted(member_dir.glob("*.json")):
         row = json.loads(path.read_text())
         if not row.get("complete"):
             continue
-        members.append({
-            "bioguide": row["bioguide"],
-            "url": "https://www.congress.gov/member/%s" % row["bioguide"],
+        terms = []
+        years = []
+        for term in row.get("terms") or []:
+            start = term.get("startYear")
+            if isinstance(start, int):
+                years.append(start)
+            item = {
+                "chamber": term.get("chamber"),
+                "congress": term.get("congress"),
+                "startYear": start,
+                "endYear": term.get("endYear"),
+                "state": term.get("state"),
+            }
+            if term.get("district") is not None:
+                item["district"] = term.get("district")
+            terms.append(item)
+        first = min(years) if years else row.get("earliest_year")
+        bills = []
+        for bill in row.get("sponsored_bills") or []:
+            bills.append([bill.get("congress"), bill.get("type"), str(bill.get("number"))])
+        members[row["bioguide"]] = {
+            "first_year": first,
             "retrieved_at": row.get("retrieved_at"),
-            "terms": row.get("terms") or [],
-            "sponsored_count": len(row.get("sponsored_bills") or []),
-            "sponsored_bills": row.get("sponsored_bills") or [],
-        })
-        year = row.get("earliest_year")
-        if isinstance(year, int) and (earliest is None or year < earliest):
-            earliest = year
+            "terms": terms,
+            # Sponsored bills and resolutions only. Amendments are not in this count.
+            "sponsored_bill_count": len(bills),
+            "sponsored_bills": bills,
+        }
+        if isinstance(first, int) and (earliest is None or first < earliest):
+            earliest = first
     return {
         "retrieved_at": now_iso(),
         "source_name": "Congress.gov",
         "source_url": "https://www.congress.gov/",
         "earliest_year": earliest,
         "committee_note": "The Congress.gov API has no member committee-assignment history. This file does not include committee assignments.",
-        "bill_lists": "Each sponsored bill keeps its congress, type, number, and public congress.gov URL. Titles are omitted so this derived file stays under 20 MB.",
+        "sponsored_bills_note": "sponsored_bill_count is sponsored bills and resolutions. Amendments are not included. Public bill URLs are rebuilt with public_bill_url.",
         "members": members,
     }
+
+
+def write_compact(path, obj):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, separators=(",", ":"), ensure_ascii=False))
 
 
 def paced(path, key, limit, opener, sleep):
     delay = limit.wait(time.time())
     if delay:
         sleep(delay)
+    # None selects the no-redirect opener inside fetch_json.
     return fetch_json(path, key, opener)
 
 
-def one_member(bioguide, key, limit, opener=urllib.request.urlopen, sleep=time.sleep):
+def one_member(bioguide, key, limit, opener=None, sleep=time.sleep):
     detail = paced("/member/%s?format=json" % bioguide, key, limit, opener, sleep)
     if not detail or "member" not in detail:
         return None
@@ -288,7 +314,7 @@ def main(argv):
         if row:
             write_json(dest, scrub(row))
             print("saved", bioguide, flush=True)
-    write_json(OUT, scrub(assemble()))
+    write_compact(OUT, scrub(assemble()))
     print("wrote", OUT, flush=True)
 
 

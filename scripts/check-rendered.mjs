@@ -83,6 +83,29 @@ if (fs.existsSync(summariesPath)) {
     }
   }
 }
+const peoplePath = path.join(process.cwd(), "data", "build", "site", "people.json");
+const realProfiles = fs.existsSync(peoplePath);
+for (const f of html) {
+  if (!f.includes(`${path.sep}p${path.sep}`) || f.endsWith(`${path.sep}_none.html`)) continue;
+  const t = fs.readFileSync(f, "utf8");
+  const tags = [...t.matchAll(/<[a-z]+[^>]*data-career-fact=""[^>]*>/g)];
+  if (realProfiles && !t.includes("data-career-section")) {
+    errors.push(`${path.relative(root, f)}: profile is missing the career record`);
+  }
+  for (const m of tags) {
+    facts++;
+    const tag = m[0];
+    const href = (tag.match(/data-source="([^"]*)"/) || [])[1] || "";
+    const retrieved = (tag.match(/data-retrieved="([^"]*)"/) || [])[1] || "";
+    if (!retrieved) errors.push(`${path.relative(root, f)}: career fact has no retrieval date`);
+    let host = "";
+    try { host = new URL(href).hostname.toLowerCase().replace(/\.$/, ""); } catch { host = ""; }
+    const allowed = host === "congress.gov" || host.endsWith(".congress.gov") || host === "fec.gov" || host.endsWith(".fec.gov") || host === "lda.gov" || host.endsWith(".lda.gov");
+    if (!allowed || host === "api.congress.gov" || href.includes("api.congress.gov")) {
+      errors.push(`${path.relative(root, f)}: career fact source is not a public congress.gov, fec.gov, or lda.gov URL`);
+    }
+  }
+}
 console.log(`check-rendered: ${html.length} HTML pages, ${facts} rendered facts checked, ${PRIVATE.length} private denylist terms`);
 if (errors.length) { console.error(errors.slice(0, 60).join("\n")); console.error(`check-rendered FAILED: ${errors.length} problems`); process.exit(1); }
 console.log("check-rendered: OK — every rendered fact has a verified source; OPSEC patterns clean; noindex present");
