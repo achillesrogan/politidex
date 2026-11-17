@@ -202,6 +202,52 @@ def test_derived_outputs_are_compact_and_key_free():
     )
 
 
+def test_member_committees_do_not_mix_years():
+    print("fec committees")
+    import zipfile
+    import tempfile
+    raw = Path(tempfile.mkdtemp())
+
+    def zip_text(name, lines):
+        path = raw / name
+        with zipfile.ZipFile(path, "w") as archive:
+            archive.writestr(name.replace(".zip", ".txt"), "\n".join(lines) + "\n")
+
+    def cm(committee_id, name, designation, cand):
+        parts = [""] * 15
+        parts[0] = committee_id
+        parts[1] = name
+        parts[8] = designation
+        parts[14] = cand
+        return "|".join(parts)
+
+    def ccl(committee_id, cand, designation, year):
+        return "|".join([cand, str(year), str(year), committee_id, "H", designation, "1"])
+
+    zip_text("cm24.zip", [cm("C00000001", "OLD PAC", "A", "H0TX00001")])
+    zip_text("ccl24.zip", [ccl("C00000001", "H0TX00001", "A", 2024)])
+    zip_text("cm26.zip", [cm("C00000001", "DON'T MESS WITH TEXAS PAC 2026", "P", "H0TX00001")])
+    zip_text("ccl26.zip", [ccl("C00000001", "H0TX00001", "P", 2026)])
+    zip_text("cm22.zip", [
+        cm("C00000002", "MUSLIMS OF UNITED STATES OF AMERICA PAC", "U", "H0VA00001"),
+        cm("C00000003", "SAVE AMERICA PAC II", "D", "S0ID00001"),
+        cm("C00000004", "SAIL TO VICTORY", "J", "H0TX00001"),
+    ])
+    zip_text("ccl22.zip", [
+        ccl("C00000002", "H0VA00001", "U", 2022),
+        ccl("C00000003", "S0ID00001", "D", 2022),
+        ccl("C00000004", "H0TX00001", "J", 2022),
+    ])
+    derived = F.member_committees({"H0TX00001": "J000000", "H0VA00001": "W000000", "S0ID00001": "R000000"}, root=raw, write=False)
+    rows = derived["members"].get("J000000") or []
+    texts = [(row["name"], row["designation"], row["cycles"]) for row in rows]
+    check("each year's name stays with that year's designation", ("DON'T MESS WITH TEXAS PAC 2026", "P", [2026]) in texts and ("OLD PAC", "A", [2024]) in texts)
+    check("the 2026 name is not stored with the earlier designation", not any(row["name"].endswith("2026") and row["designation"] != "P" for row in rows))
+    check("unauthorized and leadership committees are omitted", "W000000" not in derived["members"] and "R000000" not in derived["members"])
+    check("a joint fundraising committee is kept", any(row["designation"] == "J" and row["name"] == "SAIL TO VICTORY" for row in rows))
+    check("the crosswalk source is recorded", derived["id_crosswalk"]["source_url"].startswith("https://github.com/unitedstates/congress-legislators"))
+
+
 def test_build_does_not_download():
     print("build")
     prebuild = json.loads(Path(__file__).resolve().parents[1].joinpath("package.json").read_text())["scripts"]["prebuild"]
@@ -213,6 +259,7 @@ if __name__ == "__main__":
     test_congress_script()
     test_default_openers_do_not_forward_the_key()
     test_derived_outputs_are_compact_and_key_free()
+    test_member_committees_do_not_mix_years()
     test_build_does_not_download()
     if failures:
         print("FAILED", len(failures))

@@ -84,12 +84,21 @@ if (fs.existsSync(summariesPath)) {
   }
 }
 const peoplePath = path.join(process.cwd(), "data", "build", "site", "people.json");
-const realProfiles = fs.existsSync(peoplePath);
+const peopleBySlug = new Map();
+if (fs.existsSync(peoplePath)) {
+  for (const person of JSON.parse(fs.readFileSync(peoplePath, "utf8")).people || []) {
+    if (person && person.slug) peopleBySlug.set(person.slug, person);
+  }
+}
 for (const f of html) {
   if (!f.includes(`${path.sep}p${path.sep}`) || f.endsWith(`${path.sep}_none.html`)) continue;
+  const slug = path.basename(f, ".html");
+  const person = peopleBySlug.get(slug);
+  // Executive profiles have no bioguide id, so they have no Congress.gov career record.
+  if (!person || !person.bioguide) continue;
   const t = fs.readFileSync(f, "utf8");
   const tags = [...t.matchAll(/<[a-z]+[^>]*data-career-fact=""[^>]*>/g)];
-  if (realProfiles && !t.includes("data-career-section")) {
+  if (!t.includes("data-career-section")) {
     errors.push(`${path.relative(root, f)}: profile is missing the career record`);
   }
   for (const m of tags) {

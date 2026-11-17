@@ -34,6 +34,7 @@ export default function CareerRecord({ career }: { career: Career }) {
     <RecordModule title="Career">
       <div data-career-section="">
         <h3 className="font-display text-xl font-bold mt-1 mb-2">Terms</h3>
+        <p className="text-sm text-[var(--color-muted)] mb-2">Congress.gov records a special-election or appointed start as that Congress&apos;s start year.</p>
         <ul className="grid gap-2 mb-4">
           {career.terms.map((term) => (
             <Cited key={term.text} text={term.text} href={term.href} retrieved={term.retrieved_at} sourceName={term.source_name} />
@@ -67,14 +68,6 @@ export default function CareerRecord({ career }: { career: Career }) {
                   <a className="link text-sm" href={row.bulk} rel="noopener noreferrer">Bulk file</a>
                 </Cited>
               ))}
-            </ul>
-          </>
-        )}
-        {career.lobbying && (
-          <>
-            <h3 className="font-display text-xl font-bold mb-2">Lobbying filings</h3>
-            <ul className="grid gap-2">
-              <Cited text={career.lobbying.text} href={career.lobbying.href} retrieved={career.lobbying.retrieved_at} sourceName={career.lobbying.source_name} />
             </ul>
           </>
         )}

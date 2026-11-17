@@ -165,73 +165,140 @@ def write_derived(saved):
     print("wrote data/career/fec.json", flush=True)
 
 
-def member_committees(fec_to_bioguide, retrieved_at=None):
-    """Committees whose filed candidate id maps to one bioguide.
+# Principal, authorized, and joint fundraising. Unauthorized (U) and leadership (D) stay out.
+KEEP_DESIGNATIONS = frozenset({"P", "A", "J"})
+CROSSWALK = {
+    "source_name": "unitedstates/congress-legislators",
+    "source_url": "https://github.com/unitedstates/congress-legislators",
+    "files": [
+        "https://unitedstates.github.io/congress-legislators/legislators-current.json",
+        "https://unitedstates.github.io/congress-legislators/legislators-historical.json",
+    ],
+    "license": "CC0 1.0",
+    "note": "The FEC candidate master has no bioguide field. This public-domain index is the bioguide-to-FEC-candidate-id crosswalk.",
+}
+# The candidate-committee linkage file is published from the 2000 cycle forward.
+CCL_FROM = 2000
 
-    The map is candidate id to bioguide. A candidate id that maps to more than
-    one bioguide is omitted. Individual contribution files are not read.
-    """
+
+def _zip_rows_split(path):
     import zipfile
-    chosen = {}
-    for cand, bio in fec_to_bioguide.items():
-        if not cand or not bio:
-            continue
-        chosen.setdefault(cand, set()).add(bio)
-    usable = {cand: next(iter(bios)) for cand, bios in chosen.items() if len(bios) == 1}
-    found = {}
+    with zipfile.ZipFile(path) as archive:
+        names = [name for name in archive.namelist() if not name.endswith("/")]
+        if not names:
+            return
+        with archive.open(names[0]) as handle:
+            for raw in handle:
+                yield raw.decode("latin-1").rstrip("\r\n").split("|")
+
+
+def load_bioguide_fec_ids(current_path=None, historical_path=None):
+    """FEC candidate id to bioguide, from the public-domain legislators index."""
+    current_path = Path(current_path or (RAW / "legislators-current.json"))
+    historical_path = Path(historical_path or (RAW / "legislators-historical.json"))
+    if not current_path.exists() or not historical_path.exists():
+        return None
+    mapping = {}
+    for path in (current_path, historical_path):
+        people = json.loads(path.read_text())
+        if isinstance(people, dict):
+            people = people.get("persons") or people.get("people") or []
+        for person in people:
+            bio = (person.get("id") or {}).get("bioguide")
+            for fec in (person.get("id") or {}).get("fec") or []:
+                if bio and fec:
+                    mapping.setdefault(fec, set()).add(bio)
+    return {fec: next(iter(bios)) for fec, bios in mapping.items() if len(bios) == 1}
+
+
+def member_committees(fec_to_bioguide, retrieved_at=None, root=None, write=True):
+    """P, A, and J committees, name and designation kept as filed in each cycle.
+
+    From 2000, a row is kept only when that cycle's linkage file and committee
+    master both name the same candidate, committee, and designation. Earlier
+    cycles have no linkage file, so the committee master's own candidate id
+    and designation are used. Unauthorized and leadership designations are
+    omitted. Individual contribution files are not read.
+    """
+    usable = {}
+    for cand, bios in fec_to_bioguide.items():
+        if isinstance(bios, str):
+            bios = {bios}
+        if cand and len(bios) == 1:
+            usable[cand] = next(iter(bios))
+    raw_root = Path(root) if root is not None else RAW / "career-fec"
+    grouped = {}
     for year in range(1980, 2028, 2):
-        path = RAW / "career-fec" / ("cm%02d.zip" % (year % 100))
-        if not path.exists():
+        cm_path = raw_root / ("cm%02d.zip" % (year % 100))
+        if not cm_path.exists():
             continue
-        with zipfile.ZipFile(path) as archive:
-            names = [name for name in archive.namelist() if not name.endswith("/")]
-            if not names:
+        master = {}
+        for parts in _zip_rows_split(cm_path):
+            if len(parts) < 15:
                 continue
-            with archive.open(names[0]) as handle:
-                for raw in handle:
-                    parts = raw.decode("latin-1").rstrip("\r\n").split("|")
-                    if len(parts) < 15:
-                        continue
-                    cand = parts[14].strip()
-                    bio = usable.get(cand)
-                    if not bio:
-                        continue
-                    committee_id = parts[0].strip()
-                    if not committee_id.startswith("C"):
-                        continue
-                    key = (bio, committee_id)
-                    row = found.get(key)
-                    if row is None:
-                        row = {
-                            "committee_id": committee_id,
-                            "name": parts[1].strip(),
-                            "candidate_id": cand,
-                            "designation": parts[8].strip(),
-                            "cycles": [],
-                        }
-                        found[key] = row
-                    if year not in row["cycles"]:
-                        row["cycles"].append(year)
-                    name = parts[1].strip()
-                    if len(name) > len(row["name"]):
-                        row["name"] = name
+            committee_id = parts[0].strip()
+            if not committee_id.startswith("C"):
+                continue
+            master[committee_id] = {
+                "name": parts[1].strip(),
+                "designation": parts[8].strip().upper(),
+                "candidate_id": parts[14].strip(),
+            }
+        ccl_path = raw_root / ("ccl%02d.zip" % (year % 100))
+        if year >= CCL_FROM and ccl_path.exists():
+            for parts in _zip_rows_split(ccl_path):
+                if len(parts) < 6:
+                    continue
+                if parts[2].strip() != str(year):
+                    continue
+                cand = parts[0].strip()
+                committee_id = parts[3].strip()
+                designation = parts[5].strip().upper()
+                if designation not in KEEP_DESIGNATIONS:
+                    continue
+                bio = usable.get(cand)
+                filed = master.get(committee_id)
+                if not bio or not filed:
+                    continue
+                if filed["candidate_id"] != cand or filed["designation"] != designation:
+                    continue
+                key = (bio, committee_id, filed["name"], designation, cand)
+                grouped.setdefault(key, []).append(year)
+        elif year < CCL_FROM:
+            for committee_id, filed in master.items():
+                cand = filed["candidate_id"]
+                designation = filed["designation"]
+                bio = usable.get(cand)
+                if not bio or designation not in KEEP_DESIGNATIONS:
+                    continue
+                key = (bio, committee_id, filed["name"], designation, cand)
+                grouped.setdefault(key, []).append(year)
     members = {}
-    for (bio, _cid), row in found.items():
-        members.setdefault(bio, []).append(row)
+    for (bio, committee_id, name, designation, cand), cycles in grouped.items():
+        members.setdefault(bio, []).append({
+            "committee_id": committee_id,
+            "name": name,
+            "candidate_id": cand,
+            "designation": designation,
+            "cycles": cycles,
+        })
     for rows in members.values():
-        rows.sort(key=lambda item: (item["cycles"][0], item["committee_id"]))
+        rows.sort(key=lambda item: (item["cycles"][0], item["committee_id"], item["name"]))
     derived = {
         "retrieved_at": retrieved_at or now_iso(),
         "source_name": "Federal Election Commission",
         "source_url": "https://www.fec.gov/files/bulk-downloads/",
         "begins": 1980,
         "excludes": "individual contribution files",
-        "note": "A committee is listed when its filed candidate id is an FEC id for that bioguide. The public committee page is https://www.fec.gov/data/committee/{id}/.",
+        "designations": "P principal, A authorized, J joint fundraising. U and D are omitted.",
+        "linkage": "From 2000, the candidate-committee linkage file and the committee master must agree on candidate, committee, and designation. Before that file, the committee master's candidate id is used.",
+        "id_crosswalk": CROSSWALK,
         "members": members,
     }
-    path = ROOT / "data" / "career" / "fec-members.json"
-    path.write_text(json.dumps(derived, separators=(",", ":"), ensure_ascii=False))
-    print("wrote", path, len(members), "members", flush=True)
+    if write:
+        path = ROOT / "data" / "career" / "fec-members.json"
+        path.write_text(json.dumps(derived, separators=(",", ":"), ensure_ascii=False))
+        print("wrote", path, len(members), "members", flush=True)
     return derived
 
 
@@ -240,3 +307,9 @@ if __name__ == "__main__":
     if "--cycle" in sys.argv:
         chosen = [int(sys.argv[sys.argv.index("--cycle") + 1])]
     fetch(chosen)
+    ids = load_bioguide_fec_ids()
+    if ids:
+        fec = json.loads((ROOT / "data" / "career" / "fec.json").read_text())
+        member_committees(ids, retrieved_at=fec.get("retrieved_at"))
+    else:
+        print("skip member committees; legislators crosswalk is not in data/raw", flush=True)
