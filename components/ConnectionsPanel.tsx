@@ -1,7 +1,8 @@
-import Link from "next/link";
 import Fact from "@/components/Fact";
+import EntityLink from "@/components/EntityLink";
 import SourceCard from "@/components/SourceCard";
 import { verified, fmtUSD, claims as allClaims } from "@/lib/data";
+import { entityRecord } from "@/lib/entity-registry.mjs";
 import { orgCategoryLabel, designationLabel, committeeTypeLabel } from "@/lib/labels";
 import type { SourceCardInfo, SourceLink } from "@/components/SourceCard";
 import { fmtDate } from "@/lib/dates";
@@ -41,6 +42,22 @@ function ieSummary(r: any, personName: string, retrieved?: string) {
   const verb = r.support_oppose === "S" || r.support_oppose_full === "Support" ? "support" : "oppose";
   const rec = retrieved ? `, retrieved ${fmtDate(retrieved)}` : "";
   return `${n} ${noun} by ${r.spender_name} to ${verb} ${personName} totaling ${fmtUSD(r.total)} in the 2026 cycle (FEC bulk data${rec}).`;
+}
+
+function linkedName(kind: string, name: string | null | undefined, officialId: string | null | undefined, claimId: string | null | undefined, href?: string | null, sourceUrl?: string | null) {
+  const claim = verified(claimId);
+  if (!claim || !name) return null;
+  return entityRecord({
+    kind,
+    name,
+    official_id: officialId,
+    source_name: claim.source_name,
+    source_url: sourceUrl || claim.source_url,
+    retrieved_at: claim.retrieved_at,
+    href,
+    amended: claim.check?.amended === true,
+    review_status: typeof claim.check?.review_status === "string" ? claim.check.review_status : undefined,
+  });
 }
 
 function fecLinks(r: any, c: any): SourceLink[] {
@@ -146,7 +163,7 @@ export default function ConnectionsPanel({
                   <li key={r.claim} className="border-b border-[var(--color-rule)]/60 pb-2">
                     <SourceCard card={card}>
                       <Fact claim={r.claim}>
-                        {r.org_slug ? <Link className="link" href={`/org/${r.org_slug}`}>{r.giver_name}</Link> : r.giver_name}
+                        <EntityLink entity={linkedName("pac", r.giver_name, r.giver_id, r.claim, r.org_slug ? `/org/${r.org_slug}` : null, r.disbursements_url)}>{r.giver_name}</EntityLink>
                         {" — "}
                         {fmtUSD(r.total)}
                         <span className="text-[var(--color-muted)] text-sm">
@@ -194,7 +211,8 @@ export default function ConnectionsPanel({
                       <Fact claim={r.claim}>
                         This filing&apos;s issue text lists {r.bill_label}. {personName} {r.role === "sponsor" ? "sponsored" : "cosponsored"} {r.bill_label} (119th Congress)
                         {" — "}
-                        {r.client_slug ? <Link className="link" href={`/org/${r.client_slug}`}>{r.client_name}</Link> : r.client_name}
+                        <EntityLink entity={linkedName("client", r.client_name, r.client_id, r.claim, r.client_slug ? `/org/${r.client_slug}` : null, r.document_url)}>{r.client_name}</EntityLink>
+                        {r.registrant_name ? <> {" "}(registrant <EntityLink entity={linkedName("registrant", r.registrant_name, r.registrant_id, r.claim, r.registrant_slug ? `/org/${r.registrant_slug}` : null, r.document_url)}>{r.registrant_name}</EntityLink>)</> : null}
                         {r.bill_title ? <span className="text-[var(--color-muted)] text-sm"> ({r.bill_title})</span> : null}
                       </Fact>
                     </SourceCard>
@@ -227,7 +245,7 @@ export default function ConnectionsPanel({
                   <li key={r.claim} className="border-b border-[var(--color-rule)]/60 pb-2">
                     <SourceCard card={card}>
                       <Fact claim={r.claim}>
-                        {r.org_slug ? <Link className="link" href={`/org/${r.org_slug}`}>{r.spender_name}</Link> : r.spender_name}
+                        <EntityLink entity={linkedName("pac", r.spender_name, r.spender_id, r.claim, r.org_slug ? `/org/${r.org_slug}` : null)}>{r.spender_name}</EntityLink>
                         {" — "}
                         {r.support_oppose_full}
                         {" "}
@@ -250,7 +268,7 @@ export default function ConnectionsPanel({
                 {people.map((c: any) => (
                   <li key={c.partner}>
                     <Fact claim={c.claim}>
-                      {c.partner_slug ? <Link className="link" href={`/p/${c.partner_slug}`}>{c.partner_name}</Link> : c.partner_name}
+                      <EntityLink entity={linkedName("member", c.partner_name, c.partner, c.claim, c.partner_slug ? `/p/${c.partner_slug}` : null)}>{c.partner_name}</EntityLink>
                       {" — "}{c.count} bills
                     </Fact>
                   </li>
@@ -283,7 +301,7 @@ export default function ConnectionsPanel({
                     <SourceCard card={card}>
                       <Fact claim={r.claim}>
                         {who}, registered by{" "}
-                        {r.registrant_slug ? <Link className="link" href={`/org/${r.registrant_slug}`}>{r.registrant_name}</Link> : r.registrant_name}
+                        <EntityLink entity={linkedName("registrant", r.registrant_name, r.registrant_id, r.claim, r.registrant_slug ? `/org/${r.registrant_slug}` : null, r.document_url)}>{r.registrant_name}</EntityLink>
                         {", listed a covered position: “"}
                         {r.excerpt}
                         {"”"}
