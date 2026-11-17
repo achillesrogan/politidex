@@ -51,7 +51,8 @@
     "filing_id": null
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "unverified"
+   "status": "verified",
+   "verified_at": "2026-11-17T20:34:45Z"
   },
   "profile": {
    "committee_id": "C00326389",
@@ -83,7 +84,8 @@
      "committee_id": "C00326389"
     },
     "retrieved_at": "2026-11-17T00:26:07+00:00",
-    "status": "unverified"
+    "status": "verified",
+    "verified_at": "2026-11-17T20:34:45Z"
    }
   }
  },
@@ -129,7 +131,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00063586",
@@ -161,7 +164,8 @@
        "committee_id": "C00063586"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -202,7 +206,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -247,7 +252,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00167684",
@@ -279,7 +285,8 @@
        "committee_id": "C00167684"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -320,7 +327,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -369,7 +377,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00331397",
@@ -401,7 +410,8 @@
        "committee_id": "C00331397"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -442,7 +452,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -491,7 +502,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00440362",
@@ -523,7 +535,8 @@
        "committee_id": "C00440362"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -564,7 +577,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -609,7 +623,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00771246",
@@ -641,7 +656,8 @@
        "committee_id": "C00771246"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -682,7 +698,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -731,7 +748,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00926345",
@@ -763,7 +781,8 @@
        "committee_id": "C00926345"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -804,7 +823,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -853,7 +873,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00725465",
@@ -885,7 +906,8 @@
        "committee_id": "C00725465"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -926,7 +948,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -975,7 +998,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00482737",
@@ -1007,7 +1031,8 @@
        "committee_id": "C00482737"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1048,7 +1073,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1097,7 +1123,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00501643",
@@ -1129,7 +1156,8 @@
        "committee_id": "C00501643"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1170,7 +1198,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1219,7 +1248,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00728238",
@@ -1251,7 +1281,8 @@
        "committee_id": "C00728238"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1292,7 +1323,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1341,7 +1373,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00849844",
@@ -1373,7 +1406,8 @@
        "committee_id": "C00849844"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1414,7 +1448,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1463,7 +1498,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00869370",
@@ -1495,7 +1531,8 @@
        "committee_id": "C00869370"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1536,7 +1573,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1581,7 +1619,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00002238",
@@ -1613,7 +1652,8 @@
        "committee_id": "C00002238"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1654,7 +1694,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1699,7 +1740,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00027466",
@@ -1731,7 +1773,8 @@
        "committee_id": "C00027466"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1772,7 +1815,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1817,7 +1861,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00409003",
@@ -1849,7 +1894,8 @@
        "committee_id": "C00409003"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1890,7 +1936,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1939,7 +1986,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00409581",
@@ -1971,7 +2019,8 @@
        "committee_id": "C00409581"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2012,7 +2061,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2061,7 +2111,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00412890",
@@ -2093,7 +2144,8 @@
        "committee_id": "C00412890"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2134,7 +2186,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2183,7 +2236,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00444620",
@@ -2215,7 +2269,8 @@
        "committee_id": "C00444620"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2256,7 +2311,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2301,7 +2357,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00461996",
@@ -2333,7 +2390,8 @@
        "committee_id": "C00461996"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2374,7 +2432,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2419,7 +2478,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00493072",
@@ -2451,7 +2511,8 @@
        "committee_id": "C00493072"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2492,7 +2553,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2541,7 +2603,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00499392",
@@ -2573,7 +2636,8 @@
        "committee_id": "C00499392"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2614,7 +2678,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2663,7 +2728,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00608695",
@@ -2695,7 +2761,8 @@
        "committee_id": "C00608695"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2736,7 +2803,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2785,7 +2853,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00648295",
@@ -2817,7 +2886,8 @@
        "committee_id": "C00648295"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2858,7 +2928,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2903,7 +2974,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00649574",
@@ -2935,7 +3007,8 @@
        "committee_id": "C00649574"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2976,7 +3049,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -3025,7 +3099,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00764381",
@@ -3057,7 +3132,8 @@
        "committee_id": "C00764381"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -3098,7 +3174,8 @@
       "edge_kind": "reported contribution"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -3150,7 +3227,8 @@
       "amount_cents": 47806112
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -3196,7 +3274,8 @@
       "amount_cents": 47806112
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   }

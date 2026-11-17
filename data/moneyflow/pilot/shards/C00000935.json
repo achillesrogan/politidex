@@ -51,7 +51,8 @@
     "filing_id": null
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "unverified"
+   "status": "verified",
+   "verified_at": "2026-11-17T20:34:45Z"
   },
   "profile": {
    "committee_id": "C00000935",
@@ -83,7 +84,8 @@
      "committee_id": "C00000935"
     },
     "retrieved_at": "2026-11-17T00:26:07+00:00",
-    "status": "unverified"
+    "status": "verified",
+    "verified_at": "2026-11-17T20:34:45Z"
    }
   }
  },
@@ -133,7 +135,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -173,7 +176,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -224,7 +228,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -266,7 +271,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -317,7 +323,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -359,7 +366,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -408,7 +416,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -448,7 +457,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -497,7 +507,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -537,7 +548,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -586,7 +598,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -626,7 +639,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -677,7 +691,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -719,7 +734,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -768,7 +784,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -808,7 +825,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -857,7 +875,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -897,7 +916,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -946,7 +966,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -986,7 +1007,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1035,7 +1057,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1075,7 +1098,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1126,7 +1150,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1168,7 +1193,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1219,7 +1245,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1261,7 +1288,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1310,7 +1338,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1350,7 +1379,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1401,7 +1431,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1443,7 +1474,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1494,7 +1526,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1536,7 +1569,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1585,7 +1619,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1625,7 +1660,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1676,7 +1712,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1718,7 +1755,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1767,7 +1805,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1807,7 +1846,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1858,7 +1898,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1900,7 +1941,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1949,7 +1991,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1989,7 +2032,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2038,7 +2082,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2078,7 +2123,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2127,7 +2173,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2167,7 +2214,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2216,7 +2264,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2256,7 +2305,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2305,7 +2355,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2345,7 +2396,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2399,7 +2451,8 @@
       "transaction_count": 10062
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2447,7 +2500,8 @@
       "transaction_count": 10062
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2499,7 +2553,8 @@
       "amount_cents": 7778537384
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2545,7 +2600,8 @@
       "amount_cents": 7778537384
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   }

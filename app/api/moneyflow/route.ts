@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { NextResponse } from "next/server";
-import { MONEYFLOW_CACHE, MONEYFLOW_ERROR } from "@/lib/moneyflow-http.mjs";
+import { MONEYFLOW_CACHE, MONEYFLOW_ERROR, moneyflowPublished } from "@/lib/moneyflow-http.mjs";
 
 /** Slim index. Shard files are not imported into the client bundle. */
 export function GET() {
@@ -14,7 +14,7 @@ export function GET() {
     for (const entry of purposeDoc.committees || []) {
       if (entry && entry.review_status === "approved" && entry.committee_id) purposes[entry.committee_id] = entry;
     }
-    const shown = manifest.not_in_web_bundle !== true;
+    const shown = moneyflowPublished(manifest);
     const committees = shown ? (manifest.pilot || []).map((row: { committee_id?: string; name?: string; party?: string | null; official_total_out?: string; coverage_end?: string | null; selection_rule?: string }) => ({
       committee_id: row.committee_id,
       name: row.name,
