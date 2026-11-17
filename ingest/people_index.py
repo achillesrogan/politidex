@@ -138,26 +138,32 @@ def contribution_cents(row):
         return None
     if txn in _REFUND_TYPES:
         return -abs(cents)
-    if txn == "15E":
-        return cents
     return cents
 
 
-def _identity(row):
+def _place_key(row):
+    """Name, suffix, city, and state. Work fields are not part of this key."""
     name = parse_person_name(row.get("name"))
     if not name:
         return None
     city, state = row.get("city") or "", row.get("state") or ""
-    employer, occupation = _work(row.get("employer")), _work(row.get("occupation"))
     if not all((name["last"], name["first"], city, state)):
         return None
+    return (name["last"], name["first"], name["middle"], name.get("suffix") or "", city, state)
+
+
+def _identity(row):
+    place = _place_key(row)
+    if not place:
+        return None
+    employer, occupation = _work(row.get("employer")), _work(row.get("occupation"))
     # Generic work is blank. Merging still needs one real employer or occupation.
     if not employer and not occupation:
         return None
     # Without a middle name, both work fields have to be present.
-    if not name["middle"] and (not employer or not occupation):
+    if not place[2] and (not employer or not occupation):
         return None
-    return (name["last"], name["first"], name["middle"], name.get("suffix") or "", city, state, employer, occupation)
+    return place + (employer, occupation)
 
 
 def _source(row, retrieved_at):
@@ -199,18 +205,28 @@ def _filing_rank(row):
     return (file_num, amend)
 
 
+def _dedupe_key(row):
+    """Amendments share a transaction id and image. A different image or sub_id is another row."""
+    committee = row.get("committee_id")
+    tran = row.get("tran_id") or ""
+    sub = row.get("sub_id") or ""
+    image = row.get("image") or ""
+    file_num = row.get("file_num") or ""
+    if tran:
+        marker = image or file_num or sub
+        return (committee, "tran", tran, marker)
+    if sub:
+        return (committee, "sub", sub)
+    return None
+
+
 def _latest_rows(rows):
-    """One row per committee transaction id, or per sub_id when tran_id is blank."""
+    """Keep the latest filing for one reported transaction. Different images are kept."""
     chosen = {}
     loose = []
     for row in rows:
-        tran = row.get("tran_id") or ""
-        sub = row.get("sub_id") or ""
-        if tran:
-            key = (row.get("committee_id"), "tran", tran)
-        elif sub:
-            key = (row.get("committee_id"), "sub", sub)
-        else:
+        key = _dedupe_key(row)
+        if key is None:
             loose.append(row)
             continue
         prev = chosen.get(key)
@@ -247,11 +263,28 @@ def to_public(person):
     return out
 
 
+def _apply_refunds(groups, refunds):
+    """Subtract a refund from the one cluster with the same name, city, and state."""
+    unmatched = []
+    for refund in refunds:
+        place = _place_key(refund)
+        matches = [members for ident, members in groups.items() if place and ident[:6] == place]
+        if len(matches) == 1:
+            matches[0].append(refund)
+        else:
+            unmatched.append(refund)
+    return unmatched
+
+
 def build_index(rows, retrieved_at):
     """Aggregate eligible rows. Published people are those at or above $10,000.00."""
     groups = {}
     weak = []
+    refunds = []
     for row in _latest_rows(row for row in rows if _eligible(row)):
+        if (row.get("txn_type") or "") in _REFUND_TYPES:
+            refunds.append(row)
+            continue
         ident = _identity(row)
         if ident is None:
             name = parse_person_name(row.get("name"))
@@ -259,6 +292,7 @@ def build_index(rows, retrieved_at):
                 weak.append((name, row, "missing city, state, employer, or occupation"))
             continue
         groups.setdefault(ident, []).append(row)
+    unmatched_refunds = _apply_refunds(groups, refunds)
 
     published = []
     unlinked = []
@@ -266,8 +300,16 @@ def build_index(rows, retrieved_at):
     by_bare = {}
     for ident, members in groups.items():
         by_bare.setdefault((ident[0], ident[1]), []).append((ident, members))
+    grouped_weak = {}
     for name, row, reason in weak:
+        city, state = row.get("city") or "", row.get("state") or ""
+        if name.get("last") and name.get("first") and city and state:
+            place = (name["last"], name["first"], name.get("middle") or "", name.get("suffix") or "", city, state)
+            grouped_weak.setdefault(place, []).append((row, reason))
+            continue
         by_bare.setdefault((name["last"], name["first"]), []).append((None, [(row, reason)]))
+    for place, members in grouped_weak.items():
+        by_bare.setdefault((place[0], place[1]), []).append((None, members))
 
     for (last, first), clusters in sorted(by_bare.items()):
         strong = [(ident, members) for ident, members in clusters if ident is not None]
@@ -305,6 +347,14 @@ def build_index(rows, retrieved_at):
                 "qualification": "Itemized FEC contributions in the 2026 cycle aggregate to at least $10,000.00 for this reported name, middle name, city, state, employer, and occupation.",
             }
             published.append(to_public(person))
+    for refund in unmatched_refunds:
+        name = parse_person_name(refund.get("name")) or {}
+        last, first = name.get("last") or "", name.get("first") or ""
+        unlinked.append({
+            "name": "%s, %s" % (last, first) if last and first else (refund.get("name") or ""),
+            "reason": "Refund did not match a single cluster on name, city, and state.",
+            "clusters": _cluster_summaries([(None, [(refund, "refund did not match one cluster")])]),
+        })
     published.sort(key=lambda person: (-person["amount_cents"], person["name"], person["id"]))
     return {
         "notice": NOTICE,
@@ -317,8 +367,7 @@ def build_index(rows, retrieved_at):
 
 def _cluster_total(ident, members):
     if ident is None:
-        row = members[0][0]
-        return contribution_cents(row) or 0
+        return sum(contribution_cents(item[0]) or 0 for item in members)
     return sum(contribution_cents(item) or 0 for item in members)
 
 
@@ -326,17 +375,18 @@ def _cluster_summaries(clusters):
     out = []
     for ident, members in clusters:
         if ident is None:
-            row, reason = members[0]
-            parsed = parse_person_name(row.get("name")) or {}
+            rows = [item[0] for item in members]
+            parsed = parse_person_name(rows[0].get("name")) or {}
             out.append({
                 "middle": parsed.get("middle"),
                 "suffix": parsed.get("suffix") or "",
-                "city": row.get("city"),
-                "state": row.get("state"),
-                "employer": row.get("employer"),
-                "occupation": row.get("occupation"),
-                "rows": 1,
-                "reason": reason,
+                "city": rows[0].get("city"),
+                "state": rows[0].get("state"),
+                "employer": rows[0].get("employer"),
+                "occupation": rows[0].get("occupation"),
+                "rows": len(rows),
+                "amount": cents_to_decimal(sum(contribution_cents(item) or 0 for item in rows)),
+                "reason": members[0][1],
             })
             continue
         out.append({
