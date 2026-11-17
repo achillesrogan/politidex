@@ -1,5 +1,6 @@
 import { verified } from "@/lib/data";
 import { fmtDate } from "@/lib/dates";
+import { publicSourceHref } from "@/lib/source-href.mjs";
 /** Renders children only when the claim passed verification. Every rendered fact carries data-claim for the CI check. */
 export default function Fact({ claim, children, as = "span", className }: { claim?: string | null; children: React.ReactNode; as?: "span" | "div" | "li" | "td"; className?: string }) {
   const c = verified(claim);
@@ -8,7 +9,7 @@ export default function Fact({ claim, children, as = "span", className }: { clai
   return (
     <Tag data-fact="" data-claim={c.id} className={className}>
       {children}
-      <a className="cite" href={c.source_url} rel="noopener noreferrer" title={`${c.source_name} — retrieved ${fmtDate(c.retrieved_at)} — “${c.excerpt}”`}>[source]</a>
+      {publicSourceHref(c.source_url) ? <a className="cite" href={publicSourceHref(c.source_url) || undefined} rel="noopener noreferrer" title={`${c.source_name} — retrieved ${fmtDate(c.retrieved_at)} — “${c.excerpt}”`}>[source]</a> : null}
     </Tag>
   );
 }

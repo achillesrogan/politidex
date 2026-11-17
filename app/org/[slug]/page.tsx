@@ -5,6 +5,7 @@ import SourceCard from "@/components/SourceCard";
 import { org, orgIndex, verified, fmtUSD, claims as allClaims } from "@/lib/data";
 import { orgCategoryLabel, designationLabel, committeeTypeLabel } from "@/lib/labels";
 import type { SourceCardInfo, SourceLink } from "@/components/SourceCard";
+import { publicSourceHref } from "@/lib/source-href.mjs";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -50,7 +51,7 @@ export default async function OrgPage({ params }: { params: Promise<{ slug: stri
         <p className="text-sm text-[var(--color-muted)] mb-4">{o.note}</p>
         {o.lda_disclaimer && <p className="text-sm text-[var(--color-muted)] mb-4">{o.lda_disclaimer}</p>}
         <dl className="grid gap-1 sm:grid-cols-[12rem_1fr] mb-4 text-sm">
-          {o.committee_id && <><dt className="font-semibold">FEC committee ID</dt><dd><a className="link" href={o.url} rel="noopener noreferrer">{o.committee_id}</a></dd></>}
+          {o.committee_id && <><dt className="font-semibold">FEC committee ID</dt><dd>{publicSourceHref(o.url) ? <a className="link" href={publicSourceHref(o.url) || undefined} rel="noopener noreferrer">{o.committee_id}</a> : o.committee_id}</dd></>}
           {(committeeTypeLabel(o.committee_type, o.committee_type_full) || o.committee_type_full) && <><dt className="font-semibold">Committee type</dt><dd>{committeeTypeLabel(o.committee_type, o.committee_type_full) || o.committee_type_full}</dd></>}
           {o.kind === "fec-committee" && <><dt className="font-semibold">Interest group category</dt><dd>{orgCategoryLabel(o.org_type_full)}</dd></>}
           {(designationLabel(o.designation, o.designation_full) || o.designation_full) && <><dt className="font-semibold">Designation</dt><dd>{designationLabel(o.designation, o.designation_full) || o.designation_full}</dd></>}

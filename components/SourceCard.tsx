@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
 import RecordPopover from "@/components/RecordPopover";
+import { publicSourceHref } from "@/lib/source-href.mjs";
 
 export type SourceLink = { label: string; href: string };
 export type SourceCardInfo = {
@@ -18,6 +19,7 @@ export type SourceCardInfo = {
 export default function SourceCard({ card, children }: { card: SourceCardInfo; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
+  const source = publicSourceHref(card.source_url);
   return (
     <div className="conn-row">
       <div className="min-w-0 flex-1">{children}</div>
@@ -44,13 +46,17 @@ export default function SourceCard({ card, children }: { card: SourceCardInfo; c
         )}
         {card.links && card.links.length > 0 && (
           <ul className="mt-3 text-sm grid gap-1">
-            {card.links.map((l) => (
-              <li key={l.href + l.label}>
-                <a className="link" href={l.href} rel="noopener noreferrer">
+            {card.links.map((l) => {
+              const href = publicSourceHref(l.href);
+              if (!href) return null;
+              return (
+              <li key={href + l.label}>
+                <a className="link" href={href} rel="noopener noreferrer">
                   {l.label}
                 </a>
               </li>
-            ))}
+              );
+            })}
           </ul>
         )}
         <p className="mt-3 text-sm">
@@ -66,9 +72,7 @@ export default function SourceCard({ card, children }: { card: SourceCardInfo; c
             {card.excerpt}
           </blockquote>
           <p className="mt-2 text-sm">
-            <a className="link" href={card.source_url} rel="noopener noreferrer">
-              Open the cited source
-            </a>
+            {source ? <a className="link" href={source} rel="noopener noreferrer">Open the cited source</a> : null}
           </p>
         </details>
       </RecordPopover>

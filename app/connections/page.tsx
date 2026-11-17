@@ -3,6 +3,7 @@ import PageHead from "@/components/PageHead";
 import ComingSoon from "@/components/ComingSoon";
 import Fact from "@/components/Fact";
 import { connections, people, verified, fmtUSD } from "@/lib/data";
+import { publicSourceHref } from "@/lib/source-href.mjs";
 export const metadata = { title: "Connections" };
 export default function ConnectionsPage() {
   const ps = people();
@@ -35,7 +36,7 @@ export default function ConnectionsPage() {
         <div className="grid gap-4 md:grid-cols-2">
           {pacs.slice(0, 16).map((x: any) => (
             <div key={x.committee_id} className="border border-[var(--color-rule)] p-4 bg-white/60">
-              <h3 className="font-display text-lg font-bold"><a className="link" href={`https://www.fec.gov/data/committee/${x.committee_id}/`} rel="noopener noreferrer">{x.name}</a></h3>
+              <h3 className="font-display text-lg font-bold">{publicSourceHref(`https://www.fec.gov/data/committee/${x.committee_id}/`) ? <a className="link" href={publicSourceHref(`https://www.fec.gov/data/committee/${x.committee_id}/`) || undefined} rel="noopener noreferrer">{x.name}</a> : x.name}</h3>
               <p className="text-sm text-[var(--color-muted)]">{x.members.length} members</p>
               <ul className="text-sm mt-2 grid gap-1">{x.members.slice(0, 8).map((m: any) => <Fact key={m.claim} as="li" claim={m.claim}>{name(m.who)} — {fmtUSD(m.amount)}</Fact>)}</ul>
             </div>

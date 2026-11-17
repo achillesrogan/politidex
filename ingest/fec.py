@@ -38,7 +38,7 @@ def totals(cycle=2026):
                 "disbursements", "cash_on_hand_end_period", "individual_itemized_contributions",
                 "other_political_committee_contributions", "debts_owed_by_committee", "coverage_start_date", "coverage_end_date",
                 "candidate_election_year"]}
-        keep["source_url"] = f"https://www.fec.gov/data/candidate/{f}/?cycle={cycle}"
+        keep["source_url"] = f"https://www.fec.gov/data/candidate/{f}/"
         keep["api_url"] = f"{BASE}/candidates/totals/?candidate_id={f}&cycle={cycle}&election_full=false"
         prev = out.get(b)
         if not prev or (keep.get("receipts") or 0) > (prev.get("receipts") or 0):
