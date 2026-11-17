@@ -306,7 +306,7 @@ def _add(agg, seen, stats, parts, source, master, webk_ids, category=None):
     classified = classify_payee(
         parts["entity"], parts["other_id"], parts["name"],
         parts.get("txn_type"), category if category is not None else parts.get("category"),
-        master,
+        master, parts.get("purpose") or "",
     )
     # classify_payee must not be handed through to storage when it is a person bucket:
     # the name field on a bucket result is None.

@@ -50,7 +50,7 @@
     "sub_id": null,
     "filing_id": null
    },
-   "retrieved_at": "2026-11-16T23:46:17+00:00",
+   "retrieved_at": "2026-11-17T00:11:01+00:00",
    "status": "unverified"
   }
  },
@@ -95,7 +95,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -135,7 +135,7 @@
       "sample_filing_id": "2033220",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -180,7 +180,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -220,7 +220,7 @@
       "sample_filing_id": "2033220",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -269,7 +269,7 @@
       "sample_filing_id": "1978017",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -309,7 +309,7 @@
       "sample_filing_id": "1978017",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -358,7 +358,7 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -398,7 +398,7 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -449,7 +449,7 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -491,7 +491,7 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -540,7 +540,7 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -580,7 +580,7 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -629,7 +629,7 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -669,7 +669,7 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -718,7 +718,7 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -758,7 +758,7 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -807,7 +807,7 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -847,7 +847,7 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -896,7 +896,7 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -936,7 +936,7 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -985,7 +985,7 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1025,7 +1025,7 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1074,7 +1074,7 @@
       "sample_filing_id": "1895127",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1114,7 +1114,7 @@
       "sample_filing_id": "1895127",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1163,7 +1163,7 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1203,7 +1203,7 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1254,7 +1254,7 @@
       "sample_filing_id": "1953864",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1296,7 +1296,7 @@
       "sample_filing_id": "1953864",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1345,7 +1345,7 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1385,7 +1385,7 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1434,7 +1434,7 @@
       "sample_filing_id": "1912550",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1474,7 +1474,7 @@
       "sample_filing_id": "1912550",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1523,7 +1523,7 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1563,7 +1563,7 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1612,7 +1612,7 @@
       "sample_filing_id": "2000590",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1652,7 +1652,7 @@
       "sample_filing_id": "2000590",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1701,7 +1701,7 @@
       "sample_filing_id": "1970222",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1741,7 +1741,7 @@
       "sample_filing_id": "1970222",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1790,7 +1790,7 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1830,7 +1830,7 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1881,7 +1881,7 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1923,7 +1923,7 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1974,7 +1974,7 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2016,7 +2016,7 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2067,7 +2067,7 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2109,7 +2109,7 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2158,7 +2158,7 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2198,7 +2198,7 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2247,7 +2247,7 @@
       "sample_filing_id": "2033220",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2287,7 +2287,7 @@
       "sample_filing_id": "2033220",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2308,10 +2308,10 @@
     "reported_out": null,
     "official_total_out": null,
     "source": {
-     "id": "c_4d8139d1a3c5f1",
-     "text": "reported assistance to individuals — not itemized for C00003418, sum 22714359.42.",
-     "value": 2271435942,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by REPUBLICAN NATIONAL COMMITTEE (C00003418). The payee name is not stored. Memo code X is excluded. Sum 22714359.42 across 6866 rows.",
+     "id": "c_daec7652d93b8c",
+     "text": "reported assistance to individuals — not itemized for C00003418, sum 25649122.53.",
+     "value": 2564912253,
+     "excerpt": "Itemized rows for individual people filed by REPUBLICAN NATIONAL COMMITTEE (C00003418), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 25649122.53 across 6904 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -2333,14 +2333,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
-      "amount_cents": 2271435942,
-      "transaction_count": 6866
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 2564912253,
+      "transaction_count": 6904
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2349,16 +2350,16 @@
     "from": "committee:C00003418",
     "to": "residual:C00003418:individuals",
     "kind": "reported disbursement",
-    "amount": "22714359.42",
-    "amount_cents": 2271435942,
-    "count": 6866,
+    "amount": "25649122.53",
+    "amount_cents": 2564912253,
+    "count": 6904,
     "purpose": null,
     "purpose_code": null,
     "source": {
-     "id": "c_4d8139d1a3c5f1",
-     "text": "reported assistance to individuals — not itemized for C00003418, sum 22714359.42.",
-     "value": 2271435942,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by REPUBLICAN NATIONAL COMMITTEE (C00003418). The payee name is not stored. Memo code X is excluded. Sum 22714359.42 across 6866 rows.",
+     "id": "c_daec7652d93b8c",
+     "text": "reported assistance to individuals — not itemized for C00003418, sum 25649122.53.",
+     "value": 2564912253,
+     "excerpt": "Itemized rows for individual people filed by REPUBLICAN NATIONAL COMMITTEE (C00003418), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 25649122.53 across 6904 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -2380,14 +2381,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
-      "amount_cents": 2271435942,
-      "transaction_count": 6866
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 2564912253,
+      "transaction_count": 6904
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2408,10 +2410,10 @@
     "reported_out": null,
     "official_total_out": null,
     "source": {
-     "id": "c_7a734c95c6efc5",
-     "text": "other reported disbursements for C00003418, sum 114791822.18.",
-     "value": 11479182218,
-     "excerpt": "Remainder of reported disbursements for REPUBLICAN NATIONAL COMMITTEE (C00003418) in the 2026 cycle: itemized payees below the top 25 (112570954.25), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (2220867.93). Sum 114791822.18. No payee names from the remainder are stored.",
+     "id": "c_917f89d58e621a",
+     "text": "other reported disbursements for C00003418, sum 111857059.07.",
+     "value": 11185705907,
+     "excerpt": "Remainder of reported disbursements for REPUBLICAN NATIONAL COMMITTEE (C00003418) in the 2026 cycle: itemized payees below the top 25 (109636191.14), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (2220867.93). Sum 111857059.07. No payee names from the remainder are stored.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
      "check": {
@@ -2432,14 +2434,14 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "payees_below_top_cents": 11257095425,
+      "payees_below_top_cents": 10963619114,
       "entity_type_unclear_cents": 0,
       "entity_type_unclear_count": 0,
       "not_in_itemized_files_cents": 222086793,
       "top_n": 25,
-      "amount_cents": 11479182218
+      "amount_cents": 11185705907
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2448,16 +2450,16 @@
     "from": "committee:C00003418",
     "to": "residual:C00003418:other",
     "kind": "reported disbursement",
-    "amount": "114791822.18",
-    "amount_cents": 11479182218,
-    "count": 7983,
+    "amount": "111857059.07",
+    "amount_cents": 11185705907,
+    "count": 7945,
     "purpose": null,
     "purpose_code": null,
     "source": {
-     "id": "c_7a734c95c6efc5",
-     "text": "other reported disbursements for C00003418, sum 114791822.18.",
-     "value": 11479182218,
-     "excerpt": "Remainder of reported disbursements for REPUBLICAN NATIONAL COMMITTEE (C00003418) in the 2026 cycle: itemized payees below the top 25 (112570954.25), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (2220867.93). Sum 114791822.18. No payee names from the remainder are stored.",
+     "id": "c_917f89d58e621a",
+     "text": "other reported disbursements for C00003418, sum 111857059.07.",
+     "value": 11185705907,
+     "excerpt": "Remainder of reported disbursements for REPUBLICAN NATIONAL COMMITTEE (C00003418) in the 2026 cycle: itemized payees below the top 25 (109636191.14), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (2220867.93). Sum 111857059.07. No payee names from the remainder are stored.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
      "check": {
@@ -2478,14 +2480,14 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "payees_below_top_cents": 11257095425,
+      "payees_below_top_cents": 10963619114,
       "entity_type_unclear_cents": 0,
       "entity_type_unclear_count": 0,
       "not_in_itemized_files_cents": 222086793,
       "top_n": 25,
-      "amount_cents": 11479182218
+      "amount_cents": 11185705907
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2495,11 +2497,11 @@
   "official_total_out": "303338969.71",
   "official_total_out_cents": 30333896971,
   "itemized_cents": 30111810178,
-  "individuals_cents": 2271435942,
+  "individuals_cents": 2564912253,
   "unclear_entity_cents": 0,
-  "below_top_cents": 11257095425,
+  "below_top_cents": 10963619114,
   "not_in_itemized_files_cents": 222086793,
-  "other_bucket_cents": 11479182218,
+  "other_bucket_cents": 11185705907,
   "child_edge_cents": 30333896971,
   "ok": true,
   "tolerance_cents": 0

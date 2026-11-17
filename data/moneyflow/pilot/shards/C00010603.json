@@ -50,7 +50,7 @@
     "sub_id": null,
     "filing_id": null
    },
-   "retrieved_at": "2026-11-16T23:46:17+00:00",
+   "retrieved_at": "2026-11-17T00:11:01+00:00",
    "status": "unverified"
   }
  },
@@ -99,7 +99,7 @@
       "sample_filing_id": "2033585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -139,7 +139,7 @@
       "sample_filing_id": "2033585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -188,7 +188,7 @@
       "sample_filing_id": "1878291",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -228,7 +228,7 @@
       "sample_filing_id": "1878291",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -279,7 +279,7 @@
       "sample_filing_id": "1982111",
       "edge_kind": "reported disbursement"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -321,7 +321,7 @@
       "sample_filing_id": "1982111",
       "edge_kind": "reported disbursement"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -370,7 +370,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -410,7 +410,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -459,7 +459,7 @@
       "sample_filing_id": "1896867",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -499,7 +499,7 @@
       "sample_filing_id": "1896867",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -548,7 +548,7 @@
       "sample_filing_id": "1982111",
       "edge_kind": "reported disbursement"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -588,7 +588,7 @@
       "sample_filing_id": "1982111",
       "edge_kind": "reported disbursement"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -637,7 +637,7 @@
       "sample_filing_id": "1987749",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -677,7 +677,7 @@
       "sample_filing_id": "1987749",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -726,7 +726,7 @@
       "sample_filing_id": "1982117",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -766,7 +766,7 @@
       "sample_filing_id": "1982117",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -815,7 +815,7 @@
       "sample_filing_id": "2003519",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -855,7 +855,7 @@
       "sample_filing_id": "2003519",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -904,7 +904,7 @@
       "sample_filing_id": "1889471",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -944,7 +944,7 @@
       "sample_filing_id": "1889471",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -989,7 +989,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1029,7 +1029,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1078,7 +1078,7 @@
       "sample_filing_id": "1896867",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1118,7 +1118,7 @@
       "sample_filing_id": "1896867",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1163,7 +1163,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1203,7 +1203,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1252,7 +1252,7 @@
       "sample_filing_id": "1923132",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1292,96 +1292,7 @@
       "sample_filing_id": "1923132",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   }
-  },
-  {
-   "node": {
-    "id": "business:e9ab1ee2b0b599b7",
-    "kind": "business",
-    "official_id": null,
-    "name": "FREEMAN",
-    "terminal": true,
-    "terminal_label": "Spent",
-    "period": {
-     "cycle": 2026,
-     "coverage_end": null
-    },
-    "reported_in": null,
-    "reported_out": null,
-    "official_total_out": null,
-    "source": {
-     "id": "c_beb8dcad93a017",
-     "text": "Payee FREEMAN as reported on itemized disbursements filed by C00010603.",
-     "value": {
-      "reported_name": "FREEMAN",
-      "official_id": null
-     },
-     "excerpt": "Filer C00010603, 2026 cycle: 8 itemized rows, memo code X excluded, sum 3215024.00, payee FREEMAN. Purpose code 24C. Sample image 202507209764147263, sub_id 4072320251210931006.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507209764147263",
-     "check": {
-      "kind": "fec-itemized-payee",
-      "cycle": 2026,
-      "committee_id": "C00010603",
-      "amount_cents": 321502400,
-      "transaction_count": 8,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
-      ],
-      "transaction_type_or_category": "24C",
-      "sample_image_number": "202507209764147263",
-      "sample_sub_id": "4072320251210931006",
-      "sample_filing_id": "1905203",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   },
-   "edge": {
-    "id": "edge:11c249421a3c6bc5",
-    "from": "committee:C00010603",
-    "to": "business:e9ab1ee2b0b599b7",
-    "kind": "spent",
-    "amount": "3215024.00",
-    "amount_cents": 321502400,
-    "count": 8,
-    "purpose": "Coordinated party expenditure",
-    "purpose_code": "24C",
-    "source": {
-     "id": "c_cd52bd7368074d",
-     "text": "Spent from C00010603 to FREEMAN, sum 3215024.00, 8 itemized rows.",
-     "value": 321502400,
-     "excerpt": "Filer C00010603, 2026 cycle: 8 itemized rows, memo code X excluded, sum 3215024.00, payee FREEMAN. Purpose code 24C. Sample image 202507209764147263, sub_id 4072320251210931006.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507209764147263",
-     "check": {
-      "kind": "fec-itemized-disbursement",
-      "cycle": 2026,
-      "committee_id": "C00010603",
-      "amount_cents": 321502400,
-      "transaction_count": 8,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
-      ],
-      "transaction_type_or_category": "24C",
-      "sample_image_number": "202507209764147263",
-      "sample_sub_id": "4072320251210931006",
-      "sample_filing_id": "1905203",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1432,7 +1343,7 @@
       "sample_filing_id": "1889471",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1474,7 +1385,7 @@
       "sample_filing_id": "1889471",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1525,7 +1436,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1567,7 +1478,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1616,7 +1527,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1656,7 +1567,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1705,7 +1616,7 @@
       "sample_filing_id": "2033585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1745,7 +1656,7 @@
       "sample_filing_id": "2033585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1794,7 +1705,7 @@
       "sample_filing_id": "1882149",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1834,7 +1745,7 @@
       "sample_filing_id": "1882149",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1883,7 +1794,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1923,7 +1834,7 @@
       "sample_filing_id": "1926358",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1972,7 +1883,7 @@
       "sample_filing_id": "2033585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2012,7 +1923,7 @@
       "sample_filing_id": "2033585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2061,7 +1972,7 @@
       "sample_filing_id": "2033558",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2101,7 +2012,7 @@
       "sample_filing_id": "2033558",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2146,7 +2057,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2186,7 +2097,7 @@
       "sample_filing_id": "1889471",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2235,7 +2146,7 @@
       "sample_filing_id": "1878291",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2275,7 +2186,96 @@
       "sample_filing_id": "1878291",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:529e879972548ec5",
+    "kind": "business",
+    "official_id": null,
+    "name": "ENGAGE, LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_77dd6ec7f2d27f",
+     "text": "Payee ENGAGE, LLC as reported on itemized disbursements filed by C00010603.",
+     "value": {
+      "reported_name": "ENGAGE, LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00010603, 2026 cycle: 126 itemized rows, memo code X excluded, sum 1313442.34, payee ENGAGE, LLC. Purpose code mixed or blank. Sample image 202505209761557595, sub_id 4052120251203679428.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202505209761557595",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00010603",
+      "amount_cents": 131344234,
+      "transaction_count": 126,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202505209761557595",
+      "sample_sub_id": "4052120251203679428",
+      "sample_filing_id": "1893641",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:7a36df7d92a44060",
+    "from": "committee:C00010603",
+    "to": "business:529e879972548ec5",
+    "kind": "spent",
+    "amount": "1313442.34",
+    "amount_cents": 131344234,
+    "count": 126,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_1afdf5d72199f9",
+     "text": "Spent from C00010603 to ENGAGE, LLC, sum 1313442.34, 126 itemized rows.",
+     "value": 131344234,
+     "excerpt": "Filer C00010603, 2026 cycle: 126 itemized rows, memo code X excluded, sum 1313442.34, payee ENGAGE, LLC. Purpose code mixed or blank. Sample image 202505209761557595, sub_id 4052120251203679428.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202505209761557595",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00010603",
+      "amount_cents": 131344234,
+      "transaction_count": 126,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202505209761557595",
+      "sample_sub_id": "4052120251203679428",
+      "sample_filing_id": "1893641",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2296,10 +2296,10 @@
     "reported_out": null,
     "official_total_out": null,
     "source": {
-     "id": "c_2d7af24ff90083",
-     "text": "reported assistance to individuals — not itemized for C00010603, sum 2292869.59.",
-     "value": 229286959,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603). The payee name is not stored. Memo code X is excluded. Sum 2292869.59 across 3079 rows.",
+     "id": "c_0778d62959d675",
+     "text": "reported assistance to individuals — not itemized for C00010603, sum 5510393.59.",
+     "value": 551039359,
+     "excerpt": "Itemized rows for individual people filed by DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 5510393.59 across 3088 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -2321,14 +2321,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
-      "amount_cents": 229286959,
-      "transaction_count": 3079
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 551039359,
+      "transaction_count": 3088
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2337,16 +2338,16 @@
     "from": "committee:C00010603",
     "to": "residual:C00010603:individuals",
     "kind": "reported disbursement",
-    "amount": "2292869.59",
-    "amount_cents": 229286959,
-    "count": 3079,
+    "amount": "5510393.59",
+    "amount_cents": 551039359,
+    "count": 3088,
     "purpose": null,
     "purpose_code": null,
     "source": {
-     "id": "c_2d7af24ff90083",
-     "text": "reported assistance to individuals — not itemized for C00010603, sum 2292869.59.",
-     "value": 229286959,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603). The payee name is not stored. Memo code X is excluded. Sum 2292869.59 across 3079 rows.",
+     "id": "c_0778d62959d675",
+     "text": "reported assistance to individuals — not itemized for C00010603, sum 5510393.59.",
+     "value": 551039359,
+     "excerpt": "Itemized rows for individual people filed by DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 5510393.59 across 3088 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -2368,14 +2369,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
-      "amount_cents": 229286959,
-      "transaction_count": 3079
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 551039359,
+      "transaction_count": 3088
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2396,10 +2398,10 @@
     "reported_out": null,
     "official_total_out": null,
     "source": {
-     "id": "c_ae38cb4ca2b3cd",
-     "text": "other reported disbursements for C00010603, sum 67563154.68.",
-     "value": 6756315468,
-     "excerpt": "Remainder of reported disbursements for DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603) in the 2026 cycle: itemized payees below the top 25 (60605367.53), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (6957787.15). Sum 67563154.68. No payee names from the remainder are stored.",
+     "id": "c_37cfd44daebde0",
+     "text": "other reported disbursements for C00010603, sum 66247212.34.",
+     "value": 6624721234,
+     "excerpt": "Remainder of reported disbursements for DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603) in the 2026 cycle: itemized payees below the top 25 (59289425.19), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (6957787.15). Sum 66247212.34. No payee names from the remainder are stored.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
      "check": {
@@ -2420,14 +2422,14 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "payees_below_top_cents": 6060536753,
+      "payees_below_top_cents": 5928942519,
       "entity_type_unclear_cents": 0,
       "entity_type_unclear_count": 0,
       "not_in_itemized_files_cents": 695778715,
       "top_n": 25,
-      "amount_cents": 6756315468
+      "amount_cents": 6624721234
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2436,16 +2438,16 @@
     "from": "committee:C00010603",
     "to": "residual:C00010603:other",
     "kind": "reported disbursement",
-    "amount": "67563154.68",
-    "amount_cents": 6756315468,
-    "count": 5468,
+    "amount": "66247212.34",
+    "amount_cents": 6624721234,
+    "count": 5341,
     "purpose": null,
     "purpose_code": null,
     "source": {
-     "id": "c_ae38cb4ca2b3cd",
-     "text": "other reported disbursements for C00010603, sum 67563154.68.",
-     "value": 6756315468,
-     "excerpt": "Remainder of reported disbursements for DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603) in the 2026 cycle: itemized payees below the top 25 (60605367.53), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (6957787.15). Sum 67563154.68. No payee names from the remainder are stored.",
+     "id": "c_37cfd44daebde0",
+     "text": "other reported disbursements for C00010603, sum 66247212.34.",
+     "value": 6624721234,
+     "excerpt": "Remainder of reported disbursements for DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE (C00010603) in the 2026 cycle: itemized payees below the top 25 (59289425.19), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (6957787.15). Sum 66247212.34. No payee names from the remainder are stored.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
      "check": {
@@ -2466,14 +2468,14 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "payees_below_top_cents": 6060536753,
+      "payees_below_top_cents": 5928942519,
       "entity_type_unclear_cents": 0,
       "entity_type_unclear_count": 0,
       "not_in_itemized_files_cents": 695778715,
       "top_n": 25,
-      "amount_cents": 6756315468
+      "amount_cents": 6624721234
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2483,11 +2485,11 @@
   "official_total_out": "252802705.69",
   "official_total_out_cents": 25280270569,
   "itemized_cents": 24584491854,
-  "individuals_cents": 229286959,
+  "individuals_cents": 551039359,
   "unclear_entity_cents": 0,
-  "below_top_cents": 6060536753,
+  "below_top_cents": 5928942519,
   "not_in_itemized_files_cents": 695778715,
-  "other_bucket_cents": 6756315468,
+  "other_bucket_cents": 6624721234,
   "child_edge_cents": 25280270569,
   "ok": true,
   "tolerance_cents": 0

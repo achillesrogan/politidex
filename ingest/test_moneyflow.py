@@ -70,6 +70,68 @@ def test_parsers_drop_address_and_people_columns():
     check("webk has no individual key", "indiv" not in json.dumps(webk).lower())
 
 
+def test_person_like_org_payees():
+    print("person-like organizations")
+    master = {"C00003418": master_row()}
+    person = "JANE Q DOE"
+    benefit = "JANE Q DOE HSA"
+    payroll = "JANE Q DOE PAYROLL"
+    bare = M.classify_payee("ORG", "", person, None, "001", master, "ADMINISTRATIVE AND MANAGEMENT - SALARY")
+    check("bare personal name filed as ORG is the individuals bucket", bare["bucket"] == "individuals" and bare["name"] is None)
+    check("bare personal name is not stored", person not in json.dumps(bare))
+    hsa = M.classify_payee("ORG", "", benefit, None, "", master, "HEALTH SAVINGS ACCOUNT CONTRIBUTION")
+    check("HSA label filed as ORG is the individuals bucket", hsa["bucket"] == "individuals")
+    check("HSA label is not stored", benefit not in json.dumps(hsa) and "JANE" not in json.dumps(hsa))
+    labeled = M.classify_payee("ORG", "", payroll, None, "", master, "")
+    check("payroll label tied to a person is the individuals bucket", labeled["bucket"] == "individuals")
+    last_first = M.classify_payee("ORG", "", "DOE, JANE Q", None, "", master, "")
+    check("LAST, FIRST filed as ORG is the individuals bucket", last_first["bucket"] == "individuals")
+    check("LAST, FIRST is not stored", "JANE" not in json.dumps(last_first))
+    com = M.classify_payee("COM", "", person, "24K", None, master, "")
+    check("person-like name on a non-person entity type is bucketed", com["bucket"] == "individuals")
+    unclear_word = M.classify_payee("ORG", "", "CARSON", None, "", master, "INSURANCE")
+    check("one-word label with only an insurance purpose is bucketed", unclear_word["bucket"] == "individuals")
+    office = M.classify_payee("ORG", "", "CARSON", None, "", master, "OFFICE EXPENSE")
+    check("one-word label with only an office-expense purpose is bucketed", office["bucket"] == "individuals")
+    blank = M.classify_payee("ORG", "", "CARSON", "24C", None, master, "")
+    check("one-word label with no purpose is bucketed", blank["bucket"] == "individuals")
+    vendor = M.classify_payee("ORG", "", "RIPPLEPAY", None, "", master, "PAYROLL TAXES")
+    check("one-word payroll vendor stays a business", vendor["node_kind"] == "business" and vendor["name"] == "RIPPLEPAY")
+    express = M.classify_payee("ORG", "", "AMERICAN EXPRESS", None, "", master, "CREDIT CARD PAYMENT")
+    check("card network stays a business", express["node_kind"] == "business")
+    party = M.classify_payee("ORG", "", "EXAMPLE DEMOCRATIC PARTY", None, "", master, "")
+    check("party name stays a business", party["node_kind"] == "business")
+    domain = M.classify_payee("ORG", "", "DIRECTMAIL.COM", None, "", master, "POSTAGE")
+    check("domain payee stays a business", domain["node_kind"] == "business")
+    postal = M.classify_payee("ORG", "", "USPS", None, "", master, "POSTAGE")
+    check("postal service stays a business", postal["node_kind"] == "business")
+    firm = M.classify_payee("ORG", "", "ACME PRINTING LLC", None, "", master, "")
+    check("named company with LLC stays a business", firm["node_kind"] == "business" and firm["name"] == "ACME PRINTING LLC")
+    registered = M.classify_payee("ORG", "C00003418", person, "24K", None, master, "")
+    check("registered committee id is not reclassified as a person", registered["bucket"] == "unclear" or registered.get("official_id") == "C00003418")
+    # ORG plus a known committee id is the existing conflict rule.
+    check("conflict still does not publish the personal name", person not in json.dumps(registered))
+    records = [{
+        "payee_key": "residual:individuals", "edge_kind": "reported disbursement", "amount_cents": 5000,
+        "count": 2, "purpose_code": None, "name": None, "official_id": None, "node_kind": "residual",
+        "terminal": True, "bucket": "individuals", "image": None, "sub_id": None, "file_num": None,
+        "sources": ["oppexp"],
+    }]
+    committee = {
+        "committee_id": "C00000001", "name": "EXAMPLE COMMITTEE", "committee_type": "Q",
+        "designation": "U", "party": "", "org_type": "C", "connected_organization": None,
+        "state": None, "receipts_cents": 5000, "disbursements_cents": 5000,
+        "coverage_end": "2026-10-14", "type_conflict": False, "summary_committee_type": "Q",
+    }
+    shard = M.build_shard(committee, records, "2026-11-16T00:00:00+00:00", {}, top_n=25)
+    dumped = json.dumps(shard)
+    check("shard for a person-like payee has no name", person not in dumped and "JANE" not in dumped)
+    check("shard sample ids for that bucket are empty",
+          shard["children"][0]["edge"]["source"]["check"].get("sub_id") is None
+          and shard["children"][0]["edge"]["source"]["check"].get("image_number") is None)
+    check("person-like amount still reconciles", shard["reconciliation"]["ok"] is True)
+
+
 def test_privacy_filter():
     print("privacy")
     master = {"C00003418": master_row()}
@@ -85,8 +147,9 @@ def test_privacy_filter():
     check("blank entity type is unclear even with a committee id", blank["bucket"] == "unclear")
     check("blank entity does not keep the name", unclear not in json.dumps(blank))
     check("blank entity does not keep the committee id", "C00003418" not in json.dumps(blank))
-    weird = M.classify_payee("XYZ", "", unclear, "24K", None, master)
+    weird = M.classify_payee("XYZ", "", "ACME WIDGET LLC", "24K", None, master)
     check("unrecognized entity type is unclear", weird["bucket"] == "unclear")
+    check("unrecognized entity does not keep the organization name", "ACME" not in json.dumps(weird))
     conflict = M.classify_payee("ORG", "C00003418", "ACME", "24K", None, master)
     check("ORG plus a known committee id is unclear", conflict["bucket"] == "unclear")
     vendor = M.classify_payee("ORG", "H6CA24113", "ACME MEDIA LLC", "24E", None, master)
@@ -311,6 +374,7 @@ def test_web_app_does_not_import_shards():
 
 if __name__ == "__main__":
     test_parsers_drop_address_and_people_columns()
+    test_person_like_org_payees()
     test_privacy_filter()
     test_reconciliation()
     test_pilot_selection_is_symmetric()

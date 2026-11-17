@@ -9,10 +9,13 @@ bucket equal the committee's official total disbursements from the PAC and
 party summary file, or the build raises ReconciliationError.
 
 Privacy. Entity types IND and CAN are people and are summed into one residual
-bucket with no names. A blank, unrecognized, or conflicting entity type is
-summed into the other residual bucket. Street address, city, ZIP, employer,
-occupation, memo text, treasurer, and candidate-id columns are not accepted
-by these parsers.
+bucket with no names. A reported name that is a person, or a benefit, payroll,
+reimbursement, or similar label tied to a person, is summed into that same
+bucket even when the entity type is ORG or another non-person code. A one-word
+label with no clear business purpose is treated the same way. A blank,
+unrecognized, or conflicting entity type is summed into the other residual
+bucket. Street address, city, ZIP, employer, occupation, memo text, treasurer,
+and candidate-id columns are not accepted by these parsers.
 """
 from __future__ import annotations
 
@@ -371,12 +374,145 @@ def _clean_name(name):
     return name
 
 
-def classify_payee(entity, other_id, name, txn_type, category, master):
+# Ordinary words, places, and organization words. A token in this set means the
+# payee string is not only a personal name. This is not a list of payees.
+_NON_NAME_TOKENS = frozenset("""
+A AND OF THE FOR TO WITH FROM BY ON IN AT OR
+LLC INC INCORPORATED CORP CORPORATION CO COMPANY LLP PLLC PC LP LTD LIMITED NA PBC PA
+BANK BANCORP GROUP SERVICE SERVICES MEDIA AGENCY ASSOCIATES ASSOCIATE ASSOCIATION
+PARTNERS PARTNER TRUST FUND FUNDS COMMITTEE UNIVERSITY COLLEGE HOTEL INN MOTEL
+INSURANCE SYSTEM SYSTEMS SOLUTION SOLUTIONS TECHNOLOGY TECHNOLOGIES TECH
+CONSULTING CONSULTANT CONSULTANTS STRATEGY STRATEGIES STRATEGIC DIGITAL MAIL
+MAILING PRINT PRINTING PRINTER DATA DIRECT CAMPAIGN CAMPAIGNS COMMUNICATION
+COMMUNICATIONS PRODUCTION PRODUCTIONS MANAGEMENT HOLDING HOLDINGS ENTERPRISE
+ENTERPRISES INTERNATIONAL GLOBAL NATIONAL FEDERAL UNITED STATES STATE STATES
+TREASURY TREASURER POSTAL USPS POSTMASTER MUTUAL BUREAU OFFICE CENTER CENTRE
+MARKETING CREATIVE UNLIMITED GRAPHIC GRAPHICS LIST LISTS RESEARCH POLLING PUBLIC
+LIFE PROJECT MUSEUM HOSPITALITY FLORIST INTERACTIVE DANCING BAKER
+AFFAIRS GOVERNMENT DEPARTMENT COMMISSION UNION LOCAL DISTRICT COUNTY CITY
+DBA LAW LEGAL PARTY DEMOCRATIC REPUBLICAN DEMOCRAT HEADQUARTERS SCC
+HILTON MARRIOTT WESTIN HYATT SHERATON RENAISSANCE OMNI PLAZA PALACE DOWNTOWN
+GRAND SUITES RESORT RENTAL RENTALS CATERING CATERERS CATERER AVIATION PRESS
+PHOTOGRAPHY DESIGN DESIGNS GALLERY ATELIER LINEN SPORTS CLUB PARK IMAGE POINTE
+AMERICAN EXPRESS TARGETED VICTORY PRO RED WIN CONNECT LEXIS NEXIS NETWORK
+PAYMENT PAYMENTS CARD WIRELESS SOCIAL CLOUD USA BANKCARD LEASING AUTO
+RETAIL FINANCIAL POLITICS POWER COUNTRY FIRST DAY HEALTH CARE BLUE CROSS
+SOFTWARE HARDWARE ONLINE WEB HOSTING INTERNET TELEPHONE PHONE CABLE
+SHIPPING FREIGHT ELECTRIC GAS FOOD WATER POWER LIGHT LINK HOUSE DESK SPARK
+ADVOCACY VOTE ELECT PAC TAX TAXES PAYROLL BENEFIT BENEFITS
+ALABAMA ALASKA ARIZONA ARKANSAS CALIFORNIA COLORADO CONNECTICUT DELAWARE FLORIDA
+GEORGIA HAWAII IDAHO ILLINOIS INDIANA IOWA KANSAS KENTUCKY LOUISIANA MAINE
+MARYLAND MASSACHUSETTS MICHIGAN MINNESOTA MISSISSIPPI MISSOURI MONTANA NEBRASKA
+NEVADA NEW HAMPSHIRE JERSEY MEXICO YORK NORTH DAKOTA OHIO OKLAHOMA OREGON
+PENNSYLVANIA RHODE CAROLINA SOUTH TENNESSEE TEXAS UTAH VERMONT VIRGINIA
+WASHINGTON WEST WISCONSIN WYOMING COLUMBIA PUERTO RICO GUAM
+""".split())
+_ORG_SUFFIXES = frozenset({
+    "INC", "LLC", "CORP", "CORPORATION", "CO", "COMPANY", "LLP", "PLLC", "PC",
+    "LP", "LTD", "LIMITED", "NA", "PBC", "PA",
+})
+_NAME_SUFFIXES = frozenset({"JR", "SR", "II", "III", "IV", "MD", "PHD", "ESQ"})
+_BENEFIT_TOKENS = frozenset({
+    "HSA", "FSA", "HRA", "401K", "SALARY", "WAGES", "WAGE", "STIPEND",
+    "REIMBURSEMENT", "REIMBURSEMENTS", "REIMBURSE", "HONORARIUM", "PAYROLL",
+})
+_NAME_TITLES = frozenset({"MR", "MRS", "MS", "DR", "HON", "CHEF"})
+_INSTITUTION_WORDS = frozenset({
+    "USPS", "IRS", "FEC", "UPS", "DHL", "NASA", "FEMA", "NOAA", "POSTMASTER", "WMATA",
+})
+# A one-word payee with a purpose that is only one of these is not a clear business.
+_WEAK_ONE_WORD_PURPOSE = re.compile(
+    r"^(INSURANCE|OFFICE EXPENSE|OFFICE EXPENSES)$"
+)
+_PERSON_PAY_PURPOSE = re.compile(
+    r"\b(SALARY|WAGES?|STIPEND|HONORARIUM|HEALTH SAVINGS|\bHSA\b)\b"
+)
+_VENDOR_PURPOSE = re.compile(
+    r"\b(SOFTWARE|POSTAGE|PRINT|WEBSITE|HOST|MAIL|CATERING|UTILIT|TELEPHONE|PHONE|"
+    r"PROCESSING|SUBSCRIPTION|EQUIPMENT|MERCHANDISE|TRANSPORT|DATABASE|ACCOUNTING|"
+    r"ADVERTIS|MEDIA|POLL|RESEARCH|SECURITY|LICENS|FEE|FEES|CREDIT CARD|INTERNET|"
+    r"STORAGE|FUNDRAIS|MESSAG|PRODUCTION|RENTAL|COPY|PAYROLL|401K|BOOKKEEPING|"
+    r"SHIPPING|CABLE|MERCHANT|EMAIL|CONSULT|DIGITAL|CAGING|PLATFORM|TAX|DATA |"
+    r"BENEFITS)\b"
+)
+_BUSINESS_ROOTS = (
+    "PAC", "TECH", "SOFT", "MAIL", "DATA", "BANK", "CARD", "PAY", "NET", "WEB",
+    "CLOUD", "LINK", "WIRE", "MEDIA", "FUND", "VOTE", "ELECT", "GROUP", "SERV",
+    "CARE", "BLUE", "PRINT", "POLL", "LAW", "HOTEL", "DESK", "SPARK", "HOUSE",
+    "SIGN", "WORK", "LAB", "BOOK", "ADVOC",
+)
+
+
+def _name_tokens(name):
+    return re.findall(r"[A-Z0-9']+", (name or "").upper())
+
+
+def name_is_private_person(name, purpose=""):
+    """True when the reported payee should not be shown as an organization.
+
+    Last-name/first-name forms, a bare given name plus surname, and benefit,
+    payroll, reimbursement, or similar labels tied to a person all match.
+    A one-word label with no clear business purpose matches too. Unsure names
+    match. Registered organization words, domains, and vendor-service purposes
+    do not.
+    """
+    raw = " ".join((name or "").upper().split())
+    if not raw or "." in raw or "&" in raw or re.search(r"\d", raw):
+        return False
+    if raw.count(",") == 1:
+        left, right = [part.strip() for part in raw.split(",")]
+        left_toks, right_toks = _name_tokens(left), _name_tokens(right)
+        core = [tok for tok in right_toks if tok not in _NAME_SUFFIXES]
+        if (len(left_toks) == 1 and left_toks[0].isalpha() and len(left_toks[0]) >= 2
+                and core and len(right_toks) <= 4 and all(tok.isalpha() for tok in right_toks)
+                and not any(tok in _ORG_SUFFIXES or tok in _NON_NAME_TOKENS for tok in left_toks + core)):
+            return True
+    raw_toks = [tok for tok in _name_tokens(raw) if tok not in _NAME_TITLES and tok not in _NAME_SUFFIXES]
+    single_letters = [i for i, tok in enumerate(raw_toks) if len(tok) == 1]
+    # A leading "A" is an article. A middle initial sits between name tokens.
+    middle_initial = len(single_letters) == 1 and single_letters[0] not in (0, len(raw_toks) - 1)
+    toks = [tok for tok in raw_toks if len(tok) != 1] if middle_initial else raw_toks
+    if not toks:
+        return False
+    if any(tok in _BENEFIT_TOKENS for tok in toks):
+        others = [tok for tok in toks if tok not in _BENEFIT_TOKENS]
+        if others and all(tok.isalpha() and tok not in _ORG_SUFFIXES and tok not in _NON_NAME_TOKENS for tok in others):
+            return True
+    purpose_text = " ".join((purpose or "").upper().split())
+    vendor_purpose = bool(_VENDOR_PURPOSE.search(purpose_text))
+    paid_to_person = bool(_PERSON_PAY_PURPOSE.search(purpose_text)) or bool(_WEAK_ONE_WORD_PURPOSE.match(purpose_text))
+    bare_name = (
+        2 <= len(toks) <= 3
+        and all(tok.isalpha() and len(tok) >= 3 and re.search(r"[AEIOUY]", tok) for tok in toks)
+        and not any(tok in _NON_NAME_TOKENS or tok in _ORG_SUFFIXES for tok in toks)
+        and not any(any(root in tok for root in _BUSINESS_ROOTS) for tok in toks)
+    )
+    # A middle initial, or a salary/benefit purpose, is enough. A blank purpose is
+    # not, because several bulk files have no purpose column.
+    if bare_name and (middle_initial or (paid_to_person and not vendor_purpose)):
+        return True
+    if len(toks) == 1 and toks[0].isalpha() and len(toks[0]) >= 4:
+        token = toks[0]
+        if token in _INSTITUTION_WORDS or token in _NON_NAME_TOKENS:
+            return False
+        if not re.search(r"[AEIOUY]", token):
+            return False
+        if token.endswith("PAC") or any(root in token for root in _BUSINESS_ROOTS):
+            return False
+        if _VENDOR_PURPOSE.search(purpose_text):
+            return False
+        if purpose_text == "" or _WEAK_ONE_WORD_PURPOSE.match(purpose_text) or _PERSON_PAY_PURPOSE.search(purpose_text):
+            return True
+    return False
+
+
+def classify_payee(entity, other_id, name, txn_type, category, master, purpose=""):
     """Decide the payee. People and unclear rows carry no name and no address.
 
     master maps committee id -> dict with name, committee_type, designation.
     A candidate id in OTHER_ID is not a recipient (independent-expenditure rows
     use that column for the candidate the expenditure is about).
+    purpose is used only to decide; it is not returned.
     """
     entity = (entity or "").strip().upper()
     other_id = (other_id or "").strip().upper()
@@ -390,6 +526,11 @@ def classify_payee(entity, other_id, name, txn_type, category, master):
         other_id_for_link = other_id if other_is_committee else ""
 
     if entity in PERSON_ENTITY:
+        return _bucket("individuals", txn_type, category)
+
+    # A registered committee id is the committee, even when its name includes a person.
+    registered = bool(other_id_for_link and other_id_for_link in master)
+    if not registered and name_is_private_person(name, purpose):
         return _bucket("individuals", txn_type, category)
 
     if entity == "ORG":
@@ -560,6 +701,8 @@ def oppexp_parts(line):
         "file_num": c[22].strip() if len(c) > 22 else "",
         "memo": c[18].strip(),
         "sub_id": c[21].strip(),
+        # Used only to decide whether a one-word payee is a business. Not stored.
+        "purpose": c[15].strip(),
     }
 
 
@@ -684,13 +827,16 @@ def build_shard(committee, records, retrieved_at, summaries, top_n=TOP_PAYEES):
         children.append(_residual_child(
             cid, "individuals", INDIVIDUAL_BUCKET_NAME, individuals, ind_count,
             ind_sources, retrieved_at, {
-                "entity_types": ["IND", "CAN"],
+                "includes_entity_types": ["IND", "CAN"],
+                "also_includes": "person-like payee names filed under another entity type",
                 "payee_names_stored": False,
                 "amount_cents": individuals,
                 "transaction_count": ind_count,
             },
-            "Itemized rows with entity type IND or CAN filed by %s (%s). "
-            "The payee name is not stored. Memo code X is excluded. Sum %s across %d rows."
+            "Itemized rows for individual people filed by %s (%s), including rows coded to another "
+            "entity type when the payee name is a person or a benefit, payroll, reimbursement, or "
+            "similar label tied to a person. The payee name is not stored. Memo code X is excluded. "
+            "Sum %s across %d rows."
             % (committee["name"], cid, cents_to_decimal(individuals), ind_count),
         ))
     if other_cents != 0:

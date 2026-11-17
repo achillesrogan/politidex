@@ -50,7 +50,7 @@
     "sub_id": null,
     "filing_id": null
    },
-   "retrieved_at": "2026-11-16T23:46:17+00:00",
+   "retrieved_at": "2026-11-17T00:11:01+00:00",
    "status": "unverified"
   }
  },
@@ -95,7 +95,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -135,7 +135,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -180,7 +180,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -220,7 +220,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -265,7 +265,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -305,7 +305,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -350,7 +350,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -390,7 +390,7 @@
       "sample_filing_id": "1933917",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -435,7 +435,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -475,7 +475,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -520,7 +520,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -560,7 +560,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -605,7 +605,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -645,7 +645,7 @@
       "sample_filing_id": "1992353",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -694,7 +694,7 @@
       "sample_filing_id": "1933917",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -734,7 +734,7 @@
       "sample_filing_id": "1933917",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -783,7 +783,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -823,7 +823,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -868,7 +868,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -908,7 +908,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -957,7 +957,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -997,7 +997,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1046,7 +1046,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1086,7 +1086,7 @@
       "sample_filing_id": "2022029",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1131,7 +1131,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1171,7 +1171,7 @@
       "sample_filing_id": "1965249",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1216,7 +1216,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1256,7 +1256,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1301,7 +1301,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1341,7 +1341,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1390,7 +1390,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1430,7 +1430,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1475,7 +1475,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1515,7 +1515,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1564,7 +1564,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1604,7 +1604,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1649,7 +1649,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1689,7 +1689,7 @@
       "sample_filing_id": "1965249",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1738,7 +1738,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1778,7 +1778,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1827,7 +1827,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1867,7 +1867,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1912,7 +1912,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1952,7 +1952,7 @@
       "sample_filing_id": "1933917",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1997,7 +1997,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2037,7 +2037,7 @@
       "sample_filing_id": "1965249",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2086,7 +2086,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2126,7 +2126,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2175,7 +2175,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2215,7 +2215,7 @@
       "sample_filing_id": "1906569",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2267,7 +2267,7 @@
       "top_n": 25,
       "amount_cents": 125663488
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2313,7 +2313,7 @@
       "top_n": 25,
       "amount_cents": 125663488
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }

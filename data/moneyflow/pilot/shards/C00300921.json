@@ -50,7 +50,7 @@
     "sub_id": null,
     "filing_id": null
    },
-   "retrieved_at": "2026-11-16T23:46:17+00:00",
+   "retrieved_at": "2026-11-17T00:11:01+00:00",
    "status": "unverified"
   }
  },
@@ -99,7 +99,7 @@
       "sample_filing_id": "1966302",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -139,96 +139,7 @@
       "sample_filing_id": "1966302",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   }
-  },
-  {
-   "node": {
-    "id": "business:59bd6d13f91ee59a",
-    "kind": "business",
-    "official_id": null,
-    "name": "ALVIN WILLIAMS",
-    "terminal": true,
-    "terminal_label": "Spent",
-    "period": {
-     "cycle": 2026,
-     "coverage_end": null
-    },
-    "reported_in": null,
-    "reported_out": null,
-    "official_total_out": null,
-    "source": {
-     "id": "c_5866b21c08552b",
-     "text": "Payee ALVIN WILLIAMS as reported on itemized disbursements filed by C00300921.",
-     "value": {
-      "reported_name": "ALVIN WILLIAMS",
-      "official_id": null
-     },
-     "excerpt": "Filer C00300921, 2026 cycle: 50 itemized rows, memo code X excluded, sum 247500.00, payee ALVIN WILLIAMS. Purpose code mixed or blank. Sample image 202510159791040017, sub_id 4121020251298130233.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202510159791040017",
-     "check": {
-      "kind": "fec-itemized-payee",
-      "cycle": 2026,
-      "committee_id": "C00300921",
-      "amount_cents": 24750000,
-      "transaction_count": 50,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
-      ],
-      "transaction_type_or_category": null,
-      "sample_image_number": "202510159791040017",
-      "sample_sub_id": "4121020251298130233",
-      "sample_filing_id": "1920405",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   },
-   "edge": {
-    "id": "edge:a3bdd4eaaa136c92",
-    "from": "committee:C00300921",
-    "to": "business:59bd6d13f91ee59a",
-    "kind": "spent",
-    "amount": "247500.00",
-    "amount_cents": 24750000,
-    "count": 50,
-    "purpose": null,
-    "purpose_code": null,
-    "source": {
-     "id": "c_821d8c2d486f2c",
-     "text": "Spent from C00300921 to ALVIN WILLIAMS, sum 247500.00, 50 itemized rows.",
-     "value": 24750000,
-     "excerpt": "Filer C00300921, 2026 cycle: 50 itemized rows, memo code X excluded, sum 247500.00, payee ALVIN WILLIAMS. Purpose code mixed or blank. Sample image 202510159791040017, sub_id 4121020251298130233.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202510159791040017",
-     "check": {
-      "kind": "fec-itemized-disbursement",
-      "cycle": 2026,
-      "committee_id": "C00300921",
-      "amount_cents": 24750000,
-      "transaction_count": 50,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
-      ],
-      "transaction_type_or_category": null,
-      "sample_image_number": "202510159791040017",
-      "sample_sub_id": "4121020251298130233",
-      "sample_filing_id": "1920405",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -277,7 +188,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -317,7 +228,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -366,7 +277,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -406,7 +317,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -455,7 +366,7 @@
       "sample_filing_id": "1966302",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -495,7 +406,7 @@
       "sample_filing_id": "1966302",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -544,7 +455,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -584,7 +495,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -633,7 +544,7 @@
       "sample_filing_id": "1937965",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -673,7 +584,7 @@
       "sample_filing_id": "1937965",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -722,7 +633,7 @@
       "sample_filing_id": "1920405",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -762,7 +673,7 @@
       "sample_filing_id": "1920405",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -811,7 +722,7 @@
       "sample_filing_id": "1994670",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -851,7 +762,7 @@
       "sample_filing_id": "1994670",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -900,7 +811,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -940,7 +851,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -989,7 +900,7 @@
       "sample_filing_id": "1920405",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1029,7 +940,7 @@
       "sample_filing_id": "1920405",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1078,7 +989,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1118,7 +1029,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1167,7 +1078,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1207,7 +1118,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1256,7 +1167,7 @@
       "sample_filing_id": "1966302",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1296,7 +1207,7 @@
       "sample_filing_id": "1966302",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1345,7 +1256,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1385,7 +1296,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1434,7 +1345,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1474,7 +1385,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1523,7 +1434,7 @@
       "sample_filing_id": "1994670",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1563,7 +1474,7 @@
       "sample_filing_id": "1994670",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1612,7 +1523,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1652,96 +1563,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   }
-  },
-  {
-   "node": {
-    "id": "business:44c43721c5dca895",
-    "kind": "business",
-    "official_id": null,
-    "name": "CARR",
-    "terminal": true,
-    "terminal_label": "Spent",
-    "period": {
-     "cycle": 2026,
-     "coverage_end": null
-    },
-    "reported_in": null,
-    "reported_out": null,
-    "official_total_out": null,
-    "source": {
-     "id": "c_c721be9111b1d5",
-     "text": "Payee CARR as reported on itemized disbursements filed by C00300921.",
-     "value": {
-      "reported_name": "CARR",
-      "official_id": null
-     },
-     "excerpt": "Filer C00300921, 2026 cycle: 12 itemized rows, memo code X excluded, sum 5640.64, payee CARR. Purpose code mixed or blank. Sample image 202507159762845657, sub_id 4071520251208520615.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507159762845657",
-     "check": {
-      "kind": "fec-itemized-payee",
-      "cycle": 2026,
-      "committee_id": "C00300921",
-      "amount_cents": 564064,
-      "transaction_count": 12,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
-      ],
-      "transaction_type_or_category": null,
-      "sample_image_number": "202507159762845657",
-      "sample_sub_id": "4071520251208520615",
-      "sample_filing_id": "1901254",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   },
-   "edge": {
-    "id": "edge:6112fb253787ced5",
-    "from": "committee:C00300921",
-    "to": "business:44c43721c5dca895",
-    "kind": "spent",
-    "amount": "5640.64",
-    "amount_cents": 564064,
-    "count": 12,
-    "purpose": null,
-    "purpose_code": null,
-    "source": {
-     "id": "c_2c378f1c2d45ec",
-     "text": "Spent from C00300921 to CARR, sum 5640.64, 12 itemized rows.",
-     "value": 564064,
-     "excerpt": "Filer C00300921, 2026 cycle: 12 itemized rows, memo code X excluded, sum 5640.64, payee CARR. Purpose code mixed or blank. Sample image 202507159762845657, sub_id 4071520251208520615.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507159762845657",
-     "check": {
-      "kind": "fec-itemized-disbursement",
-      "cycle": 2026,
-      "committee_id": "C00300921",
-      "amount_cents": 564064,
-      "transaction_count": 12,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
-      ],
-      "transaction_type_or_category": null,
-      "sample_image_number": "202507159762845657",
-      "sample_sub_id": "4071520251208520615",
-      "sample_filing_id": "1901254",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1790,7 +1612,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1830,96 +1652,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   }
-  },
-  {
-   "node": {
-    "id": "business:f47ecc51d3fb0c69",
-    "kind": "business",
-    "official_id": null,
-    "name": "ALVIN WILLIAMS HSA",
-    "terminal": true,
-    "terminal_label": "Spent",
-    "period": {
-     "cycle": 2026,
-     "coverage_end": null
-    },
-    "reported_in": null,
-    "reported_out": null,
-    "official_total_out": null,
-    "source": {
-     "id": "c_83b140e35e990d",
-     "text": "Payee ALVIN WILLIAMS HSA as reported on itemized disbursements filed by C00300921.",
-     "value": {
-      "reported_name": "ALVIN WILLIAMS HSA",
-      "official_id": null
-     },
-     "excerpt": "Filer C00300921, 2026 cycle: 8 itemized rows, memo code X excluded, sum 4700.00, payee ALVIN WILLIAMS HSA. Purpose code mixed or blank. Sample image 202507159762845652, sub_id 4071520251208520601.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507159762845652",
-     "check": {
-      "kind": "fec-itemized-payee",
-      "cycle": 2026,
-      "committee_id": "C00300921",
-      "amount_cents": 470000,
-      "transaction_count": 8,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
-      ],
-      "transaction_type_or_category": null,
-      "sample_image_number": "202507159762845652",
-      "sample_sub_id": "4071520251208520601",
-      "sample_filing_id": "1901254",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
-     "status": "unverified"
-    }
-   },
-   "edge": {
-    "id": "edge:b6b2d2801bad541d",
-    "from": "committee:C00300921",
-    "to": "business:f47ecc51d3fb0c69",
-    "kind": "spent",
-    "amount": "4700.00",
-    "amount_cents": 470000,
-    "count": 8,
-    "purpose": null,
-    "purpose_code": null,
-    "source": {
-     "id": "c_9759499312b5f0",
-     "text": "Spent from C00300921 to ALVIN WILLIAMS HSA, sum 4700.00, 8 itemized rows.",
-     "value": 470000,
-     "excerpt": "Filer C00300921, 2026 cycle: 8 itemized rows, memo code X excluded, sum 4700.00, payee ALVIN WILLIAMS HSA. Purpose code mixed or blank. Sample image 202507159762845652, sub_id 4071520251208520601.",
-     "source_name": "Federal Election Commission",
-     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202507159762845652",
-     "check": {
-      "kind": "fec-itemized-disbursement",
-      "cycle": 2026,
-      "committee_id": "C00300921",
-      "amount_cents": 470000,
-      "transaction_count": 8,
-      "memo_code_x_excluded": true,
-      "file_urls": [
-       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
-      ],
-      "description_urls": [
-       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
-      ],
-      "transaction_type_or_category": null,
-      "sample_image_number": "202507159762845652",
-      "sample_sub_id": "4071520251208520601",
-      "sample_filing_id": "1901254",
-      "edge_kind": "spent"
-     },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1968,7 +1701,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2008,7 +1741,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2057,7 +1790,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2097,7 +1830,7 @@
       "sample_filing_id": "2019389",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2146,7 +1879,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2186,7 +1919,7 @@
       "sample_filing_id": "1885585",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2235,7 +1968,7 @@
       "sample_filing_id": "1901254",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2275,7 +2008,274 @@
       "sample_filing_id": "1901254",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:d5817c967663b70c",
+    "kind": "business",
+    "official_id": null,
+    "name": "WELLS FARGO",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_f3c0f67fdab2e6",
+     "text": "Payee WELLS FARGO as reported on itemized disbursements filed by C00300921.",
+     "value": {
+      "reported_name": "WELLS FARGO",
+      "official_id": null
+     },
+     "excerpt": "Filer C00300921, 2026 cycle: 30 itemized rows, memo code X excluded, sum 2199.00, payee WELLS FARGO. Purpose code mixed or blank. Sample image 202504139755272574, sub_id 4041420251184142546.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202504139755272574",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00300921",
+      "amount_cents": 219900,
+      "transaction_count": 30,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202504139755272574",
+      "sample_sub_id": "4041420251184142546",
+      "sample_filing_id": "1885585",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:dc730678204c1879",
+    "from": "committee:C00300921",
+    "to": "business:d5817c967663b70c",
+    "kind": "spent",
+    "amount": "2199.00",
+    "amount_cents": 219900,
+    "count": 30,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_151988bb290fc4",
+     "text": "Spent from C00300921 to WELLS FARGO, sum 2199.00, 30 itemized rows.",
+     "value": 219900,
+     "excerpt": "Filer C00300921, 2026 cycle: 30 itemized rows, memo code X excluded, sum 2199.00, payee WELLS FARGO. Purpose code mixed or blank. Sample image 202504139755272574, sub_id 4041420251184142546.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202504139755272574",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00300921",
+      "amount_cents": 219900,
+      "transaction_count": 30,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202504139755272574",
+      "sample_sub_id": "4041420251184142546",
+      "sample_filing_id": "1885585",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:ab386939624d21ca",
+    "kind": "business",
+    "official_id": null,
+    "name": "AMERICAN EXPRESS",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_c4fbd071682130",
+     "text": "Payee AMERICAN EXPRESS as reported on itemized disbursements filed by C00300921.",
+     "value": {
+      "reported_name": "AMERICAN EXPRESS",
+      "official_id": null
+     },
+     "excerpt": "Filer C00300921, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1590.00, payee AMERICAN EXPRESS. Purpose code mixed or blank. Sample image 202610119908611713, sub_id 4101920261614013975.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610119908611713",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00300921",
+      "amount_cents": 159000,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610119908611713",
+      "sample_sub_id": "4101920261614013975",
+      "sample_filing_id": "2019389",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:91093ebd1dd6ae2f",
+    "from": "committee:C00300921",
+    "to": "business:ab386939624d21ca",
+    "kind": "spent",
+    "amount": "1590.00",
+    "amount_cents": 159000,
+    "count": 2,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_80503cadda4744",
+     "text": "Spent from C00300921 to AMERICAN EXPRESS, sum 1590.00, 2 itemized rows.",
+     "value": 159000,
+     "excerpt": "Filer C00300921, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1590.00, payee AMERICAN EXPRESS. Purpose code mixed or blank. Sample image 202610119908611713, sub_id 4101920261614013975.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610119908611713",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00300921",
+      "amount_cents": 159000,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610119908611713",
+      "sample_sub_id": "4101920261614013975",
+      "sample_filing_id": "2019389",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:26a5af0015dd1be0",
+    "kind": "business",
+    "official_id": null,
+    "name": "NORTHWESTERN MUTUAL",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_2ae3190db8e740",
+     "text": "Payee NORTHWESTERN MUTUAL as reported on itemized disbursements filed by C00300921.",
+     "value": {
+      "reported_name": "NORTHWESTERN MUTUAL",
+      "official_id": null
+     },
+     "excerpt": "Filer C00300921, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1588.60, payee NORTHWESTERN MUTUAL. Purpose code mixed or blank. Sample image 202610119908611762, sub_id 4101920261614014121.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610119908611762",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00300921",
+      "amount_cents": 158860,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610119908611762",
+      "sample_sub_id": "4101920261614014121",
+      "sample_filing_id": "2019389",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:9db410fd908c6a80",
+    "from": "committee:C00300921",
+    "to": "business:26a5af0015dd1be0",
+    "kind": "spent",
+    "amount": "1588.60",
+    "amount_cents": 158860,
+    "count": 2,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_920f6500a627c4",
+     "text": "Spent from C00300921 to NORTHWESTERN MUTUAL, sum 1588.60, 2 itemized rows.",
+     "value": 158860,
+     "excerpt": "Filer C00300921, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1588.60, payee NORTHWESTERN MUTUAL. Purpose code mixed or blank. Sample image 202610119908611762, sub_id 4101920261614014121.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610119908611762",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00300921",
+      "amount_cents": 158860,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610119908611762",
+      "sample_sub_id": "4101920261614014121",
+      "sample_filing_id": "2019389",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2296,10 +2296,10 @@
     "reported_out": null,
     "official_total_out": null,
     "source": {
-     "id": "c_eea57e8a096bda",
-     "text": "reported assistance to individuals — not itemized for C00300921, sum 47314.87.",
-     "value": 4731487,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921). The payee name is not stored. Memo code X is excluded. Sum 47314.87 across 5 rows.",
+     "id": "c_e9f5d24640c052",
+     "text": "reported assistance to individuals — not itemized for C00300921, sum 306155.51.",
+     "value": 30615551,
+     "excerpt": "Itemized rows for individual people filed by BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 306155.51 across 77 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -2321,14 +2321,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
-      "amount_cents": 4731487,
-      "transaction_count": 5
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 30615551,
+      "transaction_count": 77
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2337,16 +2338,16 @@
     "from": "committee:C00300921",
     "to": "residual:C00300921:individuals",
     "kind": "reported disbursement",
-    "amount": "47314.87",
-    "amount_cents": 4731487,
-    "count": 5,
+    "amount": "306155.51",
+    "amount_cents": 30615551,
+    "count": 77,
     "purpose": null,
     "purpose_code": null,
     "source": {
-     "id": "c_eea57e8a096bda",
-     "text": "reported assistance to individuals — not itemized for C00300921, sum 47314.87.",
-     "value": 4731487,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921). The payee name is not stored. Memo code X is excluded. Sum 47314.87 across 5 rows.",
+     "id": "c_e9f5d24640c052",
+     "text": "reported assistance to individuals — not itemized for C00300921, sum 306155.51.",
+     "value": 30615551,
+     "excerpt": "Itemized rows for individual people filed by BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 306155.51 across 77 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -2368,14 +2369,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
-      "amount_cents": 4731487,
-      "transaction_count": 5
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 30615551,
+      "transaction_count": 77
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2396,10 +2398,10 @@
     "reported_out": null,
     "official_total_out": null,
     "source": {
-     "id": "c_b871778eef4991",
-     "text": "other reported disbursements for C00300921, sum 142569.72.",
-     "value": 14256972,
-     "excerpt": "Remainder of reported disbursements for BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921) in the 2026 cycle: itemized payees below the top 25 (12572.88), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (129996.84). Sum 142569.72. No payee names from the remainder are stored.",
+     "id": "c_0d134777b2f98c",
+     "text": "other reported disbursements for C00300921, sum 136192.12.",
+     "value": 13619212,
+     "excerpt": "Remainder of reported disbursements for BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921) in the 2026 cycle: itemized payees below the top 25 (6195.28), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (129996.84). Sum 136192.12. No payee names from the remainder are stored.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
      "check": {
@@ -2420,14 +2422,14 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "payees_below_top_cents": 1257288,
+      "payees_below_top_cents": 619528,
       "entity_type_unclear_cents": 0,
       "entity_type_unclear_count": 0,
       "not_in_itemized_files_cents": 12999684,
       "top_n": 25,
-      "amount_cents": 14256972
+      "amount_cents": 13619212
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -2436,16 +2438,16 @@
     "from": "committee:C00300921",
     "to": "residual:C00300921:other",
     "kind": "reported disbursement",
-    "amount": "142569.72",
-    "amount_cents": 14256972,
-    "count": 101,
+    "amount": "136192.12",
+    "amount_cents": 13619212,
+    "count": 65,
     "purpose": null,
     "purpose_code": null,
     "source": {
-     "id": "c_b871778eef4991",
-     "text": "other reported disbursements for C00300921, sum 142569.72.",
-     "value": 14256972,
-     "excerpt": "Remainder of reported disbursements for BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921) in the 2026 cycle: itemized payees below the top 25 (12572.88), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (129996.84). Sum 142569.72. No payee names from the remainder are stored.",
+     "id": "c_0d134777b2f98c",
+     "text": "other reported disbursements for C00300921, sum 136192.12.",
+     "value": 13619212,
+     "excerpt": "Remainder of reported disbursements for BLACK AMERICA'S POLITICAL ACTION COMMITTEE (C00300921) in the 2026 cycle: itemized payees below the top 25 (6195.28), rows whose entity type was missing, unrecognized, or in conflict (0.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (129996.84). Sum 136192.12. No payee names from the remainder are stored.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
      "check": {
@@ -2466,14 +2468,14 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "payees_below_top_cents": 1257288,
+      "payees_below_top_cents": 619528,
       "entity_type_unclear_cents": 0,
       "entity_type_unclear_count": 0,
       "not_in_itemized_files_cents": 12999684,
       "top_n": 25,
-      "amount_cents": 14256972
+      "amount_cents": 13619212
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -2483,11 +2485,11 @@
   "official_total_out": "1691495.59",
   "official_total_out_cents": 169149559,
   "itemized_cents": 156149875,
-  "individuals_cents": 4731487,
+  "individuals_cents": 30615551,
   "unclear_entity_cents": 0,
-  "below_top_cents": 1257288,
+  "below_top_cents": 619528,
   "not_in_itemized_files_cents": 12999684,
-  "other_bucket_cents": 14256972,
+  "other_bucket_cents": 13619212,
   "child_edge_cents": 169149559,
   "ok": true,
   "tolerance_cents": 0

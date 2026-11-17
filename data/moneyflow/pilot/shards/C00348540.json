@@ -50,7 +50,7 @@
     "sub_id": null,
     "filing_id": null
    },
-   "retrieved_at": "2026-11-16T23:46:17+00:00",
+   "retrieved_at": "2026-11-17T00:11:01+00:00",
    "status": "unverified"
   }
  },
@@ -95,7 +95,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -135,7 +135,7 @@
       "sample_filing_id": "1994150",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -180,7 +180,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -220,7 +220,7 @@
       "sample_filing_id": "2025979",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -265,7 +265,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -305,7 +305,7 @@
       "sample_filing_id": "2025979",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -350,7 +350,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -390,7 +390,7 @@
       "sample_filing_id": "2025979",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -439,7 +439,7 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -479,7 +479,7 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -528,7 +528,7 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -568,7 +568,7 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -613,7 +613,7 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -653,7 +653,7 @@
       "sample_filing_id": "1994179",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -702,7 +702,7 @@
       "sample_filing_id": "1994150",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -742,7 +742,7 @@
       "sample_filing_id": "1994150",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -791,7 +791,7 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -831,7 +831,7 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -880,7 +880,7 @@
       "sample_filing_id": "2025979",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -920,7 +920,7 @@
       "sample_filing_id": "2025979",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -969,7 +969,7 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1009,7 +1009,7 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1033,7 +1033,7 @@
      "id": "c_7266aefb08f9e3",
      "text": "reported assistance to individuals — not itemized for C00348540, sum 1233.39.",
      "value": 123339,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by 1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540). The payee name is not stored. Memo code X is excluded. Sum 1233.39 across 2 rows.",
+     "excerpt": "Itemized rows for individual people filed by 1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 1233.39 across 2 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -1054,14 +1054,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
+      "also_includes": "person-like payee names filed under another entity type",
       "amount_cents": 123339,
       "transaction_count": 2
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1079,7 +1080,7 @@
      "id": "c_7266aefb08f9e3",
      "text": "reported assistance to individuals — not itemized for C00348540, sum 1233.39.",
      "value": 123339,
-     "excerpt": "Itemized rows with entity type IND or CAN filed by 1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540). The payee name is not stored. Memo code X is excluded. Sum 1233.39 across 2 rows.",
+     "excerpt": "Itemized rows for individual people filed by 1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 1233.39 across 2 rows.",
      "source_name": "Federal Election Commission",
      "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
      "check": {
@@ -1100,14 +1101,15 @@
       "sub_id": null,
       "filing_id": null,
       "payee_names_stored": false,
-      "entity_types": [
+      "includes_entity_types": [
        "IND",
        "CAN"
       ],
+      "also_includes": "person-like payee names filed under another entity type",
       "amount_cents": 123339,
       "transaction_count": 2
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
@@ -1159,7 +1161,7 @@
       "top_n": 25,
       "amount_cents": 115137684
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    },
@@ -1205,7 +1207,7 @@
       "top_n": 25,
       "amount_cents": 115137684
      },
-     "retrieved_at": "2026-11-16T23:46:17+00:00",
+     "retrieved_at": "2026-11-17T00:11:01+00:00",
      "status": "unverified"
     }
    }
