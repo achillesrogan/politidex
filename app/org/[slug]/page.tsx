@@ -1,3 +1,4 @@
+import SourceCoverage from "@/components/SourceCoverage";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Fact from "@/components/Fact";
@@ -43,6 +44,7 @@ export default async function OrgPage({ params }: { params: Promise<{ slug: stri
       <header className="mb-6 border-b-4 border-double border-[var(--color-ink)] pb-4">
         <div className="tag text-[var(--color-muted)]">{kindLabel}</div>
         <h1 className="font-display text-4xl sm:text-5xl font-black masthead-shadow mt-1">{o.name}</h1>
+        <SourceCoverage />
         {o.connected_org && <p className="text-lg text-[var(--color-muted)] mt-1">Connected organization (as listed with FEC): {o.connected_org}</p>}
       </header>
       <section className="newspaper-card p-5 sm:p-6 border-l-4 !border-l-[var(--color-record)]">

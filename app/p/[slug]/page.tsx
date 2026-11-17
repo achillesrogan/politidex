@@ -1,4 +1,5 @@
 import CommitteeInfo from "@/components/CommitteeInfo";
+import SourceCoverage from "@/components/SourceCoverage";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Fact from "@/components/Fact";
@@ -35,6 +36,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
         <div className="tag text-[var(--color-muted)]">{p.kind === "executive" ? "Executive branch" : p.chamber === "senate" ? "U.S. Senate" : "U.S. House of Representatives"}</div>
         <h1 className="font-display text-4xl sm:text-5xl font-black masthead-shadow mt-1">{p.name}</h1>
         <p className="text-xl text-[var(--color-muted)] mt-1">{p.role}{p.stateName ? ` · ${p.stateName}` : ""}{p.party ? ` · ${p.party}` : ""}</p>
+        <SourceCoverage />
       </header>
 
       {(() => { const sm = approvedSummary(slug); return sm && (

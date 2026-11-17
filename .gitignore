@@ -13,6 +13,7 @@ next-env.d.ts
 
 # Regenerable / bulky data (see README for how to rebuild)
 data/raw/
+data/career/congress.json
 data/verify-cache/
 data/build/
 data/people/*
