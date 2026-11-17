@@ -17,12 +17,18 @@ export async function GET(_req: Request, context: { params: Promise<{ id: string
     if (!moneyflowPublished(manifest) || !pilotCommitteeIds(manifest).has(id)) {
       return NextResponse.json({ error: "No shard for this committee." }, { status: 404, headers: { "cache-control": "no-store" } });
     }
-    const dir = path.resolve(process.cwd(), "data", "moneyflow", "pilot", "shards");
-    const file = path.resolve(dir, `${id}.json`);
-    if (!file.startsWith(dir + path.sep) || !existsSync(file)) {
-      return NextResponse.json({ error: "No shard for this committee." }, { status: 404, headers: { "cache-control": "no-store" } });
+    const fixtureShard = fixture?.shards && fixture.shards[id];
+    let shard: unknown;
+    if (fixtureShard) {
+      shard = fixtureShard;
+    } else {
+      const dir = path.resolve(process.cwd(), "data", "moneyflow", "pilot", "shards");
+      const file = path.resolve(dir, `${id}.json`);
+      if (!file.startsWith(dir + path.sep) || !existsSync(file)) {
+        return NextResponse.json({ error: "No shard for this committee." }, { status: 404, headers: { "cache-control": "no-store" } });
+      }
+      shard = JSON.parse(readFileSync(file, "utf8"));
     }
-    const shard = JSON.parse(readFileSync(file, "utf8"));
     if (!moneyflowSources(shard).every((source) => moneyflowSourceReady(source))) {
       return NextResponse.json({ error: "No shard for this committee." }, { status: 404, headers: { "cache-control": "no-store" } });
     }

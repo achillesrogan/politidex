@@ -560,21 +560,61 @@ def test_files_ready_rejects_zips_older_than_seven_days():
     print("zip age")
     import os
     import tempfile
+    import zipfile
+    from datetime import datetime, timezone
+    from email.utils import formatdate
     import moneyflow_verify as V
     from moneyflow_lib import FILE_URLS
 
     keys = ("cm", "webk", "oth", "pas2", "oppexp")
+
+    def touch(root, when):
+        for key in keys:
+            path = root / Path(FILE_URLS[key]).name
+            if not path.exists():
+                path.write_bytes(b"x" * 1000)
+            os.utime(path, (when, when))
+
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         stamped = 1_700_000_000
-        for key in keys:
-            path = root / Path(FILE_URLS[key]).name
-            path.write_bytes(b"x" * 1000)
-            os.utime(path, (stamped, stamped))
+        touch(root, stamped)
         week = V.ZIP_MAX_AGE
         check("zips from this moment are ready", V.files_ready(now=stamped, root=root))
         check("zips at exactly 7 days are ready", V.files_ready(now=stamped + week, root=root))
         check("zips older than 7 days are not ready", not V.files_ready(now=stamped + week + 1, root=root))
+        touch(root, stamped + 60)
+        check("a future local timestamp is stale", not V.files_ready(now=stamped, root=root))
+
+        touch(root, stamped)
+        header = formatdate(stamped - week - 86400, usegmt=True)
+        (root / "sources.json").write_text(json.dumps({
+            "files": {key: {"last_modified": header} for key in keys},
+        }))
+        check("an old FEC Last-Modified date is stale even when the local copy is new", not V.files_ready(now=stamped, root=root))
+        fresh_header = formatdate(stamped - 3600, usegmt=True)
+        (root / "sources.json").write_text(json.dumps({
+            "files": {key: {"last_modified": fresh_header} for key in keys},
+        }))
+        touch(root, stamped - 30 * 86400)
+        check("a recent FEC Last-Modified date keeps an old local copy", V.files_ready(now=stamped, root=root))
+        future_header = formatdate(stamped + 86400, usegmt=True)
+        (root / "sources.json").write_text(json.dumps({
+            "files": {key: {"last_modified": future_header} for key in keys},
+        }))
+        touch(root, stamped)
+        check("a future FEC Last-Modified date is stale", not V.files_ready(now=stamped, root=root))
+        (root / "sources.json").unlink()
+
+        old = datetime.fromtimestamp(stamped - week - 86400, timezone.utc)
+        old_parts = (old.year, old.month, old.day, old.hour, old.minute, old.second)
+        for key in keys:
+            path = root / Path(FILE_URLS[key]).name
+            info = zipfile.ZipInfo("member.txt", date_time=old_parts)
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr(info, b"x" * 1000)
+            os.utime(path, (stamped, stamped))
+        check("an old date inside the zip is stale even when the local copy is new", not V.files_ready(now=stamped, root=root))
 
 
 def test_verifier_claims_reproducibility_not_correctness():

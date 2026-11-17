@@ -17,7 +17,9 @@ from __future__ import annotations
 import json
 import sys
 import time
+import zipfile
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -57,8 +59,58 @@ def walk_sources(shard):
 ZIP_MAX_AGE = 7 * 24 * 60 * 60
 
 
+def _http_timestamp(value):
+    if not value:
+        return None
+    try:
+        parsed = parsedate_to_datetime(value)
+    except (TypeError, ValueError, IndexError, OverflowError):
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.timestamp()
+
+
+def _zip_timestamp(path):
+    """Date the FEC stored in the zip. Not the local copy time."""
+    try:
+        with zipfile.ZipFile(path) as archive:
+            stamps = []
+            for info in archive.infolist():
+                if info.is_dir():
+                    continue
+                year, month, day, hour, minute, second = info.date_time
+                stamps.append(datetime(year, month, day, hour, minute, second, tzinfo=timezone.utc).timestamp())
+    except (zipfile.BadZipFile, OSError, ValueError, OverflowError):
+        return None
+    return max(stamps) if stamps else None
+
+
+def _saved_last_modified(root, key):
+    sidecar = Path(root) / "sources.json"
+    if not sidecar.exists():
+        return None
+    try:
+        saved = json.loads(sidecar.read_text()).get("files") or {}
+    except (OSError, json.JSONDecodeError):
+        return None
+    return (saved.get(key) or {}).get("last_modified")
+
+
+def _fresh(stamp, clock):
+    """A future stamp is stale. So is one older than 7 days."""
+    if stamp is None or stamp > clock:
+        return False
+    return clock - stamp <= ZIP_MAX_AGE
+
+
 def files_ready(now=None, root=None):
-    """True when the five bulk zips exist, are non-trivial, and are 7 days old or newer."""
+    """True when the five bulk zips exist and their FEC date is within 7 days.
+
+    The date is the saved Last-Modified header, then the date inside the zip.
+    The local mtime is used only when neither FEC date is present. A local
+    mtime in the future is stale either way.
+    """
     root = Path(root) if root is not None else MF.RAW_DIR
     clock = time.time() if now is None else now
     for key in ("cm", "webk", "oth", "pas2", "oppexp"):
@@ -67,7 +119,13 @@ def files_ready(now=None, root=None):
             return False
         if "indiv" in path.name.lower():
             return False
-        if clock - path.stat().st_mtime > ZIP_MAX_AGE:
+        mtime = path.stat().st_mtime
+        if mtime > clock:
+            return False
+        fec = _http_timestamp(_saved_last_modified(root, key))
+        if fec is None:
+            fec = _zip_timestamp(path)
+        if not _fresh(fec if fec is not None else mtime, clock):
             return False
     return True
 
