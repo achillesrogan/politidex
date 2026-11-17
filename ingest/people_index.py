@@ -206,22 +206,19 @@ def _filing_rank(row):
 
 
 def _dedupe_key(row):
-    """Amendments share a transaction id and image. A different image or sub_id is another row."""
+    """One reported gift is committee, transaction id, date, and name. Amendments change the image."""
     committee = row.get("committee_id")
     tran = row.get("tran_id") or ""
     sub = row.get("sub_id") or ""
-    image = row.get("image") or ""
-    file_num = row.get("file_num") or ""
     if tran:
-        marker = image or file_num or sub
-        return (committee, "tran", tran, marker)
+        return (committee, "tran", tran, row.get("date") or "", _norm(row.get("name") or ""))
     if sub:
         return (committee, "sub", sub)
     return None
 
 
 def _latest_rows(rows):
-    """Keep the latest filing for one reported transaction. Different images are kept."""
+    """Keep the filing with the highest file number for one reported transaction."""
     chosen = {}
     loose = []
     for row in rows:
@@ -264,16 +261,24 @@ def to_public(person):
 
 
 def _apply_refunds(groups, refunds):
-    """Subtract a refund from the one cluster with the same name, city, and state."""
+    """Subtract a refund only when one cluster shares name, city, and state.
+
+    Any other refund holds back every cluster with that last and first name.
+    """
     unmatched = []
+    withheld = set()
     for refund in refunds:
         place = _place_key(refund)
         matches = [members for ident, members in groups.items() if place and ident[:6] == place]
-        if len(matches) == 1:
+        name = parse_person_name(refund.get("name")) or {}
+        bare = (name.get("last") or "", name.get("first") or "")
+        if place and len(matches) == 1:
             matches[0].append(refund)
         else:
             unmatched.append(refund)
-    return unmatched
+            if bare[0] and bare[1]:
+                withheld.add(bare)
+    return unmatched, withheld
 
 
 def build_index(rows, retrieved_at):
@@ -292,7 +297,7 @@ def build_index(rows, retrieved_at):
                 weak.append((name, row, "missing city, state, employer, or occupation"))
             continue
         groups.setdefault(ident, []).append(row)
-    unmatched_refunds = _apply_refunds(groups, refunds)
+    unmatched_refunds, withheld_names = _apply_refunds(groups, refunds)
 
     published = []
     unlinked = []
@@ -310,8 +315,21 @@ def build_index(rows, retrieved_at):
         by_bare.setdefault((name["last"], name["first"]), []).append((None, [(row, reason)]))
     for place, members in grouped_weak.items():
         by_bare.setdefault((place[0], place[1]), []).append((None, members))
+    for refund in unmatched_refunds:
+        name = parse_person_name(refund.get("name")) or {}
+        last, first = name.get("last") or "", name.get("first") or ""
+        if not last or not first:
+            continue
+        by_bare.setdefault((last, first), []).append((None, [(refund, "refund did not match one cluster")]))
 
     for (last, first), clusters in sorted(by_bare.items()):
+        if (last, first) in withheld_names:
+            unlinked.append({
+                "name": "%s, %s" % (last, first),
+                "reason": "A refund did not match a single cluster on name, city, and state, so no cluster with this first and last name is published.",
+                "clusters": _cluster_summaries(clusters),
+            })
+            continue
         strong = [(ident, members) for ident, members in clusters if ident is not None]
         high = [(ident, members) for ident, members in clusters if _cluster_total(ident, members) >= THRESHOLD_CENTS]
         weak_high = [pair for pair in high if pair[0] is None]
@@ -347,14 +365,6 @@ def build_index(rows, retrieved_at):
                 "qualification": "Itemized FEC contributions in the 2026 cycle aggregate to at least $10,000.00 for this reported name, middle name, city, state, employer, and occupation.",
             }
             published.append(to_public(person))
-    for refund in unmatched_refunds:
-        name = parse_person_name(refund.get("name")) or {}
-        last, first = name.get("last") or "", name.get("first") or ""
-        unlinked.append({
-            "name": "%s, %s" % (last, first) if last and first else (refund.get("name") or ""),
-            "reason": "Refund did not match a single cluster on name, city, and state.",
-            "clusters": _cluster_summaries([(None, [(refund, "refund did not match one cluster")])]),
-        })
     published.sort(key=lambda person: (-person["amount_cents"], person["name"], person["id"]))
     return {
         "notice": NOTICE,

@@ -83,11 +83,22 @@ def test_threshold_and_aggregation():
     check("a 15000 gift plus a 9000 refund with blank work fields is not published at 15000", missed["published"] == [])
     ambiguous = P.build_index([
         row("DOE, JOHN Q", 1_200_000, employer="EXAMPLE SCHOOL"),
-        row("DOE, JOHN Q", 1_200_000, sub_id="2", employer="OTHER SCHOOL"),
+        row("DOE, JOHN Q", 1_500_000, sub_id="2", employer="OTHER SCHOOL"),
         row("DOE, JOHN Q", 300_000, sub_id="3", txn_type="22Y", employer="", occupation=""),
     ], "2026-11-17T02:30:00+00:00")
-    check("a refund with two possible clusters is not subtracted", len(ambiguous["published"]) == 2 and {p["amount"] for p in ambiguous["published"]} == {"12000.00"})
-    check("that refund is sent to review", any("Refund did not match" in item["reason"] for item in ambiguous["unlinked"]))
+    check("an ambiguous refund publishes neither cluster", ambiguous["published"] == [])
+    check("that refund is sent to review", any("refund did not match" in item["reason"].lower() for item in ambiguous["unlinked"]))
+    bare_name = P.build_index([
+        row("DOE, JOHN Q", 1_500_000),
+        row("DOE, JOHN", 900_000, sub_id="2", txn_type="22Y", employer="", occupation=""),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a refund to DOE, JOHN against DOE, JOHN Q is not published at 15000", bare_name["published"] == [])
+    check("the unmatched middle-name gift is on the review list", any(item["name"] == "DOE, JOHN" for item in bare_name["unlinked"]))
+    middle_refund = P.build_index([
+        row("DOE, JOHN Q", 2_000_000),
+        row("DOE, JOHN Q", 500_000, sub_id="2", txn_type="22Y", employer="", occupation=""),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a refund with the same middle name is subtracted", len(middle_refund["published"]) == 1 and middle_refund["published"][0]["amount"] == "15000.00")
 
 
 def test_same_name_is_not_linked():
@@ -175,10 +186,15 @@ def test_address_and_memo_and_duplicates():
     ], "2026-11-17T02:30:00+00:00")
     check("rows without a transaction id dedupe on sub_id", len(bare["published"]) == 1 and bare["published"][0]["amount"] == "10000.00")
     reused = P.build_index([
-        row("DOE, JANE QUINN", 600_000, tran_id="SA1", image="202601019900000001", sub_id="1"),
-        row("DOE, JANE QUINN", 600_000, tran_id="SA1", image="202601019900000002", sub_id="2"),
+        row("DOE, JANE QUINN", 600_000, tran_id="SA1", image="202601019900000001", date="2026-03-01", sub_id="1"),
+        row("DOE, JANE QUINN", 600_000, tran_id="SA1", image="202601019900000002", date="2026-04-02", sub_id="2"),
     ], "2026-11-17T02:30:00+00:00")
-    check("the same transaction id on another image is kept", len(reused["published"]) == 1 and reused["published"][0]["amount"] == "12000.00")
+    check("the same transaction id on another date is kept", len(reused["published"]) == 1 and reused["published"][0]["amount"] == "12000.00")
+    amended = P.build_index([
+        row("DOE, JANE QUINN", 1_500_000, tran_id="SA9", image="202601019900000001", file_num="1", amend="N"),
+        row("DOE, JANE QUINN", 1_500_000, tran_id="SA9", image="202601019900000099", sub_id="9", file_num="2", amend="A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("an amendment with a new image is not counted twice", len(amended["published"]) == 1 and amended["published"][0]["amount"] == "15000.00")
     check("the notice is on the result", P.NOTICE in built["notice"] and "30111" in built["notice"])
 
 
