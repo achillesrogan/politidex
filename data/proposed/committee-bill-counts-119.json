@@ -9,8 +9,8 @@
     "committees": 230,
     "full_committees": 50,
     "subcommittees": 180,
-    "bills_referred_full_committees": 24665,
-    "bills_referred_including_subcommittees": 26979
+    "bills_associated_full_committees": 24665,
+    "bills_associated_including_subcommittees": 26979
   },
   "committees": [
     {
@@ -21,12 +21,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 729,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-agriculture/hsag00",
       "retrieved_at": "2026-11-17T03:51:52Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 729
     },
     {
       "politidex_code": "AP00",
@@ -36,12 +36,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 155,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-appropriations/hsap00",
       "retrieved_at": "2026-11-17T03:51:54Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 155
     },
     {
       "politidex_code": "AS00",
@@ -51,12 +51,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 703,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-armed-services/hsas00",
       "retrieved_at": "2026-11-17T03:51:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 703
     },
     {
       "politidex_code": "BA00",
@@ -66,12 +66,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 980,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-financial-services/hsba00",
       "retrieved_at": "2026-11-17T03:51:59Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 980
     },
     {
       "politidex_code": "BU00",
@@ -81,12 +81,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 153,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsbu00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsbu00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-budget/hsbu00",
       "retrieved_at": "2026-11-17T03:52:01Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 153
     },
     {
       "politidex_code": "ED00",
@@ -96,12 +96,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 1370,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsed00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsed00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-education-and-workforce/hsed00",
       "retrieved_at": "2026-11-17T03:52:03Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1370
     },
     {
       "politidex_code": "FA00",
@@ -111,12 +111,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 1033,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-foreign-affairs/hsfa00",
       "retrieved_at": "2026-11-17T03:52:05Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1033
     },
     {
       "politidex_code": "GO00",
@@ -126,12 +126,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 1268,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-government-reform/hsgo00",
       "retrieved_at": "2026-11-17T03:52:08Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1268
     },
     {
       "politidex_code": "HA00",
@@ -141,12 +141,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 413,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsha00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsha00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-administration/hsha00",
       "retrieved_at": "2026-11-17T03:52:12Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 413
     },
     {
       "politidex_code": "HM00",
@@ -156,12 +156,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 312,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-homeland-security/hshm00",
       "retrieved_at": "2026-11-17T03:52:14Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 312
     },
     {
       "politidex_code": "IF00",
@@ -171,12 +171,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 2603,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-energy-and-commerce/hsif00",
       "retrieved_at": "2026-11-17T03:52:16Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 2603
     },
     {
       "politidex_code": "IG00",
@@ -186,12 +186,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 83,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-permanent-select-intelligence/hlig00",
       "retrieved_at": "2026-11-17T03:52:18Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 83
     },
     {
       "politidex_code": "II00",
@@ -201,12 +201,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 941,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsii00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsii00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-natural-resources/hsii00",
       "retrieved_at": "2026-11-17T03:52:20Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 941
     },
     {
       "politidex_code": "JU00",
@@ -216,12 +216,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 2246,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-judiciary/hsju00",
       "retrieved_at": "2026-11-17T03:52:22Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 2246
     },
     {
       "politidex_code": "PW00",
@@ -231,12 +231,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 991,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-transportation-and-infrastructure/hspw00",
       "retrieved_at": "2026-11-17T03:52:25Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 991
     },
     {
       "politidex_code": "RU00",
@@ -246,12 +246,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 305,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsru00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsru00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-rules/hsru00",
       "retrieved_at": "2026-11-17T03:52:27Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 305
     },
     {
       "politidex_code": "SM00",
@@ -261,12 +261,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 192,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssm00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssm00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-small-business/hssm00",
       "retrieved_at": "2026-11-17T03:52:29Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 192
     },
     {
       "politidex_code": "SO00",
@@ -276,12 +276,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 66,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsso00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsso00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-ethics/hsso00",
       "retrieved_at": "2026-11-17T03:52:31Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 66
     },
     {
       "politidex_code": "SY00",
@@ -291,12 +291,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 392,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssy00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssy00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-science-space-and-technology/hssy00",
       "retrieved_at": "2026-11-17T03:52:33Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 392
     },
     {
       "politidex_code": "VR00",
@@ -306,12 +306,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 600,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsvr00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsvr00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-veterans-affairs/hsvr00",
       "retrieved_at": "2026-11-17T03:52:35Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 600
     },
     {
       "politidex_code": "WM00",
@@ -321,12 +321,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 2014,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-ways-and-means/hswm00",
       "retrieved_at": "2026-11-17T03:52:37Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 2014
     },
     {
       "politidex_code": "ZS00",
@@ -336,12 +336,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlzs00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlzs00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-select-committee-on-the-strategic-competition-between-the-united-states-and-the-chinese-communist-party/hlzs00",
       "retrieved_at": "2026-11-17T03:52:39Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "EC00",
@@ -351,12 +351,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jjec00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jjec00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-economic-committee/jjec00",
       "retrieved_at": "2026-11-17T03:52:41Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IT00",
@@ -366,12 +366,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jstx00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jstx00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-committee-on-taxation/jstx00",
       "retrieved_at": "2026-11-17T03:52:43Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JL00",
@@ -381,12 +381,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jslc00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jslc00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-committee-on-the-library/jslc00",
       "retrieved_at": "2026-11-17T03:52:46Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JP00",
@@ -396,12 +396,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jspr00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jspr00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-committee-on-printing/jspr00",
       "retrieved_at": "2026-11-17T03:52:48Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JSEC",
@@ -411,12 +411,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jsec00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jsec00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-economic-committee/jsec00",
       "retrieved_at": "2026-11-17T03:52:50Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JSLC",
@@ -426,12 +426,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jslc00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jslc00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-committee-on-the-library/jslc00",
       "retrieved_at": "2026-11-17T03:52:52Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JSPR",
@@ -441,12 +441,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jspr00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jspr00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-committee-on-printing/jspr00",
       "retrieved_at": "2026-11-17T03:52:54Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JSTX",
@@ -456,12 +456,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/joint/jstx00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/joint/jstx00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/joint-committee-on-taxation/jstx00",
       "retrieved_at": "2026-11-17T03:52:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SLET",
@@ -471,12 +471,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/slet00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/slet00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-select-committee-on-ethics/slet00",
       "retrieved_at": "2026-11-17T03:52:58Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SLIA",
@@ -486,12 +486,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 95,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/slia00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/slia00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-indian-affairs/slia00",
       "retrieved_at": "2026-11-17T03:53:00Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 95
     },
     {
       "politidex_code": "SLIN",
@@ -501,12 +501,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 24,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/slin00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/slin00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-select-committee-on-intelligence/slin00",
       "retrieved_at": "2026-11-17T03:53:02Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 24
     },
     {
       "politidex_code": "SPAG",
@@ -516,12 +516,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/spag00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/spag00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-special-committee-on-aging/spag00",
       "retrieved_at": "2026-11-17T03:53:05Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAF",
@@ -531,12 +531,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 365,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-agriculture-nutrition-and-forestry/ssaf00",
       "retrieved_at": "2026-11-17T03:53:06Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 365
     },
     {
       "politidex_code": "SSAP",
@@ -546,12 +546,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 36,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-appropriations/ssap00",
       "retrieved_at": "2026-11-17T03:53:09Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 36
     },
     {
       "politidex_code": "SSAS",
@@ -561,12 +561,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 237,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-armed-services/ssas00",
       "retrieved_at": "2026-11-17T03:53:11Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 237
     },
     {
       "politidex_code": "SSBK",
@@ -576,12 +576,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 537,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-banking-housing-and-urban-affairs/ssbk00",
       "retrieved_at": "2026-11-17T03:53:26Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 537
     },
     {
       "politidex_code": "SSBU",
@@ -591,12 +591,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 26,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbu00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbu00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-budget/ssbu00",
       "retrieved_at": "2026-11-17T03:53:28Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 26
     },
     {
       "politidex_code": "SSCM",
@@ -606,12 +606,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 599,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-commerce-science-and-transportation/sscm00",
       "retrieved_at": "2026-11-17T03:53:30Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 599
     },
     {
       "politidex_code": "SSEG",
@@ -621,12 +621,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 471,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sseg00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sseg00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-energy-and-natural-resources/sseg00",
       "retrieved_at": "2026-11-17T03:53:34Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 471
     },
     {
       "politidex_code": "SSEV",
@@ -636,12 +636,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 306,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssev00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssev00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-environment-and-public-works/ssev00",
       "retrieved_at": "2026-11-17T03:53:36Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 306
     },
     {
       "politidex_code": "SSFI",
@@ -651,12 +651,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 987,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-finance/ssfi00",
       "retrieved_at": "2026-11-17T03:53:38Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 987
     },
     {
       "politidex_code": "SSFR",
@@ -666,12 +666,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 536,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-foreign-relations/ssfr00",
       "retrieved_at": "2026-11-17T03:53:40Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 536
     },
     {
       "politidex_code": "SSGA",
@@ -681,12 +681,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 564,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssga00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssga00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-homeland-security-and-governmental-affairs/ssga00",
       "retrieved_at": "2026-11-17T03:53:45Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 564
     },
     {
       "politidex_code": "SSHR",
@@ -696,12 +696,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 888,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sshr00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sshr00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-health-education-labor-and-pensions/sshr00",
       "retrieved_at": "2026-11-17T03:53:48Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 888
     },
     {
       "politidex_code": "SSJU",
@@ -711,12 +711,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 955,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-judiciary/ssju00",
       "retrieved_at": "2026-11-17T03:53:51Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 955
     },
     {
       "politidex_code": "SSRA",
@@ -726,12 +726,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 96,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssra00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssra00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-rules-and-administration/ssra00",
       "retrieved_at": "2026-11-17T03:53:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 96
     },
     {
       "politidex_code": "SSSB",
@@ -741,12 +741,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 115,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sssb00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sssb00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-small-business-and-entrepreneurship/sssb00",
       "retrieved_at": "2026-11-17T03:53:58Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 115
     },
     {
       "politidex_code": "SSVA",
@@ -756,12 +756,12 @@
       "congress": 119,
       "is_subcommittee": false,
       "parent": null,
-      "bills_referred": 278,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssva00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssva00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-veterans-affairs/ssva00",
       "retrieved_at": "2026-11-17T03:54:00Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 278
     },
     {
       "politidex_code": "AG03",
@@ -771,12 +771,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AG00",
-      "bills_referred": 83,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-nutrition-and-foreign-agriculture-sub/hsag03",
       "retrieved_at": "2026-11-17T03:54:02Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 83
     },
     {
       "politidex_code": "AG14",
@@ -786,12 +786,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AG00",
-      "bills_referred": 74,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-conservation-research-and-biotechnology-sub/hsag14",
       "retrieved_at": "2026-11-17T03:54:04Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 74
     },
     {
       "politidex_code": "AG15",
@@ -801,12 +801,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AG00",
-      "bills_referred": 64,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-forestry-and-horticulture-sub/hsag15",
       "retrieved_at": "2026-11-17T03:54:06Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 64
     },
     {
       "politidex_code": "AG16",
@@ -816,12 +816,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AG00",
-      "bills_referred": 48,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-general-farm-commodities-risk-management-and-credit-sub/hsag16",
       "retrieved_at": "2026-11-17T03:54:08Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 48
     },
     {
       "politidex_code": "AG22",
@@ -831,12 +831,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AG00",
-      "bills_referred": 57,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag22",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag22/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-commodity-markets-digital-assets-and-rural-development-sub/hsag22",
       "retrieved_at": "2026-11-17T03:54:10Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 57
     },
     {
       "politidex_code": "AG29",
@@ -846,12 +846,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AG00",
-      "bills_referred": 39,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsag29",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsag29/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-livestock-dairy-and-poultry-sub/hsag29",
       "retrieved_at": "2026-11-17T03:54:12Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 39
     },
     {
       "politidex_code": "AP01",
@@ -861,12 +861,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-agriculture-rural-development-food-and-drug-administration-and-related-agencies-sub/hsap01",
       "retrieved_at": "2026-11-17T03:54:14Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP02",
@@ -876,12 +876,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-defense-sub/hsap02",
       "retrieved_at": "2026-11-17T03:54:16Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP04",
@@ -891,12 +891,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-national-security-department-of-state-and-related-programs-sub/hsap04",
       "retrieved_at": "2026-11-17T03:54:19Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP06",
@@ -906,12 +906,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap06",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap06/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-interior-environment-and-related-agencies-sub/hsap06",
       "retrieved_at": "2026-11-17T03:54:21Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP07",
@@ -921,12 +921,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap07",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap07/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-labor-health-and-human-services-education-and-related-agencies-sub/hsap07",
       "retrieved_at": "2026-11-17T03:54:23Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP10",
@@ -936,12 +936,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-energy-and-water-development-and-related-agencies-sub/hsap10",
       "retrieved_at": "2026-11-17T03:54:25Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP15",
@@ -951,12 +951,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-homeland-security-sub/hsap15",
       "retrieved_at": "2026-11-17T03:54:27Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP18",
@@ -966,12 +966,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap18",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap18/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-military-construction-veterans-affairs-and-related-agencies-sub/hsap18",
       "retrieved_at": "2026-11-17T03:54:29Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP19",
@@ -981,12 +981,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap19",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap19/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-commerce-justice-science-and-related-agencies-sub/hsap19",
       "retrieved_at": "2026-11-17T03:54:31Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP20",
@@ -996,12 +996,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap20",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap20/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-transportation-housing-and-urban-development-and-related-agencies-sub/hsap20",
       "retrieved_at": "2026-11-17T03:54:33Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP23",
@@ -1011,12 +1011,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap23",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap23/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-financial-services-and-general-government-sub/hsap23",
       "retrieved_at": "2026-11-17T03:54:35Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AP24",
@@ -1026,12 +1026,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AP00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsap24",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsap24/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-legislative-branch-sub/hsap24",
       "retrieved_at": "2026-11-17T03:54:37Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS02",
@@ -1041,12 +1041,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-military-personnel-sub/hsas02",
       "retrieved_at": "2026-11-17T03:54:39Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS03",
@@ -1056,12 +1056,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-readiness-sub/hsas03",
       "retrieved_at": "2026-11-17T03:54:42Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS25",
@@ -1071,12 +1071,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas25",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas25/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-tactical-air-and-land-forces-sub/hsas25",
       "retrieved_at": "2026-11-17T03:54:44Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS26",
@@ -1086,12 +1086,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas26",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas26/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-intelligence-and-special-operations-sub/hsas26",
       "retrieved_at": "2026-11-17T03:54:46Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS28",
@@ -1101,12 +1101,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas28",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas28/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-seapower-and-projection-forces-sub/hsas28",
       "retrieved_at": "2026-11-17T03:54:48Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS29",
@@ -1116,12 +1116,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas29",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas29/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-strategic-forces-sub/hsas29",
       "retrieved_at": "2026-11-17T03:54:50Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "AS35",
@@ -1131,12 +1131,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "AS00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsas35",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsas35/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-cyber-information-technologies-and-innovation-sub/hsas35",
       "retrieved_at": "2026-11-17T03:54:52Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "BA04",
@@ -1146,12 +1146,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "BA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-housing-and-insurance-sub/hsba04",
       "retrieved_at": "2026-11-17T03:54:54Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "BA09",
@@ -1161,12 +1161,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "BA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-investigations-sub/hsba09",
       "retrieved_at": "2026-11-17T03:54:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "BA10",
@@ -1176,12 +1176,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "BA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-national-security-illicit-finance-and-international-financial-institutions-sub/hsba10",
       "retrieved_at": "2026-11-17T03:54:58Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "BA16",
@@ -1191,12 +1191,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "BA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-capital-markets-sub/hsba16",
       "retrieved_at": "2026-11-17T03:55:00Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "BA20",
@@ -1206,12 +1206,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "BA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba20",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba20/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-financial-institutions-sub/hsba20",
       "retrieved_at": "2026-11-17T03:55:03Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "BA21",
@@ -1221,12 +1221,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "BA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsba21",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsba21/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-digital-assets-financial-technology-and-artificial-intelligence-sub/hsba21",
       "retrieved_at": "2026-11-17T03:55:05Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "ED02",
@@ -1236,12 +1236,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "ED00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsed02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsed02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-health-employment-labor-and-pensions-sub/hsed02",
       "retrieved_at": "2026-11-17T03:55:07Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "ED10",
@@ -1251,12 +1251,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "ED00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsed10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsed10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-workforce-protections-sub/hsed10",
       "retrieved_at": "2026-11-17T03:55:09Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "ED13",
@@ -1266,12 +1266,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "ED00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsed13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsed13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-higher-education-and-workforce-development-sub/hsed13",
       "retrieved_at": "2026-11-17T03:55:11Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "ED14",
@@ -1281,12 +1281,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "ED00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsed14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsed14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-early-childhood-elementary-and-secondary-education-sub/hsed14",
       "retrieved_at": "2026-11-17T03:55:13Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA05",
@@ -1296,12 +1296,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-east-asia-and-pacific-sub/hsfa05",
       "retrieved_at": "2026-11-17T03:55:15Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA07",
@@ -1311,12 +1311,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa07",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa07/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-western-hemisphere-sub/hsfa07",
       "retrieved_at": "2026-11-17T03:55:17Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA13",
@@ -1326,12 +1326,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-middle-east-and-north-africa-sub/hsfa13",
       "retrieved_at": "2026-11-17T03:55:19Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA14",
@@ -1341,12 +1341,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-europe-sub/hsfa14",
       "retrieved_at": "2026-11-17T03:55:21Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA16",
@@ -1356,12 +1356,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-africa-sub/hsfa16",
       "retrieved_at": "2026-11-17T03:55:23Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA17",
@@ -1371,12 +1371,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa17",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa17/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-intelligence-sub/hsfa17",
       "retrieved_at": "2026-11-17T03:55:26Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "FA19",
@@ -1386,12 +1386,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "FA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsfa19",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsfa19/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-south-and-central-asia-sub/hsfa19",
       "retrieved_at": "2026-11-17T03:55:28Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO05",
@@ -1401,12 +1401,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-economic-growth-energy-policy-and-regulatory-affairs-sub/hsgo05",
       "retrieved_at": "2026-11-17T03:55:30Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO06",
@@ -1416,12 +1416,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo06",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo06/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-military-and-foreign-affairs-sub/hsgo06",
       "retrieved_at": "2026-11-17T03:55:32Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO12",
@@ -1431,12 +1431,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo12",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo12/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-cybersecurity-information-technology-and-government-innovation-sub/hsgo12",
       "retrieved_at": "2026-11-17T03:55:34Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO16",
@@ -1446,12 +1446,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-delivering-on-government-efficiency-sub/hsgo16",
       "retrieved_at": "2026-11-17T03:55:36Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO24",
@@ -1461,12 +1461,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo24",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo24/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-government-operations-sub/hsgo24",
       "retrieved_at": "2026-11-17T03:55:38Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO27",
@@ -1476,12 +1476,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo27",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo27/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-health-care-and-financial-services-sub/hsgo27",
       "retrieved_at": "2026-11-17T03:55:40Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "GO33",
@@ -1491,12 +1491,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "GO00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsgo33",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsgo33/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-federal-law-enforcement-sub/hsgo33",
       "retrieved_at": "2026-11-17T03:55:42Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "HA08",
@@ -1506,12 +1506,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsha08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsha08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-elections-sub/hsha08",
       "retrieved_at": "2026-11-17T03:55:45Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "HA27",
@@ -1521,12 +1521,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HA00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsha27",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsha27/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-modernization-and-innovation-sub/hsha27",
       "retrieved_at": "2026-11-17T03:55:47Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "HM05",
@@ -1536,12 +1536,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HM00",
-      "bills_referred": 49,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-counterterrorism-and-intelligence-sub/hshm05",
       "retrieved_at": "2026-11-17T03:55:49Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 49
     },
     {
       "politidex_code": "HM07",
@@ -1551,12 +1551,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HM00",
-      "bills_referred": 49,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm07",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm07/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-transportation-and-maritime-security-sub/hshm07",
       "retrieved_at": "2026-11-17T03:55:51Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 49
     },
     {
       "politidex_code": "HM08",
@@ -1566,12 +1566,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HM00",
-      "bills_referred": 22,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-cybersecurity-and-infrastructure-protection-sub/hshm08",
       "retrieved_at": "2026-11-17T03:55:53Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 22
     },
     {
       "politidex_code": "HM09",
@@ -1581,12 +1581,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HM00",
-      "bills_referred": 34,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-investigations-and-accountability-sub/hshm09",
       "retrieved_at": "2026-11-17T03:55:55Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 34
     },
     {
       "politidex_code": "HM11",
@@ -1596,12 +1596,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HM00",
-      "bills_referred": 107,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm11",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm11/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-border-security-and-enforcement-sub/hshm11",
       "retrieved_at": "2026-11-17T03:55:57Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 107
     },
     {
       "politidex_code": "HM12",
@@ -1611,12 +1611,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "HM00",
-      "bills_referred": 27,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hshm12",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hshm12/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-emergency-management-and-technology-sub/hshm12",
       "retrieved_at": "2026-11-17T03:55:59Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 27
     },
     {
       "politidex_code": "IF02",
@@ -1626,12 +1626,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IF00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-investigations-sub/hsif02",
       "retrieved_at": "2026-11-17T03:56:01Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IF03",
@@ -1641,12 +1641,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IF00",
-      "bills_referred": 40,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-energy-sub/hsif03",
       "retrieved_at": "2026-11-17T03:56:03Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 40
     },
     {
       "politidex_code": "IF14",
@@ -1656,12 +1656,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IF00",
-      "bills_referred": 35,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-health-sub/hsif14",
       "retrieved_at": "2026-11-17T03:56:06Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 35
     },
     {
       "politidex_code": "IF16",
@@ -1671,12 +1671,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IF00",
-      "bills_referred": 20,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-communications-and-technology-sub/hsif16",
       "retrieved_at": "2026-11-17T03:56:13Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 20
     },
     {
       "politidex_code": "IF17",
@@ -1686,12 +1686,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IF00",
-      "bills_referred": 43,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif17",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif17/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-commerce-manufacturing-and-trade-sub/hsif17",
       "retrieved_at": "2026-11-17T03:56:16Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 43
     },
     {
       "politidex_code": "IF18",
@@ -1701,12 +1701,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IF00",
-      "bills_referred": 16,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsif18",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsif18/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-environment-sub/hsif18",
       "retrieved_at": "2026-11-17T03:56:18Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 16
     },
     {
       "politidex_code": "IG01",
@@ -1716,12 +1716,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IG00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-central-intelligence-agency-sub/hlig01",
       "retrieved_at": "2026-11-17T03:56:20Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IG02",
@@ -1731,12 +1731,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IG00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-national-security-agency-and-cyber-sub/hlig02",
       "retrieved_at": "2026-11-17T03:56:22Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IG04",
@@ -1746,12 +1746,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IG00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-defense-intelligence-and-overhead-architecture-sub/hlig04",
       "retrieved_at": "2026-11-17T03:56:25Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IG06",
@@ -1761,12 +1761,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IG00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig06",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig06/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-national-intelligence-enterprise-sub/hlig06",
       "retrieved_at": "2026-11-17T03:56:27Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IG09",
@@ -1776,12 +1776,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IG00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-investigations-sub/hlig09",
       "retrieved_at": "2026-11-17T03:56:29Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "IG11",
@@ -1791,12 +1791,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "IG00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlig11",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlig11/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-open-source-intelligence-sub/hlig11",
       "retrieved_at": "2026-11-17T03:56:31Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "II06",
@@ -1806,12 +1806,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "II00",
-      "bills_referred": 36,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsii06",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsii06/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-energy-and-mineral-resources-sub/hsii06",
       "retrieved_at": "2026-11-17T03:56:33Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 36
     },
     {
       "politidex_code": "II10",
@@ -1821,12 +1821,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "II00",
-      "bills_referred": 83,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsii10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsii10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-federal-lands-sub/hsii10",
       "retrieved_at": "2026-11-17T03:56:35Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 83
     },
     {
       "politidex_code": "II13",
@@ -1836,12 +1836,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "II00",
-      "bills_referred": 66,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsii13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsii13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-water-wildlife-and-fisheries-sub/hsii13",
       "retrieved_at": "2026-11-17T03:56:37Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 66
     },
     {
       "politidex_code": "II15",
@@ -1851,12 +1851,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "II00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsii15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsii15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-investigations-sub/hsii15",
       "retrieved_at": "2026-11-17T03:56:39Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "II24",
@@ -1866,12 +1866,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "II00",
-      "bills_referred": 41,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsii24",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsii24/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-indian-and-insular-affairs-sub/hsii24",
       "retrieved_at": "2026-11-17T03:56:41Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 41
     },
     {
       "politidex_code": "JU01",
@@ -1881,12 +1881,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-immigration-integrity-security-and-enforcement-sub/hsju01",
       "retrieved_at": "2026-11-17T03:56:43Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JU03",
@@ -1896,12 +1896,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-courts-intellectual-property-artificial-intelligence-and-the-internet-sub/hsju03",
       "retrieved_at": "2026-11-17T03:56:46Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JU05",
@@ -1911,12 +1911,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-the-administrative-state-regulatory-reform-and-antitrust-sub/hsju05",
       "retrieved_at": "2026-11-17T03:56:48Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JU08",
@@ -1926,12 +1926,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-crime-and-federal-government-surveillance-sub/hsju08",
       "retrieved_at": "2026-11-17T03:56:50Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JU10",
@@ -1941,12 +1941,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-the-constitution-and-limited-government-sub/hsju10",
       "retrieved_at": "2026-11-17T03:56:52Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "JU13",
@@ -1956,12 +1956,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsju13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsju13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-sub/hsju13",
       "retrieved_at": "2026-11-17T03:56:54Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "PW02",
@@ -1971,12 +1971,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "PW00",
-      "bills_referred": 102,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-water-resources-and-environment-sub/hspw02",
       "retrieved_at": "2026-11-17T03:56:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 102
     },
     {
       "politidex_code": "PW05",
@@ -1986,12 +1986,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "PW00",
-      "bills_referred": 94,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-aviation-sub/hspw05",
       "retrieved_at": "2026-11-17T03:56:58Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 94
     },
     {
       "politidex_code": "PW07",
@@ -2001,12 +2001,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "PW00",
-      "bills_referred": 62,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw07",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw07/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-coast-guard-and-maritime-transportation-sub/hspw07",
       "retrieved_at": "2026-11-17T03:57:00Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 62
     },
     {
       "politidex_code": "PW12",
@@ -2016,12 +2016,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "PW00",
-      "bills_referred": 181,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw12",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw12/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-highways-and-transit-sub/hspw12",
       "retrieved_at": "2026-11-17T03:57:03Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 181
     },
     {
       "politidex_code": "PW13",
@@ -2031,12 +2031,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "PW00",
-      "bills_referred": 168,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-economic-development-public-buildings-and-emergency-management-sub/hspw13",
       "retrieved_at": "2026-11-17T03:57:05Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 168
     },
     {
       "politidex_code": "PW14",
@@ -2046,12 +2046,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "PW00",
-      "bills_referred": 60,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hspw14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hspw14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-railroads-pipelines-and-hazardous-materials-sub/hspw14",
       "retrieved_at": "2026-11-17T03:57:07Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 60
     },
     {
       "politidex_code": "QJ00",
@@ -2061,12 +2061,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "JU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hlqj00",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hlqj00/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-select-subcommittee-to-investigate-the-remaining-questions-surrounding-january-6-2021/hlqj00",
       "retrieved_at": "2026-11-17T03:57:09Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "RU02",
@@ -2076,12 +2076,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "RU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsru02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsru02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-legislative-and-budget-process-sub/hsru02",
       "retrieved_at": "2026-11-17T03:57:11Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "RU04",
@@ -2091,12 +2091,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "RU00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsru04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsru04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-rules-and-organization-of-the-house-sub/hsru04",
       "retrieved_at": "2026-11-17T03:57:13Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SM21",
@@ -2106,12 +2106,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssm21",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssm21/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-rural-development-energy-and-supply-chains-sub/hssm21",
       "retrieved_at": "2026-11-17T03:57:15Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SM22",
@@ -2121,12 +2121,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssm22",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssm22/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-innovation-entrepreneurship-and-workforce-development-sub/hssm22",
       "retrieved_at": "2026-11-17T03:57:17Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SM23",
@@ -2136,12 +2136,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssm23",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssm23/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-contracting-and-infrastructure-sub/hssm23",
       "retrieved_at": "2026-11-17T03:57:19Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SM24",
@@ -2151,12 +2151,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssm24",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssm24/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-investigations-and-regulations-sub/hssm24",
       "retrieved_at": "2026-11-17T03:57:21Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SM27",
@@ -2166,12 +2166,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssm27",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssm27/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-economic-growth-tax-and-capital-access-sub/hssm27",
       "retrieved_at": "2026-11-17T03:57:23Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SY15",
@@ -2181,12 +2181,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SY00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssy15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssy15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-research-and-technology-sub/hssy15",
       "retrieved_at": "2026-11-17T03:57:26Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SY16",
@@ -2196,12 +2196,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SY00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssy16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssy16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-space-and-aeronautics-sub/hssy16",
       "retrieved_at": "2026-11-17T03:57:28Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SY18",
@@ -2211,12 +2211,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SY00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssy18",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssy18/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-environment-sub/hssy18",
       "retrieved_at": "2026-11-17T03:57:30Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SY20",
@@ -2226,12 +2226,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SY00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssy20",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssy20/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-energy-sub/hssy20",
       "retrieved_at": "2026-11-17T03:57:32Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SY21",
@@ -2241,12 +2241,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SY00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hssy21",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hssy21/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-investigations-and-oversight-sub/hssy21",
       "retrieved_at": "2026-11-17T03:57:34Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "VR03",
@@ -2256,12 +2256,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "VR00",
-      "bills_referred": 200,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsvr03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsvr03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-health-sub/hsvr03",
       "retrieved_at": "2026-11-17T03:57:36Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 200
     },
     {
       "politidex_code": "VR08",
@@ -2271,12 +2271,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "VR00",
-      "bills_referred": 45,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsvr08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsvr08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-and-investigations-sub/hsvr08",
       "retrieved_at": "2026-11-17T03:57:38Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 45
     },
     {
       "politidex_code": "VR09",
@@ -2286,12 +2286,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "VR00",
-      "bills_referred": 95,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsvr09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsvr09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-disability-assistance-and-memorial-affairs-sub/hsvr09",
       "retrieved_at": "2026-11-17T03:57:40Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 95
     },
     {
       "politidex_code": "VR10",
@@ -2301,12 +2301,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "VR00",
-      "bills_referred": 107,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsvr10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsvr10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-economic-opportunity-sub/hsvr10",
       "retrieved_at": "2026-11-17T03:57:42Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 107
     },
     {
       "politidex_code": "VR11",
@@ -2316,12 +2316,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "VR00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hsvr11",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hsvr11/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-technology-modernization-sub/hsvr11",
       "retrieved_at": "2026-11-17T03:57:45Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "WM01",
@@ -2331,12 +2331,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "WM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-social-security-sub/hswm01",
       "retrieved_at": "2026-11-17T03:57:47Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "WM02",
@@ -2346,12 +2346,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "WM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-health-sub/hswm02",
       "retrieved_at": "2026-11-17T03:57:49Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "WM03",
@@ -2361,12 +2361,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "WM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-work-and-welfare-sub/hswm03",
       "retrieved_at": "2026-11-17T03:57:51Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "WM04",
@@ -2376,12 +2376,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "WM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-trade-sub/hswm04",
       "retrieved_at": "2026-11-17T03:57:53Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "WM05",
@@ -2391,12 +2391,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "WM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-tax-sub/hswm05",
       "retrieved_at": "2026-11-17T03:57:55Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "WM06",
@@ -2406,12 +2406,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "WM00",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/house/hswm06",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/house/hswm06/bills",
       "congress_gov_url": "https://www.congress.gov/committee/house-oversight-sub/hswm06",
       "retrieved_at": "2026-11-17T03:57:57Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAF13",
@@ -2421,12 +2421,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAF",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-commodities-derivatives-risk-management-and-trade/ssaf13",
       "retrieved_at": "2026-11-17T03:57:59Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAF14",
@@ -2436,12 +2436,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAF",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-conservation-forestry-natural-resources-and-biotechnology/ssaf14",
       "retrieved_at": "2026-11-17T03:58:01Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAF15",
@@ -2451,12 +2451,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAF",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-rural-development-energy-and-credit/ssaf15",
       "retrieved_at": "2026-11-17T03:58:04Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAF16",
@@ -2466,12 +2466,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAF",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-food-and-nutrition-specialty-crops-organics-and-research/ssaf16",
       "retrieved_at": "2026-11-17T03:58:05Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAF17",
@@ -2481,12 +2481,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAF",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf17",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssaf17/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-livestock-dairy-poultry-and-food-safety/ssaf17",
       "retrieved_at": "2026-11-17T03:58:08Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP01",
@@ -2496,12 +2496,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-agriculture-rural-development-food-and-drug-administration-and-related-agencies/ssap01",
       "retrieved_at": "2026-11-17T03:58:10Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAP02",
@@ -2511,12 +2511,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-department-of-defense/ssap02",
       "retrieved_at": "2026-11-17T03:58:12Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP08",
@@ -2526,12 +2526,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-legislative-branch/ssap08",
       "retrieved_at": "2026-11-17T03:58:14Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAP14",
@@ -2541,12 +2541,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-department-of-homeland-security/ssap14",
       "retrieved_at": "2026-11-17T03:58:16Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP16",
@@ -2556,12 +2556,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-commerce-justice-science-and-related-agencies/ssap16",
       "retrieved_at": "2026-11-17T03:58:18Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP17",
@@ -2571,12 +2571,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap17",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap17/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-department-of-interior-environment-and-related-agencies/ssap17",
       "retrieved_at": "2026-11-17T03:58:20Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAP18",
@@ -2586,12 +2586,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap18",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap18/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-departments-of-labor-health-and-human-services-and-education-and-related-agencies/ssap18",
       "retrieved_at": "2026-11-17T03:58:22Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP19",
@@ -2601,12 +2601,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap19",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap19/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-military-construction-veterans-affairs-and-related-agencies/ssap19",
       "retrieved_at": "2026-11-17T03:58:24Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP20",
@@ -2616,12 +2616,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap20",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap20/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-state-foreign-operations-and-related-programs/ssap20",
       "retrieved_at": "2026-11-17T03:58:27Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAP22",
@@ -2631,12 +2631,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap22",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap22/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-energy-and-water-development/ssap22",
       "retrieved_at": "2026-11-17T03:58:29Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP23",
@@ -2646,12 +2646,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap23",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap23/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-financial-services-and-general-government/ssap23",
       "retrieved_at": "2026-11-17T03:58:31Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAP24",
@@ -2661,12 +2661,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAP",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssap24",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssap24/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-transportation-housing-and-urban-development-and-related-agencies/ssap24",
       "retrieved_at": "2026-11-17T03:58:33Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAS13",
@@ -2676,12 +2676,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-seapower/ssas13",
       "retrieved_at": "2026-11-17T03:58:35Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAS14",
@@ -2691,12 +2691,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-airland/ssas14",
       "retrieved_at": "2026-11-17T03:58:37Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAS15",
@@ -2706,12 +2706,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-readiness-and-management-support/ssas15",
       "retrieved_at": "2026-11-17T03:58:39Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAS16",
@@ -2721,12 +2721,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas16",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas16/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-strategic-forces/ssas16",
       "retrieved_at": "2026-11-17T03:58:41Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSAS17",
@@ -2736,12 +2736,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas17",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas17/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-personnel/ssas17",
       "retrieved_at": "2026-11-17T03:58:43Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAS20",
@@ -2751,12 +2751,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas20",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas20/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-emerging-threats-and-capabilities/ssas20",
       "retrieved_at": "2026-11-17T03:58:46Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSAS21",
@@ -2766,12 +2766,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSAS",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssas21",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssas21/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-cybersecurity/ssas21",
       "retrieved_at": "2026-11-17T03:58:48Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSBK04",
@@ -2781,12 +2781,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSBK",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-securities-insurance-and-investment/ssbk04",
       "retrieved_at": "2026-11-17T03:58:50Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSBK05",
@@ -2796,12 +2796,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSBK",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk05",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk05/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-national-security-and-international-trade-and-finance/ssbk05",
       "retrieved_at": "2026-11-17T03:58:52Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSBK08",
@@ -2811,12 +2811,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSBK",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-financial-institutions-and-consumer-protection/ssbk08",
       "retrieved_at": "2026-11-17T03:58:54Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSBK09",
@@ -2826,12 +2826,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSBK",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-housing-transportation-and-community-development/ssbk09",
       "retrieved_at": "2026-11-17T03:58:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSBK12",
@@ -2841,12 +2841,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSBK",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk12",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk12/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-economic-policy/ssbk12",
       "retrieved_at": "2026-11-17T03:58:58Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSBK13",
@@ -2856,12 +2856,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSBK",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssbk13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-digital-assets/ssbk13",
       "retrieved_at": "2026-11-17T03:59:00Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSCM33",
@@ -2871,12 +2871,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSCM",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm33",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm33/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-aviation-space-and-innovation/sscm33",
       "retrieved_at": "2026-11-17T03:59:02Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSCM34",
@@ -2886,12 +2886,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSCM",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm34",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm34/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-telecommunications-and-media/sscm34",
       "retrieved_at": "2026-11-17T03:59:05Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSCM35",
@@ -2901,12 +2901,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSCM",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm35",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm35/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-consumer-protection-technology-and-data-privacy/sscm35",
       "retrieved_at": "2026-11-17T03:59:06Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSCM36",
@@ -2916,12 +2916,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSCM",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm36",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm36/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-coast-guard-maritime-and-fisheries/sscm36",
       "retrieved_at": "2026-11-17T03:59:09Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSCM37",
@@ -2931,12 +2931,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSCM",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm37",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm37/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-science-manufacturing-and-competitiveness/sscm37",
       "retrieved_at": "2026-11-17T03:59:11Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSCM38",
@@ -2946,12 +2946,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSCM",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sscm38",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sscm38/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-surface-transportation-freight-pipelines-and-safety/sscm38",
       "retrieved_at": "2026-11-17T03:59:13Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSEG01",
@@ -2961,12 +2961,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEG",
-      "bills_referred": 6,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sseg01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sseg01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-energy/sseg01",
       "retrieved_at": "2026-11-17T03:59:15Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 6
     },
     {
       "politidex_code": "SSEG03",
@@ -2976,12 +2976,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEG",
-      "bills_referred": 66,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sseg03",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sseg03/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-public-lands-forests-and-mining/sseg03",
       "retrieved_at": "2026-11-17T03:59:17Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 66
     },
     {
       "politidex_code": "SSEG04",
@@ -2991,12 +2991,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEG",
-      "bills_referred": 56,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sseg04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sseg04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-national-parks/sseg04",
       "retrieved_at": "2026-11-17T03:59:19Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 56
     },
     {
       "politidex_code": "SSEG07",
@@ -3006,12 +3006,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEG",
-      "bills_referred": 21,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sseg07",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sseg07/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-water-and-power/sseg07",
       "retrieved_at": "2026-11-17T03:59:21Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 21
     },
     {
       "politidex_code": "SSEV08",
@@ -3021,12 +3021,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEV",
-      "bills_referred": 3,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssev08",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssev08/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-transportation-and-infrastructure/ssev08",
       "retrieved_at": "2026-11-17T03:59:23Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 3
     },
     {
       "politidex_code": "SSEV09",
@@ -3036,12 +3036,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEV",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssev09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssev09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-chemical-safety-waste-management-environmental-justice-and-regulatory-oversight/ssev09",
       "retrieved_at": "2026-11-17T03:59:25Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSEV10",
@@ -3051,12 +3051,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEV",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssev10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssev10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-clean-air-climate-and-nuclear-innovation-and-safety/ssev10",
       "retrieved_at": "2026-11-17T03:59:27Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSEV15",
@@ -3066,12 +3066,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSEV",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssev15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssev15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-fisheries-water-and-wildlife/ssev15",
       "retrieved_at": "2026-11-17T03:59:30Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFI02",
@@ -3081,12 +3081,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFI",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-social-security-pensions-and-family-policy/ssfi02",
       "retrieved_at": "2026-11-17T03:59:32Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFI10",
@@ -3096,12 +3096,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFI",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi10",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi10/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-health-care/ssfi10",
       "retrieved_at": "2026-11-17T03:59:34Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFI11",
@@ -3111,12 +3111,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFI",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi11",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi11/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-taxation-and-irs-oversight/ssfi11",
       "retrieved_at": "2026-11-17T03:59:36Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFI12",
@@ -3126,12 +3126,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFI",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi12",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi12/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-energy-natural-resources-and-infrastructure/ssfi12",
       "retrieved_at": "2026-11-17T03:59:38Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFI13",
@@ -3141,12 +3141,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFI",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi13",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi13/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-international-trade-customs-and-global-competitiveness/ssfi13",
       "retrieved_at": "2026-11-17T03:59:40Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFI14",
@@ -3156,12 +3156,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFI",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfi14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-fiscal-responsibility-and-economic-growth/ssfi14",
       "retrieved_at": "2026-11-17T03:59:42Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR01",
@@ -3171,12 +3171,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-europe-and-regional-security-cooperation/ssfr01",
       "retrieved_at": "2026-11-17T03:59:44Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR02",
@@ -3186,12 +3186,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr02",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr02/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-east-asia-the-pacific-and-international-cybersecurity-policy/ssfr02",
       "retrieved_at": "2026-11-17T03:59:46Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR06",
@@ -3201,12 +3201,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr06",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr06/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-and-global-women-s-issues/ssfr06",
       "retrieved_at": "2026-11-17T03:59:48Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR07",
@@ -3216,12 +3216,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr07",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr07/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-near-east-south-asia-central-asia-and-counterterrorism/ssfr07",
       "retrieved_at": "2026-11-17T03:59:51Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR09",
@@ -3231,12 +3231,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-africa-and-global-health-policy/ssfr09",
       "retrieved_at": "2026-11-17T03:59:53Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR14",
@@ -3246,12 +3246,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr14",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr14/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-state-department-and-usaid-management-international-operations-and-bilateral-international-development/ssfr14",
       "retrieved_at": "2026-11-17T03:59:55Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSFR15",
@@ -3261,12 +3261,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSFR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr15",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssfr15/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-multilateral-international-development-multilateral-institutions-and-international-economic-energy-and-environmental-policy/ssfr15",
       "retrieved_at": "2026-11-17T03:59:57Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSGA01",
@@ -3276,12 +3276,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSGA",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssga01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssga01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-permanent-subcommittee-on-investigations/ssga01",
       "retrieved_at": "2026-11-17T03:59:59Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSGA20",
@@ -3291,12 +3291,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSGA",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssga20",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssga20/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-disaster-management-district-of-columbia-and-census/ssga20",
       "retrieved_at": "2026-11-17T04:00:01Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSGA22",
@@ -3306,12 +3306,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSGA",
-      "bills_referred": 2,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssga22",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssga22/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-border-management-federal-workforce-and-regulatory-affairs/ssga22",
       "retrieved_at": "2026-11-17T04:00:03Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 2
     },
     {
       "politidex_code": "SSHR09",
@@ -3321,12 +3321,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSHR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sshr09",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sshr09/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-education-and-the-american-family/sshr09",
       "retrieved_at": "2026-11-17T04:00:06Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSHR11",
@@ -3336,12 +3336,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSHR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sshr11",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sshr11/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-employment-and-workplace-safety/sshr11",
       "retrieved_at": "2026-11-17T04:00:09Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSHR12",
@@ -3351,12 +3351,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSHR",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/sshr12",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/sshr12/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-primary-health-and-retirement-security/sshr12",
       "retrieved_at": "2026-11-17T04:00:12Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSJU01",
@@ -3366,12 +3366,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju01",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju01/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-antitrust-competition-policy-and-consumer-rights/ssju01",
       "retrieved_at": "2026-11-17T04:00:24Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSJU04",
@@ -3381,12 +3381,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju04",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju04/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-border-security-and-immigration/ssju04",
       "retrieved_at": "2026-11-17T04:00:32Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSJU21",
@@ -3396,12 +3396,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju21",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju21/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-the-constitution/ssju21",
       "retrieved_at": "2026-11-17T04:00:39Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSJU22",
@@ -3411,12 +3411,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju22",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju22/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-crime-and-counterterrorism/ssju22",
       "retrieved_at": "2026-11-17T04:00:45Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSJU25",
@@ -3426,12 +3426,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju25",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju25/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-federal-courts-oversight-agency-action-and-federal-rights/ssju25",
       "retrieved_at": "2026-11-17T04:00:51Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     },
     {
       "politidex_code": "SSJU26",
@@ -3441,12 +3441,12 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 1,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju26",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju26/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-intellectual-property/ssju26",
       "retrieved_at": "2026-11-17T04:00:56Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 1
     },
     {
       "politidex_code": "SSJU28",
@@ -3456,12 +3456,13 @@
       "congress": 119,
       "is_subcommittee": true,
       "parent": "SSJU",
-      "bills_referred": 0,
       "source_url": "https://api.congress.gov/v3/committee/119/senate/ssju28",
       "bills_source_url": "https://api.congress.gov/v3/committee/119/senate/ssju28/bills",
       "congress_gov_url": "https://www.congress.gov/committee/senate-privacy-technology-and-the-law/ssju28",
       "retrieved_at": "2026-11-17T04:01:03Z",
-      "review_status": "proposed"
+      "review_status": "proposed",
+      "bills_associated": 0
     }
-  ]
+  ],
+  "count_label": "Bills the Congress.gov API associates with the committee, including referrals and other relationships such as an original measure the committee reported."
 }

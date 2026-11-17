@@ -1,5 +1,6 @@
 """Synthetic donors only. No real FEC names."""
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -346,10 +347,33 @@ def test_refund_check_is_fast():
         rows.append(row("NN %s" % _wide_name(j), 100_000, sub_id="p%d" % j, txn_type="22Y"))
     for j in range(1_000):
         rows.append(row("Z%s" % _wide_name(1_000 + j), 100_000, sub_id="j%d" % j, txn_type="22Y"))
-    started = time.perf_counter()
-    built = P.build_index(rows, "2026-11-17T18:40:00+00:00")
-    elapsed = time.perf_counter() - started
-    check("60k clusters and 2k refunds finish in under 10 seconds (%.2fs)" % elapsed, elapsed < 10)
+    clusters = 60_000
+    refunds = 2_000
+    calls = {"n": 0}
+    original = P._name_pieces
+
+    def counted(raw):
+        calls["n"] += 1
+        return original(raw)
+
+    # Both the indexed check and the old per-cluster check call _name_pieces.
+    P._name_pieces = counted
+    try:
+        started = time.perf_counter()
+        built = P.build_index(rows, "2026-11-17T18:40:00+00:00")
+        elapsed = time.perf_counter() - started
+    finally:
+        P._name_pieces = original
+    # The indexed check is about one call per cluster last name plus one per refund.
+    # Checking every cluster calls it twice per pair, about 240 million times here.
+    limit = 2 * (clusters + refunds)
+    check(
+        "name-piece calls stay under twice the clusters plus the refunds",
+        calls["n"] < limit,
+        "%d calls, limit %d" % (calls["n"], limit),
+    )
+    if os.environ.get("POLITIDEX_REFUND_TIMING"):
+        check("60k clusters and 2k refunds finish in under 10 seconds (%.2fs)" % elapsed, elapsed < 10)
     check("those refunds hold only the last names they name", len(built["published"]) == 58_000, str(len(built["published"])))
 
 

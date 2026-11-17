@@ -7,8 +7,9 @@ import Fact from "@/components/Fact";
 import { RecordModule, AnalysisModule } from "@/components/Module";
 import { people, profile, verified, fmtUSD, claims, approvedSummary, committeeHistory } from "@/lib/data";
 import { approvedCommitteeFacts, committeeSite } from "@/lib/committees";
-import { entityRecord, latestRetrieved } from "@/lib/entity-registry.mjs";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { entityRecord } from "@/lib/entity-registry.mjs";
+import { profileAsOf } from "@/lib/page-as-of.mjs";
+import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 import ConnectionsPanel from "@/components/ConnectionsPanel";
 import { fmtDate } from "@/lib/dates";
 
@@ -25,7 +26,7 @@ function namedEntity(kind: string, name: string | null | undefined, officialId: 
     name,
     official_id: officialId,
     source_name: claim.source_name,
-    source_url: sourceUrl || claim.source_url,
+    source_url: sourceUrl || renderedSourceHref(claim) || claim.source_url,
     retrieved_at: claim.retrieved_at,
     href,
     amended: claim.check?.amended === true,
@@ -44,6 +45,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 const pct = (a: number, b: number) => (b ? `${((a / b) * 100).toFixed(1)}%` : "—");
 
+function pageAsOf(pr: any) {
+  const claimDates = [
+    ...(pr.facts || []).map((f: { claim?: string }) => verified(f.claim)?.retrieved_at),
+    ...(pr.bills || []).map((b: { claim?: string }) => verified(b.claim)?.retrieved_at),
+    ...(pr.money || []).map((m: { claim?: string }) => verified(m.claim)?.retrieved_at),
+    ...(pr.pacs || []).map((x: { claim?: string }) => verified(x.claim)?.retrieved_at),
+    ...(pr.committees || []).map((c: { claim?: string }) => verified(c.claim)?.retrieved_at),
+  ];
+  const sites: Record<string, NonNullable<ReturnType<typeof committeeSite>>> = {};
+  for (const committee of pr.committees || []) {
+    const site = committeeSite(committee?.code);
+    if (site && committee.code) sites[committee.code] = site;
+  }
+  return profileAsOf(claimDates, (pr.committees || []).map((committee: { code?: string }) => committee?.code), sites);
+}
+
 export default async function ProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const pr = profile(slug);
@@ -60,12 +77,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
         <h1 className="font-display text-4xl sm:text-5xl font-black masthead-shadow mt-1">{p.name}</h1>
         <p className="text-xl text-[var(--color-muted)] mt-1">{p.role}{p.stateName ? ` · ${p.stateName}` : ""}{p.party ? ` · ${p.party}` : ""}</p>
         <div className="mt-3">
-          <PageTrust retrieved={latestRetrieved([
-            ...pr.facts.map((f: { claim?: string }) => verified(f.claim)?.retrieved_at),
-            ...((pr.bills || []).map((b: { claim?: string }) => verified(b.claim)?.retrieved_at)),
-            ...((pr.money || []).map((m: { claim?: string }) => verified(m.claim)?.retrieved_at)),
-            ...((pr.pacs || []).map((x: { claim?: string }) => verified(x.claim)?.retrieved_at)),
-          ])} />
+          <PageTrust retrieved={pageAsOf(pr)} />
         </div>
       </header>
 

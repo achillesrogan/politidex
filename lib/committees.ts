@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { officialGovHref, publicSourceHref } from "@/lib/source-href.mjs";
+import { officialGovHref, renderedSourceHref } from "@/lib/source-href.mjs";
 
 export type CommitteeSite = {
   code: string;
@@ -50,5 +50,5 @@ export function approvedCommitteeFacts(code?: string | null): CommitteeFact[] {
   const doc = readJSON<{ committees?: Record<string, SummaryEntry> }>("data/committees/summaries.json", {});
   const row = doc.committees?.[code];
   if (!row || row.review_status !== "approved" || !Array.isArray(row.facts)) return [];
-  return row.facts.filter((f) => f && f.text && f.source_url && f.retrieved_at && f.excerpt && publicSourceHref(f.source_url));
+  return row.facts.filter((f) => f && f.text && f.retrieved_at && f.excerpt && renderedSourceHref(f));
 }

@@ -7,7 +7,7 @@ import { org, orgIndex, verified, fmtUSD, claims as allClaims } from "@/lib/data
 import { entityRecord, latestRetrieved } from "@/lib/entity-registry.mjs";
 import { orgCategoryLabel, designationLabel, committeeTypeLabel } from "@/lib/labels";
 import type { SourceCardInfo, SourceLink } from "@/components/SourceCard";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -23,13 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 function cardFor(id: string | undefined, opts: { title?: string; summary?: string; extra?: string[]; links?: SourceLink[] }): SourceCardInfo | null {
   const c = verified(id);
   if (!c) return null;
+  const cited = renderedSourceHref(c);
   const links: SourceLink[] = [...(opts.links || [])];
-  if (c.source_url && !links.some((l) => l.href === c.source_url)) links.push({ label: "Open the cited source", href: c.source_url });
+  if (cited && !links.some((l) => l.href === cited)) links.push({ label: "Open the cited source", href: cited });
   const bulk = c.check && (c.check as any).bulk_url;
   const desc = c.check && (c.check as any).description_url;
   if (bulk) links.push({ label: "Official FEC bulk file", href: String(bulk) });
   if (desc) links.push({ label: "FEC description of the bulk file", href: String(desc) });
-  return { title: opts.title || String(c.text), summary: opts.summary || String(c.text), excerpt: c.excerpt, source_name: c.source_name, source_url: c.source_url, retrieved_at: c.retrieved_at, extra: opts.extra, links };
+  return { title: opts.title || String(c.text), summary: opts.summary || String(c.text), excerpt: c.excerpt, source_name: c.source_name, source_url: cited || c.source_url, retrieved_at: c.retrieved_at, extra: opts.extra, links };
 }
 
 export default async function OrgPage({ params }: { params: Promise<{ slug: string }> }) {
