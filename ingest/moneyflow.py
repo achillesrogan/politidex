@@ -232,6 +232,7 @@ def _load_summaries(master):
                 "org_type": m.get("org_type") or "",
                 "connected_organization": m.get("connected_organization"),
                 "state": m.get("state"),
+                "filing_frequency": m.get("filing_frequency"),
                 "receipts_cents": row["receipts_cents"],
                 "disbursements_cents": row["disbursements_cents"],
                 "coverage_end": row["coverage_end"],
@@ -459,7 +460,7 @@ def build():
         cid = view["committee_id"]
         records = [rec.as_dict() for rec in agg[cid].values()]
         try:
-            shard = build_shard(summaries[cid], records, retrieved_at, summaries)
+            shard = build_shard(summaries[cid], records, retrieved_at, summaries, master=master)
         except ReconciliationError as exc:
             raise SystemExit(str(exc))
         encoded = json.dumps(shard, indent=1, ensure_ascii=False).encode("utf-8")

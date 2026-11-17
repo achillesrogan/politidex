@@ -52,6 +52,39 @@
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
    "status": "unverified"
+  },
+  "profile": {
+   "committee_id": "C00042366",
+   "committee_type": "Y",
+   "designation": "U",
+   "party": "DEM",
+   "org_type": null,
+   "connected_organization": "COLORADO SENATE VICTORY 2016",
+   "state": "DC",
+   "filing_frequency": "M",
+   "source": {
+    "id": "c_8fb93135ebe3d4",
+    "text": "Committee master C00042366; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization COLORADO SENATE VICTORY 2016; state DC.",
+    "value": {
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "filing_frequency": "M",
+     "state": "DC"
+    },
+    "excerpt": "Committee master C00042366; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization COLORADO SENATE VICTORY 2016; state DC.",
+    "source_name": "Federal Election Commission",
+    "source_url": "https://www.fec.gov/data/committee/C00042366/?cycle=2026&tab=spending",
+    "check": {
+     "kind": "fec-committee-master",
+     "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "committee_id": "C00042366"
+    },
+    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "status": "unverified"
+   }
   }
  },
  "children": [
@@ -914,6 +947,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00165688",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DEMOCRATIC GRASSROOTS VICTORY FUND",
+     "state": "NC",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_020a05712e2096",
+      "text": "Committee master C00165688; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC GRASSROOTS VICTORY FUND; state NC.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "NC"
+      },
+      "excerpt": "Committee master C00165688; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC GRASSROOTS VICTORY FUND; state NC.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00165688/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00165688"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -999,6 +1065,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00041269",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DEMOCRATIC NATIONAL COMMITTEE - VICTORY FUND",
+     "state": "GA",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_600b4c5613970e",
+      "text": "Committee master C00041269; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC NATIONAL COMMITTEE - VICTORY FUND; state GA.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "GA"
+      },
+      "excerpt": "Committee master C00041269; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DEMOCRATIC NATIONAL COMMITTEE - VICTORY FUND; state GA.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00041269/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00041269"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1173,6 +1272,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00191247",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DNC VICTORY FUND",
+     "state": "AK",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_8293a2ad669ae3",
+      "text": "Committee master C00191247; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC VICTORY FUND; state AK.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "AK"
+      },
+      "excerpt": "Committee master C00191247; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC VICTORY FUND; state AK.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00191247/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00191247"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1711,6 +1843,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00016899",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DNC/STATE PARTY VICTORY FUND",
+     "state": "OH",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_43696417224f09",
+      "text": "Committee master C00016899; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC/STATE PARTY VICTORY FUND; state OH.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "OH"
+      },
+      "excerpt": "Committee master C00016899; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC/STATE PARTY VICTORY FUND; state OH.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00016899/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00016899"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {
@@ -1974,6 +2139,39 @@
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
      "status": "unverified"
+    },
+    "profile": {
+     "committee_id": "C00031054",
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "connected_organization": "DNC VICTORY FUND",
+     "state": "MI",
+     "filing_frequency": "M",
+     "source": {
+      "id": "c_7a1249a74caeb5",
+      "text": "Committee master C00031054; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC VICTORY FUND; state MI.",
+      "value": {
+       "committee_type": "Y",
+       "designation": "U",
+       "party": "DEM",
+       "org_type": null,
+       "filing_frequency": "M",
+       "state": "MI"
+      },
+      "excerpt": "Committee master C00031054; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization DNC VICTORY FUND; state MI.",
+      "source_name": "Federal Election Commission",
+      "source_url": "https://www.fec.gov/data/committee/C00031054/?cycle=2026&tab=spending",
+      "check": {
+       "kind": "fec-committee-master",
+       "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+       "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+       "committee_id": "C00031054"
+      },
+      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "status": "unverified"
+     }
     }
    },
    "edge": {

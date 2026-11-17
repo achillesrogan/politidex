@@ -52,6 +52,39 @@
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
    "status": "unverified"
+  },
+  "profile": {
+   "committee_id": "C00000935",
+   "committee_type": "Y",
+   "designation": "U",
+   "party": "DEM",
+   "org_type": null,
+   "connected_organization": "HOUSE SENATE VICTORY FUND",
+   "state": "DC",
+   "filing_frequency": "M",
+   "source": {
+    "id": "c_4571c3bd609c93",
+    "text": "Committee master C00000935; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization HOUSE SENATE VICTORY FUND; state DC.",
+    "value": {
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "DEM",
+     "org_type": null,
+     "filing_frequency": "M",
+     "state": "DC"
+    },
+    "excerpt": "Committee master C00000935; type Y; designation U; party DEM; filing frequency M; interest group blank; connected organization HOUSE SENATE VICTORY FUND; state DC.",
+    "source_name": "Federal Election Commission",
+    "source_url": "https://www.fec.gov/data/committee/C00000935/?cycle=2026&tab=spending",
+    "check": {
+     "kind": "fec-committee-master",
+     "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "committee_id": "C00000935"
+    },
+    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "status": "unverified"
+   }
   }
  },
  "children": [

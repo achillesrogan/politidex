@@ -52,6 +52,39 @@
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
    "status": "unverified"
+  },
+  "profile": {
+   "committee_id": "C00027466",
+   "committee_type": "Y",
+   "designation": "U",
+   "party": "REP",
+   "org_type": null,
+   "connected_organization": "YOUNG VICTORY COMMITTEE",
+   "state": "DC",
+   "filing_frequency": "M",
+   "source": {
+    "id": "c_4c8fdc7a07e05e",
+    "text": "Committee master C00027466; type Y; designation U; party REP; filing frequency M; interest group blank; connected organization YOUNG VICTORY COMMITTEE; state DC.",
+    "value": {
+     "committee_type": "Y",
+     "designation": "U",
+     "party": "REP",
+     "org_type": null,
+     "filing_frequency": "M",
+     "state": "DC"
+    },
+    "excerpt": "Committee master C00027466; type Y; designation U; party REP; filing frequency M; interest group blank; connected organization YOUNG VICTORY COMMITTEE; state DC.",
+    "source_name": "Federal Election Commission",
+    "source_url": "https://www.fec.gov/data/committee/C00027466/?cycle=2026&tab=spending",
+    "check": {
+     "kind": "fec-committee-master",
+     "file_url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "committee_id": "C00027466"
+    },
+    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "status": "unverified"
+   }
   }
  },
  "children": [

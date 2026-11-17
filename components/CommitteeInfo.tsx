@@ -1,6 +1,7 @@
 "use client";
-import { useRef } from "react";
+import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
+import RecordPopover from "@/components/RecordPopover";
 
 export type CommitteeFact = {
   id: string;
@@ -13,20 +14,22 @@ export type CommitteeFact = {
 };
 
 export default function CommitteeInfo({ name, facts }: { name: string; facts: CommitteeFact[] }) {
-  const ref = useRef<HTMLDialogElement>(null);
+  const [open, setOpen] = useState(false);
+  const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
   if (!facts.length) return null;
   return (
     <>
-      <button type="button" className="conn-card-btn" onClick={() => ref.current?.showModal()}>
-        About
-      </button>
-      <dialog
-        ref={ref}
-        className="conn-dialog newspaper-card"
-        onClick={(e) => {
-          if (e.target === ref.current) ref.current?.close();
+      <button
+        type="button"
+        className="conn-card-btn"
+        onClick={(event) => {
+          setAnchor({ x: event.clientX, y: event.clientY });
+          setOpen(true);
         }}
       >
+        About
+      </button>
+      <RecordPopover open={open} anchor={anchor} onClose={() => setOpen(false)} label="Official committee record">
         <p className="tag text-[var(--color-record)]">Official committee record</p>
         <h3 className="font-display text-xl font-bold mt-1">{name}</h3>
         {facts.map((f) => (
@@ -51,12 +54,7 @@ export default function CommitteeInfo({ name, facts }: { name: string; facts: Co
             </details>
           </section>
         ))}
-        <form method="dialog" className="mt-4">
-          <button type="submit" className="conn-card-btn">
-            Close
-          </button>
-        </form>
-      </dialog>
+      </RecordPopover>
     </>
   );
 }

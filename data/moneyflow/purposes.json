@@ -1,0 +1,158 @@
+{
+ "schema": "politidex.moneyflow.purpose.v1",
+ "review_status": "proposed",
+ "retrieved_at": "2026-11-17T02:30:00+00:00",
+ "rule": "A quote is included only when the page was retrieved and the excerpt appears on it. Entries without a quote mean no stated purpose was found in a primary source this run could retrieve.",
+ "committees": [
+  {
+   "committee_id": "C00010603",
+   "name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "Democratic National Committee",
+    "source_url": "https://democrats.org/internships/",
+    "retrieved_at": "2026-11-17T02:34:00+00:00",
+    "excerpt": "The DNC performs many roles within Democratic politics, the most important of which is working to elect Democrats to all levels of government, from school board to the Oval Office."
+   },
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:34:00+00:00"
+  },
+  {
+   "committee_id": "C00000935",
+   "name": "DCCC",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "DCCC",
+    "source_url": "https://dccc.org/about/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The DCCC is the official campaign arm of the Democrats in the House of Representatives and the only political committee in the country whose principal mission is to support Democratic House candidates every step of the way."
+   },
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  },
+  {
+   "committee_id": "C00042366",
+   "name": "DSCC",
+   "review_status": "approved",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "DSCC",
+    "source_url": "https://www.dscc.org/about-us/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The Democratic Senatorial Campaign Committee is the only committee solely dedicated to electing a Democratic Senate."
+   },
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  },
+  {
+   "committee_id": "C00003418",
+   "name": "REPUBLICAN NATIONAL COMMITTEE",
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:35:00+00:00",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "Republican National Committee — Rules of the Republican Party, Rule No. 1(a)",
+    "source_url": "https://prod-static.gop.com/media/Rules_Of_The_Republican_Party.pdf",
+    "retrieved_at": "2026-11-17T02:34:00+00:00",
+    "excerpt": "The Republican National Committee shall have the general management of the Republican Party, based upon the rules adopted by the Republican National Convention."
+   }
+  },
+  {
+   "committee_id": "C00075820",
+   "name": "NRCC",
+   "review_status": "approved",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "NRCC",
+    "source_url": "https://www.nrcc.org/about-2/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The National Republican Congressional Committee (NRCC) is a political committee devoted to increasing the number of Republicans in the U.S. House of Representatives."
+   },
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  },
+  {
+   "committee_id": "C00027466",
+   "name": "NRSC",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "NRSC",
+    "source_url": "https://www.nrsc.org/about-us/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The NRSC (National Republican Senatorial Committee) is the only national organization solely devoted to strengthening the Republican Senate Majority and electing Republicans to the United States Senate."
+   },
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  },
+  {
+   "committee_id": "C00300921",
+   "name": "BLACK AMERICA'S POLITICAL ACTION COMMITTEE",
+   "found": false,
+   "speaker": null,
+   "source": null,
+   "review_status": "proposed"
+  },
+  {
+   "committee_id": "C00348540",
+   "name": "1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND",
+   "found": true,
+   "speaker": "connected_organization",
+   "source": {
+    "source_name": "1199SEIU United Healthcare Workers East",
+    "source_url": "https://www.1199seiu.org/about",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "Our mission is to advocate for quality care and good jobs for all!"
+   },
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  },
+  {
+   "committee_id": "C00140061",
+   "name": "NATIONAL EMERGENCY MEDICINE POLITICAL ACTION COMMITTEE / AMERICAN COLLEGE OF EMERGENCY PHYSICIANS",
+   "found": true,
+   "speaker": "connected_organization",
+   "source": {
+    "source_name": "American College of Emergency Physicians",
+    "source_url": "https://www.acep.org/who-we-are/about-us",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "Today, ACEP represents more than 38,000 emergency physicians, emergency medicine residents, and medical students. ACEP promotes the highest quality of emergency care and is the leading advocate for emergency physicians and their patients, and the public."
+   },
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  },
+  {
+   "committee_id": "C00363986",
+   "name": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC",
+   "found": false,
+   "speaker": null,
+   "source": null,
+   "review_status": "proposed"
+  },
+  {
+   "committee_id": "C00326389",
+   "name": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE",
+   "found": false,
+   "speaker": null,
+   "source": null,
+   "review_status": "proposed"
+  },
+  {
+   "committee_id": "C00298000",
+   "name": "MADISON PROJECT INC.",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "Madison Project",
+    "source_url": "https://madisonproject.com/mission/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "At the Madison Project, we strongly believe Republican voters should be offered bold choices in primaries with candidates who they can proudly vote for and support with their money, time, and energy."
+   },
+   "review_status": "approved",
+   "approved_at": "2026-11-17T02:32:00+00:00"
+  }
+ ]
+}
