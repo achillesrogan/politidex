@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
 import RecordPopover from "@/components/RecordPopover";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { officialGovHref, publicSourceHref } from "@/lib/source-href.mjs";
 
 export type CommitteeFact = {
   id?: string;
@@ -34,7 +34,7 @@ export default function CommitteeInfo({
 }) {
   const [open, setOpen] = useState(false);
   const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
-  const site = publicSourceHref(website || "") || null;
+  const site = officialGovHref(website || "");
   const roster = publicSourceHref(membershipUrl || "") || null;
   const shown = [...summary, ...facts].filter((f) => publicSourceHref(f.source_url));
   return (

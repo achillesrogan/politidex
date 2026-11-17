@@ -1,3 +1,4 @@
+Approval lives in data/committees/summaries.json (review_status). This file is a generated mirror, not the approval record.
 Proposed committee summaries. None are approved. The site does not render these sentences until review_status is approved.
 Retrieved 2026-11-17T02:54:55+00:00
 Every entry is proposed. The site renders a sentence only after review_status is approved. Bill-referral counts are omitted because no Congress.gov API key was available in this environment.

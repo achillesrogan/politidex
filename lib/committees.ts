@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { officialGovHref, publicSourceHref } from "@/lib/source-href.mjs";
 
 export type CommitteeSite = {
   code: string;
@@ -40,7 +40,7 @@ export function committeeSite(code?: string | null): CommitteeSite | null {
   const doc = readJSON<{ committees?: Record<string, CommitteeSite> }>("data/committees/sites.json", {});
   const row = doc.committees?.[code];
   if (!row) return null;
-  const website = row.website ? publicSourceHref(row.website) : null;
+  const website = officialGovHref(row.website);
   return { ...row, website };
 }
 
