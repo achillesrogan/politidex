@@ -1,12 +1,14 @@
 import SourceCoverage from "@/components/SourceCoverage";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Fact from "@/components/Fact";
+import EntityLink from "@/components/EntityLink";
+import PageTrust from "@/components/PageTrust";
 import SourceCard from "@/components/SourceCard";
 import { org, orgIndex, verified, fmtUSD, claims as allClaims } from "@/lib/data";
+import { entityRecord, latestRetrieved } from "@/lib/entity-registry.mjs";
 import { orgCategoryLabel, designationLabel, committeeTypeLabel } from "@/lib/labels";
 import type { SourceCardInfo, SourceLink } from "@/components/SourceCard";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -22,13 +24,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 function cardFor(id: string | undefined, opts: { title?: string; summary?: string; extra?: string[]; links?: SourceLink[] }): SourceCardInfo | null {
   const c = verified(id);
   if (!c) return null;
+  const cited = renderedSourceHref(c);
   const links: SourceLink[] = [...(opts.links || [])];
-  if (c.source_url && !links.some((l) => l.href === c.source_url)) links.push({ label: "Open the cited source", href: c.source_url });
+  if (cited && !links.some((l) => l.href === cited)) links.push({ label: "Open the cited source", href: cited });
   const bulk = c.check && (c.check as any).bulk_url;
   const desc = c.check && (c.check as any).description_url;
   if (bulk) links.push({ label: "Official FEC bulk file", href: String(bulk) });
   if (desc) links.push({ label: "FEC description of the bulk file", href: String(desc) });
-  return { title: opts.title || String(c.text), summary: opts.summary || String(c.text), excerpt: c.excerpt, source_name: c.source_name, source_url: c.source_url, retrieved_at: c.retrieved_at, extra: opts.extra, links };
+  return { title: opts.title || String(c.text), summary: opts.summary || String(c.text), excerpt: c.excerpt, source_name: c.source_name, source_url: cited || c.source_url, retrieved_at: c.retrieved_at, extra: opts.extra, links };
 }
 
 export default async function OrgPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -43,7 +46,17 @@ export default async function OrgPage({ params }: { params: Promise<{ slug: stri
     <article>
       <header className="mb-6 border-b-4 border-double border-[var(--color-ink)] pb-4">
         <div className="tag text-[var(--color-muted)]">{kindLabel}</div>
-        <h1 className="font-display text-4xl sm:text-5xl font-black masthead-shadow mt-1">{o.name}</h1>
+        <h1 className="font-display text-4xl sm:text-5xl font-black masthead-shadow mt-1">
+          <EntityLink entity={entityRecord({
+            kind: o.kind === "lda-registrant" ? "registrant" : o.kind === "lda-client" ? "client" : "pac",
+            name: o.name,
+            official_id: o.committee_id || o.lda_id,
+            source_name: verified(members[0]?.claim)?.source_name || "",
+            source_url: o.url || verified(members[0]?.claim)?.source_url || "",
+            retrieved_at: latestRetrieved(members.map((m: { claim?: string }) => verified(m.claim)?.retrieved_at)),
+          })}>{o.name}</EntityLink>
+        </h1>
+        <div className="mt-3"><PageTrust retrieved={latestRetrieved(members.map((m: { claim?: string }) => verified(m.claim)?.retrieved_at))} /></div>
         <SourceCoverage />
         {o.connected_org && <p className="text-lg text-[var(--color-muted)] mt-1">Connected organization (as listed with FEC): {o.connected_org}</p>}
       </header>
@@ -71,7 +84,15 @@ export default async function OrgPage({ params }: { params: Promise<{ slug: stri
               <li key={`${m.claim}-${i}`} className="border-b border-[var(--color-rule)]/60 pb-2">
                 <SourceCard card={card}>
                   <Fact claim={m.claim}>
-                    <Link className="link" href={`/p/${m.slug}`}>{m.name}</Link>
+                    <EntityLink entity={entityRecord({
+                      kind: "member",
+                      name: m.name,
+                      official_id: m.bioguide,
+                      source_name: c.source_name,
+                      source_url: c.source_url,
+                      retrieved_at: c.retrieved_at,
+                      href: `/p/${m.slug}`,
+                    })}>{m.name}</EntityLink>
                     {" — "}
                     {m.relationship}
                     {m.total != null ? ` — ${fmtUSD(m.total)}` : ""}

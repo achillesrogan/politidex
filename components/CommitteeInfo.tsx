@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
 import RecordPopover from "@/components/RecordPopover";
-import { officialGovHref, publicSourceHref } from "@/lib/source-href.mjs";
+import { officialGovHref, publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
+import { confidenceBadge } from "@/lib/entity-registry.mjs";
+import ConfidenceBadge from "@/components/ConfidenceBadge";
 
 export type CommitteeFact = {
   id?: string;
@@ -18,6 +20,7 @@ export type CommitteeFact = {
 export default function CommitteeInfo({
   name,
   role,
+  officialId,
   claimId,
   website,
   membershipUrl,
@@ -26,6 +29,7 @@ export default function CommitteeInfo({
 }: {
   name: string;
   role?: string | null;
+  officialId?: string | null;
   claimId: string;
   website?: string | null;
   membershipUrl?: string | null;
@@ -36,7 +40,8 @@ export default function CommitteeInfo({
   const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
   const site = officialGovHref(website || "");
   const roster = publicSourceHref(membershipUrl || "") || null;
-  const shown = [...summary, ...facts].filter((f) => publicSourceHref(f.source_url));
+  const badge = confidenceBadge({ official_id: officialId, source_url: membershipUrl || site || "" });
+  const shown = [...summary, ...facts].filter((f) => renderedSourceHref(f));
   return (
     <>
       <span data-fact="" data-claim={claimId} className="inline">
@@ -60,6 +65,7 @@ export default function CommitteeInfo({
       <RecordPopover open={open} anchor={anchor} onClose={() => setOpen(false)} label={`${name} committee record`}>
         <p className="tag text-[var(--color-record)]">Official committee record</p>
         <h3 className="font-display text-xl font-bold mt-1">{name}</h3>
+        <ConfidenceBadge badge={badge} />
         {site ? (
           <p className="mt-3">
             <a className="link" href={site} rel="noopener noreferrer">
@@ -71,7 +77,7 @@ export default function CommitteeInfo({
           <p className="mt-3 text-sm text-[var(--color-muted)]">An editor-reviewed summary is not on this card yet.</p>
         ) : (
           shown.map((f) => {
-            const href = publicSourceHref(f.source_url);
+            const href = renderedSourceHref(f);
             return (
               <section key={f.id || `${f.label}-${f.source_url}`} className="mt-4">
                 <h4 className="font-sans text-xs uppercase tracking-wide font-bold text-[var(--color-record)]">{f.label}</h4>

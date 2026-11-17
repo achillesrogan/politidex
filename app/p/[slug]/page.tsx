@@ -1,14 +1,39 @@
 import CommitteeInfo from "@/components/CommitteeInfo";
 import SourceCoverage from "@/components/SourceCoverage";
+import EntityLink from "@/components/EntityLink";
+import PageTrust from "@/components/PageTrust";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Fact from "@/components/Fact";
 import { RecordModule, AnalysisModule } from "@/components/Module";
 import { people, profile, verified, fmtUSD, claims, approvedSummary, committeeHistory } from "@/lib/data";
 import { approvedCommitteeFacts, committeeSite } from "@/lib/committees";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { entityRecord } from "@/lib/entity-registry.mjs";
+import { profileAsOf } from "@/lib/page-as-of.mjs";
+import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 import ConnectionsPanel from "@/components/ConnectionsPanel";
 import { fmtDate } from "@/lib/dates";
+
+function billId(url?: string | null) {
+  const match = String(url || "").match(/\/(bill\/\d+th-congress\/[a-z-]+\/\d+)/i);
+  return match ? match[1] : null;
+}
+
+function namedEntity(kind: string, name: string | null | undefined, officialId: string | null | undefined, claimId: string | null | undefined, href?: string | null, sourceUrl?: string | null) {
+  const claim = verified(claimId);
+  if (!claim || !name) return null;
+  return entityRecord({
+    kind,
+    name,
+    official_id: officialId,
+    source_name: claim.source_name,
+    source_url: sourceUrl || renderedSourceHref(claim) || claim.source_url,
+    retrieved_at: claim.retrieved_at,
+    href,
+    amended: claim.check?.amended === true,
+    review_status: typeof claim.check?.review_status === "string" ? claim.check.review_status : undefined,
+  });
+}
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -20,6 +45,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: pr ? pr.person.name : "Profile", alternates: { canonical: `/p/${slug}` } };
 }
 const pct = (a: number, b: number) => (b ? `${((a / b) * 100).toFixed(1)}%` : "—");
+
+function pageAsOf(pr: any) {
+  const claimDates = [
+    ...(pr.facts || []).map((f: { claim?: string }) => verified(f.claim)?.retrieved_at),
+    ...(pr.bills || []).map((b: { claim?: string }) => verified(b.claim)?.retrieved_at),
+    ...(pr.money || []).map((m: { claim?: string }) => verified(m.claim)?.retrieved_at),
+    ...(pr.pacs || []).map((x: { claim?: string }) => verified(x.claim)?.retrieved_at),
+    ...(pr.committees || []).map((c: { claim?: string }) => verified(c.claim)?.retrieved_at),
+  ];
+  const sites: Record<string, NonNullable<ReturnType<typeof committeeSite>>> = {};
+  for (const committee of pr.committees || []) {
+    const site = committeeSite(committee?.code);
+    if (site && committee.code) sites[committee.code] = site;
+  }
+  return profileAsOf(claimDates, (pr.committees || []).map((committee: { code?: string }) => committee?.code), sites);
+}
 
 export default async function ProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -36,6 +77,9 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
         <div className="tag text-[var(--color-muted)]">{p.kind === "executive" ? "Executive branch" : p.chamber === "senate" ? "U.S. Senate" : "U.S. House of Representatives"}</div>
         <h1 className="font-display text-4xl sm:text-5xl font-black masthead-shadow mt-1">{p.name}</h1>
         <p className="text-xl text-[var(--color-muted)] mt-1">{p.role}{p.stateName ? ` · ${p.stateName}` : ""}{p.party ? ` · ${p.party}` : ""}</p>
+        <div className="mt-3">
+          <PageTrust retrieved={pageAsOf(pr)} />
+        </div>
         <SourceCoverage />
       </header>
 
@@ -94,6 +138,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
                       <CommitteeInfo
                         name={c.name}
                         role={c.role}
+                        officialId={c.code}
                         claimId={claim.id}
                         website={site?.website}
                         membershipUrl={claim.source_url}
@@ -130,7 +175,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
           {pr.bills?.some((b: any) => verified(b.claim)) && (
             <RecordModule title="Recently sponsored legislation (119th Congress)">
               <ul className="grid gap-2">
-                {pr.bills.map((b: any) => <Fact key={b.claim} as="li" claim={track(b.claim)}>{publicSourceHref(b.url) ? <a className="link" href={publicSourceHref(b.url) || undefined} rel="noopener noreferrer">{b.label}</a> : b.label} — {b.title} <span className="text-[var(--color-muted)]">({b.date})</span></Fact>)}
+                {pr.bills.map((b: any) => <Fact key={b.claim} as="li" claim={track(b.claim)}><EntityLink entity={namedEntity("bill", b.label, billId(b.url), b.claim, null, b.url)}>{b.label}</EntityLink> — {b.title} <span className="text-[var(--color-muted)]">({b.date})</span></Fact>)}
               </ul>
             </RecordModule>
           )}
@@ -168,7 +213,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
           {!pr.ties?.money?.rows?.length && pr.pacs?.some((x: any) => verified(x.claim)) && (
             <RecordModule title="Political committees giving the most">
               <ul className="grid gap-2">
-                {pr.pacs.map((x: any) => <Fact key={x.committee_id} as="li" claim={track(x.claim)}>{publicSourceHref(x.url) ? <a className="link" href={publicSourceHref(x.url) || undefined} rel="noopener noreferrer">{x.name}</a> : x.name} — {fmtUSD(x.largest)} <span className="text-[var(--color-muted)] text-sm">({x.count} {x.count === 1 ? "payment" : "payments"})</span></Fact>)}
+                {pr.pacs.map((x: any) => <Fact key={x.committee_id} as="li" claim={track(x.claim)}><EntityLink entity={namedEntity("pac", x.name, x.committee_id, x.claim, x.org_slug ? `/org/${x.org_slug}` : null, x.url)}>{x.name}</EntityLink> — {fmtUSD(x.largest)} <span className="text-[var(--color-muted)] text-sm">({x.count} {x.count === 1 ? "payment" : "payments"})</span></Fact>)}
               </ul>
               <p className="mt-3 text-sm text-[var(--color-muted)]">Totals the paying committees reported to the FEC as disbursements to this member’s principal campaign committee in 2025–26. Includes PACs, party committees, and joint fundraising committees. Individual donors are never shown.</p>
             </RecordModule>
@@ -180,10 +225,10 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
               <ul className="grid gap-3">
                 {pr.cosponsors.map((c: any) => verified(c.claim) && (
                   <li key={c.partner}>
-                    <Fact claim={track(c.claim)}>{c.partner_slug ? <Link className="link" href={`/p/${c.partner_slug}`}>{c.partner_name}</Link> : c.partner_name} — {c.count} bills</Fact>
+                    <Fact claim={track(c.claim)}><EntityLink entity={namedEntity("member", c.partner_name, c.partner, c.claim, c.partner_slug ? `/p/${c.partner_slug}` : null)}>{c.partner_name}</EntityLink> — {c.count} bills</Fact>
                     <ul className="text-sm mt-1 pl-3 border-l border-[var(--color-rule)]">
                       {c.examples.filter((e: any) => verified(e.claim) && verified(e.sponsor_claim)).map((e: any) => (
-                        <Fact key={e.claim} as="li" claim={track(e.claim)}>{publicSourceHref(e.url) ? <a className="link" href={publicSourceHref(e.url) || undefined} rel="noopener noreferrer">{e.label}</a> : e.label} {e.title}</Fact>
+                        <Fact key={e.claim} as="li" claim={track(e.claim)}><EntityLink entity={namedEntity("bill", e.label, billId(e.url), e.claim, null, e.url)}>{e.label}</EntityLink> {e.title}</Fact>
                       ))}
                     </ul>
                   </li>

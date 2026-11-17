@@ -1,7 +1,10 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import HowToRead from "@/components/HowToRead";
 import PageHead from "@/components/PageHead";
+import PageTrust from "@/components/PageTrust";
 import MoneyFlowExplorer from "@/components/moneyflow/MoneyFlowExplorer";
+import { moneyFlowAsOf } from "@/lib/page-as-of.mjs";
 
 export const metadata = { title: "Reported money out" };
 
@@ -19,6 +22,8 @@ export default function MoneyFlowPage() {
         title="Reported money out"
         dek="Reported disbursements from a committee account for the current FEC cycle. Open a recipient when that account has its own record."
       />
+      <PageTrust retrieved={moneyFlowAsOf()} />
+      <HowToRead />
       <MoneyFlowExplorer note={words.fungibility_note} cycle={words.cycle} />
     </div>
   );
