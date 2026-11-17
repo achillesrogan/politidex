@@ -14,7 +14,8 @@
     "source_url": "https://democrats.org/who-we-are/",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
     "excerpt": "Democrats believe that every American deserves a fair shot at the American dream. We’re focused on lowering costs, improving healthcare, creating jobs, ending corruption, and protecting our democracy."
-   }
+   },
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00000935",
@@ -26,32 +27,46 @@
     "source_url": "https://dccc.org/about/",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
     "excerpt": "The DCCC is the official campaign arm of the Democrats in the House of Representatives and the only political committee in the country whose principal mission is to support Democratic House candidates every step of the way."
-   }
+   },
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00042366",
    "name": "DSCC",
-   "found": false,
-   "speaker": null,
-   "source": null
+   "review_status": "proposed",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "DSCC",
+    "source_url": "https://www.dscc.org/about-us/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The Democratic Senatorial Campaign Committee is the only committee solely dedicated to electing a Democratic Senate."
+   }
   },
   {
    "committee_id": "C00003418",
    "name": "REPUBLICAN NATIONAL COMMITTEE",
-   "found": false,
-   "speaker": null,
-   "source": null
+   "review_status": "proposed",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "Republican National Committee",
+    "source_url": "https://www.gop.com/about-our-party/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "And today, thanks to President Trump’s strong America First leadership, that spirit of Strength, Determination, and Love of Country continues to guide us as we fight to secure America's future, restore its greatness, and defend the values that have made our nation a beacon of freedom and opportunity."
+   }
   },
   {
    "committee_id": "C00075820",
    "name": "NRCC",
+   "review_status": "proposed",
    "found": true,
    "speaker": "committee",
    "source": {
     "source_name": "NRCC",
-    "source_url": "https://www.nrcc.org/",
+    "source_url": "https://www.nrcc.org/about-2/",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
-    "excerpt": "Help Us Elect House Republicans"
+    "excerpt": "The National Republican Congressional Committee (NRCC) is a political committee devoted to increasing the number of Republicans in the U.S. House of Representatives."
    }
   },
   {
@@ -64,14 +79,16 @@
     "source_url": "https://www.nrsc.org/about-us/",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
     "excerpt": "The NRSC (National Republican Senatorial Committee) is the only national organization solely devoted to strengthening the Republican Senate Majority and electing Republicans to the United States Senate."
-   }
+   },
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00300921",
    "name": "BLACK AMERICA'S POLITICAL ACTION COMMITTEE",
    "found": false,
    "speaker": null,
-   "source": null
+   "source": null,
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00348540",
@@ -83,7 +100,8 @@
     "source_url": "https://www.1199seiu.org/about",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
     "excerpt": "Our mission is to advocate for quality care and good jobs for all!"
-   }
+   },
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00140061",
@@ -95,21 +113,24 @@
     "source_url": "https://www.acep.org/who-we-are/about-us",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
     "excerpt": "Today, ACEP represents more than 38,000 emergency physicians, emergency medicine residents, and medical students. ACEP promotes the highest quality of emergency care and is the leading advocate for emergency physicians and their patients, and the public."
-   }
+   },
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00363986",
    "name": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC",
    "found": false,
    "speaker": null,
-   "source": null
+   "source": null,
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00326389",
    "name": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE",
    "found": false,
    "speaker": null,
-   "source": null
+   "source": null,
+   "review_status": "proposed"
   },
   {
    "committee_id": "C00298000",
@@ -121,7 +142,8 @@
     "source_url": "https://madisonproject.com/mission/",
     "retrieved_at": "2026-11-17T02:30:00+00:00",
     "excerpt": "At the Madison Project, we strongly believe Republican voters should be offered bold choices in primaries with candidates who they can proudly vote for and support with their money, time, and energy."
-   }
+   },
+   "review_status": "proposed"
   }
  ]
 }

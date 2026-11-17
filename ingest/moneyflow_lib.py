@@ -323,23 +323,73 @@ def committee_url(committee_id):
     return "https://www.fec.gov/data/committee/%s/?cycle=%d&tab=spending" % (committee_id, CYCLE)
 
 
-def connected_org_is_private(name):
-    """Hide a connected-organization value only when it is shaped like a personal name.
+_CONNECTED_ORG_WORDS = frozenset({
+    "LEAGUE", "FUND", "MAJORITY", "ASSOCIATION", "UNION", "COMMITTEE", "PROJECT",
+    "ALLIANCE", "CLUB", "FOUNDATION", "INSTITUTE", "UNIVERSITY", "CHURCH",
+    "HOSPITAL", "BANK", "PARTY", "NATIONAL", "INTERNATIONAL", "SERVICES",
+    "GROUP", "COUNCIL", "SOCIETY", "TRUST", "PARTNERS", "COMPANY",
+})
 
-    A one-word sponsor and a multi-word organization name stay. Last-name/first-name,
-    a bare given name plus surname, and a middle initial are omitted.
+
+def _connected_name_tokens(name):
+    raw = _prepare_payee_name(name)
+    raw = re.sub(r"\b(DR|MR|MRS|MS|HON)\.?\b", " ", raw)
+    raw = raw.replace(".", " ")
+    toks = _name_tokens(raw)
+    while toks and toks[-1] in _NAME_SUFFIXES:
+        toks.pop()
+    return [tok for tok in toks if tok not in _NAME_TITLES]
+
+
+def _tokens_look_personal(toks):
+    cleaned = [tok.replace("'", "") for tok in toks]
+    if not cleaned or not all(tok.isalpha() for tok in cleaned):
+        return False
+    ordinary = _NON_NAME_TOKENS - {"PUBLIC"}
+    if any(tok in _ORG_SUFFIXES or tok in ordinary or tok in _GENERIC_BUSINESS or tok in _CONNECTED_ORG_WORDS for tok in cleaned):
+        return False
+    if any(any(root in tok for root in _BUSINESS_ROOTS) for tok in cleaned):
+        return False
+    return True
+
+
+def connected_org_is_private(name):
+    """Hide a connected-organization value when it is shaped like a personal name.
+
+    Registered suffixes and organization words stay. Blank and NONE are not names.
     """
-    if not name or not name_is_private_person(name, ""):
+    if not name or _norm_blank(name):
         return False
-    if "," in name:
-        return True
-    toks = _name_tokens(_prepare_payee_name(name))
-    if len(toks) == 1:
+    raw_toks = _name_tokens(_prepare_payee_name(name).replace(".", " "))
+    if any(tok in _ORG_SUFFIXES or tok in _CONNECTED_ORG_WORDS or tok in _GENERIC_BUSINESS for tok in raw_toks):
         return False
-    single = [i for i, tok in enumerate(toks) if len(tok) == 1]
-    if len(single) == 1 and single[0] not in (0, len(toks) - 1):
+    if name_is_private_person(name, ""):
         return True
-    return len(toks) == 2
+    raw = _prepare_payee_name(name).replace(".", " ")
+    if raw.count(",") == 1:
+        left, right = [part.strip() for part in raw.split(",")]
+        left_toks = _name_tokens(left)
+        right_toks = [tok for tok in _name_tokens(right) if tok not in _NAME_SUFFIXES and tok not in _NAME_TITLES]
+        if (len(left_toks) == 1 and left_toks[0].isalpha() and right_toks
+                and _tokens_look_personal(left_toks + right_toks)):
+            return True
+    toks = _connected_name_tokens(name)
+    if len(toks) == 2 and len(toks[0]) == 1 and toks[1].isalpha() and len(toks[1]) >= 2:
+        return _tokens_look_personal([toks[1]])
+    if len(toks) >= 2 and len(toks[-1]) == 1 and _tokens_look_personal(toks[:-1]):
+        return True
+    words = [tok for tok in toks if len(tok) > 1]
+    singles = [tok for tok in toks if len(tok) == 1]
+    if singles and 1 <= len(words) <= 3 and _tokens_look_personal(words):
+        return True
+    if len(toks) in (2, 3) and _tokens_look_personal(toks) and all(len(tok) >= 2 for tok in toks):
+        return True
+    return False
+
+
+def _norm_blank(value):
+    text = " ".join((value or "").upper().replace(".", " ").split())
+    return text in {"", "NONE", "N/A", "NA", "NULL"}
 
 
 def committee_profile(row, retrieved_at):
@@ -348,7 +398,9 @@ def committee_profile(row, retrieved_at):
     if not cid:
         return None
     connected = row.get("connected_organization") or None
-    if connected and connected_org_is_private(connected):
+    if _norm_blank(connected):
+        connected = None
+    elif connected_org_is_private(connected):
         connected = None
     freq = row.get("filing_frequency") or ""
     if freq not in FILING_FREQUENCY:

@@ -402,6 +402,20 @@ def test_committee_profile_is_factual_and_drops_a_person_like_sponsor():
         "connected_organization": slogan, "state": "DC",
     }, "2026-11-17T00:00:00+00:00")
     check("multi-word organization sponsor is kept", kept["connected_organization"] == slogan)
+    for label in (
+        "MARY ANN SMITH", "JOHN Q PUBLIC III", "DR. JANE DOE", "JANE DOE JR",
+        "DOE JANE M", "O'BRIEN, PATRICK", "JANE A B DOE", "J DOE",
+    ):
+        check("personal shape is omitted: %s" % label, M.connected_org_is_private(label))
+    blank = M.committee_profile({
+        "committee_id": "C00000014", "committee_type": "Q", "designation": "U",
+        "party": "", "org_type": "", "filing_frequency": "Q",
+        "connected_organization": "NONE", "state": "MO",
+    }, "2026-11-17T00:00:00+00:00")
+    check("NONE is a blank connected organization", blank["connected_organization"] is None)
+    import moneyflow_purposes as P
+    check("a non-default port is not an allowlisted host", P.host_of("https://www.dscc.org:8443/about-us/") is None)
+    check("a redirect to another host is rejected", P.host_of("https://evil.example/about") != "www.dscc.org")
     check("business node has no profile", "profile" not in shard["children"][1]["node"])
     check("profile source is the committee page", shard["node"]["profile"]["source"]["source_url"].startswith("https://www.fec.gov/data/committee/"))
     check("profile has no forbidden keys", not M.public_problems(shard))

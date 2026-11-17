@@ -9,12 +9,15 @@ import html
 import json
 import re
 import sys
+import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PURPOSE_PATH = ROOT / "data" / "moneyflow" / "purposes.json"
 UA = "Politidex-civic-research/0.1 (+https://politidex.icu; open-source non-profit)"
+MAX_BYTES = 2_000_000
 
 
 def normalize_document(text):
@@ -34,17 +37,68 @@ def excerpt_in_document(excerpt, document):
     return needle in normalize_document(document)
 
 
-def fetch(url, timeout=25):
+def host_of(url):
+    """Https host with no userinfo and no non-default port, or None."""
+    parsed = urllib.parse.urlparse(url or "")
+    if parsed.scheme != "https" or parsed.username or parsed.password:
+        return None
+    if parsed.port not in (None, 443):
+        return None
+    return (parsed.hostname or "").lower() or None
+
+
+def stored_hosts(data):
+    hosts = set()
+    for entry in data.get("committees") or []:
+        host = host_of(((entry.get("source") or {}).get("source_url")) or "")
+        if host:
+            hosts.add(host)
+    return hosts
+
+
+class _StayOnHost(urllib.request.HTTPRedirectHandler):
+    def __init__(self, host):
+        super().__init__()
+        self._host = host
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if host_of(newurl) != self._host:
+            return None
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def fetch(url, timeout=25, allow=None):
+    host = host_of(url)
+    if not host or (allow is not None and host not in allow):
+        raise ValueError("host is not on the stored allowlist")
+    opener = urllib.request.build_opener(_StayOnHost(host))
     request = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        raw = response.read()
+    try:
+        response = opener.open(request, timeout=timeout)
+    except urllib.error.HTTPError as exc:
+        if exc.code in (301, 302, 303, 307, 308):
+            raise ValueError("redirect left the host") from None
+        raise
+    with response:
+        final = host_of(response.geturl())
+        if final != host:
+            raise ValueError("redirect left the host")
+        raw = response.read(MAX_BYTES + 1)
+        if len(raw) > MAX_BYTES:
+            raise ValueError("response exceeds 2000000 bytes")
         charset = response.headers.get_content_charset() or "utf-8"
     return raw.decode(charset, errors="replace")
 
 
-def review(fetch_page=fetch):
+def review(fetch_page=None):
     """Return a list of flag strings. Empty means every stored excerpt was found."""
     data = json.loads(PURPOSE_PATH.read_text())
+    allow = stored_hosts(data)
+
+    def default_fetch(url):
+        return fetch(url, allow=allow)
+
+    fetch_page = fetch_page or default_fetch
     flags = []
     for entry in data.get("committees") or []:
         cid = entry.get("committee_id") or "?"
@@ -53,8 +107,9 @@ def review(fetch_page=fetch):
         source = entry.get("source") or {}
         url = source.get("source_url") or ""
         excerpt = source.get("excerpt") or ""
-        if not url.startswith("https://") or not excerpt:
-            flags.append("%s: stored quote is missing an https source or excerpt" % cid)
+        host = host_of(url)
+        if host not in allow or not excerpt:
+            flags.append("%s: stored quote is missing an allowlisted https source or excerpt" % cid)
             continue
         try:
             page = fetch_page(url)

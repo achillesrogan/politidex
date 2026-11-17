@@ -12,7 +12,7 @@ export function GET() {
     const purposeDoc = JSON.parse(readFileSync(purposeFile, "utf8"));
     const purposes: Record<string, unknown> = {};
     for (const entry of purposeDoc.committees || []) {
-      if (entry && entry.committee_id) purposes[entry.committee_id] = entry;
+      if (entry && entry.review_status === "approved" && entry.committee_id) purposes[entry.committee_id] = entry;
     }
     const committees = (manifest.pilot || []).map((row: { committee_id?: string; name?: string; party?: string | null; official_total_out?: string; coverage_end?: string | null; selection_rule?: string }) => ({
       committee_id: row.committee_id,
