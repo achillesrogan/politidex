@@ -195,6 +195,25 @@ def test_address_and_memo_and_duplicates():
         row("DOE, JANE QUINN", 1_500_000, tran_id="SA9", image="202601019900000099", sub_id="9", file_num="2", amend="A"),
     ], "2026-11-17T02:30:00+00:00")
     check("an amendment with a new image is not counted twice", len(amended["published"]) == 1 and amended["published"][0]["amount"] == "15000.00")
+    spaced = P.build_index([
+        row("DOE, JOHN Q", 1_500_000, tran_id="SA3", file_num="1", amend="N"),
+        row("DOE,JOHN Q", 1_500_000, tran_id="SA3", sub_id="2", file_num="2", amend="A"),
+        row("DOE , JOHN Q", 1_500_000, tran_id="SA3", sub_id="3", file_num="3", amend="A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("spacing around the comma does not publish the amendment twice", len(spaced["published"]) == 1 and spaced["published"][0]["amount"] == "15000.00")
+    corrected = P.build_index([
+        row("DOE, JANE QUINN", 1_500_000, tran_id="SA4", date="2026-03-01", file_num="1", amend="N"),
+        row("DOE, JANE QUINN", 1_500_000, tran_id="SA4", date="2026-04-02", sub_id="2", file_num="2", amend="A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a date-correcting amendment replaces the earlier row", len(corrected["published"]) == 1 and corrected["published"][0]["amount"] == "15000.00")
+    titled = P.parse_person_name("DOE, JOHN Q MR")
+    comma = P.parse_person_name("DOE, JOHN Q,")
+    check("a title and a stray comma are not part of the middle name", titled["middle"] == "Q" and comma["middle"] == "Q")
+    unnamed = P.build_index([
+        row("DOE, JANE QUINN", 1_500_000),
+        row("NOT A PERSON", 500_000, sub_id="2", txn_type="22Y"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a refund whose name cannot be parsed is reviewed", len(unnamed["published"]) == 1 and any(item["name"] == "NOT A PERSON" for item in unnamed["unlinked"]))
     check("the notice is on the result", P.NOTICE in built["notice"] and "30111" in built["notice"])
 
 

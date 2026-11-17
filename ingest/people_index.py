@@ -39,6 +39,7 @@ OFFICIAL_ROLES = frozenset({
 })
 BUSINESS_METHODS = frozenset({"company_domain", "sec_edgar", "state_registry"})
 _SUFFIXES = frozenset({"JR", "SR", "II", "III", "IV"})
+_TITLES = frozenset({"MR", "MRS", "MS", "MISS", "DR", "PROF", "HON", "REV", "SIR"})
 _GENERIC_WORK = frozenset({
     "RETIRED", "NONE", "NOT EMPLOYED", "SELF EMPLOYED", "SELF-EMPLOYED",
     "INFORMATION REQUESTED", "INFORMATION REQUESTED PER BEST EFFORTS",
@@ -82,10 +83,13 @@ def parse_person_name(raw):
     if "," not in text:
         return None
     last, given = text.split(",", 1)
-    last = last.strip()
+    last = last.strip().strip(",")
     suffix = ""
     kept = []
     for tok in given.split():
+        tok = tok.strip(",")
+        if not tok or tok in _TITLES:
+            continue
         if tok in _SUFFIXES:
             suffix = tok
         else:
@@ -205,30 +209,67 @@ def _filing_rank(row):
     return (file_num, amend)
 
 
-def _dedupe_key(row):
-    """One reported gift is committee, transaction id, date, and name. Amendments change the image."""
-    committee = row.get("committee_id")
-    tran = row.get("tran_id") or ""
-    sub = row.get("sub_id") or ""
-    if tran:
-        return (committee, "tran", tran, row.get("date") or "", _norm(row.get("name") or ""))
-    if sub:
-        return (committee, "sub", sub)
-    return None
+def _parsed_name_key(row):
+    parsed = parse_person_name(row.get("name"))
+    if not parsed:
+        return None
+    return (parsed["last"], parsed["first"], parsed["middle"], parsed.get("suffix") or "")
+
+
+def _is_amendment(row):
+    return (row.get("amend") or "").upper() in {"A", "T"}
+
+
+def _keep_later(chosen, key, row):
+    prev = chosen.get(key)
+    if prev is None or _filing_rank(row) >= _filing_rank(prev):
+        chosen[key] = row
 
 
 def _latest_rows(rows):
-    """Keep the filing with the highest file number for one reported transaction."""
+    """Keep the highest file number for one gift.
+
+    Original filings that reuse a transaction id on different dates stay separate.
+    An amendment (A or T) with a higher file number replaces the earlier row with
+    the same committee, transaction id, and parsed name, even if the date changed.
+    """
     chosen = {}
     loose = []
+    amendments = []
     for row in rows:
-        key = _dedupe_key(row)
-        if key is None:
+        tran = row.get("tran_id") or ""
+        sub = row.get("sub_id") or ""
+        if tran and _is_amendment(row):
+            amendments.append(row)
+            continue
+        if tran:
+            name = _parsed_name_key(row)
+            if name is None:
+                loose.append(row)
+                continue
+            key = (row.get("committee_id"), "tran", tran, row.get("date") or "", name)
+        elif sub:
+            key = (row.get("committee_id"), "sub", sub)
+        else:
             loose.append(row)
             continue
-        prev = chosen.get(key)
-        if prev is None or _filing_rank(row) >= _filing_rank(prev):
-            chosen[key] = row
+        _keep_later(chosen, key, row)
+    for row in sorted(amendments, key=_filing_rank):
+        name = _parsed_name_key(row)
+        if name is None:
+            loose.append(row)
+            continue
+        committee = row.get("committee_id")
+        tran = row.get("tran_id") or ""
+        earlier = [
+            key for key, prev in chosen.items()
+            if len(key) == 5 and key[0] == committee and key[1] == "tran" and key[2] == tran and key[4] == name
+            and _filing_rank(prev) <= _filing_rank(row)
+        ]
+        if earlier:
+            earlier.sort(key=lambda key: _filing_rank(chosen[key]))
+            del chosen[earlier[-1]]
+        _keep_later(chosen, (committee, "tran", tran, row.get("date") or "", name), row)
     return list(chosen.values()) + loose
 
 
@@ -315,10 +356,12 @@ def build_index(rows, retrieved_at):
         by_bare.setdefault((name["last"], name["first"]), []).append((None, [(row, reason)]))
     for place, members in grouped_weak.items():
         by_bare.setdefault((place[0], place[1]), []).append((None, members))
+    unparsed_refunds = []
     for refund in unmatched_refunds:
         name = parse_person_name(refund.get("name")) or {}
         last, first = name.get("last") or "", name.get("first") or ""
         if not last or not first:
+            unparsed_refunds.append(refund)
             continue
         by_bare.setdefault((last, first), []).append((None, [(refund, "refund did not match one cluster")]))
 
@@ -365,6 +408,12 @@ def build_index(rows, retrieved_at):
                 "qualification": "Itemized FEC contributions in the 2026 cycle aggregate to at least $10,000.00 for this reported name, middle name, city, state, employer, and occupation.",
             }
             published.append(to_public(person))
+    for refund in unparsed_refunds:
+        unlinked.append({
+            "name": refund.get("name") or "",
+            "reason": "Refund name could not be parsed, so it was not subtracted.",
+            "clusters": _cluster_summaries([(None, [(refund, "refund name could not be parsed")])]),
+        })
     published.sort(key=lambda person: (-person["amount_cents"], person["name"], person["id"]))
     return {
         "notice": NOTICE,
