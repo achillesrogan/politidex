@@ -21,6 +21,18 @@ ROOT = Path(__file__).resolve().parents[1]
 PURPOSE_PATH = ROOT / "data" / "moneyflow" / "purposes.json"
 UA = "Politidex-civic-research/0.1 (+https://politidex.icu; open-source non-profit)"
 MAX_BYTES = 2_000_000
+# Hosts are fixed here. A new quote page is not fetched until its host is added.
+ALLOW_HOSTS = frozenset({
+    "democrats.org",
+    "dccc.org",
+    "www.dscc.org",
+    "prod-static.gop.com",
+    "www.nrcc.org",
+    "www.nrsc.org",
+    "www.1199seiu.org",
+    "www.acep.org",
+    "madisonproject.com",
+})
 
 
 def normalize_document(text):
@@ -50,15 +62,6 @@ def host_of(url):
     return (parsed.hostname or "").lower() or None
 
 
-def stored_hosts(data):
-    hosts = set()
-    for entry in data.get("committees") or []:
-        host = host_of(((entry.get("source") or {}).get("source_url")) or "")
-        if host:
-            hosts.add(host)
-    return hosts
-
-
 class _StayOnHost(urllib.request.HTTPRedirectHandler):
     def __init__(self, host):
         super().__init__()
@@ -86,6 +89,7 @@ def pdf_bytes_to_text(raw):
                     [exe, "-layout", handle.name, "-"],
                     check=False,
                     capture_output=True,
+                    timeout=30,
                 )
             if result.returncode == 0:
                 return result.stdout.decode("utf-8", errors="replace")
@@ -138,7 +142,7 @@ def fetch(url, timeout=25, allow=None):
 def review(fetch_page=None):
     """Return a list of flag strings. Empty means every stored excerpt was found."""
     data = json.loads(PURPOSE_PATH.read_text())
-    allow = stored_hosts(data)
+    allow = ALLOW_HOSTS
 
     def default_fetch(url):
         return fetch(url, allow=allow)

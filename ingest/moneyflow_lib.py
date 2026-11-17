@@ -382,7 +382,7 @@ def connected_org_is_private(name):
     singles = [tok for tok in toks if len(tok) == 1]
     if singles and 1 <= len(words) <= 3 and _tokens_look_personal(words):
         return True
-    if len(toks) in (2, 3) and _tokens_look_personal(toks) and all(len(tok) >= 2 for tok in toks):
+    if len(toks) in (2, 3, 4) and _tokens_look_personal(toks) and all(len(tok) >= 2 for tok in toks):
         return True
     return False
 
@@ -803,7 +803,12 @@ def parse_master_line(line):
         return None
     state = c[6].strip().upper()
     connected = c[13].strip()
+    if _norm_blank(connected):
+        connected = None
     freq = c[11].strip().upper()
+    org_type = c[12].strip()
+    if _norm_blank(org_type):
+        org_type = ""
     return {
         "committee_id": cid,
         "name": c[1].strip(),
@@ -811,8 +816,8 @@ def parse_master_line(line):
         "committee_type": c[9].strip(),
         "party": c[10].strip(),
         "filing_frequency": freq if freq in FILING_FREQUENCY else None,
-        "org_type": c[12].strip(),
-        "connected_organization": connected or None,
+        "org_type": org_type,
+        "connected_organization": connected,
         "state": state if len(state) == 2 and state.isalpha() else None,
     }
 

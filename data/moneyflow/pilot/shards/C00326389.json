@@ -617,12 +617,12 @@
      "designation": "J",
      "party": null,
      "org_type": null,
-     "connected_organization": "NONE",
+     "connected_organization": null,
      "state": "VA",
      "filing_frequency": "Q",
      "source": {
       "id": "c_65b43038104c50",
-      "text": "Committee master C00771246; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "text": "Committee master C00771246; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization blank; state VA.",
       "value": {
        "committee_type": "N",
        "designation": "J",
@@ -631,7 +631,7 @@
        "filing_frequency": "Q",
        "state": "VA"
       },
-      "excerpt": "Committee master C00771246; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "excerpt": "Committee master C00771246; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization blank; state VA.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00771246/?cycle=2026&tab=spending",
       "check": {
@@ -739,12 +739,12 @@
      "designation": "P",
      "party": "REP",
      "org_type": null,
-     "connected_organization": "SELL",
+     "connected_organization": null,
      "state": "TX",
      "filing_frequency": "Q",
      "source": {
       "id": "c_41445926c1917f",
-      "text": "Committee master C00926345; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization SELL; state TX.",
+      "text": "Committee master C00926345; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state TX.",
       "value": {
        "committee_type": "H",
        "designation": "P",
@@ -753,7 +753,7 @@
        "filing_frequency": "Q",
        "state": "TX"
       },
-      "excerpt": "Committee master C00926345; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization SELL; state TX.",
+      "excerpt": "Committee master C00926345; type H; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state TX.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00926345/?cycle=2026&tab=spending",
       "check": {
@@ -2427,12 +2427,12 @@
      "designation": "D",
      "party": null,
      "org_type": null,
-     "connected_organization": "HOEVEN",
+     "connected_organization": null,
      "state": "ND",
      "filing_frequency": "M",
      "source": {
       "id": "c_99d6b8d5e6ed3e",
-      "text": "Committee master C00493072; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization HOEVEN; state ND.",
+      "text": "Committee master C00493072; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization blank; state ND.",
       "value": {
        "committee_type": "Q",
        "designation": "D",
@@ -2441,7 +2441,7 @@
        "filing_frequency": "M",
        "state": "ND"
       },
-      "excerpt": "Committee master C00493072; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization HOEVEN; state ND.",
+      "excerpt": "Committee master C00493072; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization blank; state ND.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00493072/?cycle=2026&tab=spending",
       "check": {
@@ -2911,12 +2911,12 @@
      "designation": "J",
      "party": null,
      "org_type": null,
-     "connected_organization": "NONE",
+     "connected_organization": null,
      "state": "VA",
      "filing_frequency": "Q",
      "source": {
       "id": "c_cfa2f3191e4fb0",
-      "text": "Committee master C00649574; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "text": "Committee master C00649574; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization blank; state VA.",
       "value": {
        "committee_type": "N",
        "designation": "J",
@@ -2925,7 +2925,7 @@
        "filing_frequency": "Q",
        "state": "VA"
       },
-      "excerpt": "Committee master C00649574; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "excerpt": "Committee master C00649574; type N; designation J; party blank; filing frequency Q; interest group blank; connected organization blank; state VA.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00649574/?cycle=2026&tab=spending",
       "check": {

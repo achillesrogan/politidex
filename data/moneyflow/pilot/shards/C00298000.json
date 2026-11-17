@@ -1687,12 +1687,12 @@
      "designation": "P",
      "party": "REP",
      "org_type": null,
-     "connected_organization": null,
+     "connected_organization": "TEAM PAXTON",
      "state": "TX",
      "filing_frequency": "Q",
      "source": {
       "id": "c_5dca06964078c2",
-      "text": "Committee master C00901918; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state TX.",
+      "text": "Committee master C00901918; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization TEAM PAXTON; state TX.",
       "value": {
        "committee_type": "S",
        "designation": "P",
@@ -1701,7 +1701,7 @@
        "filing_frequency": "Q",
        "state": "TX"
       },
-      "excerpt": "Committee master C00901918; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization blank; state TX.",
+      "excerpt": "Committee master C00901918; type S; designation P; party REP; filing frequency Q; interest group blank; connected organization TEAM PAXTON; state TX.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00901918/?cycle=2026&tab=spending",
       "check": {

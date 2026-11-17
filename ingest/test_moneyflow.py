@@ -404,7 +404,7 @@ def test_committee_profile_is_factual_and_drops_a_person_like_sponsor():
     check("multi-word organization sponsor is kept", kept["connected_organization"] == slogan)
     for label in (
         "MARY ANN SMITH", "JOHN Q PUBLIC III", "DR. JANE DOE", "JANE DOE JR",
-        "DOE JANE M", "O'BRIEN, PATRICK", "JANE A B DOE", "J DOE",
+        "DOE JANE M", "O'BRIEN, PATRICK", "JANE A B DOE", "J DOE", "MARIA DE LA CRUZ",
     ):
         check("personal shape is omitted: %s" % label, M.connected_org_is_private(label))
     blank = M.committee_profile({

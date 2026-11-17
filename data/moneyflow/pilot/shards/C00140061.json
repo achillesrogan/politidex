@@ -609,12 +609,12 @@
      "designation": "U",
      "party": null,
      "org_type": null,
-     "connected_organization": "NONE",
+     "connected_organization": null,
      "state": "VA",
      "filing_frequency": "Q",
      "source": {
       "id": "c_93eae870dda7b1",
-      "text": "Committee master C00798009; type O; designation U; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "text": "Committee master C00798009; type O; designation U; party blank; filing frequency Q; interest group blank; connected organization blank; state VA.",
       "value": {
        "committee_type": "O",
        "designation": "U",
@@ -623,7 +623,7 @@
        "filing_frequency": "Q",
        "state": "VA"
       },
-      "excerpt": "Committee master C00798009; type O; designation U; party blank; filing frequency Q; interest group blank; connected organization NONE; state VA.",
+      "excerpt": "Committee master C00798009; type O; designation U; party blank; filing frequency Q; interest group blank; connected organization blank; state VA.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00798009/?cycle=2026&tab=spending",
       "check": {
@@ -1174,12 +1174,12 @@
      "designation": "U",
      "party": null,
      "org_type": null,
-     "connected_organization": "NONE",
+     "connected_organization": null,
      "state": "DC",
      "filing_frequency": "M",
      "source": {
       "id": "c_cd041687866d19",
-      "text": "Committee master C00165159; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization NONE; state DC.",
+      "text": "Committee master C00165159; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization blank; state DC.",
       "value": {
        "committee_type": "Q",
        "designation": "U",
@@ -1188,7 +1188,7 @@
        "filing_frequency": "M",
        "state": "DC"
       },
-      "excerpt": "Committee master C00165159; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization NONE; state DC.",
+      "excerpt": "Committee master C00165159; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization blank; state DC.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00165159/?cycle=2026&tab=spending",
       "check": {
@@ -1418,12 +1418,12 @@
      "designation": "P",
      "party": "DEM",
      "org_type": null,
-     "connected_organization": "NONE",
+     "connected_organization": null,
      "state": "CT",
      "filing_frequency": "Q",
      "source": {
       "id": "c_23ccd129b0ec15",
-      "text": "Committee master C00330142; type H; designation P; party DEM; filing frequency Q; interest group blank; connected organization NONE; state CT.",
+      "text": "Committee master C00330142; type H; designation P; party DEM; filing frequency Q; interest group blank; connected organization blank; state CT.",
       "value": {
        "committee_type": "H",
        "designation": "P",
@@ -1432,7 +1432,7 @@
        "filing_frequency": "Q",
        "state": "CT"
       },
-      "excerpt": "Committee master C00330142; type H; designation P; party DEM; filing frequency Q; interest group blank; connected organization NONE; state CT.",
+      "excerpt": "Committee master C00330142; type H; designation P; party DEM; filing frequency Q; interest group blank; connected organization blank; state CT.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00330142/?cycle=2026&tab=spending",
       "check": {
@@ -1654,12 +1654,12 @@
      "designation": "D",
      "party": null,
      "org_type": null,
-     "connected_organization": "WYDEN",
+     "connected_organization": null,
      "state": "OR",
      "filing_frequency": "Q",
      "source": {
       "id": "c_2024f0752f8517",
-      "text": "Committee master C00392738; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization WYDEN; state OR.",
+      "text": "Committee master C00392738; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization blank; state OR.",
       "value": {
        "committee_type": "Q",
        "designation": "D",
@@ -1668,7 +1668,7 @@
        "filing_frequency": "Q",
        "state": "OR"
       },
-      "excerpt": "Committee master C00392738; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization WYDEN; state OR.",
+      "excerpt": "Committee master C00392738; type Q; designation D; party blank; filing frequency Q; interest group blank; connected organization blank; state OR.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00392738/?cycle=2026&tab=spending",
       "check": {
@@ -2012,12 +2012,12 @@
      "designation": "U",
      "party": null,
      "org_type": null,
-     "connected_organization": "NONE",
+     "connected_organization": null,
      "state": "FL",
      "filing_frequency": "M",
      "source": {
       "id": "c_fc31c713ba8728",
-      "text": "Committee master C00433060; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization NONE; state FL.",
+      "text": "Committee master C00433060; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization blank; state FL.",
       "value": {
        "committee_type": "Q",
        "designation": "U",
@@ -2026,7 +2026,7 @@
        "filing_frequency": "M",
        "state": "FL"
       },
-      "excerpt": "Committee master C00433060; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization NONE; state FL.",
+      "excerpt": "Committee master C00433060; type Q; designation U; party blank; filing frequency M; interest group blank; connected organization blank; state FL.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00433060/?cycle=2026&tab=spending",
       "check": {
@@ -2252,12 +2252,12 @@
      "designation": "D",
      "party": null,
      "org_type": null,
-     "connected_organization": "CASSIDY",
+     "connected_organization": null,
      "state": "LA",
      "filing_frequency": "M",
      "source": {
       "id": "c_ac402d5f9ed613",
-      "text": "Committee master C00480228; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization CASSIDY; state LA.",
+      "text": "Committee master C00480228; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization blank; state LA.",
       "value": {
        "committee_type": "Q",
        "designation": "D",
@@ -2266,7 +2266,7 @@
        "filing_frequency": "M",
        "state": "LA"
       },
-      "excerpt": "Committee master C00480228; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization CASSIDY; state LA.",
+      "excerpt": "Committee master C00480228; type Q; designation D; party blank; filing frequency M; interest group blank; connected organization blank; state LA.",
       "source_name": "Federal Election Commission",
       "source_url": "https://www.fec.gov/data/committee/C00480228/?cycle=2026&tab=spending",
       "check": {

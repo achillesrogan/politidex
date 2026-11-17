@@ -30,6 +30,7 @@ export const FEC_NONCONNECTED_URL: string;
 export function contrastRatio(foreground: string, background: string): number;
 export function flowOf(node: any): string;
 export function flowColor(node: any): string;
+export function blankMasterValue(value: string | null | undefined): string;
 export function plainCommitteeKind(profile: any): string | null;
 export function entityFacts(profile: any): Array<{ label: string; text: string; href: string; linkLabel: string }>;
 export function createNestedList(view: any, handlers?: { onToggle?: (row: any) => void; onRecord?: (source: any, title: string, bucketNote: string | null, profile?: any, event?: any) => void }): any;
