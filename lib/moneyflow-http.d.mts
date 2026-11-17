@@ -1,6 +1,8 @@
 export const MONEYFLOW_CACHE: string;
 export const MONEYFLOW_ERROR: { error: string };
 export function moneyflowErrorResponse(): { status: number; body: { error: string }; cacheControl: string };
+export function withMoneyflowFixture<T>(fixture: { manifest?: any; purposes?: any } | null, run: () => T | Promise<T>): Promise<T>;
+export function moneyflowFixture(): { manifest?: any; purposes?: any } | null;
 export function moneyflowPublished(manifest: { not_in_web_bundle?: boolean } | null | undefined): boolean;
 export function pilotCommitteeIds(manifest: { pilot?: Array<{ committee_id?: string }> } | null | undefined): Set<string>;
 export function moneyflowSources(shard: any): Array<Record<string, any>>;

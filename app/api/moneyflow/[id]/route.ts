@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { NextResponse } from "next/server";
-import { MONEYFLOW_CACHE, MONEYFLOW_ERROR, moneyflowPublished, moneyflowSourceReady, moneyflowSources, pilotCommitteeIds } from "@/lib/moneyflow-http.mjs";
+import { MONEYFLOW_CACHE, MONEYFLOW_ERROR, moneyflowFixture, moneyflowPublished, moneyflowSourceReady, moneyflowSources, pilotCommitteeIds } from "@/lib/moneyflow-http.mjs";
 
 const ID = /^C[0-9]{8}$/;
 
@@ -12,7 +12,8 @@ export async function GET(_req: Request, context: { params: Promise<{ id: string
       return NextResponse.json({ error: "Unknown committee." }, { status: 404, headers: { "cache-control": "no-store" } });
     }
     const manifestPath = path.join(process.cwd(), "data", "moneyflow", "pilot", "manifest.json");
-    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as { not_in_web_bundle?: boolean; pilot?: Array<{ committee_id?: string }> };
+    const fixture = moneyflowFixture();
+    const manifest = (fixture?.manifest ?? JSON.parse(readFileSync(manifestPath, "utf8"))) as { not_in_web_bundle?: boolean; pilot?: Array<{ committee_id?: string }> };
     if (!moneyflowPublished(manifest) || !pilotCommitteeIds(manifest).has(id)) {
       return NextResponse.json({ error: "No shard for this committee." }, { status: 404, headers: { "cache-control": "no-store" } });
     }

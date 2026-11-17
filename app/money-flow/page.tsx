@@ -23,6 +23,9 @@ export default function MoneyFlowPage() {
         dek="Reported disbursements from a committee account for the current FEC cycle. Open a recipient when that account has its own record."
       />
       <PageTrust retrieved={moneyFlowAsOf()} />
+      <p className="mb-6 max-w-3xl text-sm leading-relaxed text-[var(--color-muted)]">
+        Repeated SUB_IDs count once. Zero-dollar rows are excluded. Type 42 recount-account disbursements are included. Negative rows are netted.
+      </p>
       <HowToRead />
       <MoneyFlowExplorer note={words.fungibility_note} cycle={words.cycle} />
     </div>

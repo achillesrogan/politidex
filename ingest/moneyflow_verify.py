@@ -1,8 +1,9 @@
-"""Re-check money-flow facts against the FEC bulk files they cite.
+"""Prove the served shards are reproducible from the FEC bulk files.
 
-Facts whose amounts and identifiers match a fresh read are marked verified.
-Facts that do not match are removed from the served shards and listed in
-data/moneyflow/review.json. Individual-contribution files are not read.
+A fresh read is compared with every displayed field. A match marks the fact
+verified. A difference removes it from the served shard and lists it in
+data/moneyflow/review.json. Reproducing the shard does not prove that the aggregation rules are the correct reading of the filings. Individual-contribution
+files are not read.
 
 Usage (from the repository root):
   python3 ingest/moneyflow_verify.py
@@ -15,6 +16,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -52,12 +54,20 @@ def walk_sources(shard):
             yield edge["source"]
 
 
-def files_ready():
+ZIP_MAX_AGE = 7 * 24 * 60 * 60
+
+
+def files_ready(now=None, root=None):
+    """True when the five bulk zips exist, are non-trivial, and are 7 days old or newer."""
+    root = Path(root) if root is not None else MF.RAW_DIR
+    clock = time.time() if now is None else now
     for key in ("cm", "webk", "oth", "pas2", "oppexp"):
-        path = MF.RAW_DIR / Path(FILE_URLS[key]).name
+        path = root / Path(FILE_URLS[key]).name
         if not path.exists() or path.stat().st_size < 1000:
             return False
         if "indiv" in path.name.lower():
+            return False
+        if clock - path.stat().st_mtime > ZIP_MAX_AGE:
             return False
     return True
 
@@ -180,7 +190,7 @@ def apply(write):
 def main(argv):
     check_only = "--check" in argv
     if not files_ready() and not check_only:
-        raise SystemExit("FEC bulk files are not on disk. Run: python3 ingest/moneyflow.py fetch")
+        raise SystemExit("FEC bulk files are not on disk or are older than 7 days. Run: python3 ingest/moneyflow.py fetch --refresh")
     checked, verified, held, _review = apply(write=not check_only)
     print("money-flow facts checked %d verified %d held %d" % (checked, verified, held))
     if check_only:

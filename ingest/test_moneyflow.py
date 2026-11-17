@@ -549,6 +549,40 @@ def test_payee_totals_follow_the_filing_rules():
     rec = next(iter(agg["C00027466"].values()))
     check("type 42 recount disbursements are included", rec.amount == 2200 and rec.count == 1)
 
+    agg, seen, st = {"C00000935": {}}, set(), stats()
+    MF._add(agg, seen, st, row(500, "N1", "oppexp", txn=None, name="PAYLOCITY"), "oppexp", {}, {"C00000935"})
+    MF._add(agg, seen, st, row(-200, "N2", "oppexp", txn=None, name="PAYLOCITY"), "oppexp", {}, {"C00000935"})
+    rec = next(iter(agg["C00000935"].values()))
+    check("a negative row is netted into the total", rec.amount == 300 and rec.count == 2)
+
+
+def test_files_ready_rejects_zips_older_than_seven_days():
+    print("zip age")
+    import os
+    import tempfile
+    import moneyflow_verify as V
+    from moneyflow_lib import FILE_URLS
+
+    keys = ("cm", "webk", "oth", "pas2", "oppexp")
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        stamped = 1_700_000_000
+        for key in keys:
+            path = root / Path(FILE_URLS[key]).name
+            path.write_bytes(b"x" * 1000)
+            os.utime(path, (stamped, stamped))
+        week = V.ZIP_MAX_AGE
+        check("zips from this moment are ready", V.files_ready(now=stamped, root=root))
+        check("zips at exactly 7 days are ready", V.files_ready(now=stamped + week, root=root))
+        check("zips older than 7 days are not ready", not V.files_ready(now=stamped + week + 1, root=root))
+
+
+def test_verifier_claims_reproducibility_not_correctness():
+    print("verifier wording")
+    text = (ROOT / "ingest" / "moneyflow_verify.py").read_text()
+    check("the verifier says shards are reproducible from the bulk files", "reproducible from the FEC bulk files" in text)
+    check("the verifier does not claim the aggregation is correct", "does not prove that the aggregation" in text)
+
 
 def test_web_app_does_not_import_shards():
     print("bundle")
@@ -578,6 +612,8 @@ if __name__ == "__main__":
     test_sources_do_not_name_indiv_files()
     test_displayed_fields_are_compared_not_only_the_check()
     test_payee_totals_follow_the_filing_rules()
+    test_files_ready_rejects_zips_older_than_seven_days()
+    test_verifier_claims_reproducibility_not_correctness()
     test_web_app_does_not_import_shards()
     test_committed_pilot_shards()
     if failures:

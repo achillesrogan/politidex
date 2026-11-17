@@ -1,15 +1,16 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { NextResponse } from "next/server";
-import { MONEYFLOW_CACHE, MONEYFLOW_ERROR, moneyflowPublished } from "@/lib/moneyflow-http.mjs";
+import { MONEYFLOW_CACHE, MONEYFLOW_ERROR, moneyflowFixture, moneyflowPublished } from "@/lib/moneyflow-http.mjs";
 
 /** Slim index. Shard files are not imported into the client bundle. */
-export function GET() {
+export function GET(_req: Request) {
   try {
+    const fixture = moneyflowFixture();
     const file = path.join(process.cwd(), "data", "moneyflow", "pilot", "manifest.json");
-    const manifest = JSON.parse(readFileSync(file, "utf8"));
+    const manifest = fixture?.manifest ?? JSON.parse(readFileSync(file, "utf8"));
     const purposeFile = path.join(process.cwd(), "data", "moneyflow", "purposes.json");
-    const purposeDoc = JSON.parse(readFileSync(purposeFile, "utf8"));
+    const purposeDoc = fixture?.purposes ?? JSON.parse(readFileSync(purposeFile, "utf8"));
     const purposes: Record<string, unknown> = {};
     for (const entry of purposeDoc.committees || []) {
       if (entry && entry.review_status === "approved" && entry.committee_id) purposes[entry.committee_id] = entry;
