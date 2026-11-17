@@ -1,5 +1,6 @@
 """Synthetic donors only. No real FEC names."""
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -346,10 +347,18 @@ def test_refund_check_is_fast():
         rows.append(row("NN %s" % _wide_name(j), 100_000, sub_id="p%d" % j, txn_type="22Y"))
     for j in range(1_000):
         rows.append(row("Z%s" % _wide_name(1_000 + j), 100_000, sub_id="j%d" % j, txn_type="22Y"))
+    P.REFUND_COMPARISONS = 0
     started = time.perf_counter()
     built = P.build_index(rows, "2026-11-17T18:40:00+00:00")
     elapsed = time.perf_counter() - started
-    check("60k clusters and 2k refunds finish in under 10 seconds (%.2fs)" % elapsed, elapsed < 10)
+    naive = 60_000 * 2_000
+    check(
+        "refund comparisons stay under one tenth of checking every cluster",
+        P.REFUND_COMPARISONS < naive // 10,
+        "%d comparisons" % P.REFUND_COMPARISONS,
+    )
+    if os.environ.get("POLITIDEX_REFUND_TIMING"):
+        check("60k clusters and 2k refunds finish in under 10 seconds (%.2fs)" % elapsed, elapsed < 10)
     check("those refunds hold only the last names they name", len(built["published"]) == 58_000, str(len(built["published"])))
 
 

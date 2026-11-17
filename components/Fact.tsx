@@ -6,7 +6,7 @@ import ConfidenceBadge from "@/components/ConfidenceBadge";
 /** Renders children only when the claim passed verification. Every rendered fact carries data-claim for the CI check. */
 export default function Fact({ claim, children, as = "span", className }: { claim?: string | null; children: React.ReactNode; as?: "span" | "div" | "li" | "td"; className?: string }) {
   const c = verified(claim);
-  if (!c) return null;
+  if (!c || !publicSourceHref(c.source_url)) return null;
   const Tag = as as any;
   const when = fmtDate(c.retrieved_at);
   return (

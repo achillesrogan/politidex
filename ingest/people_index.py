@@ -363,8 +363,12 @@ def _last_name_index(groups):
     return pieces_of, joined_of, by_piece, by_prefix, shorts, bares
 
 
+REFUND_COMPARISONS = 0
+
+
 def _refund_matching_bares(index, raw):
     """(last, first) pairs a refund might belong to. A blank name matches none."""
+    global REFUND_COMPARISONS
     pieces_of, joined_of, by_piece, by_prefix, shorts, bares = index
     parts = _name_pieces(raw)
     if not parts:
@@ -372,6 +376,7 @@ def _refund_matching_bares(index, raw):
     counts = {}
     for part in set(parts):
         for last in by_piece.get(part, ()):
+            REFUND_COMPARISONS += 1
             counts[last] = counts.get(last, 0) + 1
     seen = set()
     matched = []
@@ -389,6 +394,7 @@ def _refund_matching_bares(index, raw):
                 continue
             seen_prefix.add(pref)
             for last in by_prefix.get(pref, ()):
+                REFUND_COMPARISONS += 1
                 if last in seen:
                     continue
                 joined = joined_of[last]
@@ -396,6 +402,7 @@ def _refund_matching_bares(index, raw):
                     seen.add(last)
                     matched.append(last)
     for last in shorts:
+        REFUND_COMPARISONS += 1
         if last in seen:
             continue
         joined = joined_of[last]
