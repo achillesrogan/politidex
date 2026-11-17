@@ -4,4 +4,6 @@ export function moneyflowErrorResponse(): { status: number; body: { error: strin
 export function moneyflowPublished(manifest: { not_in_web_bundle?: boolean } | null | undefined): boolean;
 export function pilotCommitteeIds(manifest: { pilot?: Array<{ committee_id?: string }> } | null | undefined): Set<string>;
 export function moneyflowSources(shard: any): Array<Record<string, any>>;
+export const MONEYFLOW_SOURCE_HOSTS: string[];
+export function moneyflowSourceHost(url: string | null | undefined): string;
 export function moneyflowSourceReady(source: Record<string, any> | null | undefined): boolean;

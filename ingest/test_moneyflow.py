@@ -447,6 +447,109 @@ def test_sources_do_not_name_indiv_files():
     check("wording edge kinds are the allowed four", set(wording["edge_kinds"]) == set(M.EDGE_KINDS))
 
 
+def test_displayed_fields_are_compared_not_only_the_check():
+    """A planted displayed value fails even when the check block is unchanged."""
+    print("plant")
+    import copy
+    from moneyflow_verify import diff_paths
+
+    def base():
+        return {
+            "node": {
+                "name": "ROOT",
+                "reported_out": "10.00",
+                "period": {"cycle": 2026, "coverage_end": "2026-10-14"},
+                "source": {
+                    "text": "root text", "value": {"TTL_DISB": 1000}, "excerpt": "root excerpt",
+                    "source_url": "https://www.fec.gov/data/committee/C00000001/",
+                    "retrieved_at": "2026-11-17T00:00:00Z", "status": "verified",
+                    "verified_at": "2026-11-17T01:00:00Z",
+                },
+            },
+            "children": [{
+                "node": {
+                    "name": "PAYEE",
+                    "source": {
+                        "text": "payee text", "value": {"reported_name": "PAYEE"}, "excerpt": "payee excerpt",
+                        "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?111",
+                        "retrieved_at": "2026-11-17T00:00:00Z", "status": "verified",
+                    },
+                },
+                "edge": {
+                    "amount": "10.00", "amount_cents": 1000,
+                    "source": {
+                        "text": "edge text", "value": 1000, "excerpt": "edge excerpt",
+                        "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?111",
+                        "retrieved_at": "2026-11-17T00:00:00Z", "status": "unverified",
+                    },
+                },
+            }],
+        }
+
+    check("status and verification dates are not a difference", diff_paths(base(), base()) == [])
+    plants = [
+        ("$.children[0].edge.amount", lambda shard: shard["children"][0]["edge"].__setitem__("amount", "99.00")),
+        ("$.children[0].edge.amount_cents", lambda shard: shard["children"][0]["edge"].__setitem__("amount_cents", 9900)),
+        ("$.children[0].edge.source.value", lambda shard: shard["children"][0]["edge"]["source"].__setitem__("value", 1)),
+        ("$.children[0].edge.source.text", lambda shard: shard["children"][0]["edge"]["source"].__setitem__("text", "wrong text")),
+        ("$.children[0].edge.source.excerpt", lambda shard: shard["children"][0]["edge"]["source"].__setitem__("excerpt", "wrong excerpt")),
+        ("$.children[0].node.name", lambda shard: shard["children"][0]["node"].__setitem__("name", "OTHER NAME")),
+        ("$.children[0].edge.source.source_url", lambda shard: shard["children"][0]["edge"]["source"].__setitem__("source_url", "https://docquery.fec.gov/cgi-bin/fecimg/?999")),
+        ("$.node.source.retrieved_at", lambda shard: shard["node"]["source"].__setitem__("retrieved_at", "1999-01-01T00:00:00Z")),
+        ("$.node.reported_out", lambda shard: shard["node"].__setitem__("reported_out", "1.00")),
+        ("$.node.period.coverage_end", lambda shard: shard["node"]["period"].__setitem__("coverage_end", "1999-01-01")),
+    ]
+    fresh = base()
+    for path, plant in plants:
+        served = copy.deepcopy(fresh)
+        plant(served)
+        found = diff_paths(served, fresh)
+        check("plant %s" % path, path in found, ", ".join(found))
+
+
+def test_payee_totals_follow_the_filing_rules():
+    """Duplicates, zero rows, recount disbursements, and filed names."""
+    print("payee rules")
+    import moneyflow as MF
+
+    def stats():
+        return {
+            "memo_rows": 0, "memo_cents": 0, "receipt_rows": 0, "bad_amount_rows": 0,
+            "zero_amount_rows": 0, "out_of_cycle_rows": 0, "out_of_cycle_cents": 0,
+            "duplicate_sub_id": 0, "pas2_already_in_oth": 0, "missing_sub_id": 0,
+            "aggregated_rows": 0, "aggregated_cents": 0,
+            "rows_filer_not_in_pac_party_summary": 0, "unknown_types": {},
+        }
+
+    def row(amount, sub, source="oth", txn="24K", name="GROUNDSWELL PUBLIC STRATEGIES INC. GPS IMPACT", memo=""):
+        return {
+            "committee_id": "C00000935", "image": "202610229944811379", "txn_type": txn,
+            "entity": "ORG", "name": name, "date": "2026-03-01", "amount_cents": amount,
+            "other_id": "", "file_num": "1", "memo": memo, "sub_id": sub, "purpose": "",
+        }
+
+    agg, seen, st = {"C00000935": {}}, set(), stats()
+    # The contributions-to-candidates file repeats any-transaction rows. Same SUB_ID counts once.
+    MF._add(agg, seen, st, row(1000, "S1"), "oth", {}, {"C00000935"})
+    MF._add(agg, seen, st, row(1000, "S1"), "pas2", {}, {"C00000935"})
+    rec = next(iter(agg["C00000935"].values()))
+    check("a repeated pas2 SUB_ID is not added again", rec.amount == 1000 and rec.count == 1 and st["pas2_already_in_oth"] == 1)
+    check("the displayed name is the filed name, including a trailing GPS IMPACT", rec.name == "GROUNDSWELL PUBLIC STRATEGIES INC. GPS IMPACT")
+
+    agg, seen, st = {"C00000935": {}}, set(), stats()
+    MF._add(agg, seen, st, row(0, "Z1", "oppexp", txn=None, name="PAYLOCITY"), "oppexp", {}, {"C00000935"})
+    MF._add(agg, seen, st, row(500, "Z2", "oppexp", txn=None, name="PAYLOCITY"), "oppexp", {}, {"C00000935"})
+    rec = next(iter(agg["C00000935"].values()))
+    check("a zero-dollar row is not part of the count", rec.amount == 500 and rec.count == 1 and st["zero_amount_rows"] == 1)
+
+    agg, seen, st = {"C00027466": {}}, set(), stats()
+    win = row(2200, "W1", "oth", txn="42", name="WIN RED")
+    win["committee_id"] = "C00027466"
+    MF._add(agg, seen, st, win, "oth", {}, {"C00027466"})
+    rec = next(iter(agg["C00027466"].values()))
+    check("type 42 recount disbursements are included", rec.amount == 2200 and rec.count == 1)
+
+
 def test_web_app_does_not_import_shards():
     print("bundle")
     roots = [ROOT / "app", ROOT / "components", ROOT / "lib"]
@@ -473,6 +576,8 @@ if __name__ == "__main__":
     test_purpose_excerpt_match_ignores_markup_and_whitespace()
     test_committee_profile_is_factual_and_drops_a_person_like_sponsor()
     test_sources_do_not_name_indiv_files()
+    test_displayed_fields_are_compared_not_only_the_check()
+    test_payee_totals_follow_the_filing_rules()
     test_web_app_does_not_import_shards()
     test_committed_pilot_shards()
     if failures:

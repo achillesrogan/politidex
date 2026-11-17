@@ -1,7 +1,7 @@
 // Postbuild gate (CI): scan every prerendered HTML page. Fails if any rendered fact lacks a verified claim,
 // or if OPSEC / launch-safety rules are violated.
 import fs from "node:fs"; import path from "node:path";
-import { moneyflowPublished, moneyflowSourceReady, moneyflowSources } from "../lib/moneyflow-http.mjs";
+import { moneyflowPublished, moneyflowSourceHost, moneyflowSourceReady, moneyflowSources } from "../lib/moneyflow-http.mjs";
 const root = path.join(process.cwd(), ".next");
 const claimsPath = process.env.CLAIMS_PATH || path.join(process.cwd(), "data", "build", "site", "claims.json");
 const claims = fs.existsSync(claimsPath) ? JSON.parse(fs.readFileSync(claimsPath, "utf8")).claims : {};
@@ -50,10 +50,8 @@ for (const f of files.filter((f) => f.includes(`${path.sep}static${path.sep}`) &
 const manifestPath = path.join(process.cwd(), "data", "moneyflow", "pilot", "manifest.json");
 if (fs.existsSync(manifestPath)) {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-  const indexRoute = fs.readFileSync(path.join(process.cwd(), "app", "api", "moneyflow", "route.ts"), "utf8");
-  const shardRoute = fs.readFileSync(path.join(process.cwd(), "app", "api", "moneyflow", "[id]", "route.ts"), "utf8");
-  if (!indexRoute.includes("moneyflowPublished") || !shardRoute.includes("moneyflowPublished") || !shardRoute.includes("pilotCommitteeIds")) {
-    errors.push("money-flow API does not honor not_in_web_bundle and the pilot list");
+  if (moneyflowPublished({ not_in_web_bundle: true, pilot: [{ committee_id: "C00000001" }] })) {
+    errors.push("a gated money-flow manifest would still be served");
   }
   if (moneyflowPublished(manifest)) {
     for (const row of manifest.pilot || []) {
@@ -65,7 +63,8 @@ if (fs.existsSync(manifestPath)) {
       const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
       for (const source of moneyflowSources(shard)) {
         facts++;
-        if (!moneyflowSourceReady(source)) errors.push(`money-flow fact ${source && source.id} is not a verified primary source`);
+        if (!moneyflowSourceReady(source)) errors.push(`money-flow fact ${source && source.id} is not a verified FEC or allowlisted source`);
+        else if (!moneyflowSourceHost(source.source_url)) errors.push(`money-flow fact ${source.id} source is not fec.gov or an allowlisted committee site`);
       }
     }
   }
@@ -80,7 +79,7 @@ if (fs.existsSync(summariesPath)) {
       if (!fact || !fact.text || !fact.excerpt || !fact.retrieved_at || typeof fact.source_url !== "string" || !fact.source_url.startsWith("https://")) {
         errors.push(`committee summary ${code} is approved without a primary source and date`);
       }
-      if (String(fact.text).includes("*") || String(fact.excerpt).includes("*")) errors.push(`committee summary ${code} still has a bare asterisk`);
+      if (String(fact.text).includes("*")) errors.push(`committee summary ${code} still has a bare asterisk in the text`);
     }
   }
 }

@@ -294,6 +294,10 @@ def _add(agg, seen, stats, parts, source, master, webk_ids, category=None):
     if parts["date"] and not in_cycle(parts["date"]):
         stats["out_of_cycle_rows"] += 1
         stats["out_of_cycle_cents"] += amount
+    # A zero-dollar row is not a payment. It is omitted from the count and the sum.
+    # Transaction type 42 is a recount-account disbursement and is money out.
+    # pas2 repeats oth rows; a SUB_ID already seen is not added a second time.
+    # The payee name kept for display is the name on the largest itemized row, as filed.
     sub = parts["sub_id"]
     if sub:
         if sub in seen:

@@ -62,23 +62,49 @@ def files_ready():
     return True
 
 
-def fresh_ids(pilot_ids):
+SKIP_FIELDS = {"status", "verified_at", "verify_note"}
+
+
+def diff_paths(served, fresh, path="$"):
+    """Displayed fields that differ. Status and verification dates are ignored."""
+    if isinstance(served, dict) or isinstance(fresh, dict):
+        served = served if isinstance(served, dict) else {}
+        fresh = fresh if isinstance(fresh, dict) else {}
+        out = []
+        for key in sorted(set(served) | set(fresh)):
+            if key in SKIP_FIELDS:
+                continue
+            out.extend(diff_paths(served.get(key), fresh.get(key), "%s.%s" % (path, key)))
+        return out
+    if isinstance(served, list) or isinstance(fresh, list):
+        served = served if isinstance(served, list) else []
+        fresh = fresh if isinstance(fresh, list) else []
+        if len(served) != len(fresh):
+            return [path + ".length"]
+        out = []
+        for i, (left, right) in enumerate(zip(served, fresh)):
+            out.extend(diff_paths(left, right, "%s[%d]" % (path, i)))
+        return out
+    if served != fresh:
+        return [path]
+    return []
+
+
+def fresh_shards(pilot_ids, retrieved_at):
     master = MF._load_master()
     summaries, _dupes, _missing = MF._load_summaries(master)
     agg, _stats = MF._scan(master, set(pilot_ids))
-    found = {}
+    built = {}
     for cid in pilot_ids:
         row = summaries.get(cid)
         if not row:
             continue
         records = [rec.as_dict() for rec in agg.get(cid, {}).values()]
         try:
-            shard = build_shard(row, records, "2000-01-01T00:00:00Z", summaries, master=master)
+            built[cid] = build_shard(row, records, retrieved_at, summaries, master=master)
         except ReconciliationError:
-            continue
-        for source in walk_sources(shard):
-            found[source["id"]] = source["check"]
-    return found
+            built[cid] = None
+    return built
 
 
 def apply(write):
@@ -86,63 +112,56 @@ def apply(write):
     pilot = [row["committee_id"] for row in manifest.get("pilot") or []]
     checked = verified = held = 0
     review = []
-    fresh = fresh_ids(pilot) if files_ready() else None
+    rebuilt = None
+    if files_ready():
+        retrieved = "2000-01-01T00:00:00Z"
+        sample = SHARD_DIR / (pilot[0] + ".json") if pilot else None
+        if sample and sample.exists():
+            retrieved = ((json.loads(sample.read_text()).get("node") or {}).get("source") or {}).get("retrieved_at") or retrieved
+        rebuilt = fresh_shards(pilot, retrieved)
     kept_pilot = []
     for row in manifest.get("pilot") or []:
         cid = row["committee_id"]
         path = SHARD_DIR / (cid + ".json")
         if not path.exists():
-            review.append({"committee_id": cid, "claim_id": None, "reason": "shard file is missing"})
+            review.append({"committee_id": cid, "claim_id": None, "field": None, "reason": "shard file is missing"})
             held += 1
             continue
         shard = json.loads(path.read_text())
-        root = (shard.get("node") or {}).get("source") or {}
-        root_ok = mark(root, fresh, cid, review)
-        checked += 1
-        if root_ok:
-            verified += 1
-        else:
-            held += 1
-        profile = (shard.get("node") or {}).get("profile") or {}
-        if profile.get("source"):
-            checked += 1
-            if mark(profile["source"], fresh, cid, review):
-                verified += 1
+        sources = list(walk_sources(shard))
+        checked += len(sources)
+        if rebuilt is None:
+            ok = all(source.get("status") == "verified" and source.get("source_url") and source.get("retrieved_at") and source.get("excerpt") for source in sources)
+            if ok:
+                verified += len(sources)
+                kept_pilot.append(row)
             else:
-                held += 1
-                profile.pop("source", None)
-        children = []
-        for child in shard.get("children") or []:
-            node_src = (child.get("node") or {}).get("source")
-            edge_src = (child.get("edge") or {}).get("source")
-            node_ok = True
-            edge_ok = True
-            if node_src:
-                checked += 1
-                node_ok = mark(node_src, fresh, cid, review)
-                verified += 1 if node_ok else 0
-                held += 0 if node_ok else 1
-            child_profile = (child.get("node") or {}).get("profile") or {}
-            if child_profile.get("source"):
-                checked += 1
-                if mark(child_profile["source"], fresh, cid, review):
-                    verified += 1
-                else:
-                    held += 1
-                    child_profile.pop("source", None)
-            if edge_src:
-                checked += 1
-                edge_ok = mark(edge_src, fresh, cid, review)
-                verified += 1 if edge_ok else 0
-                held += 0 if edge_ok else 1
-            if node_ok and edge_ok:
-                children.append(child)
-        shard["children"] = children
-        if root_ok:
+                held += len(sources)
+                review.append({"committee_id": cid, "claim_id": None, "field": "status", "reason": "status is not verified"})
+            continue
+        fresh = rebuilt.get(cid)
+        fields = ["$"] if fresh is None else diff_paths(shard, fresh)
+        if not fields:
+            changed = False
+            for source in sources:
+                if source.get("status") != "verified" or not source.get("verified_at"):
+                    source["status"] = "verified"
+                    source["verified_at"] = now_iso()
+                    changed = True
+            verified += len(sources)
             kept_pilot.append(row)
-            if write:
+            if write and changed:
                 path.write_text(json.dumps(shard, indent=1, ensure_ascii=False) + "\n")
-        elif write:
+            continue
+        held += len(sources)
+        for field in fields:
+            review.append({
+                "committee_id": cid,
+                "claim_id": None,
+                "field": field,
+                "reason": "The FEC bulk file did not reproduce %s." % field,
+            })
+        if write:
             path.unlink()
     manifest["pilot"] = kept_pilot
     if write:
@@ -156,27 +175,6 @@ def apply(write):
             "records": review,
         }, indent=1, ensure_ascii=False) + "\n")
     return checked, verified, held, review
-
-
-def mark(source, fresh, cid, review):
-    """True when this fact matches the FEC files, or was already verified offline."""
-    if fresh is None:
-        return source.get("status") == "verified" and source.get("source_url") and source.get("retrieved_at") and source.get("excerpt")
-    check = source.get("check") or {}
-    expected = fresh.get(source.get("id"))
-    if expected is not None and expected == check:
-        source["status"] = "verified"
-        source["verified_at"] = now_iso()
-        return True
-    source["status"] = "held"
-    review.append({
-        "committee_id": cid,
-        "claim_id": source.get("id"),
-        "kind": check.get("kind"),
-        "source_url": source.get("source_url"),
-        "reason": "The FEC bulk file did not reproduce this fact.",
-    })
-    return False
 
 
 def main(argv):

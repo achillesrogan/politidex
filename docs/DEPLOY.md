@@ -13,3 +13,9 @@ The populated site is deployed from a checkout that already has `data/build/site
 `ingest/` must be in that upload. Prebuild runs the Python tests under `ingest/`. Leaving `ingest/` in `.vercelignore` removes those files and `npm run build` fails before Next.js starts. The ignore file therefore excludes `ingest/__pycache__/` and not `ingest/` itself.
 
 Nothing in this note deploys the site. A production deploy still waits for an explicit CLI deploy from a checkout that has the snapshot.
+
+## Money-flow verification
+
+`python3 ingest/moneyflow_verify.py --check` does not download the FEC bulk files. On Vercel and in CI those zips are not in the tree, so `--check` only confirms that each served fact already has `status` `verified` plus a source, a retrieval date, and an excerpt. That is not a new read of the filings.
+
+Before a deploy bundles `data/moneyflow/`, run `python3 ingest/moneyflow.py fetch` and then `python3 ingest/moneyflow_verify.py` against those freshly downloaded files. The full command rebuilds each pilot shard from the bulk files and compares every displayed field. A fact that does not match is held out of the served shard and listed in `data/moneyflow/review.json`.
