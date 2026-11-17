@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "check:claims": "node scripts/check-claims.mjs",
-    "prebuild": "node scripts/unpack-data.mjs && python3 ingest/test_match_validation.py && python3 ingest/test_moneyflow.py && python3 ingest/test_people_index.py && node --test lib/moneyflow-ui.test.mjs lib/record-popover.test.mjs lib/source-href.test.mjs lib/party-mirror.test.mjs lib/reading-terms.test.mjs lib/proposed-records.test.mjs lib/page-as-of.test.mjs lib/entity-registry.test.mjs scripts/check-links.test.mjs && node scripts/check-claims.mjs",
+    "prebuild": "node scripts/unpack-data.mjs && python3 ingest/test_match_validation.py && python3 ingest/test_moneyflow.py && python3 ingest/moneyflow_verify.py --check && python3 ingest/test_people_index.py && node --test lib/moneyflow-ui.test.mjs lib/moneyflow-gate.test.mjs lib/record-popover.test.mjs lib/source-href.test.mjs lib/party-mirror.test.mjs lib/reading-terms.test.mjs lib/proposed-records.test.mjs lib/page-as-of.test.mjs lib/entity-registry.test.mjs scripts/check-links.test.mjs && node scripts/check-claims.mjs",
     "build": "next build && node scripts/check-rendered.mjs",
     "start": "next start",
     "check:rendered": "node scripts/check-rendered.mjs",

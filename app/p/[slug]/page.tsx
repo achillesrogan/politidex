@@ -8,7 +8,7 @@ import { RecordModule, AnalysisModule } from "@/components/Module";
 import { people, profile, verified, fmtUSD, claims, approvedSummary, committeeHistory } from "@/lib/data";
 import { approvedCommitteeFacts, committeeSite } from "@/lib/committees";
 import { entityRecord } from "@/lib/entity-registry.mjs";
-import { profileAsOf } from "@/lib/page-as-of.mjs";
+import { ldaClaimDates, profileAsOf } from "@/lib/page-as-of.mjs";
 import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 import ConnectionsPanel from "@/components/ConnectionsPanel";
 import { fmtDate } from "@/lib/dates";
@@ -52,6 +52,7 @@ function pageAsOf(pr: any) {
     ...(pr.money || []).map((m: { claim?: string }) => verified(m.claim)?.retrieved_at),
     ...(pr.pacs || []).map((x: { claim?: string }) => verified(x.claim)?.retrieved_at),
     ...(pr.committees || []).map((c: { claim?: string }) => verified(c.claim)?.retrieved_at),
+    ...ldaClaimDates(pr.ties, (id) => verified(id)?.retrieved_at),
   ];
   const sites: Record<string, NonNullable<ReturnType<typeof committeeSite>>> = {};
   for (const committee of pr.committees || []) {
