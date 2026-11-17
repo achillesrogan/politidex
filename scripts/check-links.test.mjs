@@ -7,6 +7,7 @@ import {
   clampDelay,
   fetchChecked,
   hostAllowed,
+  ipv4FromMapped,
   isBlockedAddress,
 } from "./check-links.mjs";
 
@@ -27,9 +28,11 @@ test("only the official hosts are allowed", () => {
 });
 
 test("private, loopback, and link-local addresses are blocked", () => {
-  for (const ip of ["127.0.0.1", "10.1.2.3", "172.16.0.1", "192.168.1.1", "169.254.1.1", "169.254.169.254", "::1", "fe80::1", "fd00::1", "::ffff:127.0.0.1", "::ffff:169.254.169.254"]) {
+  for (const ip of ["127.0.0.1", "10.1.2.3", "172.16.0.1", "192.168.1.1", "169.254.1.1", "169.254.169.254", "100.64.0.1", "100.127.255.255", "224.0.0.1", "255.255.255.255", "::1", "fe80::1", "fd00::1", "ff02::1", "64:ff9b::1", "::ffff:127.0.0.1", "::ffff:169.254.169.254", "::ffff:7f00:1", "::ffff:a9fe:a9fe", "::ffff:8.8.8.8"]) {
     assert.equal(isBlockedAddress(ip), true, ip);
   }
+  assert.equal(ipv4FromMapped("::ffff:7f00:1"), "127.0.0.1");
+  assert.equal(ipv4FromMapped("::ffff:a9fe:a9fe"), "169.254.169.254");
   assert.equal(isBlockedAddress("8.8.8.8"), false);
   assert.equal(isBlockedAddress("2606:4700:4700::1111"), false);
 });
@@ -92,4 +95,22 @@ test("the body read stops at 256 KB", async () => {
   });
   const result = await fetchChecked("https://www.senate.gov/committees/", { fetchImpl, lookup: publicLookup });
   assert.equal(result.ok, true);
+});
+
+test("a malformed Location header does not throw", async () => {
+  const fetchImpl = async () => ({ status: 302, headers: { get: () => "http://[bad" }, body: null });
+  const result = await fetchChecked("https://www.fec.gov/start", { fetchImpl, lookup: publicLookup });
+  assert.equal(result.ok, false);
+  assert.equal(result.error, "malformed redirect");
+});
+
+test("the body read shares the request deadline", async () => {
+  const fetchImpl = async () => ({
+    status: 200,
+    headers: { get: () => null },
+    body: { getReader() { return { async read() { return new Promise(() => {}); }, async cancel() {} }; } },
+  });
+  const result = await fetchChecked("https://www.fec.gov/slow", { fetchImpl, lookup: publicLookup, timeoutMs: 40 });
+  assert.equal(result.ok, false);
+  assert.equal(result.error, "AbortError");
 });

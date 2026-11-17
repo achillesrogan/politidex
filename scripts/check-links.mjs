@@ -32,25 +32,42 @@ export function hostAllowed(hostname) {
   return false;
 }
 
+/** Embedded IPv4 from ::ffff:0:0/96, including ::ffff:7f00:1 and ::ffff:a9fe:a9fe. */
+export function ipv4FromMapped(ip) {
+  const text = String(ip || "").toLowerCase();
+  const dotted = text.match(/^(?:::|(?:0+:){5})ffff:(\d+\.\d+\.\d+\.\d+)$/);
+  if (dotted) return dotted[1];
+  const hex = text.match(/^(?:::|(?:0+:){5})ffff:([0-9a-f]{1,4}):([0-9a-f]{1,4})$/);
+  if (!hex) return null;
+  const hi = Number.parseInt(hex[1], 16);
+  const lo = Number.parseInt(hex[2], 16);
+  if (!Number.isFinite(hi) || !Number.isFinite(lo)) return null;
+  return [(hi >> 8) & 255, hi & 255, (lo >> 8) & 255, lo & 255].join(".");
+}
+
 export function isBlockedAddress(ip) {
-  const mapped = String(ip || "").toLowerCase().match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/);
-  if (mapped) return isBlockedAddress(mapped[1]);
+  if (ipv4FromMapped(ip)) return true;
   if (net.isIP(ip) === 4) {
     const parts = ip.split(".").map((n) => Number(n));
     if (parts.length !== 4 || parts.some((n) => Number.isNaN(n))) return true;
-    const [a, b] = parts;
+    const [a, b, c, d] = parts;
     if (a === 0 || a === 10 || a === 127) return true;
+    if (a === 100 && b >= 64 && b <= 127) return true;
     if (a === 169 && b === 254) return true;
     if (a === 172 && b >= 16 && b <= 31) return true;
     if (a === 192 && b === 168) return true;
+    if (a >= 224 && a <= 239) return true;
+    if (a === 255 && b === 255 && c === 255 && d === 255) return true;
     return false;
   }
   if (net.isIP(ip) === 6) {
     const lower = ip.toLowerCase();
     if (lower === "::1" || lower === "::") return true;
+    if (lower.startsWith("64:ff9b:")) return true;
     const first = Number.parseInt(lower.split(":")[0] || "0", 16);
     if (first >= 0xfe80 && first <= 0xfebf) return true;
     if (first >= 0xfc00 && first <= 0xfdff) return true;
+    if (first >= 0xff00) return true;
     return false;
   }
   return true;
@@ -100,9 +117,7 @@ async function cancel(res) {
   }
 }
 
-async function readCap(res) {
-  const reader = res.body?.getReader?.();
-  if (!reader) return "";
+async function readChunks(reader) {
   const chunks = [];
   let size = 0;
   while (size < MAX_BODY) {
@@ -119,9 +134,31 @@ async function readCap(res) {
   return Buffer.concat(chunks).toString("utf8");
 }
 
+async function readCap(res, timeoutMs) {
+  const reader = res.body?.getReader?.();
+  if (!reader) return "";
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      reader.cancel().catch(() => {});
+      const err = new Error("body timeout");
+      err.name = "AbortError";
+      reject(err);
+    }, Math.max(1, timeoutMs));
+  });
+  try {
+    return await Promise.race([readChunks(reader), timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function fetchChecked(raw, opts = {}) {
   const fetchImpl = opts.fetchImpl || fetch;
   const lookup = opts.lookup || defaultLookup;
+  const budget = opts.timeoutMs ?? 25000;
+  const started = Date.now();
+  const left = () => budget - (Date.now() - started);
   let current = raw;
   let hops = 0;
   while (true) {
@@ -130,8 +167,11 @@ export async function fetchChecked(raw, opts = {}) {
     } catch (err) {
       return { url: raw, status: 0, final: current, soft: false, blocked: true, ok: false, error: err.message || "blocked" };
     }
+    if (left() <= 0) {
+      return { url: raw, status: 0, final: current, soft: false, blocked: false, ok: false, error: "AbortError" };
+    }
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 25000);
+    const timer = setTimeout(() => controller.abort(), Math.max(1, left()));
     let res;
     try {
       res = await fetchImpl(current, {
@@ -154,10 +194,19 @@ export async function fetchChecked(raw, opts = {}) {
       if (!loc) {
         return { url: raw, status: res.status, final: current, soft: false, blocked: false, ok: false, error: "redirect without location" };
       }
-      current = new URL(loc, current).toString();
+      try {
+        current = new URL(loc, current).toString();
+      } catch {
+        return { url: raw, status: res.status, final: current, soft: false, blocked: false, ok: false, error: "malformed redirect" };
+      }
       continue;
     }
-    const html = await readCap(res);
+    let html = "";
+    try {
+      html = await readCap(res, Math.max(1, left()));
+    } catch (err) {
+      return { url: raw, status: res.status, final: current, soft: false, blocked: false, ok: false, error: err.name || "AbortError" };
+    }
     const soft = looksSoft404(res.status, html);
     const blocked = res.status === 403 || res.status === 429;
     const ok = res.status >= 200 && res.status < 400 && !soft;
