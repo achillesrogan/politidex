@@ -13,6 +13,9 @@ export function bucketNote(node: { kind?: string; name?: string } | null | undef
 export function shardUrl(id: string): string | null;
 export function presentCommittees<T extends { party?: string | null; selection_rule?: string; name?: string; committee_id?: string }>(list: T[]): Array<T & { controlClass: string }>;
 export function officialSourceHref(url: string | null | undefined): string | null;
+export const NO_STATED_PURPOSE: string;
+export function httpsPageHref(url: string | null | undefined): string | null;
+export function statedPurposeLine(entry: any): { kind: string; text: string; source: any } | null;
 export function applyFilters(children: any[], filters?: { minCents?: number; kind?: string; purpose?: string; cycle?: number | string }): any[];
 export function purposeCodes(children: any[]): string[];
 export function canExpand(node: any, depth: number, shardIds: Set<string> | null | undefined): boolean;

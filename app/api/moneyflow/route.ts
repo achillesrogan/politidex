@@ -8,6 +8,12 @@ export function GET() {
   try {
     const file = path.join(process.cwd(), "data", "moneyflow", "pilot", "manifest.json");
     const manifest = JSON.parse(readFileSync(file, "utf8"));
+    const purposeFile = path.join(process.cwd(), "data", "moneyflow", "purposes.json");
+    const purposeDoc = JSON.parse(readFileSync(purposeFile, "utf8"));
+    const purposes: Record<string, unknown> = {};
+    for (const entry of purposeDoc.committees || []) {
+      if (entry && entry.committee_id) purposes[entry.committee_id] = entry;
+    }
     const committees = (manifest.pilot || []).map((row: { committee_id?: string; name?: string; party?: string | null; official_total_out?: string; coverage_end?: string | null; selection_rule?: string }) => ({
       committee_id: row.committee_id,
       name: row.name,
@@ -21,6 +27,7 @@ export function GET() {
         cycle: manifest.cycle,
         fungibility_note: manifest.fungibility_note,
         committees,
+        purposes,
       },
       { headers: { "cache-control": MONEYFLOW_CACHE } },
     );

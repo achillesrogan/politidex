@@ -407,6 +407,17 @@ def test_committee_profile_is_factual_and_drops_a_person_like_sponsor():
     check("profile has no forbidden keys", not M.public_problems(shard))
 
 
+def test_purpose_excerpt_match_ignores_markup_and_whitespace():
+    print("purpose excerpt")
+    import moneyflow_purposes as P
+    page = "<p>The DCCC is the official campaign arm of the Democrats in the House.</p>"
+    check("excerpt survives tags", P.excerpt_in_document("The DCCC is the official campaign arm of the Democrats in the House.", page))
+    curly = "We\u2019re focused on lowering costs"
+    encoded = "<strong>We&#8217;re   focused on lowering costs</strong>"
+    check("excerpt survives a curly apostrophe and extra space", P.excerpt_in_document(curly, encoded))
+    check("a different sentence is not a match", not P.excerpt_in_document("This sentence is not on the page.", page))
+
+
 def test_sources_do_not_name_indiv_files():
     print("files")
     blob = json.dumps(M.FILE_URLS)
@@ -439,6 +450,7 @@ if __name__ == "__main__":
     test_reconciliation()
     test_pilot_selection_is_symmetric()
     test_transaction_direction_and_dates()
+    test_purpose_excerpt_match_ignores_markup_and_whitespace()
     test_committee_profile_is_factual_and_drops_a_person_like_sponsor()
     test_sources_do_not_name_indiv_files()
     test_web_app_does_not_import_shards()

@@ -21,6 +21,8 @@ import {
   linkPath,
   officialSourceHref,
   plainCommitteeKind,
+  statedPurposeLine,
+  httpsPageHref,
   presentCommittees,
   purposeCodes,
   shardUrl,
@@ -36,7 +38,7 @@ type Source = {
   check?: { image_number?: string | null; sample_image_number?: string | null; sub_id?: string | null; sample_sub_id?: string | null; sample_filing_id?: string | null; filing_id?: string | null };
 };
 type Committee = { committee_id: string; name: string; party?: string | null; official_total_out: string; coverage_end?: string | null; selection_rule?: string };
-type Card = { source: Source; title: string; bucketNote: string | null; profile: any } | null;
+type Card = { source: Source; title: string; bucketNote: string | null; profile: any; purposeEntry: any } | null;
 
 const KINDS = ["any", "party", "committee", "candidate_committee", "business", "residual"];
 
@@ -55,6 +57,7 @@ function filingBits(source: Source) {
 export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle: number }) {
   const fungibility = note || FUNGIBILITY_NOTE;
   const [committees, setCommittees] = useState<Committee[]>([]);
+  const [purposes, setPurposes] = useState<Record<string, any>>({});
   const [shards, setShards] = useState<Record<string, any>>({});
   const [active, setActive] = useState("");
   const [expanded, setExpanded] = useState<string[]>([]);
@@ -73,7 +76,10 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
     fetch("/api/moneyflow")
       .then((r) => r.json())
       .then((body) => {
-        if (!cancel) setCommittees(body.committees || []);
+        if (!cancel) {
+          setCommittees(body.committees || []);
+          setPurposes(body.purposes || {});
+        }
       })
       .catch(() => {
         if (!cancel) setError("The committee list could not be loaded.");
@@ -113,17 +119,17 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
     setShards((prev) => ({ ...prev, [row.officialId]: shard }));
   }
 
-  function showRecord(source: Source, title: string, bucketNote: string | null, profile?: any, event?: { clientX?: number; clientY?: number }) {
+  function showRecord(source: Source, title: string, bucketNote: string | null, profile?: any, event?: { clientX?: number; clientY?: number }, purposeEntry?: any) {
     if (!source?.source_url || !source.excerpt) return;
     if (event && Number.isFinite(event.clientX) && Number.isFinite(event.clientY)) {
       setAnchor({ x: event.clientX as number, y: event.clientY as number });
     }
-    setCard({ source, title, bucketNote, profile: profile || null });
+    setCard({ source, title, bucketNote, profile: profile || null, purposeEntry: purposeEntry || null });
   }
 
   const shard = active ? shards[active] : null;
   const filters = { minCents: dollarsToCents(minDollars), kind, purpose, cycle };
-  const view = shard ? buildVisible(shard, { filters, expanded: new Set(expanded), loaded, shardIds }) : null;
+  const view = shard ? buildVisible(shard, { filters, expanded: new Set(expanded), loaded, shardIds, purposes }) : null;
   const layout = view ? layoutTree(view) : null;
   const codes = shard ? purposeCodes(shard.children || []) : [];
   const shown = view?.children?.length || 0;
@@ -201,14 +207,15 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
                 const plain = plainCommitteeKind(node.data.profile);
                 const color = FLOW_PALETTE[node.data.flow]?.color || FLOW_PALETTE.account.color;
                 return (
-                  <foreignObject key={node.key} x={node.x} y={node.y} width={248} height={118}>
+                  <foreignObject key={node.key} x={node.x} y={node.y} width={248} height={136}>
                     <div className="moneyflow-node" style={{ borderLeft: `4px solid ${color}` }}>
-                      <button type="button" className="moneyflow-node-btn" aria-expanded={node.data.expandable ? (node.data.expanded ? "true" : "false") : undefined} onClick={(event) => (node.data.expandable ? toggle(node.data) : showRecord(node.data.nodeSource, node.data.name, node.data.bucketNote, node.data.profile, event))}>
+                      <button type="button" className="moneyflow-node-btn" aria-expanded={node.data.expandable ? (node.data.expanded ? "true" : "false") : undefined} onClick={(event) => (node.data.expandable ? toggle(node.data) : showRecord(node.data.nodeSource, node.data.name, node.data.bucketNote, node.data.profile, event, node.data.statedPurpose))}>
                         <span className="moneyflow-node-name">{node.data.name}</span>
                         {plain ? <span className="moneyflow-node-kind">{plain}</span> : null}
+                        {statedPurposeLine(node.data.statedPurpose) ? <span className="moneyflow-node-purpose">{statedPurposeLine(node.data.statedPurpose)?.text}</span> : null}
                         <span className="moneyflow-node-amt">{formatMoney(node.data.amount)}{node.data.edgeKind && node.data.edgeKind.toLowerCase() !== String(node.data.terminalLabel || "").toLowerCase() ? ` · ${node.data.edgeKind}` : ""}{node.data.terminalLabel ? ` · ${node.data.terminalLabel}` : ""}</span>
                       </button>
-                      <button type="button" className="moneyflow-record" onClick={(event) => showRecord(node.data.edgeSource || node.data.nodeSource, node.data.edgeKind || node.data.name, node.data.bucketNote, node.data.profile, event)}>Record</button>
+                      <button type="button" className="moneyflow-record" onClick={(event) => showRecord(node.data.edgeSource || node.data.nodeSource, node.data.edgeKind || node.data.name, node.data.bucketNote, node.data.profile, event, node.data.statedPurpose)}>Record</button>
                     </div>
                   </foreignObject>
                 );
@@ -226,6 +233,22 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
             <h3 className="font-display text-xl font-bold mt-1">{card.title}</h3>
             <p className="moneyflow-note mt-3" role="note">{fungibility}</p>
             {card.bucketNote ? <p className="mt-3">{card.bucketNote}</p> : null}
+            {statedPurposeLine(card.purposeEntry) ? (
+              <section className="mt-3">
+                <h4 className="tag">What it exists for</h4>
+                <p>{statedPurposeLine(card.purposeEntry)?.text}</p>
+                {statedPurposeLine(card.purposeEntry)?.source ? (
+                  <p className="mt-1 text-sm">
+                    {statedPurposeLine(card.purposeEntry)?.source.source_name}
+                    {statedPurposeLine(card.purposeEntry)?.source.retrieved_at ? ` · retrieved ${fmtDate(statedPurposeLine(card.purposeEntry)?.source.retrieved_at)}` : ""}
+                    {" · "}
+                    {httpsPageHref(statedPurposeLine(card.purposeEntry)?.source.source_url)
+                      ? <a className="link" href={httpsPageHref(statedPurposeLine(card.purposeEntry)?.source.source_url) || undefined} rel="noopener noreferrer">Source page</a>
+                      : statedPurposeLine(card.purposeEntry)?.source.source_url}
+                  </p>
+                ) : null}
+              </section>
+            ) : null}
             {entityFacts(card.profile).length ? (
               <ul className="moneyflow-facts">
                 {entityFacts(card.profile).map((fact) => (

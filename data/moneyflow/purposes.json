@@ -1,0 +1,127 @@
+{
+ "schema": "politidex.moneyflow.purpose.v1",
+ "review_status": "proposed",
+ "retrieved_at": "2026-11-17T02:30:00+00:00",
+ "rule": "A quote is included only when the page was retrieved and the excerpt appears on it. Entries without a quote mean no stated purpose was found in a primary source this run could retrieve.",
+ "committees": [
+  {
+   "committee_id": "C00010603",
+   "name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "Democratic National Committee",
+    "source_url": "https://democrats.org/who-we-are/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "Democrats believe that every American deserves a fair shot at the American dream. We’re focused on lowering costs, improving healthcare, creating jobs, ending corruption, and protecting our democracy."
+   }
+  },
+  {
+   "committee_id": "C00000935",
+   "name": "DCCC",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "DCCC",
+    "source_url": "https://dccc.org/about/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The DCCC is the official campaign arm of the Democrats in the House of Representatives and the only political committee in the country whose principal mission is to support Democratic House candidates every step of the way."
+   }
+  },
+  {
+   "committee_id": "C00042366",
+   "name": "DSCC",
+   "found": false,
+   "speaker": null,
+   "source": null
+  },
+  {
+   "committee_id": "C00003418",
+   "name": "REPUBLICAN NATIONAL COMMITTEE",
+   "found": false,
+   "speaker": null,
+   "source": null
+  },
+  {
+   "committee_id": "C00075820",
+   "name": "NRCC",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "NRCC",
+    "source_url": "https://www.nrcc.org/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "Help Us Elect House Republicans"
+   }
+  },
+  {
+   "committee_id": "C00027466",
+   "name": "NRSC",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "NRSC",
+    "source_url": "https://www.nrsc.org/about-us/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "The NRSC (National Republican Senatorial Committee) is the only national organization solely devoted to strengthening the Republican Senate Majority and electing Republicans to the United States Senate."
+   }
+  },
+  {
+   "committee_id": "C00300921",
+   "name": "BLACK AMERICA'S POLITICAL ACTION COMMITTEE",
+   "found": false,
+   "speaker": null,
+   "source": null
+  },
+  {
+   "committee_id": "C00348540",
+   "name": "1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND",
+   "found": true,
+   "speaker": "connected_organization",
+   "source": {
+    "source_name": "1199SEIU United Healthcare Workers East",
+    "source_url": "https://www.1199seiu.org/about",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "Our mission is to advocate for quality care and good jobs for all!"
+   }
+  },
+  {
+   "committee_id": "C00140061",
+   "name": "NATIONAL EMERGENCY MEDICINE POLITICAL ACTION COMMITTEE / AMERICAN COLLEGE OF EMERGENCY PHYSICIANS",
+   "found": true,
+   "speaker": "connected_organization",
+   "source": {
+    "source_name": "American College of Emergency Physicians",
+    "source_url": "https://www.acep.org/who-we-are/about-us",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "Today, ACEP represents more than 38,000 emergency physicians, emergency medicine residents, and medical students. ACEP promotes the highest quality of emergency care and is the leading advocate for emergency physicians and their patients, and the public."
+   }
+  },
+  {
+   "committee_id": "C00363986",
+   "name": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC",
+   "found": false,
+   "speaker": null,
+   "source": null
+  },
+  {
+   "committee_id": "C00326389",
+   "name": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE",
+   "found": false,
+   "speaker": null,
+   "source": null
+  },
+  {
+   "committee_id": "C00298000",
+   "name": "MADISON PROJECT INC.",
+   "found": true,
+   "speaker": "committee",
+   "source": {
+    "source_name": "Madison Project",
+    "source_url": "https://madisonproject.com/mission/",
+    "retrieved_at": "2026-11-17T02:30:00+00:00",
+    "excerpt": "At the Madison Project, we strongly believe Republican voters should be offered bold choices in primaries with candidates who they can proudly vote for and support with their money, time, and energy."
+   }
+  }
+ ]
+}

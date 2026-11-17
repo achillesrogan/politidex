@@ -66,7 +66,9 @@ table { border-collapse: collapse; }
 .moneyflow-stage { margin-top: 1.25rem; }
 .moneyflow-graph { overflow: auto; border: 1px solid var(--color-rule); background: #fff; margin-top: .75rem; }
 .moneyflow-stroke { fill: none; }
-.moneyflow-node-kind { display: block; color: var(--color-muted); font-size: .78rem; }
+.moneyflow-node-kind, .moneyflow-node-purpose, .moneyflow-purpose { display: block; color: var(--color-muted); font-size: .78rem; }
+.moneyflow-node-purpose { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.moneyflow-purpose { white-space: normal; margin: .25rem 0 .4rem; }
 .moneyflow-key { display: flex; flex-wrap: wrap; gap: .4rem .9rem; list-style: none; padding: 0; margin: .5rem 0 0; }
 .moneyflow-key li { display: flex; align-items: center; gap: .4rem; color: var(--color-ink); }
 .moneyflow-swatch { width: .85rem; height: .85rem; border: 1px solid var(--color-ink); flex: none; }
