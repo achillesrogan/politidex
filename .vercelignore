@@ -10,7 +10,6 @@ data/build/votes-*.json
 data/build/fec-*.json
 data/build/spotcheck-*
 data/review-queue/
-ingest/
 .opsec-denylist
 deploy-bundle.json.gz
 data/manual/on-the-record-investigations.md
