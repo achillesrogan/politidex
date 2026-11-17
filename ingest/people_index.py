@@ -37,6 +37,15 @@ OFFICIAL_ROLES = frozenset({
 })
 BUSINESS_METHODS = frozenset({"company_domain", "sec_edgar", "state_registry"})
 _SUFFIXES = frozenset({"JR", "SR", "II", "III", "IV"})
+_GENERIC_WORK = frozenset({
+    "RETIRED", "NONE", "NOT EMPLOYED", "SELF EMPLOYED", "SELF-EMPLOYED",
+    "INFORMATION REQUESTED", "INFORMATION REQUESTED PER BEST EFFORTS",
+    "N/A", "NA", "N A", "UNEMPLOYED", "REQUESTED", "BEST EFFORTS",
+})
+# 22Y/22Z are refunds. 24T forwards an earmark already counted as 15E.
+# 10 and 11 are joint-fundraising memo types that repeat a contribution.
+_REFUND_TYPES = frozenset({"22Y", "22Z"})
+_SKIP_TYPES = frozenset({"24T", "10", "11"})
 _HIDDEN = frozenset({
     "zip", "zip_code", "street", "street_1", "street_2", "address",
     "phone", "email", "employer_address",
@@ -71,10 +80,16 @@ def parse_person_name(raw):
         return None
     last, given = text.split(",", 1)
     last = last.strip()
-    tokens = [tok for tok in given.split() if tok not in _SUFFIXES]
-    if not last or not tokens:
+    suffix = ""
+    kept = []
+    for tok in given.split():
+        if tok in _SUFFIXES:
+            suffix = tok
+        else:
+            kept.append(tok)
+    if not last or not kept:
         return None
-    return {"last": last, "first": tokens[0], "middle": " ".join(tokens[1:])}
+    return {"last": last, "first": kept[0], "middle": " ".join(kept[1:]), "suffix": suffix}
 
 
 def parse_indiv_line(line):
@@ -98,9 +113,31 @@ def parse_indiv_line(line):
         "date": parse_fec_date(parts[13]),
         "amount_cents": amount,
         "tran_id": parts[16].strip(),
+        "file_num": parts[17].strip(),
+        "amend": parts[1].strip().upper(),
         "memo": parts[18].strip().upper(),
         "sub_id": parts[20].strip(),
     }
+
+
+def _work(value):
+    text = _norm(value).replace("-", " ")
+    if text in _GENERIC_WORK or text.replace("-", " ") in _GENERIC_WORK:
+        return ""
+    return _norm(value)
+
+
+def contribution_cents(row):
+    """Signed cents, or None when the row would double-count another row."""
+    txn = row.get("txn_type") or ""
+    cents = int(row.get("amount_cents") or 0)
+    if txn in _SKIP_TYPES:
+        return None
+    if txn in _REFUND_TYPES:
+        return -abs(cents)
+    if txn == "15E":
+        return cents
+    return cents
 
 
 def _identity(row):
@@ -108,10 +145,13 @@ def _identity(row):
     if not name:
         return None
     city, state = row.get("city") or "", row.get("state") or ""
-    employer, occupation = row.get("employer") or "", row.get("occupation") or ""
-    if not all((name["last"], name["first"], city, state, employer, occupation)):
+    employer, occupation = _work(row.get("employer")), _work(row.get("occupation"))
+    if not all((name["last"], name["first"], city, state)):
         return None
-    return (name["last"], name["first"], name["middle"], city, state, employer, occupation)
+    # A generic employer or occupation is blank. Without a middle name that is not a link.
+    if not name["middle"] and (not employer or not occupation):
+        return None
+    return (name["last"], name["first"], name["middle"], name.get("suffix") or "", city, state, employer, occupation)
 
 
 def _source(row, retrieved_at):
@@ -141,29 +181,49 @@ def _eligible(row):
         return False
     if not in_cycle(row.get("date")):
         return False
+    if contribution_cents(row) is None:
+        return False
     return True
 
 
-def _dedupe_key(row):
-    tran = row.get("tran_id") or ""
-    if not tran:
-        return None
-    return (row.get("committee_id"), tran, row.get("date"), row.get("amount_cents"))
+def _filing_rank(row):
+    digits = "".join(ch for ch in str(row.get("file_num") or "") if ch.isdigit())
+    file_num = int(digits) if digits else 0
+    amend = {"N": 0, "A": 1, "T": 2}.get(row.get("amend") or "", 0)
+    return (file_num, amend)
+
+
+def _latest_rows(rows):
+    """One row per (committee, transaction id): the latest filing."""
+    chosen = {}
+    loose = []
+    for row in rows:
+        tran = row.get("tran_id") or ""
+        if not tran:
+            loose.append(row)
+            continue
+        key = (row.get("committee_id"), tran)
+        prev = chosen.get(key)
+        if prev is None or _filing_rank(row) >= _filing_rank(prev):
+            chosen[key] = row
+    return list(chosen.values()) + loose
 
 
 def _public_gift(row, retrieved_at):
     return {
         "date": row.get("date"),
-        "amount": cents_to_decimal(row["amount_cents"]),
-        "amount_cents": row["amount_cents"],
+        "amount": cents_to_decimal(contribution_cents(row)),
+        "amount_cents": contribution_cents(row),
         "committee_id": row.get("committee_id"),
         "source": _source(row, retrieved_at),
     }
 
 
 def _display_name(key):
-    last, first, middle = key[0], key[1], key[2]
+    last, first, middle, suffix = key[0], key[1], key[2], key[3]
     given = first if not middle else first + " " + middle
+    if suffix:
+        given = given + " " + suffix
     return "%s, %s" % (last, given)
 
 
@@ -179,17 +239,9 @@ def to_public(person):
 
 def build_index(rows, retrieved_at):
     """Aggregate eligible rows. Published people are those at or above $10,000.00."""
-    seen = set()
     groups = {}
     weak = []
-    for row in rows:
-        if not _eligible(row):
-            continue
-        marker = _dedupe_key(row)
-        if marker is not None:
-            if marker in seen:
-                continue
-            seen.add(marker)
+    for row in _latest_rows(row for row in rows if _eligible(row)):
         ident = _identity(row)
         if ident is None:
             name = parse_person_name(row.get("name"))
@@ -209,14 +261,15 @@ def build_index(rows, retrieved_at):
 
     for (last, first), clusters in sorted(by_bare.items()):
         strong = [(ident, members) for ident, members in clusters if ident is not None]
-        if len(strong) > 1 or any(ident is None for ident, _ in clusters):
+        high = [(ident, members) for ident, members in clusters if _cluster_total(ident, members) >= THRESHOLD_CENTS]
+        if len(high) > 1:
             unlinked.append({
                 "name": "%s, %s" % (last, first),
                 "reason": "Same first and last name were not linked. Middle name, city, state, employer, or occupation did not all agree.",
-                "clusters": _cluster_summaries(clusters),
+                "clusters": _cluster_summaries(high),
             })
         for ident, members in strong:
-            total = sum(item["amount_cents"] for item in members)
+            total = _cluster_total(ident, members)
             if total < THRESHOLD_CENTS:
                 below += len(members)
                 continue
@@ -224,10 +277,10 @@ def build_index(rows, retrieved_at):
             person = {
                 "id": "p_" + hashlib.sha1("|".join(ident).encode("utf-8")).hexdigest()[:16],
                 "name": _display_name(ident),
-                "city": ident[3],
-                "state": ident[4],
-                "employer": ident[5],
-                "occupation": ident[6],
+                "city": ident[4],
+                "state": ident[5],
+                "employer": ident[6],
+                "occupation": ident[7],
                 "amount": cents_to_decimal(total),
                 "amount_cents": total,
                 "contributions": gifts,
@@ -243,6 +296,13 @@ def build_index(rows, retrieved_at):
         "unlinked": unlinked,
         "below_threshold_rows": below,
     }
+
+
+def _cluster_total(ident, members):
+    if ident is None:
+        row = members[0][0]
+        return contribution_cents(row) or 0
+    return sum(contribution_cents(item) or 0 for item in members)
 
 
 def _cluster_summaries(clusters):
@@ -267,7 +327,7 @@ def _cluster_summaries(clusters):
             "employer": ident[5],
             "occupation": ident[6],
             "rows": len(members),
-            "amount": cents_to_decimal(sum(item["amount_cents"] for item in members)),
+            "amount": cents_to_decimal(_cluster_total(ident, members)),
         })
     return out
 

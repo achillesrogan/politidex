@@ -51,6 +51,18 @@ def test_threshold_and_aggregation():
         row("DOE, JANE QUINN", -300_000, sub_id="2", txn_type="22Y"),
     ], "2026-11-17T02:30:00+00:00")
     check("a refund can drop the person below the threshold", refund["published"] == [])
+    positive_refund = P.build_index([
+        row("DOE, JANE QUINN", 1_200_000),
+        row("DOE, JANE QUINN", 300_000, sub_id="2", txn_type="22Y"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a positive 22Y refund is subtracted", positive_refund["published"] == [])
+    earmark = P.build_index([
+        row("DOE, JANE QUINN", 600_000, txn_type="15E"),
+        row("DOE, JANE QUINN", 600_000, sub_id="2", txn_type="24T"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("an earmark is not also counted as the conduit forwarding", earmark["published"] == [])
+    jfc = P.build_index([row("DOE, JANE QUINN", 1_000_000, txn_type="10")], "2026-11-17T02:30:00+00:00")
+    check("a joint-fundraising memo type is not a second gift", jfc["published"] == [])
 
 
 def test_same_name_is_not_linked():
@@ -64,9 +76,28 @@ def test_same_name_is_not_linked():
     built = P.build_index(rows, "2026-11-17T02:30:00+00:00")
     check("four substantiated clusters stay separate", len(built["published"]) == 4)
     check("the shared first and last name is in the review list", any(item["name"] == "DOE, JANE" for item in built["unlinked"]))
-    weak = P.build_index([row("SMITH, ALEX", 5_000_000, employer="")], "2026-11-17T02:30:00+00:00")
+    weak = P.build_index([
+        row("SMITH, ALEX", 5_000_000, employer=""),
+        row("SMITH, ALEX", 5_000_000, sub_id="2", employer="", city="CHICAGO"),
+    ], "2026-11-17T02:30:00+00:00")
     check("a blank employer is not published", weak["published"] == [])
     check("the blank employer is flagged for review", weak["unlinked"] and "missing" in weak["unlinked"][0]["clusters"][0]["reason"])
+    suffixes = P.build_index([
+        row("SMITH, JOHN JR", 1_200_000),
+        row("SMITH, JOHN SR", 1_200_000, sub_id="2"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("JR and SR stay different people", len(suffixes["published"]) == 2)
+    check("the suffix is part of the published name", {person["name"] for person in suffixes["published"]} == {"SMITH, JOHN JR", "SMITH, JOHN SR"})
+    retired = P.build_index([
+        row("DOE, JANE", 1_200_000, employer="RETIRED", occupation="RETIRED"),
+        row("DOE, JANE", 1_200_000, sub_id="2", employer="NOT EMPLOYED", occupation="N/A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("generic employment does not merge two people", retired["published"] == [])
+    small = P.build_index([
+        row("DOE, JANE QUINN", 100, city="CHICAGO"),
+        row("DOE, JANE QUINN", 100, sub_id="2"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("clusters under 10000 are not in the review list", small["unlinked"] == [])
 
 
 def test_address_and_memo_and_duplicates():
@@ -84,10 +115,10 @@ def test_address_and_memo_and_duplicates():
     ], "2026-11-17T02:30:00+00:00")
     check("memo code X is not counted toward the threshold", memo["published"] == [])
     dup = P.build_index([
-        row("DOE, JANE QUINN", 600_000, tran_id="SA1"),
-        row("DOE, JANE QUINN", 600_000, tran_id="SA1", sub_id="9"),
+        row("DOE, JANE QUINN", 600_000, tran_id="SA1", file_num="1", amend="N"),
+        row("DOE, JANE QUINN", 1_000_000, tran_id="SA1", sub_id="9", file_num="2", amend="A"),
     ], "2026-11-17T02:30:00+00:00")
-    check("the same transaction id is counted once", dup["published"] == [])
+    check("the later filing replaces the earlier one", len(dup["published"]) == 1 and dup["published"][0]["amount"] == "10000.00")
     check("the notice is on the result", P.NOTICE in built["notice"] and "30111" in built["notice"])
 
 
