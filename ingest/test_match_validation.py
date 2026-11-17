@@ -189,19 +189,23 @@ def test_bill_parse_and_corroboration():
     d, reason = M.decide_bill(hits[0], desc, "Something Distinctive Widgets Act", "2025-01-03", 2025, "second_quarter", all_hits=hits)
     check("bare number list is not published", d != "publish", (d, reason))
 
-    # Local attached short title / acronym (Congress.gov has no formal short title for this bill)
+    # A filing's own "EPIC Act" is not the official Congress.gov title. The long title
+    # passed here does not contain EPIC, and no Congress.gov short title or acronym is
+    # supplied. Publishing that local nickname would treat an unverified title as official,
+    # so review is the correct result.
     desc = "Pharmacy issues. H.R. 1492, the EPIC Act, in this Congress."
     hit = M.parse_bill_mentions(desc)[0]
     d, reason = M.decide_bill(hit, desc, "To amend title XI of the Social Security Act to equalize the negotiation period",
         "2025-02-21", 2025, "second_quarter")
-    check("H.R. 1492 EPIC Act attached locally publishes without a Congress.gov short title",
-          d == "publish", (d, reason))
+    check("H.R. 1492 local EPIC Act nickname is review without a Congress.gov short title",
+          d == "review" and "no distinctive short title" in reason, (d, reason))
 
     desc = "Small molecule discrepancy - H.R. 1492 & S. 832, The EPIC Act; H.R. 1672, the MINI Act"
     hits = M.parse_bill_mentions(desc)
     d, reason = M.decide_bill(hits[0], desc, "To amend title XI of the Social Security Act to equalize the negotiation period",
         "2025-02-21", 2025, "third_quarter", all_hits=hits)
-    check("H.R. 1492/S. 832 companion cluster still sees EPIC Act", d == "publish", (d, reason, [h.raw for h in hits]))
+    check("H.R. 1492/S. 832 local EPIC Act nickname is review without a Congress.gov short title",
+          d == "review" and "no distinctive short title" in reason, (d, reason, [h.raw for h in hits]))
 
     desc = "H.R. 1492 -- \"To amend title XI of the Social Security Act to equalize the negotiation period between small-molecule and biologic candidates under the Drug Price Negotiation Program.\""
     hit = M.parse_bill_mentions(desc)[0]
@@ -424,24 +428,29 @@ def test_ie_dedupe_tuple():
           and abs(sum(float(r["exp_amo"]) for r in kept) - 7500) < 0.01,
           (len(kept), stats))
 
-    # Official 2026 IE file: named spender/candidate pairs must keep separate dissem dates
+    # Official 2026 IE file: named spender/candidate pairs must keep separate dissem dates.
+    # The file is gitignored. A Vercel git build does not include data/raw, and the
+    # deploy bundles are gitignored too, so this checkout must skip rather than crash.
     import csv
     from pathlib import Path
     ie_path = Path(__file__).resolve().parents[1] / "data" / "raw" / "fec" / "independent_expenditure_2026.csv"
-    official_rows = list(csv.DictReader(ie_path.open(newline="", encoding="utf-8", errors="replace")))
-    pairs = {
-        "HMP vs Bresnahan": ("C00495028", "H4PA08124", 4817026.34, 37),
-        "HMP vs Valadao": ("C00495028", "H2CA20094", 8617134.57, 56),
-        "HMP vs Max Miller": ("C00495028", "H2OH16051", 6830073.27, 16),
-        "UDP vs Stevens": ("C00799031", "S6MI00426", 10498735.23, 25),
-    }
-    for label, (spe, cand, amt, count) in pairs.items():
-        sub = [r for r in official_rows if (r.get("spe_id") or "").strip()==spe and (r.get("cand_id") or "").strip()==cand]
-        kept, stats = dedupe_ie_rows(sub)
-        total = sum(float(r.get("exp_amo") or 0) for r in kept)
-        check(f"{label} official-file total is {amt} across {count} rows",
-              len(kept)==count and abs(total-amt)<0.02,
-              (label, len(kept), total, stats))
+    if not ie_path.is_file():
+        print("  skip official 2026 IE file is not in this checkout:", ie_path)
+    else:
+        official_rows = list(csv.DictReader(ie_path.open(newline="", encoding="utf-8", errors="replace")))
+        pairs = {
+            "HMP vs Bresnahan": ("C00495028", "H4PA08124", 4817026.34, 37),
+            "HMP vs Valadao": ("C00495028", "H2CA20094", 8617134.57, 56),
+            "HMP vs Max Miller": ("C00495028", "H2OH16051", 6830073.27, 16),
+            "UDP vs Stevens": ("C00799031", "S6MI00426", 10498735.23, 25),
+        }
+        for label, (spe, cand, amt, count) in pairs.items():
+            sub = [r for r in official_rows if (r.get("spe_id") or "").strip()==spe and (r.get("cand_id") or "").strip()==cand]
+            kept, stats = dedupe_ie_rows(sub)
+            total = sum(float(r.get("exp_amo") or 0) for r in kept)
+            check(f"{label} official-file total is {amt} across {count} rows",
+                  len(kept)==count and abs(total-amt)<0.02,
+                  (label, len(kept), total, stats))
 
 def test_individual_registrant_label():
     print("individual registrant label")
