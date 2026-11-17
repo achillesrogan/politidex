@@ -1,7 +1,7 @@
-// Deploy helper: the source tree and the verified data snapshot ship as gzipped bundles
-// (deploy-bundle.json.gz and deploy-bundle-*.json.gz: {relative path: utf-8 text or {b64}})
-// that are unpacked before the claim checks and build. Split parts are used so each file
-// stays within upload limits; all parts are merged on Vercel.
+// A git build has no data/build/site and no deploy bundle, so this script leaves the
+// tree unchanged and the site is empty. A CLI deploy uploads the already unpacked
+// data/build/site snapshot. The gzipped bundles are not uploaded. See docs/DEPLOY.md.
+// If a bundle is present and VERCEL is set, unpack it before the claim checks.
 import fs from "node:fs"; import path from "node:path"; import zlib from "node:zlib";
 const root = process.cwd();
 if (!process.env.VERCEL) { console.log("unpack-data: not on Vercel; using files on disk"); process.exit(0); }

@@ -15,6 +15,12 @@ deploy-bundle.json.gz
 data/manual/on-the-record-investigations.md
 data/manual/elections-2026.json
 data/manual/elections-2026-coverage.json
+data/manual/on-the-record.json
+data/people/*
+!data/people/review.json
+*.log
+logs/
+*.tmp
 attic/
 data/review/
 deploy-bundle-*.json.gz

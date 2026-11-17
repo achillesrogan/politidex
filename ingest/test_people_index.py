@@ -214,6 +214,29 @@ def test_address_and_memo_and_duplicates():
         row("NOT A PERSON", 500_000, sub_id="2", txn_type="22Y"),
     ], "2026-11-17T02:30:00+00:00")
     check("a refund whose name cannot be parsed is reviewed", len(unnamed["published"]) == 1 and any(item["name"] == "NOT A PERSON" for item in unnamed["unlinked"]))
+    spouses = P.build_index([
+        row("DOE, JOHN", 600_000),
+        row("DOE, MRS JOHN", 600_000, sub_id="2"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("MRS JOHN is not merged into JOHN", spouses["published"] == [])
+    check("MS stays on the name", P.parse_person_name("DOE, JOHN MS")["middle"] == "MS" and P.parse_person_name("DOE, JOHN Q MR")["middle"] == "Q")
+    reversed_name = P.build_index([
+        row("DOE, JOHN Q", 1_500_000),
+        row("JOHN Q DOE", 900_000, sub_id="2", txn_type="22Y"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("an unparsed refund that names the donor is not left published", reversed_name["published"] == [])
+    late = P.build_index([
+        row("DOE, JANE QUINN", 1_500_000, tran_id="SA5", date="2026-04-02", file_num="2", amend="N"),
+        row("DOE, JANE QUINN", 1_500_000, tran_id="SA5", date="2026-03-01", sub_id="2", file_num="1", amend="A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a lower file number amendment does not stay as a second row", len(late["published"]) == 1 and late["published"][0]["amount"] == "15000.00")
+    closest = P.build_index([
+        row("DOE, JANE QUINN", 1_000_000, tran_id="SA6", date="2026-03-01", file_num="1", amend="N"),
+        row("DOE, JANE QUINN", 2_000_000, tran_id="SA6", date="2026-06-01", sub_id="2", file_num="2", amend="N"),
+        row("DOE, JANE QUINN", 1_200_000, tran_id="SA6", date="2026-04-01", sub_id="3", file_num="4", amend="A"),
+    ], "2026-11-17T02:30:00+00:00")
+    gifts = {item["amount"] for item in closest["published"][0]["contributions"]} if closest["published"] else set()
+    check("an amendment replaces the closest-dated original", gifts == {"20000.00", "12000.00"}, str(gifts))
     check("the notice is on the result", P.NOTICE in built["notice"] and "30111" in built["notice"])
 
 

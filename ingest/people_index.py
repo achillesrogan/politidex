@@ -39,7 +39,9 @@ OFFICIAL_ROLES = frozenset({
 })
 BUSINESS_METHODS = frozenset({"company_domain", "sec_edgar", "state_registry"})
 _SUFFIXES = frozenset({"JR", "SR", "II", "III", "IV"})
-_TITLES = frozenset({"MR", "MRS", "MS", "MISS", "DR", "PROF", "HON", "REV", "SIR"})
+# MRS, MS, and MISS stay in the name. "DOE, MRS JOHN" is not "DOE, JOHN".
+# MR, DR, and the rest are dropped only after a first name is already kept.
+_HONORIFICS = frozenset({"MR", "DR", "PROF", "HON", "REV", "SIR"})
 _GENERIC_WORK = frozenset({
     "RETIRED", "NONE", "NOT EMPLOYED", "SELF EMPLOYED", "SELF-EMPLOYED",
     "INFORMATION REQUESTED", "INFORMATION REQUESTED PER BEST EFFORTS",
@@ -88,12 +90,14 @@ def parse_person_name(raw):
     kept = []
     for tok in given.split():
         tok = tok.strip(",")
-        if not tok or tok in _TITLES:
+        if not tok:
             continue
         if tok in _SUFFIXES:
             suffix = tok
-        else:
-            kept.append(tok)
+            continue
+        if tok in _HONORIFICS and kept:
+            continue
+        kept.append(tok)
     if not last or not kept:
         return None
     return {"last": last, "first": kept[0], "middle": " ".join(kept[1:]), "suffix": suffix}
@@ -202,6 +206,16 @@ def _eligible(row):
     return True
 
 
+def _date_distance(left, right):
+    if not left or not right:
+        return 10 ** 9
+    try:
+        from datetime import date
+        return abs((date.fromisoformat(left) - date.fromisoformat(right)).days)
+    except ValueError:
+        return 10 ** 9
+
+
 def _filing_rank(row):
     digits = "".join(ch for ch in str(row.get("file_num") or "") if ch.isdigit())
     file_num = int(digits) if digits else 0
@@ -261,15 +275,21 @@ def _latest_rows(rows):
             continue
         committee = row.get("committee_id")
         tran = row.get("tran_id") or ""
-        earlier = [
+        related = [
             key for key, prev in chosen.items()
             if len(key) == 5 and key[0] == committee and key[1] == "tran" and key[2] == tran and key[4] == name
-            and _filing_rank(prev) <= _filing_rank(row)
         ]
+        earlier = [key for key in related if _filing_rank(chosen[key]) <= _filing_rank(row)]
         if earlier:
-            earlier.sort(key=lambda key: _filing_rank(chosen[key]))
-            del chosen[earlier[-1]]
-        _keep_later(chosen, (committee, "tran", tran, row.get("date") or "", name), row)
+            # Reused transaction ids stay apart by date. Replace the original closest to this amendment.
+            earlier.sort(key=lambda key: (_date_distance(key[3], row.get("date") or ""), -_filing_rank(chosen[key])[0]))
+            del chosen[earlier[0]]
+            _keep_later(chosen, (committee, "tran", tran, row.get("date") or "", name), row)
+        elif related:
+            # A lower file number is already superseded by the higher filing. Do not keep both.
+            continue
+        else:
+            _keep_later(chosen, (committee, "tran", tran, row.get("date") or "", name), row)
     return list(chosen.values()) + loose
 
 
@@ -364,6 +384,21 @@ def build_index(rows, retrieved_at):
             unparsed_refunds.append(refund)
             continue
         by_bare.setdefault((last, first), []).append((None, [(refund, "refund did not match one cluster")]))
+    for refund in unparsed_refunds:
+        words = set(tok for tok in _norm(refund.get("name")).replace(",", " ").split() if tok)
+        touched = set()
+        for ident in groups:
+            if ident[0] in words and ident[1] in words:
+                touched.add((ident[0], ident[1]))
+        for last, first in touched:
+            withheld_names.add((last, first))
+            by_bare.setdefault((last, first), []).append((None, [(refund, "refund name could not be parsed")]))
+        if not touched:
+            unlinked.append({
+                "name": refund.get("name") or "",
+                "reason": "Refund name could not be parsed, so it was not subtracted.",
+                "clusters": _cluster_summaries([(None, [(refund, "refund name could not be parsed")])]),
+            })
 
     for (last, first), clusters in sorted(by_bare.items()):
         if (last, first) in withheld_names:
@@ -408,12 +443,6 @@ def build_index(rows, retrieved_at):
                 "qualification": "Itemized FEC contributions in the 2026 cycle aggregate to at least $10,000.00 for this reported name, middle name, city, state, employer, and occupation.",
             }
             published.append(to_public(person))
-    for refund in unparsed_refunds:
-        unlinked.append({
-            "name": refund.get("name") or "",
-            "reason": "Refund name could not be parsed, so it was not subtracted.",
-            "clusters": _cluster_summaries([(None, [(refund, "refund name could not be parsed")])]),
-        })
     published.sort(key=lambda person: (-person["amount_cents"], person["name"], person["id"]))
     return {
         "notice": NOTICE,
