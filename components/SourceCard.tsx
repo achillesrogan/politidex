@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
 import RecordPopover from "@/components/RecordPopover";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 
 export type SourceLink = { label: string; href: string };
 export type SourceCardInfo = {
@@ -19,7 +19,7 @@ export type SourceCardInfo = {
 export default function SourceCard({ card, children }: { card: SourceCardInfo; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [anchor, setAnchor] = useState<{ x: number; y: number } | null>(null);
-  const source = publicSourceHref(card.source_url);
+  const source = renderedSourceHref(card);
   return (
     <div className="conn-row">
       <div className="min-w-0 flex-1">{children}</div>

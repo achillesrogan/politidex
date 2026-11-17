@@ -6,20 +6,22 @@ import { entityRecord } from "@/lib/entity-registry.mjs";
 import { orgCategoryLabel, designationLabel, committeeTypeLabel } from "@/lib/labels";
 import type { SourceCardInfo, SourceLink } from "@/components/SourceCard";
 import { fmtDate } from "@/lib/dates";
+import { renderedSourceHref } from "@/lib/source-href.mjs";
 
 function cardFor(id: string | undefined, opts: { title?: string; summary?: string; extra?: string[]; links?: SourceLink[] }): SourceCardInfo | null {
   const c = verified(id);
   if (!c) return null;
+  const cited = renderedSourceHref(c);
   const links = [...(opts.links || [])];
-  if (c.source_url && !links.some((l) => l.href === c.source_url)) {
-    links.push({ label: "Open the cited source", href: c.source_url });
+  if (cited && !links.some((l) => l.href === cited)) {
+    links.push({ label: "Open the cited source", href: cited });
   }
   return {
     title: opts.title || String(c.text),
     summary: opts.summary || String(c.text),
     excerpt: c.excerpt,
     source_name: c.source_name,
-    source_url: c.source_url,
+    source_url: cited || c.source_url,
     retrieved_at: c.retrieved_at,
     extra: opts.extra,
     links,

@@ -8,8 +8,8 @@ import { RecordModule, AnalysisModule } from "@/components/Module";
 import { people, profile, verified, fmtUSD, claims, approvedSummary, committeeHistory } from "@/lib/data";
 import { approvedCommitteeFacts, committeeSite } from "@/lib/committees";
 import { entityRecord } from "@/lib/entity-registry.mjs";
-import { committeeAsOf, moneyFlowAsOf, newestRetrieved } from "@/lib/page-as-of.mjs";
-import { publicSourceHref } from "@/lib/source-href.mjs";
+import { profileAsOf } from "@/lib/page-as-of.mjs";
+import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 import ConnectionsPanel from "@/components/ConnectionsPanel";
 import { fmtDate } from "@/lib/dates";
 
@@ -26,7 +26,7 @@ function namedEntity(kind: string, name: string | null | undefined, officialId: 
     name,
     official_id: officialId,
     source_name: claim.source_name,
-    source_url: sourceUrl || claim.source_url,
+    source_url: sourceUrl || renderedSourceHref(claim) || claim.source_url,
     retrieved_at: claim.retrieved_at,
     href,
     amended: claim.check?.amended === true,
@@ -53,11 +53,12 @@ function pageAsOf(pr: any) {
     ...(pr.pacs || []).map((x: { claim?: string }) => verified(x.claim)?.retrieved_at),
     ...(pr.committees || []).map((c: { claim?: string }) => verified(c.claim)?.retrieved_at),
   ];
-  return newestRetrieved([
-    ...claimDates,
-    ...(pr.committees?.length ? [committeeAsOf()] : []),
-    ...(pr.money?.length ? [moneyFlowAsOf()] : []),
-  ]);
+  const sites: Record<string, NonNullable<ReturnType<typeof committeeSite>>> = {};
+  for (const committee of pr.committees || []) {
+    const site = committeeSite(committee?.code);
+    if (site && committee.code) sites[committee.code] = site;
+  }
+  return profileAsOf(claimDates, (pr.committees || []).map((committee: { code?: string }) => committee?.code), sites);
 }
 
 export default async function ProfilePage({ params }: { params: Promise<{ slug: string }> }) {

@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const DIR = path.join(process.cwd(), "data", "build", "site");
-export type Claim = { id: string; text: string; value: unknown; excerpt: string; source_name: string; source_url: string; retrieved_at: string; status: string; verified_at?: string; check: Record<string, unknown> };
+export type Claim = { id: string; text: string; value: unknown; excerpt: string; source_name: string; source_url: string; congress_gov_url?: string; retrieved_at: string; status: string; verified_at?: string; check: Record<string, unknown> };
 export type Person = { slug: string; bioguide: string | null; name: string; kind: "congress" | "executive" | "elect"; chamber: string; role: string; party: string | null; state: string | null; stateName: string | null; district: number | null };
 
 function readJSON<T>(f: string, fallback: T): T {

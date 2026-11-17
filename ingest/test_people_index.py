@@ -347,15 +347,30 @@ def test_refund_check_is_fast():
         rows.append(row("NN %s" % _wide_name(j), 100_000, sub_id="p%d" % j, txn_type="22Y"))
     for j in range(1_000):
         rows.append(row("Z%s" % _wide_name(1_000 + j), 100_000, sub_id="j%d" % j, txn_type="22Y"))
-    P.REFUND_COMPARISONS = 0
-    started = time.perf_counter()
-    built = P.build_index(rows, "2026-11-17T18:40:00+00:00")
-    elapsed = time.perf_counter() - started
-    naive = 60_000 * 2_000
+    clusters = 60_000
+    refunds = 2_000
+    calls = {"n": 0}
+    original = P._name_pieces
+
+    def counted(raw):
+        calls["n"] += 1
+        return original(raw)
+
+    # Both the indexed check and the old per-cluster check call _name_pieces.
+    P._name_pieces = counted
+    try:
+        started = time.perf_counter()
+        built = P.build_index(rows, "2026-11-17T18:40:00+00:00")
+        elapsed = time.perf_counter() - started
+    finally:
+        P._name_pieces = original
+    # The indexed check is about one call per cluster last name plus one per refund.
+    # Checking every cluster calls it twice per pair, about 240 million times here.
+    limit = 2 * (clusters + refunds)
     check(
-        "refund comparisons stay under one tenth of checking every cluster",
-        P.REFUND_COMPARISONS < naive // 10,
-        "%d comparisons" % P.REFUND_COMPARISONS,
+        "name-piece calls stay under twice the clusters plus the refunds",
+        calls["n"] < limit,
+        "%d calls, limit %d" % (calls["n"], limit),
     )
     if os.environ.get("POLITIDEX_REFUND_TIMING"):
         check("60k clusters and 2k refunds finish in under 10 seconds (%.2fs)" % elapsed, elapsed < 10)

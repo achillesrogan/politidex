@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { fmtDate } from "@/lib/dates";
 import RecordPopover from "@/components/RecordPopover";
-import { officialGovHref, publicSourceHref } from "@/lib/source-href.mjs";
+import { officialGovHref, publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 import { confidenceBadge } from "@/lib/entity-registry.mjs";
 import ConfidenceBadge from "@/components/ConfidenceBadge";
 
@@ -41,7 +41,7 @@ export default function CommitteeInfo({
   const site = officialGovHref(website || "");
   const roster = publicSourceHref(membershipUrl || "") || null;
   const badge = confidenceBadge({ official_id: officialId, source_url: membershipUrl || site || "" });
-  const shown = [...summary, ...facts].filter((f) => publicSourceHref(f.source_url));
+  const shown = [...summary, ...facts].filter((f) => renderedSourceHref(f));
   return (
     <>
       <span data-fact="" data-claim={claimId} className="inline">
@@ -77,7 +77,7 @@ export default function CommitteeInfo({
           <p className="mt-3 text-sm text-[var(--color-muted)]">An editor-reviewed summary is not on this card yet.</p>
         ) : (
           shown.map((f) => {
-            const href = publicSourceHref(f.source_url);
+            const href = renderedSourceHref(f);
             return (
               <section key={f.id || `${f.label}-${f.source_url}`} className="mt-4">
                 <h4 className="font-sans text-xs uppercase tracking-wide font-bold text-[var(--color-record)]">{f.label}</h4>
