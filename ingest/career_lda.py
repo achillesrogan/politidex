@@ -5,7 +5,8 @@ This script is not part of npm run build.
 
   python3 ingest/career_lda.py
 
-writes data/career/lda.json: filing counts, public URLs, and retrieval dates.
+writes data/raw/lda-career/lda.json: filing counts, public URLs, and retrieval dates.
+The file is not committed. Profile lobbying ties come from connections_lda.py.
 Pass --crawl to resume the raw jsonl download under data/raw. That dump is
 not committed. A finished year and filing type is skipped, and a failed page
 is retried on the next run.
@@ -121,7 +122,7 @@ def write_derived(periods):
         "types_note": TYPES_NOTE,
         "periods": periods,
     }
-    path = ROOT / "data" / "career" / "lda.json"
+    path = RAW / "lda-career" / "lda.json"
     write_json(path, derived)
     print("wrote data/career/lda.json", len(periods), "periods", flush=True)
     return derived

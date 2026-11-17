@@ -7,7 +7,8 @@
     "source": "https://www.fec.gov/files/bulk-downloads/"
   },
   "lda": {
-    "begins": 1999,
+    "begins": 2025,
+    "ends": 2026,
     "source": "https://lda.gov/api/v1/filings/"
   },
   "congress": {

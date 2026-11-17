@@ -188,18 +188,13 @@ def test_derived_outputs_are_compact_and_key_free():
     check("the small index has this member's first year", years["S000033"] == member["first_year"])
     coverage = json.loads((root / "data" / "career" / "coverage.json").read_text())
     check("coverage begins values are integers", all(isinstance(coverage[name]["begins"], int) for name in ("fec", "lda", "congress")))
+    import connections_lda
+    shown = tuple(sorted(connections_lda.YEARS))
+    check("lobbying coverage matches the connections crawl", coverage["lda"]["begins"] == shown[0] and coverage["lda"]["ends"] == shown[-1])
+    check("the unused lobbying count file is not in data/career", not (root / "data" / "career" / "lda.json").exists())
     fec = json.loads((root / "data" / "career" / "fec.json").read_text())
     check("fec derived coverage begins in 1980", fec.get("begins") == 1980 and fec["cycles"][0]["cycle"] == 1980)
     check("fec derived output does not list an individual file", "itcont" not in json.dumps(fec) and "indiv" not in json.dumps(fec["cycles"]))
-    lda = json.loads((root / "data" / "career" / "lda.json").read_text())
-    lda_blob = json.dumps(lda).lower()
-    check("lda derived file has no api key", "api_key" not in lda_blob)
-    check("lda citation is the public filings api", lda.get("source_url") == "https://lda.gov/api/v1/filings/")
-    check("lda derived coverage begins in 1999", lda.get("begins") == 1999)
-    check(
-        "1999 mid-year or year-end reports are counted",
-        any(item.get("year") == 1999 and item.get("filing_type") in ("MM", "YY") and isinstance(item.get("count"), int) and item["count"] > 0 for item in lda["periods"]),
-    )
 
 
 def test_member_committees_do_not_mix_years():
@@ -227,7 +222,22 @@ def test_member_committees_do_not_mix_years():
     zip_text("cm24.zip", [cm("C00000001", "OLD PAC", "A", "H0TX00001")])
     zip_text("ccl24.zip", [ccl("C00000001", "H0TX00001", "A", 2024)])
     zip_text("cm26.zip", [cm("C00000001", "DON'T MESS WITH TEXAS PAC 2026", "P", "H0TX00001")])
-    zip_text("ccl26.zip", [ccl("C00000001", "H0TX00001", "P", 2026)])
+    zip_text("ccl26.zip", [
+        ccl("C00000001", "H0TX00001", "P", 2026),
+        ccl("C00000001", "H0TX00001", "P", 2026),
+    ])
+    zip_text("cm98.zip", [
+        cm("C00000011", "JOHNSON FOR CONGRESS", "P", "H0TX00001"),
+        cm("C00000012", "JOHNSON AUTHORIZED", "A", "H0TX00001"),
+        cm("C00000013", "JOHNSON JOINT", "J", "H0TX00001"),
+        cm("C00000014", "OTHER PRINCIPAL", "P", "H0TX00001"),
+    ])
+    def cn(cand, pcc):
+        parts = [""] * 10
+        parts[0] = cand
+        parts[9] = pcc
+        return "|".join(parts)
+    zip_text("cn98.zip", [cn("H0TX00001", "C00000011")])
     zip_text("cm22.zip", [
         cm("C00000002", "MUSLIMS OF UNITED STATES OF AMERICA PAC", "U", "H0VA00001"),
         cm("C00000003", "SAVE AMERICA PAC II", "D", "S0ID00001"),
@@ -244,7 +254,9 @@ def test_member_committees_do_not_mix_years():
     check("each year's name stays with that year's designation", ("DON'T MESS WITH TEXAS PAC 2026", "P", [2026]) in texts and ("OLD PAC", "A", [2024]) in texts)
     check("the 2026 name is not stored with the earlier designation", not any(row["name"].endswith("2026") and row["designation"] != "P" for row in rows))
     check("unauthorized and leadership committees are omitted", "W000000" not in derived["members"] and "R000000" not in derived["members"])
+    check("a repeated linkage row does not repeat the cycle", any(row["cycles"] == [2026] for row in rows if row["name"].endswith("2026")))
     check("a joint fundraising committee is kept", any(row["designation"] == "J" and row["name"] == "SAIL TO VICTORY" for row in rows))
+    check("before 2000 only the candidate master's principal committee is kept", ("JOHNSON FOR CONGRESS", "P", [1998]) in texts and not any(row["committee_id"] in {"C00000012", "C00000013", "C00000014"} for row in rows))
     check("the crosswalk source is recorded", derived["id_crosswalk"]["source_url"].startswith("https://github.com/unitedstates/congress-legislators"))
 
 

@@ -1,7 +1,39 @@
 // Postbuild gate (CI): scan every prerendered HTML page. Fails if any rendered fact lacks a verified claim,
 // or if OPSEC / launch-safety rules are violated.
 import fs from "node:fs"; import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { moneyflowPublished, moneyflowSourceHost, moneyflowSourceReady, moneyflowSources } from "../lib/moneyflow-http.mjs";
+
+/** Career facts on profile HTML. A page with no bioguide id may omit the section; any fact it does render is still checked. */
+export function reviewCareerPages(pages, peopleBySlug) {
+  const errors = [];
+  let facts = 0;
+  for (const page of pages) {
+    const person = peopleBySlug.get(page.slug) || null;
+    const html = page.html;
+    const where = page.file || page.slug;
+    const tags = [...html.matchAll(/<[a-z]+[^>]*data-career-fact=""[^>]*>/g)];
+    // Skip only the missing-section rule. Executive profiles have no bioguide id.
+    if (person && person.bioguide && !html.includes("data-career-section")) {
+      errors.push(`${where}: profile is missing the career record`);
+    }
+    for (const m of tags) {
+      facts++;
+      const tag = m[0];
+      const href = (tag.match(/data-source="([^"]*)"/) || [])[1] || "";
+      const retrieved = (tag.match(/data-retrieved="([^"]*)"/) || [])[1] || "";
+      if (!retrieved) errors.push(`${where}: career fact has no retrieval date`);
+      let host = "";
+      try { host = new URL(href).hostname.toLowerCase().replace(/\.$/, ""); } catch { host = ""; }
+      const allowed = host === "congress.gov" || host.endsWith(".congress.gov") || host === "fec.gov" || host.endsWith(".fec.gov") || host === "lda.gov" || host.endsWith(".lda.gov");
+      if (!allowed || host === "api.congress.gov" || href.includes("api.congress.gov")) {
+        errors.push(`${where}: career fact source is not a public congress.gov, fec.gov, or lda.gov URL`);
+      }
+    }
+  }
+  return { errors, facts };
+}
+function main() {
 const root = path.join(process.cwd(), ".next");
 const claimsPath = process.env.CLAIMS_PATH || path.join(process.cwd(), "data", "build", "site", "claims.json");
 const claims = fs.existsSync(claimsPath) ? JSON.parse(fs.readFileSync(claimsPath, "utf8")).claims : {};
@@ -90,31 +122,17 @@ if (fs.existsSync(peoplePath)) {
     if (person && person.slug) peopleBySlug.set(person.slug, person);
   }
 }
+const careerPages = [];
 for (const f of html) {
   if (!f.includes(`${path.sep}p${path.sep}`) || f.endsWith(`${path.sep}_none.html`)) continue;
-  const slug = path.basename(f, ".html");
-  const person = peopleBySlug.get(slug);
-  // Executive profiles have no bioguide id, so they have no Congress.gov career record.
-  if (!person || !person.bioguide) continue;
-  const t = fs.readFileSync(f, "utf8");
-  const tags = [...t.matchAll(/<[a-z]+[^>]*data-career-fact=""[^>]*>/g)];
-  if (!t.includes("data-career-section")) {
-    errors.push(`${path.relative(root, f)}: profile is missing the career record`);
-  }
-  for (const m of tags) {
-    facts++;
-    const tag = m[0];
-    const href = (tag.match(/data-source="([^"]*)"/) || [])[1] || "";
-    const retrieved = (tag.match(/data-retrieved="([^"]*)"/) || [])[1] || "";
-    if (!retrieved) errors.push(`${path.relative(root, f)}: career fact has no retrieval date`);
-    let host = "";
-    try { host = new URL(href).hostname.toLowerCase().replace(/\.$/, ""); } catch { host = ""; }
-    const allowed = host === "congress.gov" || host.endsWith(".congress.gov") || host === "fec.gov" || host.endsWith(".fec.gov") || host === "lda.gov" || host.endsWith(".lda.gov");
-    if (!allowed || host === "api.congress.gov" || href.includes("api.congress.gov")) {
-      errors.push(`${path.relative(root, f)}: career fact source is not a public congress.gov, fec.gov, or lda.gov URL`);
-    }
-  }
+  careerPages.push({ slug: path.basename(f, ".html"), html: fs.readFileSync(f, "utf8"), file: path.relative(root, f) });
 }
+const career = reviewCareerPages(careerPages, peopleBySlug);
+errors.push(...career.errors);
+facts += career.facts;
 console.log(`check-rendered: ${html.length} HTML pages, ${facts} rendered facts checked, ${PRIVATE.length} private denylist terms`);
 if (errors.length) { console.error(errors.slice(0, 60).join("\n")); console.error(`check-rendered FAILED: ${errors.length} problems`); process.exit(1); }
 console.log("check-rendered: OK — every rendered fact has a verified source; OPSEC patterns clean; noindex present");
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
