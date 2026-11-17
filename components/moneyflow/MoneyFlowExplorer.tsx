@@ -19,6 +19,7 @@ import {
   dollarsToCents,
   layoutTree,
   linkPath,
+  officialSourceHref,
   plainCommitteeKind,
   presentCommittees,
   purposeCodes,
@@ -221,7 +222,7 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
       <RecordPopover open={Boolean(card)} anchor={anchor} onClose={() => setCard(null)}>
         {card ? (
           <div>
-            <p className="tag text-[var(--color-record)]">Official record</p>
+            <p className="tag moneyflow-kicker">Official record</p>
             <h3 className="font-display text-xl font-bold mt-1">{card.title}</h3>
             <p className="moneyflow-note mt-3" role="note">{fungibility}</p>
             {card.bucketNote ? <p className="mt-3">{card.bucketNote}</p> : null}
@@ -231,7 +232,9 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
                   <li key={fact.label}>
                     <span className="tag">{fact.label}</span>
                     <p>{fact.text}</p>
-                    <a className="link" href={fact.href} rel="noopener noreferrer">{fact.linkLabel}</a>
+                    {officialSourceHref(fact.href)
+                      ? <a className="link" href={officialSourceHref(fact.href) || undefined} rel="noopener noreferrer">{fact.linkLabel}</a>
+                      : <span>{fact.linkLabel}</span>}
                   </li>
                 ))}
               </ul>
@@ -245,7 +248,11 @@ export default function MoneyFlowExplorer({ note, cycle }: { note: string; cycle
             </ul>
             <p className="mt-3 text-sm">Source: {card.source.source_name}{card.source.retrieved_at ? ` · retrieved ${fmtDate(card.source.retrieved_at)}` : ""}</p>
             <blockquote className="mt-2 text-sm border-l-2 border-[var(--color-rule)] pl-3">{card.source.excerpt}</blockquote>
-            <p className="mt-2 text-sm"><a className="link" href={card.source.source_url} rel="noopener noreferrer">Open the cited source</a></p>
+            {officialSourceHref(card.source.source_url)
+              ? <p className="mt-2 text-sm"><a className="link" href={officialSourceHref(card.source.source_url) || undefined} rel="noopener noreferrer">Open the cited source</a></p>
+              : card.source.source_url
+                ? <p className="mt-2 text-sm">{card.source.source_url}</p>
+                : null}
           </div>
         ) : null}
       </RecordPopover>

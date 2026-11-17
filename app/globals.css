@@ -57,7 +57,10 @@ table { border-collapse: collapse; }
 .moneyflow-filters input, .moneyflow-filters select { font: 400 1rem var(--font-serif); text-transform: none; letter-spacing: 0; border: 1px solid var(--color-rule); background: #fff; padding: .35rem .5rem; min-width: 8rem; }
 .moneyflow-starts { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .75rem; margin-top: 1rem; }
 .moneyflow-start { text-align: left; border: 1px solid var(--color-rule); background: #fff; padding: .75rem .85rem; color: var(--color-ink); }
-.moneyflow-start.is-active { outline: 2px solid var(--color-record); }
+.moneyflow, .record-popover, .conn-card-btn { --mf-neutral: #3d4a59; }
+.moneyflow a.link, .record-popover a.link { color: var(--mf-neutral); }
+.moneyflow-kicker { color: var(--mf-neutral); }
+.moneyflow-start.is-active { outline: 2px solid var(--mf-neutral); }
 .moneyflow-start-name { display: block; font-family: var(--font-display); font-weight: 700; }
 .moneyflow-start-meta { display: block; margin-top: .25rem; color: var(--color-muted); font-size: .9rem; }
 .moneyflow-stage { margin-top: 1.25rem; }
@@ -75,7 +78,7 @@ table { border-collapse: collapse; }
 .moneyflow-node-name { display: block; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .moneyflow-node-amt, .moneyflow-list-amt, .moneyflow-list-kind { color: var(--color-muted); font-size: .85rem; }
 .moneyflow-record, .moneyflow-text-btn { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; padding: .15rem .35rem; margin: .15rem 0 0; }
-.moneyflow-node button:focus-visible, .moneyflow-start:focus-visible, .moneyflow-text-btn:focus-visible, .moneyflow-list button:focus-visible { outline: 2px solid var(--color-record); outline-offset: 2px; }
+.moneyflow-node button:focus-visible, .moneyflow-start:focus-visible, .moneyflow-text-btn:focus-visible, .moneyflow-list button:focus-visible { outline: 2px solid var(--mf-neutral); outline-offset: 2px; }
 .moneyflow-list { display: none; margin-top: .75rem; }
 .moneyflow-list ul { list-style: none; padding-left: .75rem; margin: .35rem 0; }
 .moneyflow-list-row { display: flex; flex-wrap: wrap; gap: .35rem .6rem; align-items: baseline; }
@@ -138,7 +141,7 @@ table { border-collapse: collapse; }
   color: var(--color-ink);
 }
 .record-popover-body { padding: 1rem 1.15rem 1.15rem; }
-.record-popover-handle:focus-visible, .record-popover-close:focus-visible, .conn-card-btn:focus-visible { outline: 2px solid var(--color-record); outline-offset: 2px; }
+.record-popover-handle:focus-visible, .record-popover-close:focus-visible, .conn-card-btn:focus-visible { outline: 2px solid var(--mf-neutral); outline-offset: 2px; }
 .record-popover.is-sheet { max-height: 70vh; }
 .moneyflow-error { margin-top: .75rem; }
 @media (max-width: 800px) {
