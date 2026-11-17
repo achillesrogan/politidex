@@ -11,6 +11,11 @@ export async function GET(_req: Request, context: { params: Promise<{ id: string
     if (!ID.test(id)) {
       return NextResponse.json({ error: "Unknown committee." }, { status: 404, headers: { "cache-control": "no-store" } });
     }
+    const manifestPath = path.join(process.cwd(), "data", "moneyflow", "pilot", "manifest.json");
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as { not_in_web_bundle?: boolean };
+    if (manifest.not_in_web_bundle === true) {
+      return NextResponse.json({ error: "No shard for this committee." }, { status: 404, headers: { "cache-control": "no-store" } });
+    }
     const dir = path.resolve(process.cwd(), "data", "moneyflow", "pilot", "shards");
     const file = path.resolve(dir, `${id}.json`);
     if (!file.startsWith(dir + path.sep) || !existsSync(file)) {

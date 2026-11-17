@@ -17,7 +17,7 @@
   "top_payees": 25,
   "cycle": 2026
  },
- "not_in_web_bundle": true,
+ "not_in_web_bundle": false,
  "api": "No OpenFEC request is made. No API key is read.",
  "individual_contributions": "indiv* files are not downloaded or parsed.",
  "files": {

@@ -510,7 +510,7 @@ def build():
         "retrieved_at": retrieved_at,
         "fungibility_note": FUNGIBILITY_NOTE,
         "wording": wording,
-        "not_in_web_bundle": True,
+        "not_in_web_bundle": False,
         "api": "No OpenFEC request is made. No API key is read.",
         "individual_contributions": "indiv* files are not downloaded or parsed.",
         "files": _file_meta(),

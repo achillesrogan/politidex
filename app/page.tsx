@@ -24,9 +24,13 @@ export default function Home() {
             <p className="mt-4 flex flex-wrap gap-3">
               <Link href="/people" className="inline-block bg-[var(--color-ink)] text-white px-5 py-2 font-sans text-sm font-semibold">Browse {s.people.toLocaleString()} profiles</Link>
               <Link href="/connections" className="inline-block border border-[var(--color-ink)] px-5 py-2 font-sans text-sm font-semibold">See record-based connections</Link>
+              <Link href="/money-flow" className="inline-block border border-[var(--color-ink)] px-5 py-2 font-sans text-sm font-semibold">Reported money out</Link>
             </p>
           ) : (
-            <p className="mt-4 font-sans text-sm text-[var(--color-muted)]">Profiles are being built and verified. They will appear here after review.</p>
+            <p className="mt-4 flex flex-wrap items-center gap-3 font-sans text-sm text-[var(--color-muted)]">
+              <span>Profiles are being built and verified. They will appear here after review.</span>
+              <Link href="/money-flow" className="inline-block border border-[var(--color-ink)] px-5 py-2 font-sans text-sm font-semibold text-[var(--color-ink)]">Reported money out</Link>
+            </p>
           )}
         </article>
         <aside className="newspaper-card p-6">

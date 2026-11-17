@@ -14,14 +14,15 @@ export function GET() {
     for (const entry of purposeDoc.committees || []) {
       if (entry && entry.review_status === "approved" && entry.committee_id) purposes[entry.committee_id] = entry;
     }
-    const committees = (manifest.pilot || []).map((row: { committee_id?: string; name?: string; party?: string | null; official_total_out?: string; coverage_end?: string | null; selection_rule?: string }) => ({
+    const shown = manifest.not_in_web_bundle !== true;
+    const committees = shown ? (manifest.pilot || []).map((row: { committee_id?: string; name?: string; party?: string | null; official_total_out?: string; coverage_end?: string | null; selection_rule?: string }) => ({
       committee_id: row.committee_id,
       name: row.name,
       party: row.party || null,
       official_total_out: row.official_total_out,
       coverage_end: row.coverage_end || null,
       selection_rule: row.selection_rule,
-    }));
+    })) : [];
     return NextResponse.json(
       {
         cycle: manifest.cycle,
