@@ -8,7 +8,10 @@ from __future__ import annotations
 import html
 import json
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -67,6 +70,49 @@ class _StayOnHost(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+class ManualReview(Exception):
+    """The page was retrieved, but its text cannot be checked automatically."""
+
+
+def pdf_bytes_to_text(raw):
+    """Return extracted PDF text, or None when no extractor can read it."""
+    exe = shutil.which("pdftotext")
+    if exe:
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".pdf") as handle:
+                handle.write(raw)
+                handle.flush()
+                result = subprocess.run(
+                    [exe, "-layout", handle.name, "-"],
+                    check=False,
+                    capture_output=True,
+                )
+            if result.returncode == 0:
+                return result.stdout.decode("utf-8", errors="replace")
+        except Exception:
+            pass
+    try:
+        from io import BytesIO
+        from pypdf import PdfReader
+    except ImportError:
+        return None
+    try:
+        reader = PdfReader(BytesIO(raw))
+        return "\n".join((page.extract_text() or "") for page in reader.pages)
+    except Exception:
+        return None
+
+
+def bytes_to_document(raw, url):
+    is_pdf = raw.startswith(b"%PDF") or url.lower().split("?", 1)[0].endswith(".pdf")
+    if not is_pdf:
+        return raw.decode("utf-8", errors="replace")
+    text = pdf_bytes_to_text(raw)
+    if text is None:
+        raise ManualReview("PDF text extraction is not available")
+    return text
+
+
 def fetch(url, timeout=25, allow=None):
     host = host_of(url)
     if not host or (allow is not None and host not in allow):
@@ -86,8 +132,7 @@ def fetch(url, timeout=25, allow=None):
         raw = response.read(MAX_BYTES + 1)
         if len(raw) > MAX_BYTES:
             raise ValueError("response exceeds 2000000 bytes")
-        charset = response.headers.get_content_charset() or "utf-8"
-    return raw.decode(charset, errors="replace")
+    return bytes_to_document(raw, response.geturl() or url)
 
 
 def review(fetch_page=None):
@@ -113,6 +158,9 @@ def review(fetch_page=None):
             continue
         try:
             page = fetch_page(url)
+        except ManualReview as exc:
+            flags.append("%s: manual re-verification: %s" % (cid, exc))
+            continue
         except Exception as exc:
             flags.append("%s: could not retrieve %s (%s)" % (cid, url, type(exc).__name__))
             continue

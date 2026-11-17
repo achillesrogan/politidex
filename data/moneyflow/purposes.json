@@ -11,12 +11,12 @@
    "speaker": "committee",
    "source": {
     "source_name": "Democratic National Committee",
-    "source_url": "https://democrats.org/who-we-are/",
-    "retrieved_at": "2026-11-17T02:30:00+00:00",
-    "excerpt": "Democrats believe that every American deserves a fair shot at the American dream. We’re focused on lowering costs, improving healthcare, creating jobs, ending corruption, and protecting our democracy."
+    "source_url": "https://democrats.org/internships/",
+    "retrieved_at": "2026-11-17T02:34:00+00:00",
+    "excerpt": "The DNC performs many roles within Democratic politics, the most important of which is working to elect Democrats to all levels of government, from school board to the Oval Office."
    },
    "review_status": "approved",
-   "approved_at": "2026-11-17T02:32:00+00:00"
+   "approved_at": "2026-11-17T02:34:00+00:00"
   },
   {
    "committee_id": "C00000935",
@@ -49,16 +49,15 @@
   {
    "committee_id": "C00003418",
    "name": "REPUBLICAN NATIONAL COMMITTEE",
-   "review_status": "approved",
+   "review_status": "proposed",
    "found": true,
    "speaker": "committee",
    "source": {
-    "source_name": "Republican National Committee",
-    "source_url": "https://www.gop.com/about-our-party/",
-    "retrieved_at": "2026-11-17T02:30:00+00:00",
-    "excerpt": "And today, thanks to President Trump’s strong America First leadership, that spirit of Strength, Determination, and Love of Country continues to guide us as we fight to secure America's future, restore its greatness, and defend the values that have made our nation a beacon of freedom and opportunity."
-   },
-   "approved_at": "2026-11-17T02:32:00+00:00"
+    "source_name": "Rules of the Republican Party, Rule No. 1(a)",
+    "source_url": "https://prod-static.gop.com/media/Rules_Of_The_Republican_Party.pdf",
+    "retrieved_at": "2026-11-17T02:34:00+00:00",
+    "excerpt": "The Republican National Committee shall have the general management of the Republican Party, based upon the rules adopted by the Republican National Convention."
+   }
   },
   {
    "committee_id": "C00075820",

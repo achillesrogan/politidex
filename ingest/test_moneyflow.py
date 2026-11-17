@@ -415,6 +415,12 @@ def test_committee_profile_is_factual_and_drops_a_person_like_sponsor():
     check("NONE is a blank connected organization", blank["connected_organization"] is None)
     import moneyflow_purposes as P
     check("a non-default port is not an allowlisted host", P.host_of("https://www.dscc.org:8443/about-us/") is None)
+    check("the rules PDF host is allowable", P.host_of("https://prod-static.gop.com/media/Rules_Of_The_Republican_Party.pdf") == "prod-static.gop.com")
+    try:
+        extracted = P.bytes_to_document(b"%PDF-1.4\nnot a real pdf", "https://prod-static.gop.com/rules.pdf")
+        check("a PDF is turned into text or flagged", isinstance(extracted, str))
+    except P.ManualReview as exc:
+        check("an unreadable PDF is flagged for manual re-verification", "PDF text extraction" in str(exc))
     check("a redirect to another host is rejected", P.host_of("https://evil.example/about") != "www.dscc.org")
     check("business node has no profile", "profile" not in shard["children"][1]["node"])
     check("profile source is the committee page", shard["node"]["profile"]["source"]["source_url"].startswith("https://www.fec.gov/data/committee/"))
