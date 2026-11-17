@@ -250,6 +250,25 @@ def test_address_and_memo_and_duplicates():
         "a blank refund name stays in review",
         len(blank_refund["published"]) == 1 and blank_refund["published"][0]["amount"] == "15000.00",
     )
+
+    def held(donor, refund_name):
+        built = P.build_index([
+            row(donor, 1_500_000),
+            row(refund_name, 900_000, sub_id="2", txn_type="22Y"),
+        ], "2026-11-17T02:30:00+00:00")
+        return built["published"] == []
+
+    check("JOHN SMITH-DOE holds SMITH-DOE, JOHN", held("SMITH-DOE, JOHN", "JOHN SMITH-DOE"))
+    check("J SMITHDOE holds SMITH-DOE, JOHN", held("SMITH-DOE, JOHN", "J SMITHDOE"))
+    check("PATRICK O'BRIEN holds O'BRIEN, PATRICK", held("O'BRIEN, PATRICK", "PATRICK O'BRIEN"))
+    check("P OBRIEN holds O'BRIEN, PATRICK", held("O'BRIEN, PATRICK", "P OBRIEN"))
+    check("MARIA DE LA CRUZ holds DE LA CRUZ, MARIA", held("DE LA CRUZ, MARIA", "MARIA DE LA CRUZ"))
+    check("JOHN DOE JR holds DOE JR, JOHN", held("DOE JR, JOHN", "JOHN DOE JR"))
+    check("JOSE MUNOZ holds MUÑOZ, JOSE", held("MUÑOZ, JOSE", "JOSE MUNOZ"))
+    check("JOSÉ MUÑOZ holds MUÑOZ, JOSÉ", held("MUÑOZ, JOSÉ", "JOSÉ MUÑOZ"))
+    check("JOHN DOË holds DOE, JOHN Q", held("DOE, JOHN Q", "JOHN DOË"))
+    for refund_name in ("MR DOE", "MRS DOE", "MR. & MRS. DOE", "DOE JR", "Q DOE", "JQ DOE", "DOE FAMILY", "THE DOE TRUST"):
+        check("refund %s holds DOE, JOHN Q" % refund_name, held("DOE, JOHN Q", refund_name))
     late = P.build_index([
         row("DOE, JANE QUINN", 1_500_000, tran_id="SA5", date="2026-04-02", file_num="2", amend="N"),
         row("DOE, JANE QUINN", 1_500_000, tran_id="SA5", date="2026-03-01", sub_id="2", file_num="1", amend="A"),

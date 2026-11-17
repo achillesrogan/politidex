@@ -22,6 +22,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import unicodedata
 from decimal import Decimal, ROUND_HALF_UP
 
 from moneyflow_lib import in_cycle, is_memo, parse_fec_date
@@ -323,52 +324,28 @@ def to_public(person):
     return out
 
 
-def _refund_tokens(raw):
-    """Split a refund name on every character that is not a letter."""
-    return [tok for tok in re.split(r"[^A-Za-z]+", (raw or "").upper()) if tok]
-
-
-def _single_token_names_cluster(blob, last, first):
-    """One unsplit token. The last name, or the two names joined, may sit inside it."""
-    if last and last in blob:
-        return True
-    if not first or not last:
-        return False
-    return (first + last) in blob or (last + first) in blob
-
-
-def _token_contains(token, name):
-    """The name is the token, or a piece of a hyphenated or concatenated token."""
-    return bool(name) and (token == name or (len(token) > len(name) and name in token))
+def _name_pieces(raw):
+    """NFKD, drop accents, uppercase, then split on every non-letter."""
+    text = unicodedata.normalize("NFKD", raw or "")
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    return [tok for tok in re.split(r"[^A-Z]+", text.upper()) if tok]
 
 
 def _refund_names_cluster(raw, ident):
-    """Whether an unparsed refund might belong to this cluster.
+    """Hold a cluster when the refund carries its last name.
 
-    A blank name matches nothing. A last name alone, such as "DOE,", holds every
-    cluster with that last name. One unsplit token such as "JOHNDOE" matches when
-    the last name or the joined names appear in it. Otherwise the last name has to
-    match a token, or sit inside a hyphenated or concatenated token, and the first
-    name or first initial has to match too.
+    The cluster last name and the refund use the same pieces. Every last-name
+    piece has to show up among the refund's words, or the joined last name has
+    to sit inside the refund's joined letters. The first name is not required.
+    A blank refund matches nothing.
     """
-    text = (raw or "").strip()
-    if not any(ch.isalpha() for ch in text):
+    last_pieces = _name_pieces(ident[0])
+    refund_pieces = _name_pieces(raw)
+    if not last_pieces or not refund_pieces:
         return False
-    last, first = ident[0], ident[1]
-    tokens = _refund_tokens(text)
-    if not tokens:
-        return False
-    if len(tokens) == 1 and re.fullmatch(r"[A-Za-z]+", text):
-        return _single_token_names_cluster(tokens[0], last, first)
-    if len(tokens) == 1:
-        return tokens[0] == last
-    initial = first[:1] if first else ""
-    last_ok = any(_token_contains(tok, last) for tok in tokens)
-    first_ok = any(
-        tok == first or (len(tok) == 1 and tok == initial) or (first and len(tok) > len(first) and first in tok)
-        for tok in tokens
-    )
-    return last_ok and first_ok
+    if all(piece in refund_pieces for piece in last_pieces):
+        return True
+    return "".join(last_pieces) in "".join(refund_pieces)
 
 
 def _apply_refunds(groups, refunds):
