@@ -51,7 +51,8 @@
     "filing_id": null
    },
    "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "unverified"
+   "status": "verified",
+   "verified_at": "2026-11-17T20:34:45Z"
   },
   "profile": {
    "committee_id": "C00042366",
@@ -83,7 +84,8 @@
      "committee_id": "C00042366"
     },
     "retrieved_at": "2026-11-17T00:26:07+00:00",
-    "status": "unverified"
+    "status": "verified",
+    "verified_at": "2026-11-17T20:34:45Z"
    }
   }
  },
@@ -135,7 +137,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -177,7 +180,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -228,7 +232,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -270,7 +275,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -319,7 +325,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -359,7 +366,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -408,7 +416,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -448,7 +457,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -497,7 +507,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -537,7 +548,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -588,7 +600,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -630,7 +643,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -679,7 +693,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -719,7 +734,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -770,7 +786,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -812,7 +829,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -861,7 +879,8 @@
       "edge_kind": "reported disbursement"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -901,7 +920,8 @@
       "edge_kind": "reported disbursement"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -946,7 +966,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00165688",
@@ -978,7 +999,8 @@
        "committee_id": "C00165688"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1019,7 +1041,8 @@
       "edge_kind": "reported transfer"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1064,7 +1087,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00041269",
@@ -1096,7 +1120,8 @@
        "committee_id": "C00041269"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1137,7 +1162,8 @@
       "edge_kind": "reported transfer"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1186,7 +1212,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1226,7 +1253,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1271,7 +1299,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00191247",
@@ -1303,7 +1332,8 @@
        "committee_id": "C00191247"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1344,7 +1374,8 @@
       "edge_kind": "reported transfer"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1393,7 +1424,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1433,7 +1465,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1482,7 +1515,8 @@
       "edge_kind": "reported disbursement"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1522,7 +1556,8 @@
       "edge_kind": "reported disbursement"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1573,7 +1608,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1615,7 +1651,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1664,7 +1701,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1704,7 +1742,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1755,7 +1794,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -1797,7 +1837,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1842,7 +1883,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00016899",
@@ -1874,7 +1916,8 @@
        "committee_id": "C00016899"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -1915,7 +1958,8 @@
       "edge_kind": "reported transfer"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -1964,7 +2008,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2004,7 +2049,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2053,7 +2099,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2093,7 +2140,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2138,7 +2186,8 @@
       "filing_id": null
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     },
     "profile": {
      "committee_id": "C00031054",
@@ -2170,7 +2219,8 @@
        "committee_id": "C00031054"
       },
       "retrieved_at": "2026-11-17T00:26:07+00:00",
-      "status": "unverified"
+      "status": "verified",
+      "verified_at": "2026-11-17T20:34:45Z"
      }
     }
    },
@@ -2211,7 +2261,8 @@
       "edge_kind": "reported transfer"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2260,7 +2311,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2300,7 +2352,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2351,7 +2404,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2393,7 +2447,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2442,7 +2497,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2482,7 +2538,8 @@
       "edge_kind": "spent"
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2536,7 +2593,8 @@
       "transaction_count": 5010
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2584,7 +2642,8 @@
       "transaction_count": 5010
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   },
@@ -2636,7 +2695,8 @@
       "amount_cents": 4225516423
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    },
    "edge": {
@@ -2682,7 +2742,8 @@
       "amount_cents": 4225516423
      },
      "retrieved_at": "2026-11-17T00:26:07+00:00",
-     "status": "unverified"
+     "status": "verified",
+     "verified_at": "2026-11-17T20:34:45Z"
     }
    }
   }

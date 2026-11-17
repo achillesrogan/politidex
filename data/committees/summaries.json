@@ -1,9 +1,9 @@
 {
  "retrieved_at": "2026-11-17T02:54:55+00:00",
- "review_note": "Every entry is proposed. The site renders a sentence only after review_status is approved. Bill-referral counts are omitted because no Congress.gov API key was available in this environment.",
+ "review_note": "Approved on 2026-11-17. The site renders a sentence only when review_status is approved. Bill-referral counts are omitted because no Congress.gov API key was available in this environment.",
  "committees": {
   "SSAP": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -24,7 +24,7 @@
    ]
   },
   "SSAF": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -45,7 +45,7 @@
    ]
   },
   "SPAG": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -74,7 +74,7 @@
    ]
   },
   "SSAS": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -103,7 +103,7 @@
    ]
   },
   "SSBK": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -124,7 +124,7 @@
    ]
   },
   "SSBU": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -136,16 +136,16 @@
     },
     {
      "kind": "created",
-     "text": "The Congressional Budget and Impoundment Control Act of 1974 established standing budget committees in both chambers of Congress.",
-     "source_name": "U.S. House Committee on the Budget, official about page",
-     "source_url": "https://budget.house.gov/about",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "The Budget Act also established standing committees in both chambers of Congress with jurisdiction over, among other things, the concurrent resolution on the budget."
+     "text": "The Senate Committee on the Budget’s official history says the Budget Committee is one of the Senate’s newer committees, created by the Congressional Budget and Impoundment Control Act of 1974.",
+     "source_name": "U.S. Senate Committee on the Budget, official history",
+     "source_url": "https://www.budget.senate.gov/about/committee-history",
+     "retrieved_at": "2026-11-17T20:32:00+00:00",
+     "excerpt": "The Budget Committee is one of the Senate’s newer committees, created by the Congressional Budget and Impoundment Control Act of 1974."
     }
    ]
   },
   "SSCM": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -166,7 +166,7 @@
    ]
   },
   "SSEG": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -187,7 +187,7 @@
    ]
   },
   "SSEV": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -208,7 +208,7 @@
    ]
   },
   "SSFI": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -229,7 +229,7 @@
    ]
   },
   "SSFR": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -250,7 +250,7 @@
    ]
   },
   "SSGA": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -270,7 +270,7 @@
     },
     {
      "kind": "purpose",
-     "text": "The Committee on Homeland Security and Governmental Affairs is the chief oversight committee of the United States Senate.",
+     "text": "The committee describes itself as the chief oversight committee of the United States Senate.",
      "source_name": "U.S. Senate Committee on Homeland Security and Governmental Affairs, official history",
      "source_url": "https://www.hsgac.senate.gov/about/history/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
@@ -279,7 +279,7 @@
    ]
   },
   "SSHR": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -300,7 +300,7 @@
    ]
   },
   "SSJU": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -321,7 +321,7 @@
    ]
   },
   "SSRA": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -342,7 +342,7 @@
    ]
   },
   "SSSB": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -363,7 +363,7 @@
    ]
   },
   "SSVA": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -384,41 +384,41 @@
    ]
   },
   "SLIN": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
-     "text": "Chair: Cotton, Tom (R-AR). Ranking Member: Warner, Mark R. (D-VA) *. Total Members: 21.",
+     "text": "Chair: Cotton, Tom (R-AR). Ranking Member: Warner, Mark R. (D-VA) (Vice Chairman). Total Members: 21.",
      "source_name": "U.S. Senate committee list",
      "source_url": "https://www.senate.gov/committees/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Cotton, Tom (R-AR) Warner, Mark R. (D-VA) * 21"
+     "excerpt": "Cotton, Tom (R-AR) Warner, Mark R. (D-VA) * 21 … *Vice Chairman"
     }
    ]
   },
   "SLIA": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
-     "text": "Chair: Murkowski, Lisa (R-AK). Ranking Member: Schatz, Brian (D-HI) *. Total Members: 11.",
+     "text": "Chair: Murkowski, Lisa (R-AK). Ranking Member: Schatz, Brian (D-HI) (Vice Chairman). Total Members: 11.",
      "source_name": "U.S. Senate committee list",
      "source_url": "https://www.senate.gov/committees/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Murkowski, Lisa (R-AK) Schatz, Brian (D-HI) * 11"
+     "excerpt": "Murkowski, Lisa (R-AK) Schatz, Brian (D-HI) * 11 … *Vice Chairman"
     }
    ]
   },
   "SLET": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
-     "text": "Chair: Lankford, James (R-OK). Ranking Member: Coons, Christopher A. (D-DE) *. Total Members: 6.",
+     "text": "Chair: Lankford, James (R-OK). Ranking Member: Coons, Christopher A. (D-DE) (Vice Chairman). Total Members: 6.",
      "source_name": "U.S. Senate committee list",
      "source_url": "https://www.senate.gov/committees/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Lankford, James (R-OK) Coons, Christopher A. (D-DE) * 6"
+     "excerpt": "Lankford, James (R-OK) Coons, Christopher A. (D-DE) * 6 … *Vice Chairman"
     },
     {
      "kind": "created",
@@ -431,33 +431,33 @@
    ]
   },
   "JSEC": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
-     "text": "Chair: Schmitt, Eric (R-MO) *. Ranking Member: Hassan, Margaret Wood (D-NH). Total Members: 10.",
+     "text": "Vice Chairman: Schmitt, Eric (R-MO). Ranking Member: Hassan, Margaret Wood (D-NH). Total Members: 10.",
      "source_name": "U.S. Senate committee list",
      "source_url": "https://www.senate.gov/committees/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Schmitt, Eric (R-MO) * Hassan, Margaret Wood (D-NH) 10"
+     "excerpt": "Schmitt, Eric (R-MO) * Hassan, Margaret Wood (D-NH) 10 … *Vice Chairman"
     }
    ]
   },
   "JSLC": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
-     "text": "Chair: McConnell, Mitch (R-KY) *. Total Members: 5.",
+     "text": "Vice Chairman: McConnell, Mitch (R-KY). Total Members: 5.",
      "source_name": "U.S. Senate committee list",
      "source_url": "https://www.senate.gov/committees/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "McConnell, Mitch (R-KY) * 5"
+     "excerpt": "McConnell, Mitch (R-KY) * 5 … *Vice Chairman"
     }
    ]
   },
   "JSPR": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -470,7 +470,7 @@
    ]
   },
   "JSTX": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -483,7 +483,7 @@
    ]
   },
   "AG00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -500,14 +500,6 @@
      "source_url": "https://clerk.house.gov/committees/AG00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 29 / 25"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/AG00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     },
     {
      "kind": "created",
@@ -528,7 +520,7 @@
    ]
   },
   "AP00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -547,14 +539,6 @@
      "excerpt": "Ratio 35 / 28"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 12.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/AP00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "created",
      "text": "On March 2, 1865, the House of Representatives created the Committee on Appropriations by separating appropriating duties from the Committee on Ways and Means.",
      "source_name": "U.S. House Committee on Appropriations, official history",
@@ -565,7 +549,7 @@
    ]
   },
   "AS00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -582,19 +566,11 @@
      "source_url": "https://clerk.house.gov/committees/AS00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 30 / 27"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 7.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/AS00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "BU00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -631,7 +607,7 @@
    ]
   },
   "ED00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -648,19 +624,11 @@
      "source_url": "https://clerk.house.gov/committees/ED00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 21 / 16"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 4.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/ED00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "IF00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -679,14 +647,6 @@
      "excerpt": "Ratio 30 / 24"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/IF00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "created",
      "text": "The committee now called Energy and Commerce was originally established on December 14, 1795, as the Committee on Commerce and Manufactures.",
      "source_name": "U.S. House Committee on Energy and Commerce, official about page",
@@ -696,7 +656,7 @@
     },
     {
      "kind": "purpose",
-     "text": "The House Committee on Energy and Commerce is the oldest standing legislative committee in the U.S. House of Representatives and is vested with the broadest jurisdiction of any congressional authorizing committee.",
+     "text": "The committee describes itself as the oldest standing legislative committee in the U.S. House of Representatives and as vested with the broadest jurisdiction of any congressional authorizing committee.",
      "source_name": "U.S. House Committee on Energy and Commerce, official about page",
      "source_url": "https://energycommerce.house.gov/about",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
@@ -705,7 +665,7 @@
    ]
   },
   "SO00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -726,7 +686,7 @@
    ]
   },
   "BA00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -745,14 +705,6 @@
      "excerpt": "Ratio 30 / 24"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/BA00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "purpose",
      "text": "The House Financial Services Committee has jurisdiction over issues pertaining to the economy, the banking system, housing, insurance, and securities and exchanges.",
      "source_name": "U.S. House Committee on Financial Services, official about page",
@@ -763,7 +715,7 @@
    ]
   },
   "FA00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -780,19 +732,11 @@
      "source_url": "https://clerk.house.gov/committees/FA00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 28 / 25"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 7.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/FA00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "HM00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -809,14 +753,6 @@
      "source_url": "https://clerk.house.gov/committees/HM00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 18 / 15"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/HM00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     },
     {
      "kind": "created",
@@ -837,7 +773,7 @@
    ]
   },
   "HA00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -856,14 +792,6 @@
      "excerpt": "Ratio 8 / 4"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 2.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/HA00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "purpose",
      "text": "The Committee on House Administration’s jurisdiction over federal elections requires it to consider proposals to amend federal election law and to monitor congressional elections across the United States.",
      "source_name": "U.S. House Committee on House Administration, official about page",
@@ -874,7 +802,7 @@
    ]
   },
   "JU00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -891,14 +819,6 @@
      "source_url": "https://clerk.house.gov/committees/JU00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 25 / 19"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 7.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/JU00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     },
     {
      "kind": "created",
@@ -919,7 +839,7 @@
    ]
   },
   "II00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -938,14 +858,6 @@
      "excerpt": "Ratio 25 / 20"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 5.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/II00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "created",
      "text": "The House Committee on Natural Resources traces its jurisdictional history to the Committee on Public Lands, which was created on December 17, 1805, on a motion by Representative William Findley of Pennsylvania.",
      "source_name": "U.S. House Committee on Natural Resources, official about page",
@@ -956,7 +868,7 @@
    ]
   },
   "GO00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -973,19 +885,11 @@
      "source_url": "https://clerk.house.gov/committees/GO00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 26 / 21"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 7.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/GO00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "RU00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1002,14 +906,6 @@
      "source_url": "https://clerk.house.gov/committees/RU00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 9 / 4"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 2.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/RU00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     },
     {
      "kind": "created",
@@ -1030,7 +926,7 @@
    ]
   },
   "SY00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1047,19 +943,11 @@
      "source_url": "https://clerk.house.gov/committees/SY00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 22 / 18"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 5.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/SY00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "SM00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1078,14 +966,6 @@
      "excerpt": "Ratio 15 / 12"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 5.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/SM00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "created",
      "text": "On December 4, 1941, the House of Representatives created the first House Select Committee on Small Business; it was made a permanent standing committee on January 5, 1975.",
      "source_name": "U.S. House Committee on Small Business, official about page",
@@ -1096,7 +976,7 @@
    ]
   },
   "PW00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1115,14 +995,6 @@
      "excerpt": "Ratio 36 / 31"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/PW00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "purpose",
      "text": "The House Committee on Transportation and Infrastructure has jurisdiction over all modes of transportation: aviation, highways and bridges, transit and rail, pipelines, and maritime and waterborne transportation.",
      "source_name": "U.S. House Committee on Transportation and Infrastructure, official about page",
@@ -1133,7 +1005,7 @@
    ]
   },
   "VR00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1150,19 +1022,11 @@
      "source_url": "https://clerk.house.gov/committees/VR00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 14 / 11"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 5.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/VR00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "WM00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1181,14 +1045,6 @@
      "excerpt": "Ratio 26 / 19"
     },
     {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/WM00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
-    },
-    {
      "kind": "created",
      "text": "The Committee on Ways and Means was first established as a select committee on July 24, 1789, was reappointed in 1795, and was formally listed as a standing committee in the House Rules on January 7, 1802.",
      "source_name": "U.S. House Committee on Ways and Means, official about page",
@@ -1198,7 +1054,7 @@
     },
     {
      "kind": "purpose",
-     "text": "The Committee on Ways and Means is the oldest committee of the United States Congress and is the chief tax-writing committee in the House of Representatives.",
+     "text": "The committee describes itself as the oldest committee of the United States Congress and the chief tax-writing committee in the House of Representatives.",
      "source_name": "U.S. House Committee on Ways and Means, official about page",
      "source_url": "https://waysandmeans.house.gov/about/",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
@@ -1207,7 +1063,7 @@
    ]
   },
   "IG00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",
@@ -1216,19 +1072,11 @@
      "source_url": "https://clerk.house.gov/committees/IG00",
      "retrieved_at": "2026-11-17T02:54:55+00:00",
      "excerpt": "Ratio 15 / 12"
-    },
-    {
-     "kind": "roster",
-     "text": "Subcommittees listed: 6.",
-     "source_name": "Office of the Clerk, U.S. House",
-     "source_url": "https://clerk.house.gov/committees/IG00",
-     "retrieved_at": "2026-11-17T02:54:55+00:00",
-     "excerpt": "Subcommittees"
     }
    ]
   },
   "ZS00": {
-   "review_status": "proposed",
+   "review_status": "approved",
    "facts": [
     {
      "kind": "roster",

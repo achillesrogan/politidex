@@ -104,8 +104,9 @@ npm run build               # prebuild runs match tests; build fails if any rend
 FEC bulk files (committee master, committee-to-committee transactions,
 contributions to candidates, operating expenditures, and the PAC and party
 summary). It does not read an API key and does not download individual
-contribution files. Pilot shards are written to `data/moneyflow/`; the web
-app does not import them. A committee whose itemized disbursements do not fit
+contribution files. Pilot shards are written to `data/moneyflow/` and shown on `/money-flow`.
+The web app loads a shard through its API and does not import the files into
+the client. Individual contributor names are not in those shards. A committee whose itemized disbursements do not fit
 under the official summary total is not given a shard.
 
 `ingest/people_index.py` is a separate donor index. It can read the FEC
