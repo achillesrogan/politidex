@@ -1,0 +1,2521 @@
+{
+ "schema": "politidex.moneyflow.shard.v1",
+ "cycle": 2026,
+ "fungibility_note": "Reported money out of this account. Money in an account is fungible, so this is not a record that a particular dollar went to a particular payee.",
+ "node": {
+  "id": "committee:C00075820",
+  "kind": "party",
+  "official_id": "C00075820",
+  "name": "NRCC",
+  "terminal": false,
+  "terminal_label": null,
+  "period": {
+   "cycle": 2026,
+   "coverage_end": "2026-10-14"
+  },
+  "reported_in": "263840565.88",
+  "reported_out": "228418327.17",
+  "official_total_out": "228418327.17",
+  "party": "REP",
+  "committee_type": "Y",
+  "committee_type_label": "Party - qualified",
+  "designation": "U",
+  "designation_label": "Unauthorized",
+  "org_type": null,
+  "org_type_label": null,
+  "connected_organization": "COLE COMBINED COMMITTEE",
+  "state": "DC",
+  "source": {
+   "id": "c_6eed79b0f65ae4",
+   "text": "NRCC (C00075820) reported receipts of 263840565.88 and total disbursements of 228418327.17 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "value": {
+    "TTL_DISB": 22841832717,
+    "TTL_RECEIPTS": 26384056588
+   },
+   "excerpt": "NRCC (C00075820) reported receipts of 263840565.88 and total disbursements of 228418327.17 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "source_name": "Federal Election Commission",
+   "source_url": "https://www.fec.gov/data/committee/C00075820/?cycle=2026&tab=spending",
+   "check": {
+    "kind": "fec-committee-summary",
+    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+    "cycle": 2026,
+    "committee_id": "C00075820",
+    "fields": {
+     "TTL_RECEIPTS": 26384056588,
+     "TTL_DISB": 22841832717,
+     "CVG_END_DT": "2026-10-14"
+    },
+    "image_number": null,
+    "sub_id": null,
+    "filing_id": null
+   },
+   "retrieved_at": "2026-11-17T00:26:07+00:00",
+   "status": "unverified"
+  }
+ },
+ "children": [
+  {
+   "node": {
+    "id": "business:7e2733a2e8e25cef",
+    "kind": "business",
+    "official_id": null,
+    "name": "INSPERITY",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_2c6794126c23e1",
+     "text": "Payee INSPERITY as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "INSPERITY",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 52 itemized rows, memo code X excluded, sum 13662205.26, payee INSPERITY. Purpose code mixed or blank. Sample image 202601319810194130, sub_id 4021020261305786929.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319810194130",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 1366220526,
+      "transaction_count": 52,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319810194130",
+      "sample_sub_id": "4021020261305786929",
+      "sample_filing_id": "1943581",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:705e5a17685513b4",
+    "from": "committee:C00075820",
+    "to": "business:7e2733a2e8e25cef",
+    "kind": "spent",
+    "amount": "13662205.26",
+    "amount_cents": 1366220526,
+    "count": 52,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_17bbed9cb84510",
+     "text": "Spent from C00075820 to INSPERITY, sum 13662205.26, 52 itemized rows.",
+     "value": 1366220526,
+     "excerpt": "Filer C00075820, 2026 cycle: 52 itemized rows, memo code X excluded, sum 13662205.26, payee INSPERITY. Purpose code mixed or blank. Sample image 202601319810194130, sub_id 4021020261305786929.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319810194130",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 1366220526,
+      "transaction_count": 52,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319810194130",
+      "sample_sub_id": "4021020261305786929",
+      "sample_filing_id": "1943581",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:d89287dd94d92042",
+    "kind": "business",
+    "official_id": null,
+    "name": "TARGETED VICTORY",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_a327ca78576b31",
+     "text": "Payee TARGETED VICTORY as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "TARGETED VICTORY",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 39 itemized rows, memo code X excluded, sum 11848556.24, payee TARGETED VICTORY. Purpose code mixed or blank. Sample image 202503209754410058, sub_id 4032420251181227979.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202503209754410058",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 1184855624,
+      "transaction_count": 39,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202503209754410058",
+      "sample_sub_id": "4032420251181227979",
+      "sample_filing_id": "1882098",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:4ce0afbf8b6b2921",
+    "from": "committee:C00075820",
+    "to": "business:d89287dd94d92042",
+    "kind": "spent",
+    "amount": "11848556.24",
+    "amount_cents": 1184855624,
+    "count": 39,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_234b76c9d97eff",
+     "text": "Spent from C00075820 to TARGETED VICTORY, sum 11848556.24, 39 itemized rows.",
+     "value": 1184855624,
+     "excerpt": "Filer C00075820, 2026 cycle: 39 itemized rows, memo code X excluded, sum 11848556.24, payee TARGETED VICTORY. Purpose code mixed or blank. Sample image 202503209754410058, sub_id 4032420251181227979.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202503209754410058",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 1184855624,
+      "transaction_count": 39,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202503209754410058",
+      "sample_sub_id": "4032420251181227979",
+      "sample_filing_id": "1882098",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:58b9415cefb6a470",
+    "kind": "business",
+    "official_id": null,
+    "name": "FLEXPOINT CAMPAIGNS",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_933902ca8356e8",
+     "text": "Payee FLEXPOINT CAMPAIGNS as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "FLEXPOINT CAMPAIGNS",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 25 itemized rows, memo code X excluded, sum 11794024.00, payee FLEXPOINT CAMPAIGNS. Purpose code 24C. Sample image 202610209921329631, sub_id 4102620261615397205.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329631",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 1179402400,
+      "transaction_count": 25,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329631",
+      "sample_sub_id": "4102620261615397205",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:d97e21654215ee3e",
+    "from": "committee:C00075820",
+    "to": "business:58b9415cefb6a470",
+    "kind": "spent",
+    "amount": "11794024.00",
+    "amount_cents": 1179402400,
+    "count": 25,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_e834bc7f7e6b84",
+     "text": "Spent from C00075820 to FLEXPOINT CAMPAIGNS, sum 11794024.00, 25 itemized rows.",
+     "value": 1179402400,
+     "excerpt": "Filer C00075820, 2026 cycle: 25 itemized rows, memo code X excluded, sum 11794024.00, payee FLEXPOINT CAMPAIGNS. Purpose code 24C. Sample image 202610209921329631, sub_id 4102620261615397205.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329631",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 1179402400,
+      "transaction_count": 25,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329631",
+      "sample_sub_id": "4102620261615397205",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:0e56a71b8100c413",
+    "kind": "business",
+    "official_id": null,
+    "name": "ONMESSAGE INC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_a25b2cdb1ec51d",
+     "text": "Payee ONMESSAGE INC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "ONMESSAGE INC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 59 itemized rows, memo code X excluded, sum 9543211.93, payee ONMESSAGE INC. Purpose code mixed or blank. Sample image 202610209921329605, sub_id 4102620261615397128.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329605",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 954321193,
+      "transaction_count": 59,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610209921329605",
+      "sample_sub_id": "4102620261615397128",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:67288f2a633a6d7a",
+    "from": "committee:C00075820",
+    "to": "business:0e56a71b8100c413",
+    "kind": "spent",
+    "amount": "9543211.93",
+    "amount_cents": 954321193,
+    "count": 59,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_5a72a4f043931b",
+     "text": "Spent from C00075820 to ONMESSAGE INC, sum 9543211.93, 59 itemized rows.",
+     "value": 954321193,
+     "excerpt": "Filer C00075820, 2026 cycle: 59 itemized rows, memo code X excluded, sum 9543211.93, payee ONMESSAGE INC. Purpose code mixed or blank. Sample image 202610209921329605, sub_id 4102620261615397128.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329605",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 954321193,
+      "transaction_count": 59,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610209921329605",
+      "sample_sub_id": "4102620261615397128",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:019ac39a76991933",
+    "kind": "business",
+    "official_id": null,
+    "name": "GEN2 SOLUTIONS LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_af70c395228be9",
+     "text": "Payee GEN2 SOLUTIONS LLC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "GEN2 SOLUTIONS LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 19 itemized rows, memo code X excluded, sum 8069926.00, payee GEN2 SOLUTIONS LLC. Purpose code 24C. Sample image 202610209921329567, sub_id 4102620261615397013.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329567",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 806992600,
+      "transaction_count": 19,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329567",
+      "sample_sub_id": "4102620261615397013",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:9e6e325ec4707460",
+    "from": "committee:C00075820",
+    "to": "business:019ac39a76991933",
+    "kind": "spent",
+    "amount": "8069926.00",
+    "amount_cents": 806992600,
+    "count": 19,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_b710b52fcf1551",
+     "text": "Spent from C00075820 to GEN2 SOLUTIONS LLC, sum 8069926.00, 19 itemized rows.",
+     "value": 806992600,
+     "excerpt": "Filer C00075820, 2026 cycle: 19 itemized rows, memo code X excluded, sum 8069926.00, payee GEN2 SOLUTIONS LLC. Purpose code 24C. Sample image 202610209921329567, sub_id 4102620261615397013.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329567",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 806992600,
+      "transaction_count": 19,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329567",
+      "sample_sub_id": "4102620261615397013",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:905c971f58025afd",
+    "kind": "business",
+    "official_id": null,
+    "name": "STRATEGIC MEDIA PLACEMENT INC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_ef1dfbab6f518c",
+     "text": "Payee STRATEGIC MEDIA PLACEMENT INC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "STRATEGIC MEDIA PLACEMENT INC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 20 itemized rows, memo code X excluded, sum 7602317.00, payee STRATEGIC MEDIA PLACEMENT INC. Purpose code 24C. Sample image 202610209921329623, sub_id 4102620261615397182.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329623",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 760231700,
+      "transaction_count": 20,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329623",
+      "sample_sub_id": "4102620261615397182",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:080895802bb5f5f2",
+    "from": "committee:C00075820",
+    "to": "business:905c971f58025afd",
+    "kind": "spent",
+    "amount": "7602317.00",
+    "amount_cents": 760231700,
+    "count": 20,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_feb230ad1aaa83",
+     "text": "Spent from C00075820 to STRATEGIC MEDIA PLACEMENT INC, sum 7602317.00, 20 itemized rows.",
+     "value": 760231700,
+     "excerpt": "Filer C00075820, 2026 cycle: 20 itemized rows, memo code X excluded, sum 7602317.00, payee STRATEGIC MEDIA PLACEMENT INC. Purpose code 24C. Sample image 202610209921329623, sub_id 4102620261615397182.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329623",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 760231700,
+      "transaction_count": 20,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329623",
+      "sample_sub_id": "4102620261615397182",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:8c04d41c8ac99e11",
+    "kind": "business",
+    "official_id": null,
+    "name": "TEAM DIRECT",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_8d8f37b8e819f5",
+     "text": "Payee TEAM DIRECT as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "TEAM DIRECT",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 69 itemized rows, memo code X excluded, sum 7261303.35, payee TEAM DIRECT. Purpose code mixed or blank. Sample image 202606209870957836, sub_id 4062420261522632985.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870957836",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 726130335,
+      "transaction_count": 69,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202606209870957836",
+      "sample_sub_id": "4062420261522632985",
+      "sample_filing_id": "1986086",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:78b54fb7549d50ca",
+    "from": "committee:C00075820",
+    "to": "business:8c04d41c8ac99e11",
+    "kind": "spent",
+    "amount": "7261303.35",
+    "amount_cents": 726130335,
+    "count": 69,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_9b9ff7fbf50c51",
+     "text": "Spent from C00075820 to TEAM DIRECT, sum 7261303.35, 69 itemized rows.",
+     "value": 726130335,
+     "excerpt": "Filer C00075820, 2026 cycle: 69 itemized rows, memo code X excluded, sum 7261303.35, payee TEAM DIRECT. Purpose code mixed or blank. Sample image 202606209870957836, sub_id 4062420261522632985.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870957836",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 726130335,
+      "transaction_count": 69,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202606209870957836",
+      "sample_sub_id": "4062420261522632985",
+      "sample_filing_id": "1986086",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:9ed0ca7b85ca4603",
+    "kind": "business",
+    "official_id": null,
+    "name": "CHAIN BRIDGE BANK",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_3ecc2e1aadb972",
+     "text": "Payee CHAIN BRIDGE BANK as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "CHAIN BRIDGE BANK",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 9 itemized rows, memo code X excluded, sum 6123241.63, payee CHAIN BRIDGE BANK. Purpose code mixed or blank. Sample image 202505209761522971, sub_id 4052120251203691722.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202505209761522971",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 612324163,
+      "transaction_count": 9,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202505209761522971",
+      "sample_sub_id": "4052120251203691722",
+      "sample_filing_id": "1893573",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:6197c14147542da2",
+    "from": "committee:C00075820",
+    "to": "business:9ed0ca7b85ca4603",
+    "kind": "spent",
+    "amount": "6123241.63",
+    "amount_cents": 612324163,
+    "count": 9,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_305e5d1807a9c0",
+     "text": "Spent from C00075820 to CHAIN BRIDGE BANK, sum 6123241.63, 9 itemized rows.",
+     "value": 612324163,
+     "excerpt": "Filer C00075820, 2026 cycle: 9 itemized rows, memo code X excluded, sum 6123241.63, payee CHAIN BRIDGE BANK. Purpose code mixed or blank. Sample image 202505209761522971, sub_id 4052120251203691722.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202505209761522971",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 612324163,
+      "transaction_count": 9,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202505209761522971",
+      "sample_sub_id": "4052120251203691722",
+      "sample_filing_id": "1893573",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:ffaf69f25d178f21",
+    "kind": "business",
+    "official_id": null,
+    "name": "AMERICAN MEDIA & ADVOCACY GROUP",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_ec0a1fcd60661c",
+     "text": "Payee AMERICAN MEDIA & ADVOCACY GROUP as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "AMERICAN MEDIA & ADVOCACY GROUP",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 17 itemized rows, memo code X excluded, sum 5693658.00, payee AMERICAN MEDIA & ADVOCACY GROUP. Purpose code mixed or blank. Sample image 202610229944881894, sub_id 4110520261631516037.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610229944881894",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 569365800,
+      "transaction_count": 17,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610229944881894",
+      "sample_sub_id": "4110520261631516037",
+      "sample_filing_id": "2039287",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:40f725f387a5212d",
+    "from": "committee:C00075820",
+    "to": "business:ffaf69f25d178f21",
+    "kind": "spent",
+    "amount": "5693658.00",
+    "amount_cents": 569365800,
+    "count": 17,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_d43f568d803bad",
+     "text": "Spent from C00075820 to AMERICAN MEDIA & ADVOCACY GROUP, sum 5693658.00, 17 itemized rows.",
+     "value": 569365800,
+     "excerpt": "Filer C00075820, 2026 cycle: 17 itemized rows, memo code X excluded, sum 5693658.00, payee AMERICAN MEDIA & ADVOCACY GROUP. Purpose code mixed or blank. Sample image 202610229944881894, sub_id 4110520261631516037.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610229944881894",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 569365800,
+      "transaction_count": 17,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610229944881894",
+      "sample_sub_id": "4110520261631516037",
+      "sample_filing_id": "2039287",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:ab386939624d21ca",
+    "kind": "business",
+    "official_id": null,
+    "name": "AMERICAN EXPRESS",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_c2438ffa75d662",
+     "text": "Payee AMERICAN EXPRESS as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "AMERICAN EXPRESS",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 20 itemized rows, memo code X excluded, sum 5471955.96, payee AMERICAN EXPRESS. Purpose code mixed or blank. Sample image 202601319810194075, sub_id 4021020261305786764.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319810194075",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 547195596,
+      "transaction_count": 20,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319810194075",
+      "sample_sub_id": "4021020261305786764",
+      "sample_filing_id": "1943581",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:69d78a22115261d9",
+    "from": "committee:C00075820",
+    "to": "business:ab386939624d21ca",
+    "kind": "spent",
+    "amount": "5471955.96",
+    "amount_cents": 547195596,
+    "count": 20,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_4c7a51a6c78833",
+     "text": "Spent from C00075820 to AMERICAN EXPRESS, sum 5471955.96, 20 itemized rows.",
+     "value": 547195596,
+     "excerpt": "Filer C00075820, 2026 cycle: 20 itemized rows, memo code X excluded, sum 5471955.96, payee AMERICAN EXPRESS. Purpose code mixed or blank. Sample image 202601319810194075, sub_id 4021020261305786764.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319810194075",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 547195596,
+      "transaction_count": 20,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319810194075",
+      "sample_sub_id": "4021020261305786764",
+      "sample_filing_id": "1943581",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:ea22f4d9ccada1d8",
+    "kind": "business",
+    "official_id": null,
+    "name": "STRATEGIC MEDIA SERVICES INC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_da33d8d0da12aa",
+     "text": "Payee STRATEGIC MEDIA SERVICES INC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "STRATEGIC MEDIA SERVICES INC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 13 itemized rows, memo code X excluded, sum 4363382.00, payee STRATEGIC MEDIA SERVICES INC. Purpose code 24C. Sample image 202610229944881955, sub_id 4110520261631516219.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610229944881955",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 436338200,
+      "transaction_count": 13,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610229944881955",
+      "sample_sub_id": "4110520261631516219",
+      "sample_filing_id": "2039287",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:dcdeab7ffc36e5c3",
+    "from": "committee:C00075820",
+    "to": "business:ea22f4d9ccada1d8",
+    "kind": "spent",
+    "amount": "4363382.00",
+    "amount_cents": 436338200,
+    "count": 13,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_3bd32d78b14612",
+     "text": "Spent from C00075820 to STRATEGIC MEDIA SERVICES INC, sum 4363382.00, 13 itemized rows.",
+     "value": 436338200,
+     "excerpt": "Filer C00075820, 2026 cycle: 13 itemized rows, memo code X excluded, sum 4363382.00, payee STRATEGIC MEDIA SERVICES INC. Purpose code 24C. Sample image 202610229944881955, sub_id 4110520261631516219.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610229944881955",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 436338200,
+      "transaction_count": 13,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610229944881955",
+      "sample_sub_id": "4110520261631516219",
+      "sample_filing_id": "2039287",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:47de889ee84b66c2",
+    "kind": "business",
+    "official_id": null,
+    "name": "SRCP MEDIA INC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_128ea31da4dac8",
+     "text": "Payee SRCP MEDIA INC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "SRCP MEDIA INC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 15 itemized rows, memo code X excluded, sum 3817634.00, payee SRCP MEDIA INC. Purpose code 24C. Sample image 202610229944881952, sub_id 4110520261631516212.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610229944881952",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 381763400,
+      "transaction_count": 15,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610229944881952",
+      "sample_sub_id": "4110520261631516212",
+      "sample_filing_id": "2039287",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:a30261c53934ef74",
+    "from": "committee:C00075820",
+    "to": "business:47de889ee84b66c2",
+    "kind": "spent",
+    "amount": "3817634.00",
+    "amount_cents": 381763400,
+    "count": 15,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_e8d40a91684e11",
+     "text": "Spent from C00075820 to SRCP MEDIA INC, sum 3817634.00, 15 itemized rows.",
+     "value": 381763400,
+     "excerpt": "Filer C00075820, 2026 cycle: 15 itemized rows, memo code X excluded, sum 3817634.00, payee SRCP MEDIA INC. Purpose code 24C. Sample image 202610229944881952, sub_id 4110520261631516212.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610229944881952",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 381763400,
+      "transaction_count": 15,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610229944881952",
+      "sample_sub_id": "4110520261631516212",
+      "sample_filing_id": "2039287",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:07c2628c0c3cf5a8",
+    "kind": "business",
+    "official_id": null,
+    "name": "JONES DAY",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_7305afcd5f3bbb",
+     "text": "Payee JONES DAY as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "JONES DAY",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 16 itemized rows, memo code X excluded, sum 3157231.00, payee JONES DAY. Purpose code 42. Sample image 202601319810194345, sub_id 4021020261305787574.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319810194345",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 315723100,
+      "transaction_count": 16,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "42",
+      "sample_image_number": "202601319810194345",
+      "sample_sub_id": "4021020261305787574",
+      "sample_filing_id": "1943581",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:59f372b4685a1658",
+    "from": "committee:C00075820",
+    "to": "business:07c2628c0c3cf5a8",
+    "kind": "spent",
+    "amount": "3157231.00",
+    "amount_cents": 315723100,
+    "count": 16,
+    "purpose": "Recount Account disbursement",
+    "purpose_code": "42",
+    "source": {
+     "id": "c_1e0d07da4a8091",
+     "text": "Spent from C00075820 to JONES DAY, sum 3157231.00, 16 itemized rows.",
+     "value": 315723100,
+     "excerpt": "Filer C00075820, 2026 cycle: 16 itemized rows, memo code X excluded, sum 3157231.00, payee JONES DAY. Purpose code 42. Sample image 202601319810194345, sub_id 4021020261305787574.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319810194345",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 315723100,
+      "transaction_count": 16,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "42",
+      "sample_image_number": "202601319810194345",
+      "sample_sub_id": "4021020261305787574",
+      "sample_filing_id": "1943581",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:1e570c2d7533cdc4",
+    "kind": "business",
+    "official_id": null,
+    "name": "THE LUKENS COMPANY",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_dd0562407647d6",
+     "text": "Payee THE LUKENS COMPANY as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "THE LUKENS COMPANY",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 31 itemized rows, memo code X excluded, sum 3118840.04, payee THE LUKENS COMPANY. Purpose code mixed or blank. Sample image 202505209761522960, sub_id 4052120251203691691.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202505209761522960",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 311884004,
+      "transaction_count": 31,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202505209761522960",
+      "sample_sub_id": "4052120251203691691",
+      "sample_filing_id": "1893573",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:0546293089c64b20",
+    "from": "committee:C00075820",
+    "to": "business:1e570c2d7533cdc4",
+    "kind": "spent",
+    "amount": "3118840.04",
+    "amount_cents": 311884004,
+    "count": 31,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_c9e6c622aa342a",
+     "text": "Spent from C00075820 to THE LUKENS COMPANY, sum 3118840.04, 31 itemized rows.",
+     "value": 311884004,
+     "excerpt": "Filer C00075820, 2026 cycle: 31 itemized rows, memo code X excluded, sum 3118840.04, payee THE LUKENS COMPANY. Purpose code mixed or blank. Sample image 202505209761522960, sub_id 4052120251203691691.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202505209761522960",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 311884004,
+      "transaction_count": 31,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202505209761522960",
+      "sample_sub_id": "4052120251203691691",
+      "sample_filing_id": "1893573",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:8f0cbe44376faef0",
+    "kind": "business",
+    "official_id": null,
+    "name": "RIGHT RAIL LIST CO",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_7533adb1526d4f",
+     "text": "Payee RIGHT RAIL LIST CO as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "RIGHT RAIL LIST CO",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 26 itemized rows, memo code X excluded, sum 2832076.22, payee RIGHT RAIL LIST CO. Purpose code mixed or blank. Sample image 202605209870171509, sub_id 4060920261521026041.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202605209870171509",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 283207622,
+      "transaction_count": 26,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202605209870171509",
+      "sample_sub_id": "4060920261521026041",
+      "sample_filing_id": "1978110",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:27c4bb51e1f59352",
+    "from": "committee:C00075820",
+    "to": "business:8f0cbe44376faef0",
+    "kind": "spent",
+    "amount": "2832076.22",
+    "amount_cents": 283207622,
+    "count": 26,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_8a958b9df71977",
+     "text": "Spent from C00075820 to RIGHT RAIL LIST CO, sum 2832076.22, 26 itemized rows.",
+     "value": 283207622,
+     "excerpt": "Filer C00075820, 2026 cycle: 26 itemized rows, memo code X excluded, sum 2832076.22, payee RIGHT RAIL LIST CO. Purpose code mixed or blank. Sample image 202605209870171509, sub_id 4060920261521026041.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202605209870171509",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 283207622,
+      "transaction_count": 26,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202605209870171509",
+      "sample_sub_id": "4060920261521026041",
+      "sample_filing_id": "1978110",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:d050b461884b2919",
+    "kind": "business",
+    "official_id": null,
+    "name": "MENTZER MEDIA SERVICES INC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_def04e12508ed1",
+     "text": "Payee MENTZER MEDIA SERVICES INC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "MENTZER MEDIA SERVICES INC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 18 itemized rows, memo code X excluded, sum 2637213.00, payee MENTZER MEDIA SERVICES INC. Purpose code 24C. Sample image 202610209921329590, sub_id 4102620261615397082.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329590",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 263721300,
+      "transaction_count": 18,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329590",
+      "sample_sub_id": "4102620261615397082",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:f33560d47b6523a5",
+    "from": "committee:C00075820",
+    "to": "business:d050b461884b2919",
+    "kind": "spent",
+    "amount": "2637213.00",
+    "amount_cents": 263721300,
+    "count": 18,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_cc2e7bd9714b99",
+     "text": "Spent from C00075820 to MENTZER MEDIA SERVICES INC, sum 2637213.00, 18 itemized rows.",
+     "value": 263721300,
+     "excerpt": "Filer C00075820, 2026 cycle: 18 itemized rows, memo code X excluded, sum 2637213.00, payee MENTZER MEDIA SERVICES INC. Purpose code 24C. Sample image 202610209921329590, sub_id 4102620261615397082.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329590",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 263721300,
+      "transaction_count": 18,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329590",
+      "sample_sub_id": "4102620261615397082",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "named:party:dff37bc834ac8fa4",
+    "kind": "party",
+    "official_id": null,
+    "name": "REPUBLICAN NATIONAL COMMITTEE",
+    "terminal": false,
+    "terminal_label": null,
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_368f47e043591d",
+     "text": "Payee REPUBLICAN NATIONAL COMMITTEE as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "REPUBLICAN NATIONAL COMMITTEE",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 5 itemized rows, memo code X excluded, sum 2625330.12, payee REPUBLICAN NATIONAL COMMITTEE. Purpose code mixed or blank. Sample image 202606209870958090, sub_id 4062420261522633743.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870958090",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 262533012,
+      "transaction_count": 5,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202606209870958090",
+      "sample_sub_id": "4062420261522633743",
+      "sample_filing_id": "1986086",
+      "edge_kind": "reported disbursement"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:b8e8a5539a76f6aa",
+    "from": "committee:C00075820",
+    "to": "named:party:dff37bc834ac8fa4",
+    "kind": "reported disbursement",
+    "amount": "2625330.12",
+    "amount_cents": 262533012,
+    "count": 5,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_a97284287fb646",
+     "text": "Reported disbursement from C00075820 to REPUBLICAN NATIONAL COMMITTEE, sum 2625330.12, 5 itemized rows.",
+     "value": 262533012,
+     "excerpt": "Filer C00075820, 2026 cycle: 5 itemized rows, memo code X excluded, sum 2625330.12, payee REPUBLICAN NATIONAL COMMITTEE. Purpose code mixed or blank. Sample image 202606209870958090, sub_id 4062420261522633743.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870958090",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 262533012,
+      "transaction_count": 5,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202606209870958090",
+      "sample_sub_id": "4062420261522633743",
+      "sample_filing_id": "1986086",
+      "edge_kind": "reported disbursement"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:5f5e2192c94fe212",
+    "kind": "business",
+    "official_id": null,
+    "name": "WIN RED TECHNICAL SERVICES LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_8ac344e4327ecb",
+     "text": "Payee WIN RED TECHNICAL SERVICES LLC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "WIN RED TECHNICAL SERVICES LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 441 itemized rows, memo code X excluded, sum 2411809.14, payee WIN RED TECHNICAL SERVICES LLC. Purpose code mixed or blank. Sample image 202601319808923770, sub_id 4020120261304515426.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319808923770",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 241180914,
+      "transaction_count": 441,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319808923770",
+      "sample_sub_id": "4020120261304515426",
+      "sample_filing_id": "1943513",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:495d1e7cfd61f825",
+    "from": "committee:C00075820",
+    "to": "business:5f5e2192c94fe212",
+    "kind": "spent",
+    "amount": "2411809.14",
+    "amount_cents": 241180914,
+    "count": 441,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_bcffcbd5a4632d",
+     "text": "Spent from C00075820 to WIN RED TECHNICAL SERVICES LLC, sum 2411809.14, 441 itemized rows.",
+     "value": 241180914,
+     "excerpt": "Filer C00075820, 2026 cycle: 441 itemized rows, memo code X excluded, sum 2411809.14, payee WIN RED TECHNICAL SERVICES LLC. Purpose code mixed or blank. Sample image 202601319808923770, sub_id 4020120261304515426.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319808923770",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 241180914,
+      "transaction_count": 441,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319808923770",
+      "sample_sub_id": "4020120261304515426",
+      "sample_filing_id": "1943513",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:167513cdb96378e0",
+    "kind": "business",
+    "official_id": null,
+    "name": "MOORE LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_826eb6e6c07361",
+     "text": "Payee MOORE LLC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "MOORE LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 38 itemized rows, memo code X excluded, sum 2338948.76, payee MOORE LLC. Purpose code mixed or blank. Sample image 202608209903326987, sub_id 4082420261584663107.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202608209903326987",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 233894876,
+      "transaction_count": 38,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202608209903326987",
+      "sample_sub_id": "4082420261584663107",
+      "sample_filing_id": "2009081",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:fda80b87db687f40",
+    "from": "committee:C00075820",
+    "to": "business:167513cdb96378e0",
+    "kind": "spent",
+    "amount": "2338948.76",
+    "amount_cents": 233894876,
+    "count": 38,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_a1b4995e55783c",
+     "text": "Spent from C00075820 to MOORE LLC, sum 2338948.76, 38 itemized rows.",
+     "value": 233894876,
+     "excerpt": "Filer C00075820, 2026 cycle: 38 itemized rows, memo code X excluded, sum 2338948.76, payee MOORE LLC. Purpose code mixed or blank. Sample image 202608209903326987, sub_id 4082420261584663107.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202608209903326987",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 233894876,
+      "transaction_count": 38,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202608209903326987",
+      "sample_sub_id": "4082420261584663107",
+      "sample_filing_id": "2009081",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:cc5c128f2fcaf49e",
+    "kind": "business",
+    "official_id": null,
+    "name": "FLS CONNECT LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_357adce5de32d7",
+     "text": "Payee FLS CONNECT LLC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "FLS CONNECT LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 21 itemized rows, memo code X excluded, sum 2178523.39, payee FLS CONNECT LLC. Purpose code mixed or blank. Sample image 202605089866911579, sub_id 4051120261510015592.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202605089866911579",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 217852339,
+      "transaction_count": 21,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202605089866911579",
+      "sample_sub_id": "4051120261510015592",
+      "sample_filing_id": "1973601",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:0e386217a79aef34",
+    "from": "committee:C00075820",
+    "to": "business:cc5c128f2fcaf49e",
+    "kind": "spent",
+    "amount": "2178523.39",
+    "amount_cents": 217852339,
+    "count": 21,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_5bd87d7ac5c6d5",
+     "text": "Spent from C00075820 to FLS CONNECT LLC, sum 2178523.39, 21 itemized rows.",
+     "value": 217852339,
+     "excerpt": "Filer C00075820, 2026 cycle: 21 itemized rows, memo code X excluded, sum 2178523.39, payee FLS CONNECT LLC. Purpose code mixed or blank. Sample image 202605089866911579, sub_id 4051120261510015592.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202605089866911579",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 217852339,
+      "transaction_count": 21,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202605089866911579",
+      "sample_sub_id": "4051120261510015592",
+      "sample_filing_id": "1973601",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:746b37a0023ed130",
+    "kind": "business",
+    "official_id": null,
+    "name": "FRONTLINE STRATEGIES LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_f0ef6bc89c34ae",
+     "text": "Payee FRONTLINE STRATEGIES LLC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "FRONTLINE STRATEGIES LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 23 itemized rows, memo code X excluded, sum 2169250.26, payee FRONTLINE STRATEGIES LLC. Purpose code mixed or blank. Sample image 202601319808923746, sub_id 4020120261304515352.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319808923746",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 216925026,
+      "transaction_count": 23,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319808923746",
+      "sample_sub_id": "4020120261304515352",
+      "sample_filing_id": "1943513",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:a5d97f97ef73326f",
+    "from": "committee:C00075820",
+    "to": "business:746b37a0023ed130",
+    "kind": "spent",
+    "amount": "2169250.26",
+    "amount_cents": 216925026,
+    "count": 23,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_a12412bfd9aa7c",
+     "text": "Spent from C00075820 to FRONTLINE STRATEGIES LLC, sum 2169250.26, 23 itemized rows.",
+     "value": 216925026,
+     "excerpt": "Filer C00075820, 2026 cycle: 23 itemized rows, memo code X excluded, sum 2169250.26, payee FRONTLINE STRATEGIES LLC. Purpose code mixed or blank. Sample image 202601319808923746, sub_id 4020120261304515352.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202601319808923746",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 216925026,
+      "transaction_count": 23,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202601319808923746",
+      "sample_sub_id": "4020120261304515352",
+      "sample_filing_id": "1943513",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:7e3adb7c6ea1701a",
+    "kind": "business",
+    "official_id": null,
+    "name": "UNIVISION COMMUNICATIONS INC.",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_de4bf892793659",
+     "text": "Payee UNIVISION COMMUNICATIONS INC. as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "UNIVISION COMMUNICATIONS INC.",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 30 itemized rows, memo code X excluded, sum 1999989.66, payee UNIVISION COMMUNICATIONS INC.. Purpose code mixed or blank. Sample image 202610209921329157, sub_id 4102620261615402554.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329157",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 199998966,
+      "transaction_count": 30,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610209921329157",
+      "sample_sub_id": "4102620261615402554",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:6c58cc859f2b78a6",
+    "from": "committee:C00075820",
+    "to": "business:7e3adb7c6ea1701a",
+    "kind": "spent",
+    "amount": "1999989.66",
+    "amount_cents": 199998966,
+    "count": 30,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_374a388f719475",
+     "text": "Spent from C00075820 to UNIVISION COMMUNICATIONS INC., sum 1999989.66, 30 itemized rows.",
+     "value": 199998966,
+     "excerpt": "Filer C00075820, 2026 cycle: 30 itemized rows, memo code X excluded, sum 1999989.66, payee UNIVISION COMMUNICATIONS INC.. Purpose code mixed or blank. Sample image 202610209921329157, sub_id 4102620261615402554.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329157",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 199998966,
+      "transaction_count": 30,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202610209921329157",
+      "sample_sub_id": "4102620261615402554",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:7412ddde0ca9d23f",
+    "kind": "business",
+    "official_id": null,
+    "name": "BIG DOG STRATEGIES LLC",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_d6b92851687c2f",
+     "text": "Payee BIG DOG STRATEGIES LLC as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "BIG DOG STRATEGIES LLC",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 29 itemized rows, memo code X excluded, sum 1684845.00, payee BIG DOG STRATEGIES LLC. Purpose code 24C. Sample image 202610209921329641, sub_id 4102620261615397236.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329641",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 168484500,
+      "transaction_count": 29,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329641",
+      "sample_sub_id": "4102620261615397236",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:df449cd974ca8ea6",
+    "from": "committee:C00075820",
+    "to": "business:7412ddde0ca9d23f",
+    "kind": "spent",
+    "amount": "1684845.00",
+    "amount_cents": 168484500,
+    "count": 29,
+    "purpose": "Coordinated party expenditure",
+    "purpose_code": "24C",
+    "source": {
+     "id": "c_d787a44b0e97d0",
+     "text": "Spent from C00075820 to BIG DOG STRATEGIES LLC, sum 1684845.00, 29 itemized rows.",
+     "value": 168484500,
+     "excerpt": "Filer C00075820, 2026 cycle: 29 itemized rows, memo code X excluded, sum 1684845.00, payee BIG DOG STRATEGIES LLC. Purpose code 24C. Sample image 202610209921329641, sub_id 4102620261615397236.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202610209921329641",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 168484500,
+      "transaction_count": 29,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "24C",
+      "sample_image_number": "202610209921329641",
+      "sample_sub_id": "4102620261615397236",
+      "sample_filing_id": "2033415",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:712203f18bfb5e9b",
+    "kind": "business",
+    "official_id": null,
+    "name": "EVENT STRATEGIES",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_d17635e876c612",
+     "text": "Payee EVENT STRATEGIES as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "EVENT STRATEGIES",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 4 itemized rows, memo code X excluded, sum 1571215.60, payee EVENT STRATEGIES. Purpose code mixed or blank. Sample image 202604039856944821, sub_id 4040320261434997146.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202604039856944821",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 157121560,
+      "transaction_count": 4,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202604039856944821",
+      "sample_sub_id": "4040320261434997146",
+      "sample_filing_id": "1957513",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:9adb611cdd743cf9",
+    "from": "committee:C00075820",
+    "to": "business:712203f18bfb5e9b",
+    "kind": "spent",
+    "amount": "1571215.60",
+    "amount_cents": 157121560,
+    "count": 4,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_2b6643a5a271e7",
+     "text": "Spent from C00075820 to EVENT STRATEGIES, sum 1571215.60, 4 itemized rows.",
+     "value": 157121560,
+     "excerpt": "Filer C00075820, 2026 cycle: 4 itemized rows, memo code X excluded, sum 1571215.60, payee EVENT STRATEGIES. Purpose code mixed or blank. Sample image 202604039856944821, sub_id 4040320261434997146.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202604039856944821",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 157121560,
+      "transaction_count": 4,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/"
+      ],
+      "transaction_type_or_category": null,
+      "sample_image_number": "202604039856944821",
+      "sample_sub_id": "4040320261434997146",
+      "sample_filing_id": "1957513",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "business:8fe0bb1e2c9f7d9e",
+    "kind": "business",
+    "official_id": null,
+    "name": "NATIONAL REPUBLICAN REDISTRICTING TRUST",
+    "terminal": true,
+    "terminal_label": "Spent",
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_abfe279b2cb13b",
+     "text": "Payee NATIONAL REPUBLICAN REDISTRICTING TRUST as reported on itemized disbursements filed by C00075820.",
+     "value": {
+      "reported_name": "NATIONAL REPUBLICAN REDISTRICTING TRUST",
+      "official_id": null
+     },
+     "excerpt": "Filer C00075820, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1300000.00, payee NATIONAL REPUBLICAN REDISTRICTING TRUST. Purpose code 42. Sample image 202504209756299056, sub_id 4042820251187254313.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202504209756299056",
+     "check": {
+      "kind": "fec-itemized-payee",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 130000000,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "42",
+      "sample_image_number": "202504209756299056",
+      "sample_sub_id": "4042820251187254313",
+      "sample_filing_id": "1889655",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:d3b0278f67e73614",
+    "from": "committee:C00075820",
+    "to": "business:8fe0bb1e2c9f7d9e",
+    "kind": "spent",
+    "amount": "1300000.00",
+    "amount_cents": 130000000,
+    "count": 2,
+    "purpose": "Recount Account disbursement",
+    "purpose_code": "42",
+    "source": {
+     "id": "c_109dbe6f156389",
+     "text": "Spent from C00075820 to NATIONAL REPUBLICAN REDISTRICTING TRUST, sum 1300000.00, 2 itemized rows.",
+     "value": 130000000,
+     "excerpt": "Filer C00075820, 2026 cycle: 2 itemized rows, memo code X excluded, sum 1300000.00, payee NATIONAL REPUBLICAN REDISTRICTING TRUST. Purpose code 42. Sample image 202504209756299056, sub_id 4042820251187254313.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202504209756299056",
+     "check": {
+      "kind": "fec-itemized-disbursement",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "amount_cents": 130000000,
+      "transaction_count": 2,
+      "memo_code_x_excluded": true,
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "transaction_type_or_category": "42",
+      "sample_image_number": "202504209756299056",
+      "sample_sub_id": "4042820251187254313",
+      "sample_filing_id": "1889655",
+      "edge_kind": "spent"
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "residual:C00075820:individuals",
+    "kind": "residual",
+    "official_id": null,
+    "name": "reported assistance to individuals — not itemized",
+    "terminal": true,
+    "terminal_label": null,
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_8b83e4018bf13e",
+     "text": "reported assistance to individuals — not itemized for C00075820, sum 40165479.33.",
+     "value": 4016547933,
+     "excerpt": "Itemized rows for individual people filed by NRCC (C00075820), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 40165479.33 across 5794 rows.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+     "check": {
+      "kind": "fec-residual-bucket",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "bucket": "individuals",
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "memo_code_x_excluded": true,
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null,
+      "payee_names_stored": false,
+      "includes_entity_types": [
+       "IND",
+       "CAN"
+      ],
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 4016547933,
+      "transaction_count": 5794
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:dc501eb9e3adc112",
+    "from": "committee:C00075820",
+    "to": "residual:C00075820:individuals",
+    "kind": "reported disbursement",
+    "amount": "40165479.33",
+    "amount_cents": 4016547933,
+    "count": 5794,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_8b83e4018bf13e",
+     "text": "reported assistance to individuals — not itemized for C00075820, sum 40165479.33.",
+     "value": 4016547933,
+     "excerpt": "Itemized rows for individual people filed by NRCC (C00075820), including rows coded to another entity type when the payee name is a person or a benefit, payroll, reimbursement, or similar label tied to a person. The payee name is not stored. Memo code X is excluded. Sum 40165479.33 across 5794 rows.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+     "check": {
+      "kind": "fec-residual-bucket",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "bucket": "individuals",
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "memo_code_x_excluded": true,
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null,
+      "payee_names_stored": false,
+      "includes_entity_types": [
+       "IND",
+       "CAN"
+      ],
+      "also_includes": "person-like payee names filed under another entity type",
+      "amount_cents": 4016547933,
+      "transaction_count": 5794
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  },
+  {
+   "node": {
+    "id": "residual:C00075820:other",
+    "kind": "residual",
+    "official_id": null,
+    "name": "other reported disbursements",
+    "terminal": true,
+    "terminal_label": null,
+    "period": {
+     "cycle": 2026,
+     "coverage_end": null
+    },
+    "reported_in": null,
+    "reported_out": null,
+    "official_total_out": null,
+    "source": {
+     "id": "c_36fcdf098a82af",
+     "text": "other reported disbursements for C00075820, sum 62976160.28.",
+     "value": 6297616028,
+     "excerpt": "Remainder of reported disbursements for NRCC (C00075820) in the 2026 cycle: itemized payees below the top 25 (45274130.82), rows whose entity type was missing, unrecognized, or in conflict (165000.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (17537029.46). Sum 62976160.28. No payee names from the remainder are stored.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip",
+     "check": {
+      "kind": "fec-residual-bucket",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "bucket": "other",
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "memo_code_x_excluded": true,
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null,
+      "payee_names_stored": false,
+      "payees_below_top_cents": 4527413082,
+      "entity_type_unclear_cents": 16500000,
+      "entity_type_unclear_count": 4,
+      "not_in_itemized_files_cents": 1753702946,
+      "top_n": 25,
+      "amount_cents": 6297616028
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   },
+   "edge": {
+    "id": "edge:7e8a87e7d1dcf437",
+    "from": "committee:C00075820",
+    "to": "residual:C00075820:other",
+    "kind": "reported disbursement",
+    "amount": "62976160.28",
+    "amount_cents": 6297616028,
+    "count": 2587,
+    "purpose": null,
+    "purpose_code": null,
+    "source": {
+     "id": "c_36fcdf098a82af",
+     "text": "other reported disbursements for C00075820, sum 62976160.28.",
+     "value": 6297616028,
+     "excerpt": "Remainder of reported disbursements for NRCC (C00075820) in the 2026 cycle: itemized payees below the top 25 (45274130.82), rows whose entity type was missing, unrecognized, or in conflict (165000.00), and the difference between official total disbursements and itemized non-memo disbursements in the ingested files (17537029.46). Sum 62976160.28. No payee names from the remainder are stored.",
+     "source_name": "Federal Election Commission",
+     "source_url": "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip",
+     "check": {
+      "kind": "fec-residual-bucket",
+      "cycle": 2026,
+      "committee_id": "C00075820",
+      "bucket": "other",
+      "file_urls": [
+       "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip"
+      ],
+      "description_urls": [
+       "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+       "https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/",
+       "https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/"
+      ],
+      "memo_code_x_excluded": true,
+      "image_number": null,
+      "sub_id": null,
+      "filing_id": null,
+      "payee_names_stored": false,
+      "payees_below_top_cents": 4527413082,
+      "entity_type_unclear_cents": 16500000,
+      "entity_type_unclear_count": 4,
+      "not_in_itemized_files_cents": 1753702946,
+      "top_n": 25,
+      "amount_cents": 6297616028
+     },
+     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "status": "unverified"
+    }
+   }
+  }
+ ],
+ "reconciliation": {
+  "official_total_out": "228418327.17",
+  "official_total_out_cents": 22841832717,
+  "itemized_cents": 21088129771,
+  "individuals_cents": 4016547933,
+  "unclear_entity_cents": 16500000,
+  "below_top_cents": 4527413082,
+  "not_in_itemized_files_cents": 1753702946,
+  "other_bucket_cents": 6297616028,
+  "child_edge_cents": 22841832717,
+  "ok": true,
+  "tolerance_cents": 0
+ }
+}
