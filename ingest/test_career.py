@@ -114,6 +114,34 @@ def test_congress_script():
     check("a redirect is refused before the key header is forwarded", refused and hits["stolen"] == 0)
 
 
+def test_derived_outputs_are_compact_and_key_free():
+    print("derived")
+    root = Path(__file__).resolve().parents[1]
+    congress = json.loads((root / "data" / "career" / "congress.json").read_text())
+    blob = json.dumps(congress).lower()
+    check("congress derived file has no api key", "api_key=" not in blob and "data_gov_api_key" not in blob)
+    check("congress coverage begins with a year", isinstance(congress.get("earliest_year"), int))
+    check("congress citation is the public site", congress.get("source_url") == "https://www.congress.gov/")
+    member = congress["members"][0]
+    check("a member has terms, a count, and a public url", member["terms"] and isinstance(member["sponsored_count"], int) and member["url"].startswith("https://www.congress.gov/member/"))
+    bill = member["sponsored_bills"][0]
+    check("a sponsored bill has a public url and no title", bill["url"].startswith("https://www.congress.gov/bill/") and "title" not in bill)
+    check("the derived congress file stays under 20 MB", (root / "data" / "career" / "congress.json").stat().st_size < 20_000_000)
+    check("a member record keeps its retrieval date", isinstance(member.get("retrieved_at"), str) and member["retrieved_at"])
+    fec = json.loads((root / "data" / "career" / "fec.json").read_text())
+    check("fec derived coverage begins in 1980", fec.get("begins") == 1980 and fec["cycles"][0]["cycle"] == 1980)
+    check("fec derived output does not list an individual file", "itcont" not in json.dumps(fec) and "indiv" not in json.dumps(fec["cycles"]))
+    lda = json.loads((root / "data" / "career" / "lda.json").read_text())
+    lda_blob = json.dumps(lda).lower()
+    check("lda derived file has no api key", "api_key" not in lda_blob)
+    check("lda citation is the public filings api", lda.get("source_url") == "https://lda.gov/api/v1/filings/")
+    check("lda derived coverage begins in 1999", lda.get("begins") == 1999)
+    check(
+        "1999 mid-year or year-end reports are counted",
+        any(item.get("year") == 1999 and item.get("filing_type") in ("MM", "YY") and isinstance(item.get("count"), int) and item["count"] > 0 for item in lda["periods"]),
+    )
+
+
 def test_build_does_not_download():
     print("build")
     prebuild = json.loads(Path(__file__).resolve().parents[1].joinpath("package.json").read_text())["scripts"]["prebuild"]
@@ -123,6 +151,7 @@ def test_build_does_not_download():
 if __name__ == "__main__":
     test_fec_urls()
     test_congress_script()
+    test_derived_outputs_are_compact_and_key_free()
     test_build_does_not_download()
     if failures:
         print("FAILED", len(failures))

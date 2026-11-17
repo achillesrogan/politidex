@@ -178,7 +178,6 @@ def sponsored_of(pages):
                 "congress": congress,
                 "type": bill_type,
                 "number": str(number),
-                "title": item.get("title"),
                 "url": url,
             })
     return bills
@@ -209,7 +208,10 @@ def assemble(member_dir=RAW):
             continue
         members.append({
             "bioguide": row["bioguide"],
+            "url": "https://www.congress.gov/member/%s" % row["bioguide"],
+            "retrieved_at": row.get("retrieved_at"),
             "terms": row.get("terms") or [],
+            "sponsored_count": len(row.get("sponsored_bills") or []),
             "sponsored_bills": row.get("sponsored_bills") or [],
         })
         year = row.get("earliest_year")
@@ -218,9 +220,10 @@ def assemble(member_dir=RAW):
     return {
         "retrieved_at": now_iso(),
         "source_name": "Congress.gov",
-        "source_url": "https://api.congress.gov/v3/member/{bioguide}",
+        "source_url": "https://www.congress.gov/",
         "earliest_year": earliest,
         "committee_note": "The Congress.gov API has no member committee-assignment history. This file does not include committee assignments.",
+        "bill_lists": "Each sponsored bill keeps its congress, type, number, and public congress.gov URL. Titles are omitted so this derived file stays under 20 MB.",
         "members": members,
     }
 
@@ -258,6 +261,7 @@ def one_member(bioguide, key, limit, opener=urllib.request.urlopen, sleep=time.s
     return {
         "bioguide": bioguide,
         "complete": True,
+        "retrieved_at": now_iso(),
         "earliest_year": earliest,
         "terms": terms,
         "sponsored_bills": sponsored_of(pages),

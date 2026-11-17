@@ -1,0 +1,567 @@
+{
+ "retrieved_at": "2026-11-17T21:06:28+00:00",
+ "source_name": "Federal Election Commission",
+ "source_url": "https://www.fec.gov/files/bulk-downloads/",
+ "begins": 1980,
+ "cycle": "1979-80",
+ "files": [
+  "cm",
+  "webk",
+  "pas2"
+ ],
+ "excludes": "individual contribution files",
+ "cycles": [
+  {
+   "cycle": 1980,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1980/cm80.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 359492,
+     "rows": 7884
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1980/webk80.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 101959,
+     "rows": 4217
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1980/pas280.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 3935442,
+     "rows": 132147
+    }
+   }
+  },
+  {
+   "cycle": 1982,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1982/cm82.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 383479,
+     "rows": 8291
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1982/webk82.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 114271,
+     "rows": 4620
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1982/pas282.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 5078054,
+     "rows": 167410
+    }
+   }
+  },
+  {
+   "cycle": 1984,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1984/cm84.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 393423,
+     "rows": 8465
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1984/webk84.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 179911,
+     "rows": 5447
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1984/pas284.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 5967971,
+     "rows": 198674
+    }
+   }
+  },
+  {
+   "cycle": 1986,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1986/cm86.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 399304,
+     "rows": 8518
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1986/webk86.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 168509,
+     "rows": 5479
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1986/pas286.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 4582818,
+     "rows": 213355
+    }
+   }
+  },
+  {
+   "cycle": 1988,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1988/cm88.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 431553,
+     "rows": 9218
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1988/webk88.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 208991,
+     "rows": 5816
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1988/pas288.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 4717525,
+     "rows": 214008
+    }
+   }
+  },
+  {
+   "cycle": 1990,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1990/cm90.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 431588,
+     "rows": 9134
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1990/webk90.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 200134,
+     "rows": 5545
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1990/pas290.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 4458886,
+     "rows": 199434
+    }
+   }
+  },
+  {
+   "cycle": 1992,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1992/cm92.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 502548,
+     "rows": 10759
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1992/webk92.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 212867,
+     "rows": 5859
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1992/pas292.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 5002001,
+     "rows": 228783
+    }
+   }
+  },
+  {
+   "cycle": 1994,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1994/cm94.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 505698,
+     "rows": 10815
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1994/webk94.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 204682,
+     "rows": 5651
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1994/pas294.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 6937647,
+     "rows": 227032
+    }
+   }
+  },
+  {
+   "cycle": 1996,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1996/cm96.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 517003,
+     "rows": 11075
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1996/webk96.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 209667,
+     "rows": 5744
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1996/pas296.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 5432149,
+     "rows": 250679
+    }
+   }
+  },
+  {
+   "cycle": 1998,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1998/cm98.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 466569,
+     "rows": 9976
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1998/webk98.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 208822,
+     "rows": 5740
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/1998/pas298.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 7057744,
+     "rows": 229613
+    }
+   }
+  },
+  {
+   "cycle": 2000,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2000/cm00.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 448764,
+     "rows": 9577
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2000/webk00.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 213510,
+     "rows": 5709
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2000/pas200.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 7810034,
+     "rows": 247340
+    }
+   }
+  },
+  {
+   "cycle": 2002,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2002/cm02.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 445668,
+     "rows": 9103
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2002/webk02.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 229524,
+     "rows": 5715
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2002/pas202.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 8277293,
+     "rows": 237106
+    }
+   }
+  },
+  {
+   "cycle": 2004,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2004/cm04.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 465679,
+     "rows": 9322
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2004/webk04.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 252637,
+     "rows": 6082
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2004/pas204.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 8093031,
+     "rows": 245668
+    }
+   }
+  },
+  {
+   "cycle": 2006,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2006/cm06.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 469614,
+     "rows": 9282
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2006/webk06.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 261750,
+     "rows": 6104
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2006/pas206.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 9107274,
+     "rows": 266703
+    }
+   }
+  },
+  {
+   "cycle": 2008,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2008/cm08.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 504959,
+     "rows": 10017
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2008/webk08.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 276328,
+     "rows": 6560
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2008/pas208.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 10318415,
+     "rows": 305735
+    }
+   }
+  },
+  {
+   "cycle": 2010,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2010/cm10.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 512207,
+     "rows": 11138
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2010/webk10.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 290597,
+     "rows": 6878
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2010/pas210.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 10947926,
+     "rows": 325095
+    }
+   }
+  },
+  {
+   "cycle": 2012,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2012/cm12.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 608802,
+     "rows": 14455
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2012/webk12.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 343620,
+     "rows": 9641
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2012/pas212.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 12328281,
+     "rows": 395069
+    }
+   }
+  },
+  {
+   "cycle": 2014,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2014/cm14.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 624425,
+     "rows": 14905
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2014/webk14.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 350878,
+     "rows": 10024
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2014/pas214.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 11947422,
+     "rows": 350272
+    }
+   }
+  },
+  {
+   "cycle": 2016,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2016/cm16.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 732154,
+     "rows": 17651
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2016/webk16.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 397557,
+     "rows": 12049
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2016/pas216.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 15450184,
+     "rows": 516385
+    }
+   }
+  },
+  {
+   "cycle": 2018,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2018/cm18.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 809262,
+     "rows": 19022
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2018/webk18.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 422588,
+     "rows": 12403
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2018/pas218.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 12556308,
+     "rows": 349820
+    }
+   }
+  },
+  {
+   "cycle": 2020,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2020/cm20.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 782585,
+     "rows": 18286
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2020/webk20.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 431820,
+     "rows": 11539
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2020/pas220.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 28978598,
+     "rows": 887829
+    }
+   }
+  },
+  {
+   "cycle": 2022,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2022/cm22.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 838217,
+     "rows": 19792
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2022/webk22.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 445865,
+     "rows": 12075
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2022/pas222.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 25535421,
+     "rows": 749218
+    }
+   }
+  },
+  {
+   "cycle": 2024,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2024/cm24.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 883375,
+     "rows": 20937
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2024/webk24.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 469666,
+     "rows": 12379
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2024/pas224.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 24509782,
+     "rows": 703181
+    }
+   }
+  },
+  {
+   "cycle": 2026,
+   "files": {
+    "cm": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
+     "bytes": 881709,
+     "rows": 21081
+    },
+    "webk": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+     "bytes": 489304,
+     "rows": 13013
+    },
+    "pas2": {
+     "url": "https://www.fec.gov/files/bulk-downloads/2026/pas226.zip",
+     "description_url": "https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/",
+     "bytes": 9510971,
+     "rows": 250751
+    }
+   }
+  }
+ ]
+}

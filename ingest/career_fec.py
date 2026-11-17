@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import BUILD, RAW, UA, now_iso, write_json
+from common import BUILD, RAW, ROOT, UA, now_iso, write_json
 
 CYCLES = tuple(range(1980, 2028, 2))
 KINDS = ("cm", "webk", "pas2")
@@ -120,6 +120,48 @@ def fetch(cycles=None):
         "downloaded": saved,
     })
     print("fec career files", len(saved), flush=True)
+    write_derived(saved)
+
+
+def _zip_rows(path):
+    import zipfile
+    if not path.exists():
+        return None
+    with zipfile.ZipFile(path) as archive:
+        names = [name for name in archive.namelist() if not name.endswith("/")]
+        if not names:
+            return 0
+        count = 0
+        with archive.open(names[0]) as handle:
+            for _line in handle:
+                count += 1
+        return count
+
+
+def write_derived(saved):
+    """Counts only. The zip files stay in data/raw and are not committed."""
+    cycles = {}
+    for item in saved:
+        row = cycles.setdefault(item["cycle"], {"cycle": item["cycle"], "files": {}})
+        dest = RAW / "career-fec" / Path(item["url"]).name
+        row["files"][item["kind"]] = {
+            "url": item["url"],
+            "description_url": DESC[item["kind"]],
+            "bytes": item["bytes"],
+            "rows": _zip_rows(dest),
+        }
+    derived = {
+        "retrieved_at": now_iso(),
+        "source_name": "Federal Election Commission",
+        "source_url": "https://www.fec.gov/files/bulk-downloads/",
+        "begins": 1980,
+        "cycle": "1979-80",
+        "files": ["cm", "webk", "pas2"],
+        "excludes": "individual contribution files",
+        "cycles": [cycles[year] for year in sorted(cycles)],
+    }
+    write_json(ROOT / "data" / "career" / "fec.json", derived)
+    print("wrote data/career/fec.json", flush=True)
 
 
 if __name__ == "__main__":

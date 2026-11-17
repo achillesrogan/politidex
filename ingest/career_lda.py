@@ -1,10 +1,14 @@
 """Offline Lobbying Disclosure Act filings from 1999 forward.
 
 Uses the public Senate LDA API at https://lda.gov/api/v1/filings/.
-This script is not part of npm run build. It is resumable: a finished
-year and filing type is skipped, and a failed page is retried on the next run.
+This script is not part of npm run build.
 
   python3 ingest/career_lda.py
+
+writes data/career/lda.json: filing counts, public URLs, and retrieval dates.
+Pass --crawl to resume the raw jsonl download under data/raw. That dump is
+not committed. A finished year and filing type is skipped, and a failed page
+is retried on the next run.
 """
 from __future__ import annotations
 
@@ -14,12 +18,21 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import RAW, now_iso, read_json, write_json
+from common import RAW, ROOT, now_iso, read_json, write_json
 from connections_lda import FILING_TYPES, compact, fetch_page
 
 YEARS = tuple(range(1999, 2027))
+# Quarterly codes start in 2008. Earlier lobbying reports use mid-year and year-end codes.
+# No-activity codes stay out, matching FILING_TYPES.
+HISTORICAL_TYPES = ("MM", "MT", "MA", "YY", "YT", "YA")
+COUNT_TYPES = tuple(FILING_TYPES) + HISTORICAL_TYPES
 RAWDIR = RAW / "lda-career"
 PROGRESS = RAWDIR / "progress.json"
+TYPES_NOTE = (
+    "Counts cover activity-bearing quarterly reports, terminations, and amendments, "
+    "plus the earlier mid-year and year-end reports (MM, MT, MA, YY, YT, YA). "
+    "No-activity filings are omitted."
+)
 
 
 def period_key(year, filing_type):
@@ -76,6 +89,49 @@ def crawl_period(year, filing_type, progress):
         time.sleep(0.05)
 
 
+def count_periods(types):
+    """One page per year and filing type. Only the count is kept."""
+    periods = []
+    for year in YEARS:
+        for filing_type in types:
+            status, data = fetch_page(year, filing_type, 1)
+            count = data.get("count") if data else None
+            periods.append({
+                "year": year,
+                "filing_type": filing_type,
+                "count": count,
+                "source_url": "https://lda.gov/api/v1/filings/?filing_year=%s&filing_type=%s" % (year, filing_type),
+                "retrieved_at": now_iso(),
+                "http_status": status,
+            })
+            print("lda count", year, filing_type, count, flush=True)
+            time.sleep(0.05)
+    return periods
+
+
+def write_derived(periods):
+    known = [item["count"] for item in periods if isinstance(item["count"], int) and item["count"] > 0]
+    begins = min((item["year"] for item in periods if isinstance(item.get("count"), int) and item["count"] > 0), default=1999)
+    derived = {
+        "retrieved_at": now_iso(),
+        "source_name": "Senate Office of Public Records",
+        "source_url": "https://lda.gov/api/v1/filings/",
+        "begins": begins,
+        "filing_count": sum(known),
+        "types_note": TYPES_NOTE,
+        "periods": periods,
+    }
+    path = ROOT / "data" / "career" / "lda.json"
+    write_json(path, derived)
+    print("wrote data/career/lda.json", len(periods), "periods", flush=True)
+    return derived
+
+
+def summarize_counts():
+    """Compact counts for every career year. Filing text stays in the raw crawl."""
+    write_derived(count_periods(COUNT_TYPES))
+
+
 def crawl():
     progress = load_progress()
     for year in YEARS:
@@ -86,4 +142,6 @@ def crawl():
 
 
 if __name__ == "__main__":
-    crawl()
+    summarize_counts()
+    if "--crawl" in sys.argv:
+        crawl()
