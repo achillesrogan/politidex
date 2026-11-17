@@ -5,9 +5,11 @@ This module is the separate, owner-approved donor index.
 
 A person is published only when itemized rows that substantively match
 aggregate to at least $10,000.00. Name alone never links two rows. A match
-needs the same last name, first name, and full middle-name field, plus the
-same city, state, employer, and occupation, all non-empty. Anything short of
-that is listed for review and is not published.
+needs the same last name, first name, middle name, suffix, city, and state.
+People who share a middle name and city still need at least one non-generic
+employer or occupation. Without a middle name, both work fields must agree
+and be non-generic. Anything short of that is listed for review and is not
+published. A single weak cluster at or above $10,000.00 is on the review list.
 
 Published records show name, city, and state. Street and ZIP are not stored.
 There is no bulk export and no contact field.
@@ -42,10 +44,11 @@ _GENERIC_WORK = frozenset({
     "INFORMATION REQUESTED", "INFORMATION REQUESTED PER BEST EFFORTS",
     "N/A", "NA", "N A", "UNEMPLOYED", "REQUESTED", "BEST EFFORTS",
 })
-# 22Y/22Z are refunds. 24T forwards an earmark already counted as 15E.
-# 10 and 11 are joint-fundraising memo types that repeat a contribution.
-_REFUND_TYPES = frozenset({"22Y", "22Z"})
-_SKIP_TYPES = frozenset({"24T", "10", "11"})
+# 22Y/22Z and 40Y/41Y/42Y are refunds and subtract. 24T forwards an earmark.
+# In the individual file the conduit earmark is 15I or 15T; the recipient row is 15E.
+# 10 and 11 are counted. Joint-fundraising memo codes are skipped by their full type.
+_REFUND_TYPES = frozenset({"22Y", "22Z", "40Y", "41Y", "42Y"})
+_SKIP_TYPES = frozenset({"24T", "15I", "15T", "10J", "11J", "15J", "18J", "19J", "30J", "31J", "32J"})
 _HIDDEN = frozenset({
     "zip", "zip_code", "street", "street_1", "street_2", "address",
     "phone", "email", "employer_address",
@@ -148,7 +151,10 @@ def _identity(row):
     employer, occupation = _work(row.get("employer")), _work(row.get("occupation"))
     if not all((name["last"], name["first"], city, state)):
         return None
-    # A generic employer or occupation is blank. Without a middle name that is not a link.
+    # Generic work is blank. Merging still needs one real employer or occupation.
+    if not employer and not occupation:
+        return None
+    # Without a middle name, both work fields have to be present.
     if not name["middle"] and (not employer or not occupation):
         return None
     return (name["last"], name["first"], name["middle"], name.get("suffix") or "", city, state, employer, occupation)
@@ -194,15 +200,19 @@ def _filing_rank(row):
 
 
 def _latest_rows(rows):
-    """One row per (committee, transaction id): the latest filing."""
+    """One row per committee transaction id, or per sub_id when tran_id is blank."""
     chosen = {}
     loose = []
     for row in rows:
         tran = row.get("tran_id") or ""
-        if not tran:
+        sub = row.get("sub_id") or ""
+        if tran:
+            key = (row.get("committee_id"), "tran", tran)
+        elif sub:
+            key = (row.get("committee_id"), "sub", sub)
+        else:
             loose.append(row)
             continue
-        key = (row.get("committee_id"), tran)
         prev = chosen.get(key)
         if prev is None or _filing_rank(row) >= _filing_rank(prev):
             chosen[key] = row
@@ -262,11 +272,18 @@ def build_index(rows, retrieved_at):
     for (last, first), clusters in sorted(by_bare.items()):
         strong = [(ident, members) for ident, members in clusters if ident is not None]
         high = [(ident, members) for ident, members in clusters if _cluster_total(ident, members) >= THRESHOLD_CENTS]
-        if len(high) > 1:
+        weak_high = [pair for pair in high if pair[0] is None]
+        if len(high) > 1 or weak_high:
+            shown = high if len(high) > 1 else weak_high
+            reason = (
+                "Same first and last name were not linked. Middle name, city, state, employer, or occupation did not all agree."
+                if len(high) > 1
+                else "Reported fields are not enough to publish this cluster."
+            )
             unlinked.append({
                 "name": "%s, %s" % (last, first),
-                "reason": "Same first and last name were not linked. Middle name, city, state, employer, or occupation did not all agree.",
-                "clusters": _cluster_summaries(high),
+                "reason": reason,
+                "clusters": _cluster_summaries(shown),
             })
         for ident, members in strong:
             total = _cluster_total(ident, members)
@@ -310,8 +327,10 @@ def _cluster_summaries(clusters):
     for ident, members in clusters:
         if ident is None:
             row, reason = members[0]
+            parsed = parse_person_name(row.get("name")) or {}
             out.append({
-                "middle": parse_person_name(row.get("name")).get("middle"),
+                "middle": parsed.get("middle"),
+                "suffix": parsed.get("suffix") or "",
                 "city": row.get("city"),
                 "state": row.get("state"),
                 "employer": row.get("employer"),
@@ -322,10 +341,11 @@ def _cluster_summaries(clusters):
             continue
         out.append({
             "middle": ident[2],
-            "city": ident[3],
-            "state": ident[4],
-            "employer": ident[5],
-            "occupation": ident[6],
+            "suffix": ident[3],
+            "city": ident[4],
+            "state": ident[5],
+            "employer": ident[6],
+            "occupation": ident[7],
             "rows": len(members),
             "amount": cents_to_decimal(_cluster_total(ident, members)),
         })

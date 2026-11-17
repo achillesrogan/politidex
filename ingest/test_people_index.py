@@ -61,8 +61,21 @@ def test_threshold_and_aggregation():
         row("DOE, JANE QUINN", 600_000, sub_id="2", txn_type="24T"),
     ], "2026-11-17T02:30:00+00:00")
     check("an earmark is not also counted as the conduit forwarding", earmark["published"] == [])
-    jfc = P.build_index([row("DOE, JANE QUINN", 1_000_000, txn_type="10")], "2026-11-17T02:30:00+00:00")
-    check("a joint-fundraising memo type is not a second gift", jfc["published"] == [])
+    conduit = P.build_index([
+        row("DOE, JANE QUINN", 1_000_000, txn_type="15E"),
+        row("DOE, JANE QUINN", 1_000_000, sub_id="2", txn_type="15T"),
+        row("DOE, JANE QUINN", 1_000_000, sub_id="3", txn_type="15I"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("15E is kept and 15I/15T are not added again", len(conduit["published"]) == 1 and conduit["published"][0]["amount"] == "10000.00")
+    counted = P.build_index([row("DOE, JANE QUINN", 1_000_000, txn_type="10")], "2026-11-17T02:30:00+00:00")
+    check("transaction type 10 is counted", len(counted["published"]) == 1 and counted["published"][0]["amount"] == "10000.00")
+    memo = P.build_index([row("DOE, JANE QUINN", 1_000_000, txn_type="10J")], "2026-11-17T02:30:00+00:00")
+    check("joint-fundraising memo type 10J is not a second gift", memo["published"] == [])
+    national = P.build_index([
+        row("DOE, JANE QUINN", 1_200_000),
+        row("DOE, JANE QUINN", 400_000, sub_id="2", txn_type="40Y"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a 40Y refund is subtracted", national["published"] == [])
 
 
 def test_same_name_is_not_linked():
@@ -98,6 +111,26 @@ def test_same_name_is_not_linked():
         row("DOE, JANE QUINN", 100, sub_id="2"),
     ], "2026-11-17T02:30:00+00:00")
     check("clusters under 10000 are not in the review list", small["unlinked"] == [])
+    split = P.build_index([
+        row("DOE, JANE QUINN JR", 1_200_000, city="SPRINGFIELD", state="IL", employer="EXAMPLE SCHOOL", occupation="TEACHER"),
+        row("DOE, JANE MARIE", 1_200_000, sub_id="2", city="CHICAGO", state="IL", employer="OTHER SCHOOL", occupation="NURSE"),
+    ], "2026-11-17T02:30:00+00:00")
+    review = next(item for item in split["unlinked"] if item["name"] == "DOE, JANE")
+    by_city = {cluster["city"]: cluster for cluster in review["clusters"]}
+    check("review city is the city field", by_city["SPRINGFIELD"]["city"] == "SPRINGFIELD" and by_city["CHICAGO"]["state"] == "IL")
+    check("review suffix middle employer and occupation use the identity fields",
+          by_city["SPRINGFIELD"]["suffix"] == "JR" and by_city["SPRINGFIELD"]["middle"] == "QUINN"
+          and by_city["SPRINGFIELD"]["employer"] == "EXAMPLE SCHOOL" and by_city["SPRINGFIELD"]["occupation"] == "TEACHER"
+          and by_city["CHICAGO"]["employer"] == "OTHER SCHOOL" and by_city["CHICAGO"]["occupation"] == "NURSE")
+    generic = P.build_index([
+        row("DOE, JANE QUINN", 600_000, employer="RETIRED", occupation="RETIRED"),
+        row("DOE, JANE QUINN", 600_000, sub_id="2", employer="NONE", occupation="N/A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("a shared middle name and city do not merge without a real work field", generic["published"] == [])
+    alone = P.build_index([
+        row("DOE, JANE QUINN", 1_200_000, employer="RETIRED", occupation="N/A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("one weak cluster at 10000 is on the review list", alone["published"] == [] and len(alone["unlinked"]) == 1 and alone["unlinked"][0]["clusters"][0]["city"] == "SPRINGFIELD")
 
 
 def test_address_and_memo_and_duplicates():
@@ -119,6 +152,11 @@ def test_address_and_memo_and_duplicates():
         row("DOE, JANE QUINN", 1_000_000, tran_id="SA1", sub_id="9", file_num="2", amend="A"),
     ], "2026-11-17T02:30:00+00:00")
     check("the later filing replaces the earlier one", len(dup["published"]) == 1 and dup["published"][0]["amount"] == "10000.00")
+    bare = P.build_index([
+        row("DOE, JANE QUINN", 600_000, tran_id="", sub_id="77", file_num="1", amend="N"),
+        row("DOE, JANE QUINN", 1_000_000, tran_id="", sub_id="77", file_num="2", amend="A"),
+    ], "2026-11-17T02:30:00+00:00")
+    check("rows without a transaction id dedupe on sub_id", len(bare["published"]) == 1 and bare["published"][0]["amount"] == "10000.00")
     check("the notice is on the result", P.NOTICE in built["notice"] and "30111" in built["notice"])
 
 
