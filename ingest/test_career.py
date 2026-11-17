@@ -1,6 +1,9 @@
 """Career ingest stays offline. No network and no API key."""
 import json
 import sys
+import threading
+import urllib.request
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -77,6 +80,38 @@ def test_congress_script():
     check("the member term year is kept", data["member"]["terms"][0]["startYear"] == 1975)
     text = Path(C.__file__).read_text()
     check("the script does not fall back to a demo key", "DEMO_KEY" not in text and "api_key(" not in text)
+    hits = {"stolen": 0}
+
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path == "/stolen":
+                hits["stolen"] += 1
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b"stolen")
+                return
+            self.send_response(302)
+            self.send_header("Location", "/stolen")
+            self.end_headers()
+
+        def log_message(self, *_args):
+            return
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    port = server.server_address[1]
+    refused = False
+    try:
+        C.no_redirect_opener().open(
+            urllib.request.Request("http://127.0.0.1:%d/start" % port, headers={"X-Api-Key": "secret-value"}),
+            timeout=5,
+        )
+    except SystemExit as exc:
+        refused = "not forwarded" in str(exc)
+    finally:
+        server.shutdown()
+    check("a redirect is refused before the key header is forwarded", refused and hits["stolen"] == 0)
 
 
 def test_build_does_not_download():

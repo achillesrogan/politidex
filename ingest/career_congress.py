@@ -95,7 +95,18 @@ def request_url(path):
     return BASE + path
 
 
-def fetch_json(path, key, opener=urllib.request.urlopen):
+class RefuseRedirect(urllib.request.HTTPRedirectHandler):
+    """A redirect must not be followed. The X-Api-Key header would be copied onto it."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise SystemExit("refusing an HTTP redirect so the API key is not forwarded")
+
+
+def no_redirect_opener():
+    return urllib.request.build_opener(RefuseRedirect())
+
+
+def fetch_json(path, key, opener=None):
     url = request_url(path)
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
@@ -104,8 +115,9 @@ def fetch_json(path, key, opener=urllib.request.urlopen):
     })
     if any(name.lower() == "api_key" for name, _value in req.header_items()):
         raise SystemExit("refusing to send the key as a header other than X-Api-Key")
+    open_fn = opener if opener is not None else no_redirect_opener().open
     try:
-        with opener(req, timeout=40) as response:
+        with open_fn(req, timeout=40) as response:
             body = response.read()
     except urllib.error.HTTPError as exc:
         print("HTTP %s %s" % (exc.code, path.split("?", 1)[0]), flush=True)
