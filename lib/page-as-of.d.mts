@@ -1,5 +1,7 @@
 export function newestRetrieved(values?: Array<string | null | undefined>): string | null;
-export const MONEY_FLOW_DATA_START: string;
+export const RETRIEVAL_FLOOR: string;
+export const MONEY_FLOW_CYCLES: readonly number[];
+export function retrievalFloorMs(cycle?: number | string | null): number;
 export const MONEY_FLOW_SKEW_MS: number;
 export function moneyFlowTimestamp(value: string | null | undefined, now?: number): number | null;
 export function newestMoneyFlow(values?: Array<string | null | undefined>, now?: number): string | null;
