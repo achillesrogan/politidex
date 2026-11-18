@@ -25,35 +25,6 @@
   "org_type_label": null,
   "connected_organization": "DEFEND OUR MAJORITY",
   "state": "DC",
-  "source": {
-   "id": "c_9c8f99dc564240",
-   "text": "REPUBLICAN NATIONAL COMMITTEE (C00003418) reported receipts of 341469766.66 and total disbursements of 303338969.71 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
-   "value": {
-    "TTL_DISB": 30333896971,
-    "TTL_RECEIPTS": 34146976666
-   },
-   "excerpt": "REPUBLICAN NATIONAL COMMITTEE (C00003418) reported receipts of 341469766.66 and total disbursements of 303338969.71 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
-   "source_name": "Federal Election Commission",
-   "source_url": "https://www.fec.gov/data/committee/C00003418/?cycle=2026&tab=spending",
-   "check": {
-    "kind": "fec-committee-summary",
-    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
-    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
-    "cycle": 2026,
-    "committee_id": "C00003418",
-    "fields": {
-     "TTL_RECEIPTS": 34146976666,
-     "TTL_DISB": 30333896971,
-     "CVG_END_DT": "2026-10-14"
-    },
-    "image_number": null,
-    "sub_id": null,
-    "filing_id": null
-   },
-   "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "verified",
-   "verified_at": "2026-11-17T20:34:45Z"
-  },
   "profile": {
    "committee_id": "C00003418",
    "committee_type": "Y",
@@ -83,10 +54,39 @@
      "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
      "committee_id": "C00003418"
     },
-    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "retrieved_at": "2026-11-18T02:02:35+00:00",
     "status": "verified",
-    "verified_at": "2026-11-17T20:34:45Z"
+    "verified_at": "2026-11-18T02:08:05Z"
    }
+  },
+  "source": {
+   "id": "c_9c8f99dc564240",
+   "text": "REPUBLICAN NATIONAL COMMITTEE (C00003418) reported receipts of 341469766.66 and total disbursements of 303338969.71 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "value": {
+    "TTL_DISB": 30333896971,
+    "TTL_RECEIPTS": 34146976666
+   },
+   "excerpt": "REPUBLICAN NATIONAL COMMITTEE (C00003418) reported receipts of 341469766.66 and total disbursements of 303338969.71 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "source_name": "Federal Election Commission",
+   "source_url": "https://www.fec.gov/data/committee/C00003418/?cycle=2026&tab=spending",
+   "check": {
+    "kind": "fec-committee-summary",
+    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+    "cycle": 2026,
+    "committee_id": "C00003418",
+    "fields": {
+     "TTL_RECEIPTS": 34146976666,
+     "TTL_DISB": 30333896971,
+     "CVG_END_DT": "2026-10-14"
+    },
+    "image_number": null,
+    "sub_id": null,
+    "filing_id": null
+   },
+   "retrieved_at": "2026-11-18T02:02:35+00:00",
+   "status": "verified",
+   "verified_at": "2026-11-18T02:08:05Z"
   }
  },
  "children": [
@@ -130,9 +130,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00075820",
@@ -163,9 +163,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00075820"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -205,9 +205,9 @@
       "sample_filing_id": "2033220",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -251,9 +251,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00027466",
@@ -284,9 +284,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00027466"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -326,9 +326,9 @@
       "sample_filing_id": "2033220",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -376,9 +376,9 @@
       "sample_filing_id": "1978017",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -417,9 +417,9 @@
       "sample_filing_id": "1978017",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -467,9 +467,9 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -508,9 +508,9 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -558,9 +558,9 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -599,9 +599,9 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -649,9 +649,9 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -690,9 +690,9 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -740,9 +740,9 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -781,9 +781,9 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -831,9 +831,9 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -872,9 +872,9 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -922,9 +922,9 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -963,9 +963,9 @@
       "sample_filing_id": "1955664",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1013,9 +1013,9 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1054,9 +1054,9 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1104,9 +1104,9 @@
       "sample_filing_id": "1895127",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1145,9 +1145,9 @@
       "sample_filing_id": "1895127",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1195,9 +1195,9 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1236,9 +1236,9 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1288,9 +1288,9 @@
       "sample_filing_id": "1953864",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1331,9 +1331,9 @@
       "sample_filing_id": "1953864",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1381,9 +1381,9 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1422,9 +1422,9 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1472,9 +1472,9 @@
       "sample_filing_id": "1912550",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1513,9 +1513,9 @@
       "sample_filing_id": "1912550",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1563,9 +1563,9 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1604,9 +1604,9 @@
       "sample_filing_id": "1895070",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1654,9 +1654,9 @@
       "sample_filing_id": "2000590",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1695,9 +1695,9 @@
       "sample_filing_id": "2000590",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1745,9 +1745,9 @@
       "sample_filing_id": "1970222",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1786,9 +1786,9 @@
       "sample_filing_id": "1970222",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1836,9 +1836,9 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1877,9 +1877,9 @@
       "sample_filing_id": "2014461",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1929,9 +1929,9 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1972,9 +1972,9 @@
       "sample_filing_id": "2038918",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2024,9 +2024,9 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2067,9 +2067,9 @@
       "sample_filing_id": "2009011",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2119,9 +2119,9 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2162,9 +2162,9 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2212,9 +2212,9 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2253,9 +2253,9 @@
       "sample_filing_id": "1895126",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2303,9 +2303,9 @@
       "sample_filing_id": "2033220",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2344,9 +2344,9 @@
       "sample_filing_id": "2033220",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2394,9 +2394,9 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2435,9 +2435,9 @@
       "sample_filing_id": "1953929",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2490,9 +2490,9 @@
       "amount_cents": 3713052763,
       "transaction_count": 7236
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2539,9 +2539,9 @@
       "amount_cents": 3713052763,
       "transaction_count": 7236
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2592,9 +2592,9 @@
       "top_n": 25,
       "amount_cents": 10713604835
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -2639,9 +2639,9 @@
       "top_n": 25,
       "amount_cents": 10713604835
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   }
