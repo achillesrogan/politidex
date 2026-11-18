@@ -15,7 +15,7 @@ export default function ConnectionsPage() {
   const name = (id: string) => { const p = by.get(id); return p ? <Link className="link" href={`/p/${p.slug}`}>{p.name}</Link> : id; };
   return (
     <div>
-      <PageHead kicker="Connections v1" title="Documented connections" dek="Relationships that appear in public records. Each current member’s profile has a Connections panel for committee contributions, lobbying disclosure matches, independent expenditures, and cosponsorship. A connection documents a fact; it does not by itself imply coordination, influence, or wrongdoing." />
+      <PageHead kicker="Connections v1" title="Documented connections" dek="Relationships that appear in public records. Each current member’s profile has a Connections panel for committee contributions, lobbying disclosure matches, and independent expenditures. Cosponsorship counts are in that profile’s record. A connection documents a fact; it does not by itself imply coordination, influence, or wrongdoing." />
       <section className="newspaper-card p-5 sm:p-6">
         <div className="tag text-[var(--color-record)]">Record</div>
         <h2 className="font-display text-2xl font-bold mt-1 mb-3">Most frequent cosponsorship relationships</h2>

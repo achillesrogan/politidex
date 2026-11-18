@@ -180,7 +180,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
           )}
 
           {pr.ties && (
-            <ConnectionsPanel ties={pr.ties} personName={p.name} cosponsors={pr.cosponsors} />
+            <ConnectionsPanel ties={pr.ties} personName={p.name} />
           )}
 
           {an && (

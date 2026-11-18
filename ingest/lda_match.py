@@ -529,8 +529,12 @@ def load_cached_bill_titles(typ: str, number: str) -> list[dict]:
 
 
 
+# Tests set this to a dict. None means read the on-disk cache.
+POPULAR_SHORT_TITLES = None
+
+
 @lru_cache(maxsize=1)
-def _popular_short_title_map() -> dict:
+def _load_popular_short_title_file() -> dict:
     path = Path(__file__).resolve().parents[1] / "data" / "raw" / "congress" / "popular-short-titles.json"
     if not path.exists():
         return {}
@@ -541,11 +545,17 @@ def _popular_short_title_map() -> dict:
     return data if isinstance(data, dict) else {}
 
 
-def load_popular_short_titles(typ: str | None, number: str | None) -> list[tuple[str, set[str]]]:
-    """High-consensus short titles attached to this bill number in LDA filings.
+def _popular_short_title_map() -> dict:
+    if POPULAR_SHORT_TITLES is not None:
+        return POPULAR_SHORT_TITLES
+    return _load_popular_short_title_file()
 
-    Used only when Congress.gov has no formal short title (see
-    data/raw/congress/popular-short-titles.json).
+
+def load_popular_short_titles(typ: str | None, number: str | None) -> list[tuple[str, set[str]]]:
+    """High-consensus nicknames attached to this bill number in LDA filings.
+
+    These are review-only. A refresh of data/raw/congress/popular-short-titles.json
+    must not turn a local nickname into publish evidence.
     """
     if not typ or not number:
         return []
@@ -595,13 +605,20 @@ def bill_short_titles_and_acronyms(official: str | None, typ: str | None = None,
             elif official is None and "official" in kind:
                 official = title
     acr = extract_acronyms(shorts + ([official] if official else []))
-    # Popular names fill a gap only when Congress.gov has no formal short title.
-    if not shorts:
-        for title, more_acr in load_popular_short_titles(typ, number):
-            if title and title not in shorts:
-                shorts.append(title)
-            acr |= {a for a in more_acr if not is_generic_acronym(a)}
     return shorts, acr
+
+
+def popular_title_in_text(text: str, typ: str | None, number: str | None) -> bool:
+    """True when a cached popular nickname appears in this text. Not publish evidence."""
+    shorts: list[str] = []
+    acr: set[str] = set()
+    for title, more in load_popular_short_titles(typ, number):
+        if title and title not in shorts:
+            shorts.append(title)
+        acr |= {a for a in more if not is_generic_acronym(a)}
+    if not shorts and not acr:
+        return False
+    return distinctive_title_match(text or "", None, shorts, acr)
 
 
 HOUSE_BILL_TYPES = {"HR", "HJRES", "HCONRES", "HRES"}
@@ -932,6 +949,8 @@ def decide_bill(hit: BillHit, description: str, bill_title: str | None,
         else:
             if year_like:
                 return "reject", "year-like number with an ambiguous S. prefix"
+            if popular_title_in_text(prev_title, hit.typ, hit.number):
+                return "review", "popular short title is review-only; no distinctive short title or acronym from Congress.gov in the local window"
             return "review", "preceding title in a Title (number) list does not match this bill"
     else:
         title_ok = distinctive_title_match(window, bill_title, shorts, acr)
@@ -941,6 +960,8 @@ def decide_bill(hit: BillHit, description: str, bill_title: str | None,
         return "review", "bare bill-number list with no distinctive short title or acronym"
     if title_ok:
         return "publish", "distinctive short title or acronym in the local window"
+    if popular_title_in_text(window, hit.typ, hit.number):
+        return "review", "popular short title is review-only; no distinctive short title or acronym from Congress.gov in the local window"
     return "review", "no distinctive short title or acronym in the local window"
 
 
