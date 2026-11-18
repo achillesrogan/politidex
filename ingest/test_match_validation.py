@@ -207,6 +207,24 @@ def test_bill_parse_and_corroboration():
     check("H.R. 1492/S. 832 local EPIC Act nickname is review without a Congress.gov short title",
           d == "review" and "no distinctive short title" in reason, (d, reason, [h.raw for h in hits]))
 
+    # A refreshed popular-short-titles cache must not publish the same nickname.
+    M.POPULAR_SHORT_TITLES = {
+        "HR-1492": {"titles": [{"title": "EPIC Act", "acronyms": ["EPIC"]}]},
+        "S-832": {"titles": [{"title": "EPIC Act", "acronyms": ["EPIC"]}]},
+    }
+    try:
+        desc = "Pharmacy issues. H.R. 1492, the EPIC Act, in this Congress."
+        hit = M.parse_bill_mentions(desc)[0]
+        d, reason = M.decide_bill(hit, desc, "To amend title XI of the Social Security Act to equalize the negotiation period",
+            "2025-02-21", 2025, "second_quarter")
+        check("a popular nickname stays review when the cache is present",
+              d == "review" and "no distinctive short title" in reason, (d, reason))
+        d, reason = M.decide_bill(hit, desc, "To amend title XI of the Social Security Act to equalize the negotiation period",
+            "2025-02-21", 2025, "second_quarter", short_titles=["EPIC Act"], acronyms={"EPIC"})
+        check("a Congress.gov short title still publishes beside a popular nickname", d == "publish", (d, reason))
+    finally:
+        M.POPULAR_SHORT_TITLES = None
+
     desc = "H.R. 1492 -- \"To amend title XI of the Social Security Act to equalize the negotiation period between small-molecule and biologic candidates under the Drug Price Negotiation Program.\""
     hit = M.parse_bill_mentions(desc)[0]
     d, reason = M.decide_bill(hit, desc, "To amend title XI of the Social Security Act to equalize the negotiation period between small-molecule and biologic candidates under the Drug Price Negotiation Program.",

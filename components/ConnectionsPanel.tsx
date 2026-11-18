@@ -100,11 +100,9 @@ function Bars({ items }: { items: { label: string; value: number; claim?: string
 export default function ConnectionsPanel({
   ties,
   personName,
-  cosponsors,
 }: {
   ties: any;
   personName: string;
-  cosponsors?: any[];
 }) {
   if (!ties) return null;
   const C = allClaims();
@@ -113,8 +111,7 @@ export default function ConnectionsPanel({
   const ie = (ties.ie?.rows || []).filter((r: any) => verified(r.claim));
   const lobby = (ties.lobbying?.rows || []).filter((r: any) => verified(r.claim));
   const revolving = (ties.revolving?.rows || []).filter((r: any) => verified(r.claim));
-  const people = (cosponsors || []).filter((c: any) => verified(c.claim));
-  if (!money.length && !ie.length && !lobby.length && !revolving.length && !people.length && !cats.length) return null;
+  if (!money.length && !ie.length && !lobby.length && !revolving.length && !cats.length) return null;
 
   return (
     <section className="newspaper-card min-w-0 p-5 sm:p-6 border-l-4 !border-l-[var(--color-record)]">
@@ -131,7 +128,7 @@ export default function ConnectionsPanel({
           <label htmlFor="ctab-money">Money{money.length ? ` (${money.length})` : ""}</label>
           <label htmlFor="ctab-lobby">Lobbying{lobby.length ? ` (${lobby.length})` : ""}</label>
           <label htmlFor="ctab-ie">Outside spending{ie.length ? ` (${ie.length})` : ""}</label>
-          <label htmlFor="ctab-people">People{(people.length + revolving.length) ? ` (${people.length + revolving.length})` : ""}</label>
+          <label htmlFor="ctab-people">People{revolving.length ? ` (${revolving.length})` : ""}</label>
         </div>
 
         <div className="conn-panel panel-money mt-4">
@@ -262,23 +259,6 @@ export default function ConnectionsPanel({
         </div>
 
         <div className="conn-panel panel-people mt-4">
-          {people.length > 0 && (
-            <div className="mb-6">
-              <h3 className="font-display text-lg font-bold mb-2">Cosponsors</h3>
-              <p className="text-sm text-[var(--color-muted)] mb-2">Members whose bills {personName} cosponsored most often (119th Congress). These counts are the same verified Congress.gov figures shown elsewhere on this profile.</p>
-              <ul className="grid gap-2">
-                {people.map((c: any) => (
-                  <li key={c.partner}>
-                    <Fact claim={c.claim}>
-                      <EntityLink entity={linkedName("member", c.partner_name, c.partner, c.claim, c.partner_slug ? `/p/${c.partner_slug}` : null)}>{c.partner_name}</EntityLink>
-                      {" — "}{c.count} bills
-                    </Fact>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <div>
           <h3 className="font-display text-lg font-bold mb-2">Lobbyists who list a past position with this member (LDA covered position)</h3>
           <p className="text-sm text-[var(--color-muted)] mb-2">A covered position is a government job the lobbyist reports having held. It does not mean the lobbyist works for or with this member now.</p>
           <p className="text-sm text-[var(--color-muted)] mb-2">{ties.revolving?.source_note}</p>
@@ -314,7 +294,6 @@ export default function ConnectionsPanel({
               })}
             </ul>
           )}
-          </div>
         </div>
       </div>
     </section>
