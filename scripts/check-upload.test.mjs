@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -16,7 +16,8 @@ test("the Vercel ignore list drops connection intermediates and keeps the site s
   assert.equal(isIgnored("data/raw/fec/cm26.zip", repoIgnore), true);
 });
 
-test("a file over 100 MB fails even when the deploy is one archive", () => {
+test("a file over 100000000 bytes fails even when the deploy is one archive", () => {
+  assert.equal(MAX_FILE_BYTES, 100_000_000);
   const files = [{ path: "data/build/connections-fec.json", size: MAX_FILE_BYTES + 1 }];
   assert.ok(evaluateUpload(files, { archiveTgz: true }).some((error) => error.includes("100 MB")));
   assert.deepEqual(evaluateUpload([{ path: "ok.json", size: MAX_FILE_BYTES }], { archiveTgz: false }), []);
@@ -30,12 +31,18 @@ test("more than 5000 files requires vercel deploy --archive=tgz", () => {
 
 test("a fixture upload honors .vercelignore", () => {
   const root = mkdtempSync(path.join(tmpdir(), "upload-"));
-  mkdirSync(path.join(root, "data/build/site"), { recursive: true });
+  mkdirSync(path.join(root, "data/build/site/pkg/node_modules/left"), { recursive: true });
+  mkdirSync(path.join(root, "data/build/site/pkg/__pycache__"), { recursive: true });
   mkdirSync(path.join(root, "node_modules/pkg"), { recursive: true });
   writeFileSync(path.join(root, ".vercelignore"), "data/build/connections-*.json\n");
   writeFileSync(path.join(root, "data/build/site/claims.json"), "{}");
+  writeFileSync(path.join(root, "data/build/site/.DS_Store"), "x");
   writeFileSync(path.join(root, "data/build/connections-fec.json"), "{}");
+  writeFileSync(path.join(root, "data/build/site/pkg/node_modules/left/index.js"), "x");
+  writeFileSync(path.join(root, "data/build/site/pkg/__pycache__/mod.pyc"), "x");
   writeFileSync(path.join(root, "node_modules/pkg/index.js"), "module.exports = {}\n");
   const files = listUploadFiles(root, readFileSync(path.join(root, ".vercelignore"), "utf8"));
   assert.deepEqual(files.map((file) => file.path).sort(), [".vercelignore", "data/build/site/claims.json"]);
+  symlinkSync("claims.json", path.join(root, "data/build/site/alias.json"));
+  assert.throws(() => listUploadFiles(root, readFileSync(path.join(root, ".vercelignore"), "utf8")), /symlink/);
 });

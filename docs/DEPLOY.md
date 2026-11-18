@@ -20,7 +20,7 @@ Re-run `python3 ingest/connections_build.py` after any LDA rematch or FEC refres
 
 Deploy with `vercel deploy --archive=tgz`. The free plan caps uploads at 5,000 files a day, and the archive counts as one upload.
 
-Before that command, run `node scripts/check-upload.mjs --archive=tgz`. It reads `.vercelignore` and fails if any file the CLI would upload is over 100 MB. Without `--archive=tgz` it also fails when that set is over 5,000 files. `.git`, `.vercel`, `node_modules`, and `.next` are not part of the upload.
+Before that command, run `node scripts/check-upload.mjs --archive=tgz`. It reads `.vercelignore` and fails if any file the CLI would upload is over 100,000,000 bytes, or if it finds a symlink. Without `--archive=tgz` it also fails when that set is over 5,000 files. `.git`, `.vercel`, `node_modules` (including nested ones), `.next`, `__pycache__`, and `.DS_Store` are not part of the upload.
 
 Remote builds do not load the OPSEC denylist. Run `node scripts/check-rendered.mjs` locally with the denylist (`.opsec-denylist` or `OPSEC_DENYLIST`) before every promote.
 

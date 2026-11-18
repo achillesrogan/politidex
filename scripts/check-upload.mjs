@@ -4,9 +4,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-export const MAX_FILE_BYTES = 100 * 1024 * 1024;
+export const MAX_FILE_BYTES = 100_000_000;
 export const MAX_FILES_WITHOUT_ARCHIVE = 5000;
-const SKIP_DIRS = new Set([".git", ".vercel", "node_modules", ".next"]);
+const SKIP_DIRS = new Set([".git", ".vercel", "node_modules", ".next", "__pycache__"]);
 
 export function parseIgnore(text) {
   const rules = [];
@@ -72,9 +72,9 @@ export function listUploadFiles(root, ignoreText) {
   const files = [];
   function walk(dir, rel) {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (!rel && SKIP_DIRS.has(entry.name)) continue;
       const relPath = rel ? rel + "/" + entry.name : entry.name;
-      if (entry.isSymbolicLink()) continue;
+      if (entry.isSymbolicLink()) throw new Error(relPath + " is a symlink");
+      if (SKIP_DIRS.has(entry.name) || entry.name === ".DS_Store") continue;
       if (entry.isDirectory()) {
         if (!isIgnored(relPath, rules)) walk(path.join(dir, entry.name), relPath);
         else if (rules.some((rule) => rule.negate && (rule.pattern === relPath || rule.pattern.startsWith(relPath + "/")))) {
