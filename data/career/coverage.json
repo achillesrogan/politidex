@@ -1,0 +1,20 @@
+{
+  "fec": {
+    "begins": 1980,
+    "cycle": "1979-80",
+    "files": ["cm", "webk", "pas2"],
+    "excludes": "individual contribution files",
+    "source": "https://www.fec.gov/files/bulk-downloads/"
+  },
+  "lda": {
+    "begins": 2025,
+    "ends": 2026,
+    "source": "https://lda.gov/api/v1/filings/"
+  },
+  "congress": {
+    "begins": 1975,
+    "without_member": "119th Congress",
+    "source": "https://www.congress.gov/",
+    "committee_note": "The Congress.gov API has no member committee-assignment history."
+  }
+}

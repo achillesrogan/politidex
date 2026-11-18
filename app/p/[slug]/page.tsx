@@ -1,4 +1,7 @@
+import CareerRecord from "@/components/CareerRecord";
 import CommitteeInfo from "@/components/CommitteeInfo";
+import SourceCoverage from "@/components/SourceCoverage";
+import { sourceCoverageFor } from "@/lib/source-coverage.mjs";
 import EntityLink from "@/components/EntityLink";
 import PageTrust from "@/components/PageTrust";
 import { notFound } from "next/navigation";
@@ -11,6 +14,7 @@ import { entityRecord } from "@/lib/entity-registry.mjs";
 import { ldaClaimDates, profileAsOf } from "@/lib/page-as-of.mjs";
 import { publicSourceHref, renderedSourceHref } from "@/lib/source-href.mjs";
 import ConnectionsPanel from "@/components/ConnectionsPanel";
+import { careerFor, memberFirstYear } from "@/lib/career-record.mjs";
 import { fmtDate } from "@/lib/dates";
 
 function billId(url?: string | null) {
@@ -67,6 +71,9 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
   const pr = profile(slug);
   if (!pr || !verified(pr.facts?.[0]?.claim)) notFound();
   const p = pr.person;
+  const bioguide = people().find((person) => person.slug === slug)?.bioguide || null;
+  const career = bioguide ? careerFor(bioguide) : null;
+  const firstYear = memberFirstYear(bioguide);
   const an = pr.analysis;
   const C = claims();
   const used: string[] = [];
@@ -80,8 +87,10 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
         <div className="mt-3">
           <PageTrust retrieved={pageAsOf(pr)} />
         </div>
+        {sourceCoverageFor({ bioguide }) ? <SourceCoverage firstYear={firstYear} /> : null}
       </header>
 
+      {career && <CareerRecord career={career} />}
       {(() => { const sm = approvedSummary(slug); return sm && (
         <section className="newspaper-card p-5 mb-6">
           <div className="tag text-[var(--color-record)]">Summary · editor-reviewed restatement of verified records</div>
