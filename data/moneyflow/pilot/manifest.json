@@ -1,7 +1,7 @@
 {
  "schema": "politidex.moneyflow.manifest.v1",
  "cycle": 2026,
- "retrieved_at": "2026-11-17T00:26:07+00:00",
+ "retrieved_at": "2026-11-18T02:02:35+00:00",
  "fungibility_note": "Reported money out of this account. Money in an account is fungible, so this is not a record that a particular dollar went to a particular payee.",
  "wording": {
   "fungibility_note": "Reported money out of this account. Money in an account is fungible, so this is not a record that a particular dollar went to a particular payee.",
@@ -24,9 +24,9 @@
   "cm": {
    "url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
    "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
-   "bytes": 881225,
-   "sha256": "b53ee290ab797ae1f050ef0d3046f419c748d854bae8900f92d87ef85ed903db",
-   "last_modified": "Mon, 16 Nov 2026 06:39:46 GMT"
+   "bytes": 881709,
+   "sha256": "a4e4cb7424e287e3cc5afde95863d7c07c0df106274e1434cf1a5aec103eeaf2",
+   "last_modified": "Tue, 17 Nov 2026 06:38:51 GMT"
   },
   "oth": {
    "url": "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip",
@@ -52,23 +52,23 @@
   "webk": {
    "url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
-   "bytes": 489073,
-   "sha256": "b655b6a1b55d93a8cb2ac6a29786728fd6b913720611cefd899b8e8daf5b6266",
-   "last_modified": "Mon, 16 Nov 2026 06:39:37 GMT"
+   "bytes": 489304,
+   "sha256": "56e4f57b9da6643e155bc6916acf960cec82b37cec8a6a837daad5f36022d31f",
+   "last_modified": "Tue, 17 Nov 2026 06:38:42 GMT"
   },
   "webl": {
    "url": "https://www.fec.gov/files/bulk-downloads/2026/webl26.zip",
    "description_url": "https://www.fec.gov/campaign-finance-data/current-campaigns-house-and-senate-file-description/",
-   "bytes": 151940,
-   "sha256": "27964fdd442cc2b75c29797a0d666d5a3b3823d01a9bf882cf084666a2a23828",
-   "last_modified": "Mon, 16 Nov 2026 06:39:21 GMT"
+   "bytes": 151946,
+   "sha256": "1759cc0162ead77e761f107634a615dd1af0296e078fb0fe21c2d58eac904b32",
+   "last_modified": "Tue, 17 Nov 2026 06:38:27 GMT"
   },
   "weball": {
    "url": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
    "description_url": "https://www.fec.gov/campaign-finance-data/all-candidates-file-description/",
-   "bytes": 199981,
-   "sha256": "148030efafdfe5d1b4f7e9649612430c166553da86caae4030b264153c66a5b9",
-   "last_modified": "Mon, 16 Nov 2026 06:39:29 GMT"
+   "bytes": 199990,
+   "sha256": "2353e8865ded02938ee821f2c5085ce33f9729293ea6304062cbdefc960ed233",
+   "last_modified": "Tue, 17 Nov 2026 06:38:34 GMT"
   }
  },
  "candidate_summary_files": {
@@ -106,7 +106,7 @@
    "selection_rule": "party-qualified-top3",
    "selection_reason": "One of the three party-qualified committees (committee type Y) with party code DEM and the largest official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00010603.json",
-   "shard_bytes": 92403,
+   "shard_bytes": 97989,
    "official_total_out": "252802705.69",
    "child_edge_sum": "252802705.69",
    "residual_other": "62961315.64",
@@ -125,7 +125,7 @@
    "selection_rule": "party-qualified-top3",
    "selection_reason": "One of the three party-qualified committees (committee type Y) with party code DEM and the largest official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00000935.json",
-   "shard_bytes": 95351,
+   "shard_bytes": 96663,
    "official_total_out": "250326102.48",
    "child_edge_sum": "250326102.48",
    "residual_other": "77785373.84",
@@ -144,7 +144,7 @@
    "selection_rule": "party-qualified-top3",
    "selection_reason": "One of the three party-qualified committees (committee type Y) with party code DEM and the largest official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00042366.json",
-   "shard_bytes": 93915,
+   "shard_bytes": 102165,
    "official_total_out": "207175826.96",
    "child_edge_sum": "207175826.96",
    "residual_other": "42255164.23",
@@ -163,7 +163,7 @@
    "selection_rule": "party-qualified-top3",
    "selection_reason": "One of the three party-qualified committees (committee type Y) with party code REP and the largest official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00003418.json",
-   "shard_bytes": 92606,
+   "shard_bytes": 96644,
    "official_total_out": "303338969.71",
    "child_edge_sum": "303338969.71",
    "residual_other": "107136048.35",
@@ -182,7 +182,7 @@
    "selection_rule": "party-qualified-top3",
    "selection_reason": "One of the three party-qualified committees (committee type Y) with party code REP and the largest official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00075820.json",
-   "shard_bytes": 93662,
+   "shard_bytes": 94968,
    "official_total_out": "228418327.17",
    "child_edge_sum": "228418327.17",
    "residual_other": "62976160.28",
@@ -201,7 +201,7 @@
    "selection_rule": "party-qualified-top3",
    "selection_reason": "One of the three party-qualified committees (committee type Y) with party code REP and the largest official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00027466.json",
-   "shard_bytes": 93028,
+   "shard_bytes": 94334,
    "official_total_out": "215331004.77",
    "child_edge_sum": "215331004.77",
    "residual_other": "47941782.01",
@@ -220,7 +220,7 @@
    "selection_rule": "org-type-largest-no-party",
    "selection_reason": "Largest PAC (committee type Q, V, or W), designation U, blank party code, interest-group category C (Corporation), with at least one itemized non-memo disbursement, by official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00300921.json",
-   "shard_bytes": 90118,
+   "shard_bytes": 91357,
    "official_total_out": "1691495.59",
    "child_edge_sum": "1691495.59",
    "residual_other": "131319.84",
@@ -239,7 +239,7 @@
    "selection_rule": "org-type-largest-no-party",
    "selection_reason": "Largest PAC (committee type Q, V, or W), designation U, blank party code, interest-group category L (Labor organization), with at least one itemized non-memo disbursement, by official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00348540.json",
-   "shard_bytes": 45967,
+   "shard_bytes": 53990,
    "official_total_out": "13580829.53",
    "child_edge_sum": "13580829.53",
    "residual_other": "1151376.84",
@@ -258,7 +258,7 @@
    "selection_rule": "org-type-largest-no-party",
    "selection_reason": "Largest PAC (committee type Q, V, or W), designation U, blank party code, interest-group category M (Membership organization), with at least one itemized non-memo disbursement, by official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00140061.json",
-   "shard_bytes": 87470,
+   "shard_bytes": 121004,
    "official_total_out": "1668339.75",
    "child_edge_sum": "1668339.75",
    "residual_other": "1256634.88",
@@ -277,7 +277,7 @@
    "selection_rule": "org-type-largest-no-party",
    "selection_reason": "Largest PAC (committee type Q, V, or W), designation U, blank party code, interest-group category T (Trade association), with at least one itemized non-memo disbursement, by official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00363986.json",
-   "shard_bytes": 23578,
+   "shard_bytes": 26373,
    "official_total_out": "1475714.96",
    "child_edge_sum": "1475714.96",
    "residual_other": "18445.60",
@@ -296,7 +296,7 @@
    "selection_rule": "org-type-largest-no-party",
    "selection_reason": "Largest PAC (committee type Q, V, or W), designation U, blank party code, interest-group category V (Cooperative), with at least one itemized non-memo disbursement, by official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00326389.json",
-   "shard_bytes": 88810,
+   "shard_bytes": 123917,
    "official_total_out": "641561.12",
    "child_edge_sum": "641561.12",
    "residual_other": "478061.12",
@@ -315,7 +315,7 @@
    "selection_rule": "org-type-largest-no-party",
    "selection_reason": "Largest PAC (committee type Q, V, or W), designation U, blank party code, interest-group category W (Corporation without capital stock), with at least one itemized non-memo disbursement, by official total disbursements.",
    "shard": "data/moneyflow/pilot/shards/C00298000.json",
-   "shard_bytes": 90284,
+   "shard_bytes": 94239,
    "official_total_out": "538603.76",
    "child_edge_sum": "538603.76",
    "residual_other": "29894.06",
@@ -751,7 +751,7 @@
   }
  ],
  "duplicate_summary_rows_dropped": [],
- "summary_total_missing_dropped": 2606,
+ "summary_total_missing_dropped": 2611,
  "scan": {
   "rows_read": {
    "oth": 10117554,
@@ -775,13 +775,13 @@
  },
  "sizes": {
   "pilot_committees": 12,
-  "pilot_shard_bytes": 987192,
-  "full_cycle_reconciled_committees_with_a_shard": 8812,
-  "full_cycle_projected_shard_bytes": 346251917,
-  "full_cycle_projected_gzip_bytes": 34131848,
+  "pilot_shard_bytes": 1093643,
+  "full_cycle_reconciled_committees_with_a_shard": 8814,
+  "full_cycle_projected_shard_bytes": 433056729,
+  "full_cycle_projected_gzip_bytes": 41085992,
   "committees_with_zero_official_and_zero_itemized": 1541,
   "reconciliation_failures": 47,
-  "pac_and_party_committees_in_summary": 10400,
+  "pac_and_party_committees_in_summary": 10402,
   "note": "Projected bytes are the JSON size, with the same indent as the pilot shards, of one top-payee shard for every PAC and party committee whose itemized non-memo disbursements fit under the official total and that reported a non-zero total or a non-zero itemized sum. The gzip figure uses Python gzip compresslevel 6 on those same bytes. Candidate-campaign committees are not in the projection."
  }
 }

@@ -25,35 +25,6 @@
   "org_type_label": "Cooperative",
   "connected_organization": "AMALGAMATED SUGAR COMPANY",
   "state": "ID",
-  "source": {
-   "id": "c_5f00d8afd41657",
-   "text": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE (C00326389) reported receipts of 406716.53 and total disbursements of 641561.12 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
-   "value": {
-    "TTL_DISB": 64156112,
-    "TTL_RECEIPTS": 40671653
-   },
-   "excerpt": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE (C00326389) reported receipts of 406716.53 and total disbursements of 641561.12 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
-   "source_name": "Federal Election Commission",
-   "source_url": "https://www.fec.gov/data/committee/C00326389/?cycle=2026&tab=spending",
-   "check": {
-    "kind": "fec-committee-summary",
-    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
-    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
-    "cycle": 2026,
-    "committee_id": "C00326389",
-    "fields": {
-     "TTL_RECEIPTS": 40671653,
-     "TTL_DISB": 64156112,
-     "CVG_END_DT": "2026-10-14"
-    },
-    "image_number": null,
-    "sub_id": null,
-    "filing_id": null
-   },
-   "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "verified",
-   "verified_at": "2026-11-17T20:34:45Z"
-  },
   "profile": {
    "committee_id": "C00326389",
    "committee_type": "Q",
@@ -83,10 +54,39 @@
      "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
      "committee_id": "C00326389"
     },
-    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "retrieved_at": "2026-11-18T02:02:35+00:00",
     "status": "verified",
-    "verified_at": "2026-11-17T20:34:45Z"
+    "verified_at": "2026-11-18T02:08:05Z"
    }
+  },
+  "source": {
+   "id": "c_5f00d8afd41657",
+   "text": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE (C00326389) reported receipts of 406716.53 and total disbursements of 641561.12 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "value": {
+    "TTL_DISB": 64156112,
+    "TTL_RECEIPTS": 40671653
+   },
+   "excerpt": "AMALGAMATED SUGAR COMPANY POLITICAL ACTION COMMITTEE (C00326389) reported receipts of 406716.53 and total disbursements of 641561.12 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "source_name": "Federal Election Commission",
+   "source_url": "https://www.fec.gov/data/committee/C00326389/?cycle=2026&tab=spending",
+   "check": {
+    "kind": "fec-committee-summary",
+    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+    "cycle": 2026,
+    "committee_id": "C00326389",
+    "fields": {
+     "TTL_RECEIPTS": 40671653,
+     "TTL_DISB": 64156112,
+     "CVG_END_DT": "2026-10-14"
+    },
+    "image_number": null,
+    "sub_id": null,
+    "filing_id": null
+   },
+   "retrieved_at": "2026-11-18T02:02:35+00:00",
+   "status": "verified",
+   "verified_at": "2026-11-18T02:08:05Z"
   }
  },
  "children": [
@@ -130,9 +130,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00063586",
@@ -163,9 +163,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00063586"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -205,9 +205,9 @@
       "sample_filing_id": "1892530",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -251,9 +251,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00167684",
@@ -284,9 +284,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00167684"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -326,9 +326,9 @@
       "sample_filing_id": "1892530",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -376,9 +376,9 @@
       "sample_filing_id": "1928089",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00331397",
@@ -409,9 +409,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00331397"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -451,9 +451,9 @@
       "sample_filing_id": "1928089",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -501,9 +501,9 @@
       "sample_filing_id": "1928089",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00440362",
@@ -534,9 +534,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00440362"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -576,9 +576,9 @@
       "sample_filing_id": "1928089",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -622,9 +622,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00771246",
@@ -655,9 +655,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00771246"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -697,9 +697,9 @@
       "sample_filing_id": "1988989",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -747,9 +747,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00926345",
@@ -780,9 +780,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00926345"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -822,9 +822,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -872,9 +872,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00725465",
@@ -905,9 +905,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00725465"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -947,9 +947,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -997,9 +997,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00482737",
@@ -1030,9 +1030,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00482737"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1072,9 +1072,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1122,9 +1122,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00501643",
@@ -1155,9 +1155,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00501643"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1197,9 +1197,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1247,9 +1247,9 @@
       "sample_filing_id": "1981503",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00728238",
@@ -1280,9 +1280,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00728238"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1322,9 +1322,9 @@
       "sample_filing_id": "1981503",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1372,9 +1372,9 @@
       "sample_filing_id": "1981503",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00849844",
@@ -1405,9 +1405,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00849844"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1447,9 +1447,9 @@
       "sample_filing_id": "1981503",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1497,9 +1497,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00869370",
@@ -1530,9 +1530,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00869370"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1572,9 +1572,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1618,9 +1618,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00002238",
@@ -1651,9 +1651,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00002238"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1693,9 +1693,9 @@
       "sample_filing_id": "1959717",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1739,9 +1739,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00027466",
@@ -1772,9 +1772,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00027466"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1814,9 +1814,9 @@
       "sample_filing_id": "1899189",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1860,9 +1860,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00409003",
@@ -1893,9 +1893,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00409003"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -1935,9 +1935,9 @@
       "sample_filing_id": "1899189",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1985,9 +1985,9 @@
       "sample_filing_id": "1899189",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00409581",
@@ -2018,9 +2018,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00409581"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2060,9 +2060,9 @@
       "sample_filing_id": "1899189",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2110,9 +2110,9 @@
       "sample_filing_id": "1959717",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00412890",
@@ -2143,9 +2143,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00412890"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2185,9 +2185,9 @@
       "sample_filing_id": "1959717",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2235,9 +2235,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00444620",
@@ -2268,9 +2268,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00444620"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2310,9 +2310,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2356,9 +2356,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00461996",
@@ -2389,9 +2389,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00461996"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2431,9 +2431,9 @@
       "sample_filing_id": "1928089",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2477,9 +2477,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00493072",
@@ -2510,9 +2510,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00493072"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2552,9 +2552,9 @@
       "sample_filing_id": "2005578",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2602,9 +2602,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00499392",
@@ -2635,9 +2635,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00499392"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2677,9 +2677,9 @@
       "sample_filing_id": "2018185",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2727,9 +2727,9 @@
       "sample_filing_id": "1880495",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00608695",
@@ -2760,9 +2760,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00608695"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2802,9 +2802,9 @@
       "sample_filing_id": "1880495",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2852,9 +2852,9 @@
       "sample_filing_id": "1988989",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00648295",
@@ -2885,9 +2885,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00648295"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -2927,9 +2927,9 @@
       "sample_filing_id": "1988989",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -2973,9 +2973,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00649574",
@@ -3006,9 +3006,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00649574"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -3048,9 +3048,9 @@
       "sample_filing_id": "1931687",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -3098,9 +3098,9 @@
       "sample_filing_id": "2012250",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00764381",
@@ -3131,9 +3131,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00764381"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -3173,9 +3173,9 @@
       "sample_filing_id": "2012250",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -3226,9 +3226,9 @@
       "top_n": 25,
       "amount_cents": 47806112
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -3273,9 +3273,9 @@
       "top_n": 25,
       "amount_cents": 47806112
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   }

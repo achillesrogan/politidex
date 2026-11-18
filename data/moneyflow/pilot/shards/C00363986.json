@@ -25,35 +25,6 @@
   "org_type_label": "Trade association",
   "connected_organization": "NATIONAL ASSOCIATION OF REALTORS POLITICAL ACTION COMMITTEE",
   "state": "TX",
-  "source": {
-   "id": "c_96695de08a1ff7",
-   "text": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) reported receipts of 1401966.97 and total disbursements of 1475714.96 in the 2026 cycle, coverage end 2026-09-30, in the FEC PAC and party summary file.",
-   "value": {
-    "TTL_DISB": 147571496,
-    "TTL_RECEIPTS": 140196697
-   },
-   "excerpt": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) reported receipts of 1401966.97 and total disbursements of 1475714.96 in the 2026 cycle, coverage end 2026-09-30, in the FEC PAC and party summary file.",
-   "source_name": "Federal Election Commission",
-   "source_url": "https://www.fec.gov/data/committee/C00363986/?cycle=2026&tab=spending",
-   "check": {
-    "kind": "fec-committee-summary",
-    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
-    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
-    "cycle": 2026,
-    "committee_id": "C00363986",
-    "fields": {
-     "TTL_RECEIPTS": 140196697,
-     "TTL_DISB": 147571496,
-     "CVG_END_DT": "2026-09-30"
-    },
-    "image_number": null,
-    "sub_id": null,
-    "filing_id": null
-   },
-   "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "verified",
-   "verified_at": "2026-11-17T20:34:45Z"
-  },
   "profile": {
    "committee_id": "C00363986",
    "committee_type": "Q",
@@ -83,10 +54,39 @@
      "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
      "committee_id": "C00363986"
     },
-    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "retrieved_at": "2026-11-18T02:02:35+00:00",
     "status": "verified",
-    "verified_at": "2026-11-17T20:34:45Z"
+    "verified_at": "2026-11-18T02:08:05Z"
    }
+  },
+  "source": {
+   "id": "c_96695de08a1ff7",
+   "text": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) reported receipts of 1401966.97 and total disbursements of 1475714.96 in the 2026 cycle, coverage end 2026-09-30, in the FEC PAC and party summary file.",
+   "value": {
+    "TTL_DISB": 147571496,
+    "TTL_RECEIPTS": 140196697
+   },
+   "excerpt": "TEXAS ASSOCIATION OF REALTORS FEDERAL POLITICAL ACTION COMMITTEE-FEDPAC (C00363986) reported receipts of 1401966.97 and total disbursements of 1475714.96 in the 2026 cycle, coverage end 2026-09-30, in the FEC PAC and party summary file.",
+   "source_name": "Federal Election Commission",
+   "source_url": "https://www.fec.gov/data/committee/C00363986/?cycle=2026&tab=spending",
+   "check": {
+    "kind": "fec-committee-summary",
+    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+    "cycle": 2026,
+    "committee_id": "C00363986",
+    "fields": {
+     "TTL_RECEIPTS": 140196697,
+     "TTL_DISB": 147571496,
+     "CVG_END_DT": "2026-09-30"
+    },
+    "image_number": null,
+    "sub_id": null,
+    "filing_id": null
+   },
+   "retrieved_at": "2026-11-18T02:02:35+00:00",
+   "status": "verified",
+   "verified_at": "2026-11-18T02:08:05Z"
   }
  },
  "children": [
@@ -130,9 +130,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00030718",
@@ -163,9 +163,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00030718"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -205,9 +205,9 @@
       "sample_filing_id": "1907673",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -255,9 +255,9 @@
       "sample_filing_id": "1991871",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -296,9 +296,9 @@
       "sample_filing_id": "1991871",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -346,9 +346,9 @@
       "sample_filing_id": "1943966",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -387,9 +387,9 @@
       "sample_filing_id": "1943966",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -437,9 +437,9 @@
       "sample_filing_id": "1943966",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -478,9 +478,9 @@
       "sample_filing_id": "1943966",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -528,9 +528,9 @@
       "sample_filing_id": "1991871",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -569,9 +569,9 @@
       "sample_filing_id": "1991871",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -622,9 +622,9 @@
       "top_n": 25,
       "amount_cents": 1844560
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -669,9 +669,9 @@
       "top_n": 25,
       "amount_cents": 1844560
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   }

@@ -25,35 +25,6 @@
   "org_type_label": "Labor organization",
   "connected_organization": "1199 SEIU UNITED HEALTHCARE WORKERS EAST",
   "state": "NY",
-  "source": {
-   "id": "c_705ac7baae0a4b",
-   "text": "1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540) reported receipts of 12803560.97 and total disbursements of 13580829.53 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
-   "value": {
-    "TTL_DISB": 1358082953,
-    "TTL_RECEIPTS": 1280356097
-   },
-   "excerpt": "1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540) reported receipts of 12803560.97 and total disbursements of 13580829.53 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
-   "source_name": "Federal Election Commission",
-   "source_url": "https://www.fec.gov/data/committee/C00348540/?cycle=2026&tab=spending",
-   "check": {
-    "kind": "fec-committee-summary",
-    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
-    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
-    "cycle": 2026,
-    "committee_id": "C00348540",
-    "fields": {
-     "TTL_RECEIPTS": 1280356097,
-     "TTL_DISB": 1358082953,
-     "CVG_END_DT": "2026-10-14"
-    },
-    "image_number": null,
-    "sub_id": null,
-    "filing_id": null
-   },
-   "retrieved_at": "2026-11-17T00:26:07+00:00",
-   "status": "verified",
-   "verified_at": "2026-11-17T20:34:45Z"
-  },
   "profile": {
    "committee_id": "C00348540",
    "committee_type": "Q",
@@ -83,10 +54,39 @@
      "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
      "committee_id": "C00348540"
     },
-    "retrieved_at": "2026-11-17T00:26:07+00:00",
+    "retrieved_at": "2026-11-18T02:02:35+00:00",
     "status": "verified",
-    "verified_at": "2026-11-17T20:34:45Z"
+    "verified_at": "2026-11-18T02:08:05Z"
    }
+  },
+  "source": {
+   "id": "c_705ac7baae0a4b",
+   "text": "1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540) reported receipts of 12803560.97 and total disbursements of 13580829.53 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "value": {
+    "TTL_DISB": 1358082953,
+    "TTL_RECEIPTS": 1280356097
+   },
+   "excerpt": "1199 SEIU UNITED HEALTHCARE WORKERS EAST FEDERAL POLITICAL ACTION FUND (C00348540) reported receipts of 12803560.97 and total disbursements of 13580829.53 in the 2026 cycle, coverage end 2026-10-14, in the FEC PAC and party summary file.",
+   "source_name": "Federal Election Commission",
+   "source_url": "https://www.fec.gov/data/committee/C00348540/?cycle=2026&tab=spending",
+   "check": {
+    "kind": "fec-committee-summary",
+    "file_url": "https://www.fec.gov/files/bulk-downloads/2026/webk26.zip",
+    "description_url": "https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/",
+    "cycle": 2026,
+    "committee_id": "C00348540",
+    "fields": {
+     "TTL_RECEIPTS": 1280356097,
+     "TTL_DISB": 1358082953,
+     "CVG_END_DT": "2026-10-14"
+    },
+    "image_number": null,
+    "sub_id": null,
+    "filing_id": null
+   },
+   "retrieved_at": "2026-11-18T02:02:35+00:00",
+   "status": "verified",
+   "verified_at": "2026-11-18T02:08:05Z"
   }
  },
  "children": [
@@ -130,9 +130,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00004036",
@@ -163,9 +163,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00004036"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -205,9 +205,9 @@
       "sample_filing_id": "1994150",
       "edge_kind": "reported transfer"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -251,9 +251,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00957431",
@@ -284,9 +284,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00957431"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -326,9 +326,9 @@
       "sample_filing_id": "2025979",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -372,9 +372,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00609388",
@@ -405,9 +405,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00609388"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -447,9 +447,9 @@
       "sample_filing_id": "2025979",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -493,9 +493,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00753277",
@@ -526,9 +526,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00753277"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -568,9 +568,9 @@
       "sample_filing_id": "2025979",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -618,9 +618,9 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -659,9 +659,9 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -709,9 +709,9 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -750,9 +750,9 @@
       "sample_filing_id": "1994116",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -796,9 +796,9 @@
       "sub_id": null,
       "filing_id": null
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     },
     "profile": {
      "committee_id": "C00606962",
@@ -829,9 +829,9 @@
        "description_url": "https://www.fec.gov/campaign-finance-data/committee-master-file-description/",
        "committee_id": "C00606962"
       },
-      "retrieved_at": "2026-11-17T00:26:07+00:00",
+      "retrieved_at": "2026-11-18T02:02:35+00:00",
       "status": "verified",
-      "verified_at": "2026-11-17T20:34:45Z"
+      "verified_at": "2026-11-18T02:08:05Z"
      }
     }
    },
@@ -871,9 +871,9 @@
       "sample_filing_id": "1994179",
       "edge_kind": "reported contribution"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -921,9 +921,9 @@
       "sample_filing_id": "1994150",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -962,9 +962,9 @@
       "sample_filing_id": "1994150",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1012,9 +1012,9 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1053,9 +1053,9 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1103,9 +1103,9 @@
       "sample_filing_id": "2025979",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1144,9 +1144,9 @@
       "sample_filing_id": "2025979",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1194,9 +1194,9 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1235,9 +1235,9 @@
       "sample_filing_id": "1994191",
       "edge_kind": "spent"
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1289,9 +1289,9 @@
       "amount_cents": 123339,
       "transaction_count": 2
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1337,9 +1337,9 @@
       "amount_cents": 123339,
       "transaction_count": 2
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   },
@@ -1390,9 +1390,9 @@
       "top_n": 25,
       "amount_cents": 115137684
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    },
    "edge": {
@@ -1437,9 +1437,9 @@
       "top_n": 25,
       "amount_cents": 115137684
      },
-     "retrieved_at": "2026-11-17T00:26:07+00:00",
+     "retrieved_at": "2026-11-18T02:02:35+00:00",
      "status": "verified",
-     "verified_at": "2026-11-17T20:34:45Z"
+     "verified_at": "2026-11-18T02:08:05Z"
     }
    }
   }
