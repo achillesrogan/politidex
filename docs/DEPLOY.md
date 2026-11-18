@@ -14,6 +14,16 @@ The populated site is deployed from a checkout that already has `data/build/site
 
 Nothing in this note deploys the site. A production deploy still waits for an explicit CLI deploy from a checkout that has the snapshot.
 
+## Before a production promote
+
+Re-run `python3 ingest/connections_build.py` after any LDA rematch or FEC refresh, before deploying.
+
+Deploy with `vercel deploy --archive=tgz`. The free plan caps uploads at 5,000 files a day, and the archive counts as one upload.
+
+Before that command, run `node scripts/check-upload.mjs --archive=tgz`. It reads `.vercelignore` and fails if any file the CLI would upload is over 100 MB. Without `--archive=tgz` it also fails when that set is over 5,000 files. `.git`, `.vercel`, `node_modules`, and `.next` are not part of the upload.
+
+Remote builds do not load the OPSEC denylist. Run `node scripts/check-rendered.mjs` locally with the denylist (`.opsec-denylist` or `OPSEC_DENYLIST`) before every promote.
+
 ## Money-flow verification
 
 `python3 ingest/moneyflow_verify.py --check` does not download the FEC bulk files. On Vercel and in CI those zips are not in the tree, so `--check` only confirms that each served fact already has `status` `verified` plus a source, a retrieval date, and an excerpt. That is not a new read of the filings.
