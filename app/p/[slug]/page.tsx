@@ -1,6 +1,7 @@
 import CareerRecord from "@/components/CareerRecord";
 import CommitteeInfo from "@/components/CommitteeInfo";
 import SourceCoverage from "@/components/SourceCoverage";
+import { sourceCoverageFor } from "@/lib/source-coverage.mjs";
 import EntityLink from "@/components/EntityLink";
 import PageTrust from "@/components/PageTrust";
 import { notFound } from "next/navigation";
@@ -86,7 +87,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ slug: 
         <div className="mt-3">
           <PageTrust retrieved={pageAsOf(pr)} />
         </div>
-        <SourceCoverage firstYear={firstYear} />
+        {sourceCoverageFor({ bioguide }) ? <SourceCoverage firstYear={firstYear} /> : null}
       </header>
 
       {career && <CareerRecord career={career} />}
