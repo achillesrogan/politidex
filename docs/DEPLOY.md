@@ -8,7 +8,7 @@ Vercel clones the repository. `.vercelignore` is not applied to that clone. `ing
 
 ## CLI deploy that carries the snapshot
 
-The populated site is deployed from a checkout that already has `data/build/site` on disk. `.vercelignore` replaces `.gitignore` for a CLI upload. `data/build/site` is not listed there, so the unpacked snapshot is uploaded. The gzipped bundles are listed and are not uploaded; the build reads the snapshot already on disk.
+The populated site is deployed from a checkout that already has `data/build/site` on disk. `.vercelignore` replaces `.gitignore` for a CLI upload. `data/build/site` is not listed there, so the unpacked snapshot is uploaded. The gzipped bundles are listed and are not uploaded; the build reads the snapshot already on disk. `data/build/connections-*.json` is excluded from the upload. Those connection intermediates are not read by the remote build or the runtime, and `data/build/site` stays included.
 
 `ingest/` must be in that upload. Prebuild runs the Python tests under `ingest/`. Leaving `ingest/` in `.vercelignore` removes those files and `npm run build` fails before Next.js starts. The ignore file therefore excludes `ingest/__pycache__/` and not `ingest/` itself.
 
